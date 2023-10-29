@@ -1,0 +1,56 @@
+** sch_path: /foss/designs/projects/dpga-ieee-sscs-contest/xschem/tg-tb.sch
+**.subckt tg-tb
+Vdd vd GND 1.8
+.save i(vdd)
+V1 c0 GND pulse 0 {vp} '0.495/ {f0} ' '0.01/{f0} ' '0.01/{f0} ' '0.49/{f0} ' '1/{f0} '
+V2 n0 GND 0.9
+.save i(v2)
+x2 c0 vd GND GND n0 tg
+**** begin user architecture code
+
+
+.param f0=1 vp=1.8
+
+.control
+
+destroy all
+set color0=white
+set color1=black
+save all
+tran 1m 1
+let r = abs(n0/i(V2))
+plot r
+plot c0 c1+2 c2+4 c3+6
+.endc
+
+ .lib /foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.include /foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  projects/dpga-ieee-sscs-contest/xschem/tg.sym # of pins=5
+** sym_path: /foss/designs/projects/dpga-ieee-sscs-contest/xschem/tg.sym
+** sch_path: /foss/designs/projects/dpga-ieee-sscs-contest/xschem/tg.sch
+.subckt tg ctrl vd b vgnd a
+*.iopin vd
+*.iopin vgnd
+*.iopin b
+*.iopin a
+*.ipin ctrl
+XM2 b nctrl a vd sky130_fd_pr__pfet_01v8 L=0.15 W=60 nf=12 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM1 a ctrl b vgnd sky130_fd_pr__nfet_01v8 L=0.15 W=60 nf=12 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM3 nctrl ctrl vgnd vgnd sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM4 nctrl ctrl vd vd sky130_fd_pr__pfet_01v8 L=0.15 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+.GLOBAL GND
+.end

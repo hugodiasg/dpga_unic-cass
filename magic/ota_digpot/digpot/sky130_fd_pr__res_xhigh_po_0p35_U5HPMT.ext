@@ -1,0 +1,18 @@
+timestamp 1698520721
+version 8.3
+tech sky130A
+style ngspice()
+scale 1000 1 500000
+resistclasses 4400000 2200000 950000 3050000 120000 197000 114000 191000 120000 197000 114000 191000 48200 319800 2000000 48200 48200 12800 125 125 47 47 29 5
+parameters sky130_fd_pr__res_xhigh_po l=l w=w
+parameters sky130_fd_pr__res_xhigh_po_5p73 l=l
+parameters sky130_fd_pr__res_xhigh_po_2p85 l=l
+parameters sky130_fd_pr__res_xhigh_po_1p41 l=l
+parameters sky130_fd_pr__res_xhigh_po_0p69 l=l
+parameters sky130_fd_pr__res_xhigh_po_0p35 l=l
+node "a_n35_n694#" 188 785.012 -35 -694 xpc 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 60480 2008 21050 942 0 0 0 0 0 0 0 0 0 0
+node "a_n35_n262#" 14971 0 -35 -262 xres 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 36680 1188 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_n35_262#" 188 784.867 -35 262 xpc 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 60480 2008 21050 942 0 0 0 0 0 0 0 0 0 0
+substrate "a_n165_n824#" 0 0 -165 -824 ppd 0 0 0 0 0 0 0 0 0 0 129880 7640 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 129880 7640 0 0 0 0 0 0 0 0 0 0 0 0
+cap "a_n35_n694#" "a_n35_262#" 22.7763
+device rsubckt sky130_fd_pr__res_xhigh_po_0p35 -35 -262 -34 -261 l=524 "a_n165_n824#" "a_n35_n262#" 0 0 "a_n35_n694#" 70 0 "a_n35_262#" 70 0

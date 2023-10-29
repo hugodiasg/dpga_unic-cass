@@ -1,0 +1,693 @@
+timestamp 0
+version 8.3
+tech sky130A
+style ngspice()
+scale 1000 1 500000
+resistclasses 4400000 2200000 950000 3050000 120000 197000 114000 191000 120000 197000 114000 191000 48200 319800 2000000 48200 48200 12800 125 125 47 47 29 5
+parameters sky130_fd_pr__nfet_01v8 l=l w=w a1=as p1=ps a2=ad p2=pd
+parameters sky130_fd_pr__pfet_01v8 l=l w=w a1=as p1=ps a2=ad p2=pd
+parameters sky130_fd_pr__res_high_po l=l w=w
+parameters sky130_fd_pr__res_high_po_5p73 l=l
+parameters sky130_fd_pr__res_high_po_2p85 l=l
+parameters sky130_fd_pr__res_high_po_1p41 l=l
+parameters sky130_fd_pr__res_high_po_0p69 l=l
+parameters sky130_fd_pr__res_high_po_0p35 l=l
+parameters sky130_fd_pr__res_xhigh_po l=l w=w
+parameters sky130_fd_pr__res_xhigh_po_5p73 l=l
+parameters sky130_fd_pr__res_xhigh_po_2p85 l=l
+parameters sky130_fd_pr__res_xhigh_po_1p41 l=l
+parameters sky130_fd_pr__res_xhigh_po_0p69 l=l
+parameters sky130_fd_pr__res_xhigh_po_0p35 l=l
+parameters sky130_fd_pr__cap_mim_m3_1 w=w l=l
+port "c0" 6 24510 8760 24710 8960 m1
+port "c1" 7 20980 8760 21180 8960 m1
+port "c2" 8 17350 8760 17550 8960 m1
+port "c3" 9 13810 8760 14010 8960 m1
+port "c4" 10 10300 8760 10500 8960 m1
+port "c5" 11 7060 8760 7260 8960 m1
+port "c6" 12 3830 8760 4030 8960 m1
+port "c7" 13 550 8760 750 8960 m1
+port "inn" 1 13850 -450 14050 -260 m1
+port "inp" 2 28500 -490 28700 -300 m1
+port "ib" 3 29000 8760 29200 8950 m1
+port "out" 4 35030 5310 35230 5500 m1
+port "vd" 14 -200 2950 0 3150 m1
+port "gnd" 5 -200 2010 0 2200 m1
+node "digpotp_0.tg_4.ctrl" 23518 6828.61 25966 2643 p 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 523661 31420 0 0 35904 3200 1918068 25878 0 0 0 0 0 0 0 0 0 0
+equiv "digpotp_0.tg_4.ctrl" "c0"
+node "digpotp_0.tg_4.nctrl" 25242 985.518 26014 2740 pdif 0 0 0 0 0 0 0 0 11600 516 34800 1316 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 470302 29226 0 0 54672 4168 217846 8582 0 0 0 0 0 0 0 0 0 0
+node "digpotp_0.tg_7.ctrl" 23518 6985.28 22166 2643 p 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 523661 31420 0 0 35904 3200 1864068 25338 0 0 0 0 0 0 0 0 0 0
+equiv "digpotp_0.tg_7.ctrl" "c1"
+node "digpotp_0.tg_7.nctrl" 25242 980.068 22214 2740 pdif 0 0 0 0 0 0 0 0 11600 516 34800 1316 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 470302 29226 0 0 54672 4168 217846 8582 0 0 0 0 0 0 0 0 0 0
+node "digpotp_0.tg_6.ctrl" 23518 6892.2 18466 2643 p 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 523661 31420 0 0 35904 3200 1850068 25198 0 0 0 0 0 0 0 0 0 0
+equiv "digpotp_0.tg_6.ctrl" "c2"
+node "digpotp_0.tg_6.nctrl" 25242 974.647 18514 2740 pdif 0 0 0 0 0 0 0 0 11600 516 34800 1316 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 470302 29226 0 0 54672 4168 217846 8582 0 0 0 0 0 0 0 0 0 0
+node "digpotp_0.tg_5.ctrl" 23518 6859.18 14966 2643 p 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 523661 31420 0 0 35904 3200 1858068 25278 0 0 0 0 0 0 0 0 0 0
+equiv "digpotp_0.tg_5.ctrl" "c3"
+node "digpotp_0.tg_5.nctrl" 25242 1066.13 15014 2740 pdif 0 0 0 0 0 0 0 0 11600 516 34800 1316 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 470302 29226 0 0 54672 4168 217846 8582 0 0 0 0 0 0 0 0 0 0
+node "digpotp_0.tg_3.ctrl" 23518 6602.02 11366 2643 p 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 523661 31420 0 0 35904 3200 1840068 25098 0 0 0 0 0 0 0 0 0 0
+equiv "digpotp_0.tg_3.ctrl" "c4"
+node "digpotp_0.tg_3.nctrl" 25242 1065.92 11414 2740 pdif 0 0 0 0 0 0 0 0 11600 516 34800 1316 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 470302 29226 0 0 54672 4168 217846 8582 0 0 0 0 0 0 0 0 0 0
+node "digpotp_0.tg_2.ctrl" 23518 6596.45 8066 2643 p 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 523661 31420 0 0 35904 3200 1828068 24978 0 0 0 0 0 0 0 0 0 0
+equiv "digpotp_0.tg_2.ctrl" "c5"
+node "digpotp_0.tg_2.nctrl" 25242 1065.81 8114 2740 pdif 0 0 0 0 0 0 0 0 11600 516 34800 1316 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 470302 29226 0 0 54672 4168 217846 8582 0 0 0 0 0 0 0 0 0 0
+node "digpotp_0.tg_0.ctrl" 23518 6622.77 4766 2643 p 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 523661 31420 0 0 35904 3200 1814068 24838 0 0 0 0 0 0 0 0 0 0
+equiv "digpotp_0.tg_0.ctrl" "c6"
+node "digpotp_0.tg_0.nctrl" 25242 1065.71 4814 2740 pdif 0 0 0 0 0 0 0 0 11600 516 34800 1316 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 470302 29226 0 0 54672 4168 217846 8582 0 0 0 0 0 0 0 0 0 0
+node "digpotp_0.tg_1.ctrl" 23518 7340 1466 2643 p 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 523661 31420 0 0 35904 3200 1810068 24798 0 0 0 0 0 0 0 0 0 0
+equiv "digpotp_0.tg_1.ctrl" "c7"
+node "digpotp_0.tg_4.a" 16251 27270.2 1639 2733 pdif 0 0 0 0 0 0 0 0 4096000 136192 3632000 119264 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 320256 20448 0 0 4148544 253280 14494720 160428 1743200 40960 0 0 0 0 0 0 0 0
+equiv "digpotp_0.tg_4.a" "inn"
+node "digpotp_0.tg_1.nctrl" 25242 1068.74 1514 2740 pdif 0 0 0 0 0 0 0 0 11600 516 34800 1316 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 470302 29226 0 0 54672 4168 217846 8582 0 0 0 0 0 0 0 0 0 0
+node "ota_0.d" 8811 16673.4 30436 4640 pdif 0 0 0 0 0 0 0 0 11600 516 76800 2656 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 676800 10368 0 0 170816 11476 320290 13348 21000 580 15318000 16778 459043 9446 0 0 0 0
+node "ota_0.c" 5863 1787.82 30040 3868 ndif 0 0 0 0 0 0 0 0 11600 516 76800 2656 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 150400 2304 0 0 75616 4924 135548 5662 0 0 0 0 0 0 0 0 0 0
+node "ota_0.inp" 3502 3276.46 30480 4543 p 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 80490 4798 0 0 6732 600 1109684 12428 78800 3180 0 0 0 0 0 0 0 0
+equiv "ota_0.inp" "inp"
+node "ota_0.b" 28666 51.7314 29816 4640 pdif 0 0 0 0 0 0 0 0 0 0 362400 13208 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 57144 3584 0 0 215696 13640 394228 8860 100000 2600 0 0 0 0 0 0 0 0
+node "ota_0.ib" 9776 2273.85 29994 5563 p 0 0 0 0 0 0 0 0 0 0 34800 1316 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2382000 29820 0 0 224672 15324 1141512 25270 0 0 0 0 0 0 0 0 0 0
+equiv "ota_0.ib" "ib"
+node "digpotp_0.tg_4.b" 50076 2591.8 26143 1211 ndif 0 0 0 0 0 0 0 0 454000 14908 512000 17024 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 40572 2592 0 0 579048 33668 1335968 23072 0 0 0 0 0 0 0 0 0 0
+node "a_27842_4748#" 30971 0 27842 4748 xres 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 75880 2308 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_27524_4748#" 30971 0 27524 4748 xres 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 75880 2308 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_27524_5832#" 401 911.14 27524 5832 xpc 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 120960 4016 149300 1620 0 0 0 0 0 0 0 0 0 0
+node "a_27206_4316#" 401 755.209 27206 4316 xpc 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 120960 4016 149300 1620 0 0 0 0 0 0 0 0 0 0
+node "a_27206_4748#" 30971 0 27206 4748 xres 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 75880 2308 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_26888_4748#" 30971 0 26888 4748 xres 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 75880 2308 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_26888_5832#" 401 779.637 26888 5832 xpc 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 120960 4016 149300 1620 0 0 0 0 0 0 0 0 0 0
+node "a_26570_4316#" 401 745.764 26570 4316 xpc 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 120960 4016 138580 1700 0 0 0 0 0 0 0 0 0 0
+node "a_26570_4748#" 30971 0 26570 4748 xres 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 75880 2308 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_26252_4748#" 30971 0 26252 4748 xres 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 75880 2308 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_26252_5832#" 401 777.813 26252 5832 xpc 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 120960 4016 138580 1700 0 0 0 0 0 0 0 0 0 0
+node "a_25934_4316#" 401 759.295 25934 4316 xpc 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 120960 4016 138580 1700 0 0 0 0 0 0 0 0 0 0
+node "a_25934_4748#" 30971 0 25934 4748 xres 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 75880 2308 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_25616_4748#" 30971 0 25616 4748 xres 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 75880 2308 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_25616_5832#" 401 967.006 25616 5832 xpc 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 120960 4016 138580 1700 0 0 0 0 0 0 0 0 0 0
+node "digpotp_0.tg_7.b" 50076 2402.99 22343 1211 ndif 0 0 0 0 0 0 0 0 454000 14908 512000 17024 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 40572 2592 0 0 579048 33668 1335968 23072 0 0 0 0 0 0 0 0 0 0
+node "a_24070_4748#" 30971 0 24070 4748 xres 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 75880 2308 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_23752_4748#" 30971 0 23752 4748 xres 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 75880 2308 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_23752_5832#" 401 967.776 23752 5832 xpc 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 120960 4016 138580 1700 0 0 0 0 0 0 0 0 0 0
+node "a_23434_4316#" 401 768.253 23434 4316 xpc 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 120960 4016 138704 1708 0 0 0 0 0 0 0 0 0 0
+node "a_23434_4748#" 30971 0 23434 4748 xres 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 75880 2308 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_23116_4748#" 30971 0 23116 4748 xres 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 75880 2308 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_23116_5832#" 401 1027.75 23116 5832 xpc 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 120960 4016 138580 1700 0 0 0 0 0 0 0 0 0 0
+node "digpotp_0.tg_6.b" 50076 2475.5 18643 1211 ndif 0 0 0 0 0 0 0 0 454000 14908 512000 17024 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 40572 2592 0 0 579048 33668 1335968 23072 0 0 0 0 0 0 0 0 0 0
+node "a_20334_4748#" 30971 0 20334 4748 xres 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 75880 2308 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_20016_4748#" 30971 0 20016 4748 xres 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 75880 2308 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_20016_5832#" 401 1175.2 20016 5832 xpc 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 120960 4016 138580 1700 0 0 0 0 0 0 0 0 0 0
+node "digpotp_0.tg_5.b" 50076 2668.54 15143 1211 ndif 0 0 0 0 0 0 0 0 454000 14908 512000 17024 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 40572 2592 0 0 579048 33668 1335968 23072 0 0 0 0 0 0 0 0 0 0
+node "a_16816_4748#" 30971 0 16816 4748 xres 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 75880 2308 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "digpotp_0.tg_3.b" 50076 2702.76 11543 1211 ndif 0 0 0 0 0 0 0 0 454000 14908 512000 17024 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 40572 2592 0 0 579048 33668 1335968 23072 0 0 0 0 0 0 0 0 0 0
+node "a_13216_4748#" 14971 0 13216 4748 xres 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 36680 1188 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "digpotp_0.tg_2.b" 50076 2584.47 8243 1211 ndif 0 0 0 0 0 0 0 0 454000 14908 512000 17024 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 40572 2592 0 0 579048 33668 1335968 23072 0 0 0 0 0 0 0 0 0 0
+node "a_9916_4748#" 6971 0 9916 4748 xres 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 17080 628 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "digpotp_0.tg_0.b" 50076 2607.1 4943 1211 ndif 0 0 0 0 0 0 0 0 454000 14908 512000 17024 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 40572 2592 0 0 579048 33668 1335968 23072 0 0 0 0 0 0 0 0 0 0
+node "a_6616_4748#" 2971 0 6616 4748 xres 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7280 348 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "digpotp_0.tg_1.b" 50076 2643.45 1643 1211 ndif 0 0 0 0 0 0 0 0 454000 14908 512000 17024 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 40572 2592 0 0 579048 33668 1335968 23072 0 0 0 0 0 0 0 0 0 0
+node "a_3316_4748#" 914 0 3316 4748 ppres 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 14000 540 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "digpotp_0.n8" 5289 23664.2 3316 4948 xpc 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 81322 4774 0 0 551052 18672 5539588 41774 10588200 51260 0 0 0 0 0 0 0 0
+node "a_27872_7088#" 30971 0 27872 7088 xres 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 75880 2308 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_27554_7088#" 30971 0 27554 7088 xres 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 75880 2308 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_27554_8172#" 401 997.207 27554 8172 xpc 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 120960 4016 142740 1688 0 0 0 0 0 0 0 0 0 0
+node "a_27236_6656#" 401 775.033 27236 6656 xpc 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 120960 4016 141260 1680 0 0 0 0 0 0 0 0 0 0
+node "a_27236_7088#" 30971 0 27236 7088 xres 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 75880 2308 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_26918_7088#" 30971 0 26918 7088 xres 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 75880 2308 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_26918_8172#" 401 822.642 26918 8172 xpc 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 120960 4016 141260 1680 0 0 0 0 0 0 0 0 0 0
+node "a_26600_6656#" 401 774.975 26600 6656 xpc 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 120960 4016 141260 1680 0 0 0 0 0 0 0 0 0 0
+node "a_26600_7088#" 30971 0 26600 7088 xres 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 75880 2308 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_26282_7088#" 30971 0 26282 7088 xres 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 75880 2308 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_26282_8172#" 401 822.857 26282 8172 xpc 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 120960 4016 141260 1680 0 0 0 0 0 0 0 0 0 0
+node "a_25964_6656#" 401 781.489 25964 6656 xpc 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 120960 4016 141260 1680 0 0 0 0 0 0 0 0 0 0
+node "a_25964_7088#" 30971 0 25964 7088 xres 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 75880 2308 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "ota_0.out" 16937 9594.34 25646 6656 xpc 0 0 0 0 0 0 0 0 58000 2580 174000 6580 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 199200 10848 809934 15864 5004650 34060 12000 440 12899184 15806 0 0 0 0
+equiv "ota_0.out" "out"
+node "a_25646_7088#" 30971 0 25646 7088 xres 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 75880 2308 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_25646_8172#" 401 1051.36 25646 8172 xpc 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 120960 4016 141260 1680 0 0 0 0 0 0 0 0 0 0
+node "digpotp_0.tg_4.vd" 13735 146684 1050 2470 nw 0 0 0 0 39462400 75360 0 0 5568000 139120 1693600 62808 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 642176 24712 0 0 6634240 205784 3426286 73394 398000 7980 7812200 71460 0 0 0 0 0 0
+equiv "digpotp_0.tg_4.vd" "vd"
+substrate "digpotp_0.tg_4.vgnd" 0 0 240 1996 ppd 0 0 0 0 0 0 0 0 1148400 43660 7455160 232056 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 470656 22752 0 0 8198104 279636 2447018 51474 430000 8280 6702400 61380 0 0 0 0 0 0
+equiv "digpotp_0.tg_4.vgnd" "gnd"
+cap "digpotp_0.tg_6.nctrl" "digpotp_0.tg_5.b" 0.051443
+cap "a_26282_8172#" "ota_0.out" 29.6634
+cap "digpotp_0.n8" "a_25964_6656#" 29.6802
+cap "digpotp_0.tg_4.a" "a_23434_4316#" 12.5385
+cap "digpotp_0.tg_4.vd" "a_26600_6656#" 8.6446
+cap "digpotp_0.tg_7.ctrl" "digpotp_0.tg_7.b" 1249.05
+cap "a_25964_6656#" "ota_0.out" 760.887
+cap "digpotp_0.tg_3.ctrl" "digpotp_0.tg_4.a" 1859.29
+cap "digpotp_0.tg_2.ctrl" "digpotp_0.tg_0.nctrl" 7.04665
+cap "a_20016_5832#" "digpotp_0.tg_6.b" 17.5842
+cap "a_25934_4316#" "digpotp_0.n8" 212.95
+cap "digpotp_0.tg_1.ctrl" "digpotp_0.tg_4.vd" 1168.79
+cap "digpotp_0.tg_7.ctrl" "digpotp_0.tg_7.nctrl" 868.897
+cap "digpotp_0.tg_3.ctrl" "digpotp_0.tg_3.b" 1254.21
+cap "digpotp_0.tg_4.a" "ota_0.d" 0.201389
+cap "a_27236_6656#" "a_26600_6656#" 201.84
+cap "digpotp_0.tg_2.b" "digpotp_0.tg_4.a" 12926.2
+cap "digpotp_0.tg_0.nctrl" "digpotp_0.tg_0.b" 1343.85
+cap "ota_0.inp" "digpotp_0.tg_4.b" 137.5
+cap "ota_0.b" "ota_0.ib" 1223.59
+cap "digpotp_0.tg_4.ctrl" "a_26252_5832#" 0.10595
+cap "digpotp_0.n8" "digpotp_0.tg_4.vd" 1684.6
+cap "digpotp_0.tg_3.b" "digpotp_0.tg_2.b" 0.00946735
+cap "digpotp_0.tg_5.ctrl" "digpotp_0.n8" 581.763
+cap "a_25616_5832#" "a_23752_5832#" 0.940979
+cap "ota_0.c" "digpotp_0.n8" 226.195
+cap "digpotp_0.tg_4.vd" "ota_0.out" 5348.22
+cap "a_27524_5832#" "a_27206_4316#" 15.538
+cap "digpotp_0.tg_6.nctrl" "digpotp_0.tg_4.vd" 2726.63
+cap "digpotp_0.tg_4.ctrl" "a_23434_4316#" 11.4333
+cap "ota_0.c" "ota_0.out" 29.499
+cap "a_23434_4316#" "a_23116_5832#" 15.4402
+cap "digpotp_0.tg_4.nctrl" "digpotp_0.tg_4.b" 1348.33
+cap "digpotp_0.tg_4.a" "digpotp_0.tg_7.b" 12936.8
+cap "digpotp_0.n8" "a_27236_6656#" 231.114
+cap "a_27236_6656#" "ota_0.out" 557.543
+cap "digpotp_0.tg_3.ctrl" "digpotp_0.tg_2.nctrl" 6.9265
+cap "a_26570_4316#" "digpotp_0.n8" 34.1682
+cap "digpotp_0.tg_7.nctrl" "digpotp_0.tg_4.a" 1661.71
+cap "a_25616_5832#" "a_27524_5832#" 0.515595
+cap "digpotp_0.tg_2.ctrl" "digpotp_0.tg_4.vd" 1186.15
+cap "digpotp_0.tg_6.ctrl" "digpotp_0.tg_5.b" 194.076
+cap "digpotp_0.tg_0.nctrl" "digpotp_0.tg_4.a" 1661.67
+cap "digpotp_0.tg_0.ctrl" "digpotp_0.tg_1.nctrl" 6.74692
+cap "digpotp_0.tg_4.nctrl" "a_25934_4316#" 40.589
+cap "ota_0.inp" "digpotp_0.tg_4.vd" 781.994
+cap "digpotp_0.n8" "a_26600_6656#" 46.7077
+cap "digpotp_0.tg_5.b" "digpotp_0.tg_4.a" 12927.3
+cap "digpotp_0.tg_2.nctrl" "digpotp_0.tg_2.b" 1343.85
+cap "digpotp_0.tg_7.ctrl" "digpotp_0.tg_4.vd" 1176.91
+cap "digpotp_0.tg_4.a" "digpotp_0.tg_4.b" 12939.2
+cap "ota_0.d" "ota_0.b" 1075.56
+cap "ota_0.c" "ota_0.inp" 163.271
+cap "a_26600_6656#" "ota_0.out" 580.916
+cap "a_27554_8172#" "a_25646_8172#" 0.531321
+cap "digpotp_0.tg_0.b" "digpotp_0.tg_4.vd" 2102
+cap "digpotp_0.tg_1.nctrl" "digpotp_0.tg_1.b" 1343.85
+cap "ota_0.ib" "a_27524_5832#" 3.59481
+cap "digpotp_0.tg_4.nctrl" "digpotp_0.tg_4.vd" 2765.09
+cap "digpotp_0.tg_4.ctrl" "digpotp_0.tg_7.b" 211.864
+cap "a_23752_5832#" "a_23434_4316#" 15.3839
+cap "a_26918_8172#" "a_25646_8172#" 20.8207
+cap "digpotp_0.tg_7.nctrl" "digpotp_0.tg_4.ctrl" 6.861
+cap "a_26570_4316#" "ota_0.inp" 0.0573707
+cap "a_25934_4316#" "digpotp_0.tg_4.a" 29.5787
+cap "digpotp_0.tg_6.nctrl" "digpotp_0.n8" 93.0482
+cap "digpotp_0.n8" "ota_0.out" 1832.93
+cap "a_26252_5832#" "a_27524_5832#" 20.9024
+cap "digpotp_0.tg_6.ctrl" "digpotp_0.tg_4.vd" 1179.7
+cap "digpotp_0.tg_4.ctrl" "a_26282_8172#" 0.0761338
+cap "digpotp_0.tg_4.ctrl" "digpotp_0.tg_4.b" 1237.79
+cap "digpotp_0.tg_6.ctrl" "digpotp_0.tg_5.ctrl" 8.80725
+cap "digpotp_0.tg_3.nctrl" "digpotp_0.tg_4.a" 1661.61
+cap "digpotp_0.tg_4.nctrl" "a_26570_4316#" 65.1435
+cap "a_26282_8172#" "a_25646_8172#" 201.84
+cap "digpotp_0.tg_4.a" "digpotp_0.tg_4.vd" 12084.4
+cap "digpotp_0.tg_5.ctrl" "digpotp_0.tg_4.a" 1831.16
+cap "digpotp_0.tg_3.nctrl" "digpotp_0.tg_3.b" 1343.85
+cap "digpotp_0.tg_4.ctrl" "a_25964_6656#" 2.20754
+cap "digpotp_0.tg_3.b" "digpotp_0.tg_4.vd" 2044.07
+cap "a_25964_6656#" "a_25646_8172#" 15.4189
+cap "digpotp_0.tg_5.ctrl" "digpotp_0.tg_3.b" 175.409
+cap "digpotp_0.tg_2.ctrl" "digpotp_0.n8" 642.634
+cap "digpotp_0.tg_0.ctrl" "digpotp_0.tg_1.b" 202.05
+cap "a_26252_5832#" "a_25616_5832#" 201.748
+cap "digpotp_0.tg_4.ctrl" "a_25934_4316#" 12.837
+cap "digpotp_0.tg_7.b" "a_23752_5832#" 18.5263
+cap "ota_0.inp" "digpotp_0.n8" 126.704
+cap "digpotp_0.tg_7.ctrl" "digpotp_0.n8" 631.934
+cap "a_26570_4316#" "digpotp_0.tg_4.a" 10.9419
+cap "ota_0.inp" "ota_0.out" 36.6188
+cap "digpotp_0.tg_0.b" "digpotp_0.n8" 56.5973
+cap "digpotp_0.tg_7.ctrl" "digpotp_0.tg_6.nctrl" 5.00048
+cap "digpotp_0.tg_4.ctrl" "digpotp_0.tg_4.vd" 1119.99
+cap "a_26888_5832#" "a_27524_5832#" 202.118
+cap "a_26888_5832#" "a_27206_4316#" 15.5483
+cap "digpotp_0.tg_6.b" "digpotp_0.tg_4.vd" 2046.87
+cap "digpotp_0.tg_2.nctrl" "digpotp_0.tg_4.vd" 2777.51
+cap "digpotp_0.tg_5.nctrl" "digpotp_0.tg_5.b" 1343.85
+cap "digpotp_0.tg_1.ctrl" "digpotp_0.tg_4.a" 1473.25
+cap "ota_0.b" "digpotp_0.tg_4.vd" 2249.04
+cap "a_26888_5832#" "a_25616_5832#" 20.9024
+cap "digpotp_0.tg_6.ctrl" "digpotp_0.n8" 539.401
+cap "digpotp_0.tg_2.ctrl" "digpotp_0.tg_0.b" 231.996
+cap "ota_0.c" "ota_0.b" 1075.14
+cap "ota_0.d" "ota_0.ib" 141.963
+cap "digpotp_0.tg_6.ctrl" "digpotp_0.tg_6.nctrl" 870.59
+cap "digpotp_0.tg_4.a" "digpotp_0.n8" 80.8483
+cap "digpotp_0.tg_4.b" "a_27524_5832#" 17.8416
+cap "digpotp_0.tg_4.b" "a_27206_4316#" 232.606
+cap "digpotp_0.tg_6.nctrl" "digpotp_0.tg_4.a" 1661.87
+cap "digpotp_0.tg_3.b" "digpotp_0.n8" 39.5638
+cap "ota_0.ib" "a_27554_8172#" 17.3968
+cap "digpotp_0.tg_4.nctrl" "ota_0.inp" 4.70259
+cap "a_25934_4316#" "a_27206_4316#" 20.9024
+cap "digpotp_0.tg_5.nctrl" "digpotp_0.tg_4.vd" 2777.46
+cap "digpotp_0.tg_5.ctrl" "digpotp_0.tg_5.nctrl" 869.624
+cap "digpotp_0.tg_2.ctrl" "digpotp_0.tg_4.a" 1856.95
+cap "digpotp_0.tg_0.ctrl" "digpotp_0.tg_0.nctrl" 873.429
+cap "digpotp_0.tg_7.ctrl" "digpotp_0.tg_6.ctrl" 5.84518
+cap "digpotp_0.tg_1.nctrl" "digpotp_0.tg_4.vd" 2779.75
+cap "digpotp_0.tg_4.ctrl" "digpotp_0.n8" 805.995
+cap "a_25616_5832#" "a_25964_6656#" 6.60093
+cap "digpotp_0.tg_3.ctrl" "digpotp_0.tg_2.b" 268.187
+cap "a_26888_5832#" "a_26252_5832#" 201.933
+cap "digpotp_0.tg_4.a" "ota_0.inp" 94.7319
+cap "digpotp_0.n8" "a_23116_5832#" 479.515
+cap "digpotp_0.tg_4.ctrl" "ota_0.out" 109.427
+cap "digpotp_0.tg_7.ctrl" "digpotp_0.tg_4.a" 1821.88
+cap "digpotp_0.n8" "digpotp_0.tg_6.b" 262.205
+cap "a_27524_5832#" "digpotp_0.tg_4.vd" 65.1639
+cap "a_27206_4316#" "digpotp_0.tg_4.vd" 100.908
+cap "a_25934_4316#" "a_25616_5832#" 15.4161
+cap "ota_0.out" "a_25646_8172#" 45.2985
+cap "digpotp_0.tg_6.nctrl" "digpotp_0.tg_6.b" 1348.33
+cap "digpotp_0.tg_4.a" "digpotp_0.tg_0.b" 12927.4
+cap "digpotp_0.tg_0.nctrl" "digpotp_0.tg_1.b" 1.23625
+cap "digpotp_0.tg_4.nctrl" "digpotp_0.tg_4.a" 1661.71
+cap "ota_0.b" "digpotp_0.n8" 430.381
+cap "digpotp_0.tg_7.b" "a_23434_4316#" 240.021
+cap "ota_0.b" "ota_0.out" 97.5906
+cap "a_27236_6656#" "a_27524_5832#" 17.5359
+cap "digpotp_0.tg_7.nctrl" "a_23434_4316#" 19.6622
+cap "a_26570_4316#" "a_27206_4316#" 201.933
+cap "digpotp_0.tg_4.ctrl" "ota_0.inp" 6.8657
+cap "digpotp_0.tg_7.ctrl" "digpotp_0.tg_4.ctrl" 9.6464
+cap "digpotp_0.tg_6.ctrl" "digpotp_0.tg_4.a" 1842.76
+cap "digpotp_0.tg_2.ctrl" "digpotp_0.tg_2.nctrl" 872.631
+cap "digpotp_0.tg_0.ctrl" "digpotp_0.tg_4.vd" 1219.12
+cap "a_26252_5832#" "a_25964_6656#" 17.6413
+cap "digpotp_0.tg_7.ctrl" "digpotp_0.tg_6.b" 157.696
+cap "a_27554_8172#" "a_26918_8172#" 202.554
+cap "digpotp_0.tg_1.ctrl" "digpotp_0.tg_1.nctrl" 873.429
+cap "digpotp_0.n8" "a_23752_5832#" 443.729
+cap "ota_0.ib" "digpotp_0.tg_4.vd" 12452.3
+cap "digpotp_0.tg_4.nctrl" "digpotp_0.tg_4.ctrl" 862.074
+cap "a_26252_5832#" "a_25934_4316#" 15.4635
+cap "digpotp_0.tg_3.b" "digpotp_0.tg_4.a" 12928.4
+cap "digpotp_0.tg_2.nctrl" "digpotp_0.tg_0.b" 1.04183
+cap "ota_0.d" "digpotp_0.tg_4.b" 0.447023
+cap "ota_0.inp" "ota_0.b" 272.001
+cap "ota_0.c" "ota_0.ib" 62.9644
+cap "digpotp_0.tg_1.b" "digpotp_0.tg_4.vd" 2114.39
+cap "digpotp_0.n8" "a_27524_5832#" 499.422
+cap "ota_0.ib" "a_27236_6656#" 1.44535
+cap "a_27554_8172#" "a_26282_8172#" 20.8576
+cap "digpotp_0.tg_7.nctrl" "digpotp_0.tg_7.b" 1348.31
+cap "digpotp_0.n8" "a_27206_4316#" 17.8573
+cap "a_26252_5832#" "digpotp_0.tg_4.vd" 2.11015
+cap "a_27524_5832#" "ota_0.out" 26.8971
+cap "digpotp_0.tg_6.ctrl" "digpotp_0.tg_6.b" 1252
+cap "a_23434_4316#" "digpotp_0.tg_4.vd" 64.3504
+cap "digpotp_0.tg_4.ctrl" "digpotp_0.tg_4.a" 1815.99
+cap "digpotp_0.tg_3.ctrl" "digpotp_0.tg_3.nctrl" 871.594
+cap "a_26918_8172#" "a_26282_8172#" 201.84
+cap "digpotp_0.tg_4.a" "digpotp_0.tg_6.b" 12938.9
+cap "digpotp_0.tg_3.ctrl" "digpotp_0.tg_4.vd" 1167.4
+cap "digpotp_0.tg_5.ctrl" "digpotp_0.tg_3.ctrl" 7.43542
+cap "digpotp_0.tg_0.ctrl" "digpotp_0.tg_1.ctrl" 9.23658
+cap "digpotp_0.tg_2.nctrl" "digpotp_0.tg_4.a" 1661.61
+cap "a_25616_5832#" "digpotp_0.n8" 489.407
+cap "ota_0.d" "digpotp_0.tg_4.vd" 1598.21
+cap "a_26570_4316#" "a_26252_5832#" 15.4635
+cap "a_25616_5832#" "ota_0.out" 48.4419
+cap "digpotp_0.tg_3.nctrl" "digpotp_0.tg_2.b" 0.871761
+cap "ota_0.d" "ota_0.c" 771.571
+cap "digpotp_0.tg_2.b" "digpotp_0.tg_4.vd" 2093.19
+cap "digpotp_0.tg_0.ctrl" "digpotp_0.n8" 586.109
+cap "digpotp_0.tg_1.ctrl" "digpotp_0.tg_1.b" 1258.32
+cap "ota_0.inp" "a_27206_4316#" 3.33964
+cap "a_26252_5832#" "a_26600_6656#" 6.60093
+cap "a_20016_5832#" "digpotp_0.n8" 509.679
+cap "a_26888_5832#" "digpotp_0.tg_4.vd" 36.034
+cap "digpotp_0.n8" "ota_0.ib" 1255.9
+cap "digpotp_0.tg_4.ctrl" "a_23116_5832#" 6.71069
+cap "a_26282_8172#" "a_25964_6656#" 15.4909
+cap "digpotp_0.tg_4.ctrl" "a_25646_8172#" 28.9575
+cap "ota_0.ib" "ota_0.out" 3034.61
+cap "digpotp_0.tg_1.b" "digpotp_0.n8" 43.5436
+cap "digpotp_0.tg_4.nctrl" "a_27206_4316#" 22.3441
+cap "digpotp_0.tg_7.b" "digpotp_0.tg_4.vd" 2024.49
+cap "digpotp_0.tg_6.ctrl" "digpotp_0.tg_5.nctrl" 6.59197
+cap "a_25934_4316#" "digpotp_0.tg_4.b" 7.86204
+cap "a_27554_8172#" "a_27236_6656#" 15.7336
+cap "digpotp_0.tg_7.nctrl" "digpotp_0.tg_4.vd" 2726.17
+cap "digpotp_0.tg_2.ctrl" "digpotp_0.tg_0.ctrl" 10.7363
+cap "digpotp_0.tg_5.nctrl" "digpotp_0.tg_4.a" 1661.67
+cap "a_26252_5832#" "digpotp_0.n8" 415.631
+cap "a_26888_5832#" "a_27236_6656#" 6.60093
+cap "digpotp_0.tg_0.nctrl" "digpotp_0.tg_4.vd" 2777.23
+cap "a_26252_5832#" "ota_0.out" 26.7749
+cap "a_26888_5832#" "a_26570_4316#" 15.4703
+cap "a_27236_6656#" "a_26918_8172#" 15.3988
+cap "digpotp_0.tg_4.a" "digpotp_0.tg_1.nctrl" 1660.91
+cap "digpotp_0.n8" "a_23434_4316#" 217.453
+cap "digpotp_0.tg_5.b" "digpotp_0.tg_4.vd" 2059.15
+cap "digpotp_0.tg_4.b" "digpotp_0.tg_4.vd" 2185.72
+cap "digpotp_0.tg_5.ctrl" "digpotp_0.tg_5.b" 1250.39
+cap "digpotp_0.tg_3.ctrl" "digpotp_0.n8" 646.402
+cap "digpotp_0.tg_0.ctrl" "digpotp_0.tg_0.b" 1258.06
+cap "ota_0.inp" "ota_0.ib" 74.3673
+cap "digpotp_0.tg_4.a" "a_27206_4316#" 7.90809
+cap "digpotp_0.tg_7.ctrl" "a_20016_5832#" 29.0372
+cap "a_26888_5832#" "a_26600_6656#" 17.5359
+cap "ota_0.d" "digpotp_0.n8" 13.2197
+cap "a_26918_8172#" "a_26600_6656#" 15.4431
+cap "digpotp_0.tg_4.ctrl" "a_23752_5832#" 34.6871
+cap "ota_0.d" "ota_0.out" 33383.7
+cap "digpotp_0.tg_0.b" "digpotp_0.tg_1.b" 0.014178
+cap "digpotp_0.tg_2.b" "digpotp_0.n8" 41.8139
+cap "a_25934_4316#" "digpotp_0.tg_4.vd" 62.2913
+cap "a_23752_5832#" "a_23116_5832#" 201.128
+cap "a_26570_4316#" "digpotp_0.tg_4.b" 24.5763
+cap "digpotp_0.n8" "a_27554_8172#" 16.9746
+cap "a_27236_6656#" "a_25964_6656#" 20.8207
+cap "a_26888_5832#" "digpotp_0.n8" 441.326
+cap "a_27554_8172#" "ota_0.out" 29.2586
+cap "digpotp_0.tg_3.ctrl" "digpotp_0.tg_2.ctrl" 11.8733
+cap "digpotp_0.tg_3.nctrl" "digpotp_0.tg_4.vd" 2777.11
+cap "a_26888_5832#" "ota_0.out" 27.0219
+cap "a_26282_8172#" "a_26600_6656#" 15.4431
+cap "digpotp_0.tg_5.ctrl" "digpotp_0.tg_3.nctrl" 5.9533
+cap "digpotp_0.tg_7.b" "digpotp_0.n8" 39.8321
+cap "digpotp_0.tg_0.ctrl" "digpotp_0.tg_4.a" 1852.76
+cap "digpotp_0.tg_5.ctrl" "digpotp_0.tg_4.vd" 1178.79
+cap "a_26918_8172#" "ota_0.out" 29.6635
+cap "ota_0.c" "digpotp_0.tg_4.vd" 427.392
+cap "digpotp_0.tg_2.ctrl" "digpotp_0.tg_2.b" 1256.29
+cap "a_26570_4316#" "a_25934_4316#" 201.748
+cap "digpotp_0.tg_7.nctrl" "digpotp_0.n8" 151.599
+cap "ota_0.d" "ota_0.inp" 672.163
+cap "a_26600_6656#" "a_25964_6656#" 201.84
+cap "digpotp_0.tg_4.a" "digpotp_0.tg_1.b" 12888.9
+cap "digpotp_0.tg_4.ctrl" "a_25616_5832#" 4.7269
+cap "a_27236_6656#" "digpotp_0.tg_4.vd" 25.916
+cap "digpotp_0.tg_2.b" "digpotp_0.tg_0.b" 0.0116652
+cap "digpotp_0.tg_5.b" "digpotp_0.n8" 23.117
+cap "digpotp_0.n8" "digpotp_0.tg_4.b" 4.17745
+cap "a_26570_4316#" "digpotp_0.tg_4.vd" 52.2912
+device csubckt sky130_fd_pr__cap_mim_m3_1 29719 500 29720 501 w=4800 l=2800 "None" "ota_0.out" 14880 0 "ota_0.d" 0 0
+device msubckt sky130_fd_pr__nfet_01v8 27468 1218 27469 1219 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_4.a" 60 0 "digpotp_0.tg_4.a" 0 0 "digpotp_0.tg_4.a" 2000 0
+device msubckt sky130_fd_pr__nfet_01v8 27261 1211 27262 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_4.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_4.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 27165 1211 27166 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_4.ctrl" 60 0 "digpotp_0.tg_4.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 27069 1211 27070 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_4.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_4.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 26973 1211 26974 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_4.ctrl" 60 0 "digpotp_0.tg_4.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 26877 1211 26878 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_4.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_4.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 26781 1211 26782 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_4.ctrl" 60 0 "digpotp_0.tg_4.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 26685 1211 26686 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_4.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_4.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 26589 1211 26590 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_4.ctrl" 60 0 "digpotp_0.tg_4.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 26493 1211 26494 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_4.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_4.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 26397 1211 26398 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_4.ctrl" 60 0 "digpotp_0.tg_4.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 26301 1211 26302 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_4.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_4.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 26205 1211 26206 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_4.ctrl" 60 0 "digpotp_0.tg_4.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 25988 2018 25989 2019 l=30 w=200 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_4.ctrl" 60 0 "digpotp_0.tg_4.vgnd" 200 0 "digpotp_0.tg_4.nctrl" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 25788 1218 25789 1219 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_4.vgnd" 60 0 "digpotp_0.tg_4.vgnd" 2000 0 "digpotp_0.tg_4.vgnd" 0 0
+device msubckt sky130_fd_pr__nfet_01v8 23668 1218 23669 1219 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_4.a" 60 0 "digpotp_0.tg_4.a" 2000 0 "digpotp_0.tg_4.a" 0 0
+device msubckt sky130_fd_pr__nfet_01v8 23461 1211 23462 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_7.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_7.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 23365 1211 23366 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_7.ctrl" 60 0 "digpotp_0.tg_7.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 23269 1211 23270 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_7.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_7.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 23173 1211 23174 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_7.ctrl" 60 0 "digpotp_0.tg_7.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 23077 1211 23078 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_7.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_7.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 22981 1211 22982 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_7.ctrl" 60 0 "digpotp_0.tg_7.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 22885 1211 22886 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_7.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_7.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 22789 1211 22790 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_7.ctrl" 60 0 "digpotp_0.tg_7.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 22693 1211 22694 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_7.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_7.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 22597 1211 22598 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_7.ctrl" 60 0 "digpotp_0.tg_7.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 22501 1211 22502 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_7.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_7.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 22405 1211 22406 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_7.ctrl" 60 0 "digpotp_0.tg_7.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 22188 2018 22189 2019 l=30 w=200 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_7.ctrl" 60 0 "digpotp_0.tg_4.vgnd" 200 0 "digpotp_0.tg_7.nctrl" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 21988 1218 21989 1219 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_4.vgnd" 60 0 "digpotp_0.tg_4.vgnd" 2000 0 "digpotp_0.tg_4.vgnd" 0 0
+device msubckt sky130_fd_pr__nfet_01v8 19968 1218 19969 1219 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_4.a" 60 0 "digpotp_0.tg_4.a" 2000 0 "digpotp_0.tg_4.a" 0 0
+device msubckt sky130_fd_pr__nfet_01v8 19761 1211 19762 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_6.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_6.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 19665 1211 19666 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_6.ctrl" 60 0 "digpotp_0.tg_6.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 19569 1211 19570 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_6.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_6.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 19473 1211 19474 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_6.ctrl" 60 0 "digpotp_0.tg_6.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 19377 1211 19378 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_6.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_6.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 19281 1211 19282 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_6.ctrl" 60 0 "digpotp_0.tg_6.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 19185 1211 19186 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_6.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_6.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 19089 1211 19090 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_6.ctrl" 60 0 "digpotp_0.tg_6.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 18993 1211 18994 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_6.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_6.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 18897 1211 18898 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_6.ctrl" 60 0 "digpotp_0.tg_6.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 18801 1211 18802 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_6.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_6.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 18705 1211 18706 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_6.ctrl" 60 0 "digpotp_0.tg_6.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 18488 2018 18489 2019 l=30 w=200 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_6.ctrl" 60 0 "digpotp_0.tg_4.vgnd" 200 0 "digpotp_0.tg_6.nctrl" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 18288 1218 18289 1219 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_4.vgnd" 60 0 "digpotp_0.tg_4.vgnd" 2000 0 "digpotp_0.tg_4.vgnd" 0 0
+device msubckt sky130_fd_pr__nfet_01v8 16468 1218 16469 1219 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_4.a" 60 0 "digpotp_0.tg_4.a" 2000 0 "digpotp_0.tg_4.a" 0 0
+device msubckt sky130_fd_pr__nfet_01v8 16261 1211 16262 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_5.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_5.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 16165 1211 16166 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_5.ctrl" 60 0 "digpotp_0.tg_5.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 16069 1211 16070 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_5.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_5.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 15973 1211 15974 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_5.ctrl" 60 0 "digpotp_0.tg_5.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 15877 1211 15878 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_5.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_5.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 15781 1211 15782 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_5.ctrl" 60 0 "digpotp_0.tg_5.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 15685 1211 15686 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_5.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_5.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 15589 1211 15590 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_5.ctrl" 60 0 "digpotp_0.tg_5.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 15493 1211 15494 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_5.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_5.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 15397 1211 15398 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_5.ctrl" 60 0 "digpotp_0.tg_5.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 15301 1211 15302 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_5.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_5.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 15205 1211 15206 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_5.ctrl" 60 0 "digpotp_0.tg_5.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 14988 2018 14989 2019 l=30 w=200 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_5.ctrl" 60 0 "digpotp_0.tg_4.vgnd" 200 0 "digpotp_0.tg_5.nctrl" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 14788 1218 14789 1219 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_4.vgnd" 60 0 "digpotp_0.tg_4.vgnd" 2000 0 "digpotp_0.tg_4.vgnd" 0 0
+device msubckt sky130_fd_pr__nfet_01v8 12868 1218 12869 1219 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_4.a" 60 0 "digpotp_0.tg_4.a" 2000 0 "digpotp_0.tg_4.a" 0 0
+device msubckt sky130_fd_pr__nfet_01v8 12661 1211 12662 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_3.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_3.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 12565 1211 12566 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_3.ctrl" 60 0 "digpotp_0.tg_3.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 12469 1211 12470 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_3.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_3.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 12373 1211 12374 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_3.ctrl" 60 0 "digpotp_0.tg_3.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 12277 1211 12278 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_3.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_3.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 12181 1211 12182 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_3.ctrl" 60 0 "digpotp_0.tg_3.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 12085 1211 12086 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_3.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_3.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 11989 1211 11990 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_3.ctrl" 60 0 "digpotp_0.tg_3.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 11893 1211 11894 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_3.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_3.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 11797 1211 11798 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_3.ctrl" 60 0 "digpotp_0.tg_3.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 11701 1211 11702 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_3.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_3.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 11605 1211 11606 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_3.ctrl" 60 0 "digpotp_0.tg_3.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 11388 2018 11389 2019 l=30 w=200 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_3.ctrl" 60 0 "digpotp_0.tg_4.vgnd" 200 0 "digpotp_0.tg_3.nctrl" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 11188 1218 11189 1219 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_4.vgnd" 60 0 "digpotp_0.tg_4.vgnd" 2000 0 "digpotp_0.tg_4.vgnd" 0 0
+device msubckt sky130_fd_pr__nfet_01v8 9568 1218 9569 1219 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_4.a" 60 0 "digpotp_0.tg_4.a" 2000 0 "digpotp_0.tg_4.a" 0 0
+device msubckt sky130_fd_pr__nfet_01v8 9361 1211 9362 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_2.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_2.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 9265 1211 9266 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_2.ctrl" 60 0 "digpotp_0.tg_2.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 9169 1211 9170 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_2.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_2.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 9073 1211 9074 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_2.ctrl" 60 0 "digpotp_0.tg_2.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 8977 1211 8978 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_2.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_2.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 8881 1211 8882 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_2.ctrl" 60 0 "digpotp_0.tg_2.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 8785 1211 8786 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_2.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_2.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 8689 1211 8690 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_2.ctrl" 60 0 "digpotp_0.tg_2.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 8593 1211 8594 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_2.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_2.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 8497 1211 8498 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_2.ctrl" 60 0 "digpotp_0.tg_2.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 8401 1211 8402 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_2.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_2.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 8305 1211 8306 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_2.ctrl" 60 0 "digpotp_0.tg_2.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 8088 2018 8089 2019 l=30 w=200 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_2.ctrl" 60 0 "digpotp_0.tg_4.vgnd" 200 0 "digpotp_0.tg_2.nctrl" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 7888 1218 7889 1219 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_4.vgnd" 60 0 "digpotp_0.tg_4.vgnd" 2000 0 "digpotp_0.tg_4.vgnd" 0 0
+device msubckt sky130_fd_pr__nfet_01v8 6268 1218 6269 1219 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_4.a" 60 0 "digpotp_0.tg_4.a" 2000 0 "digpotp_0.tg_4.a" 0 0
+device msubckt sky130_fd_pr__nfet_01v8 6061 1211 6062 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_0.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_0.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 5965 1211 5966 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_0.ctrl" 60 0 "digpotp_0.tg_0.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 5869 1211 5870 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_0.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_0.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 5773 1211 5774 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_0.ctrl" 60 0 "digpotp_0.tg_0.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 5677 1211 5678 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_0.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_0.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 5581 1211 5582 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_0.ctrl" 60 0 "digpotp_0.tg_0.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 5485 1211 5486 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_0.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_0.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 5389 1211 5390 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_0.ctrl" 60 0 "digpotp_0.tg_0.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 5293 1211 5294 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_0.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_0.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 5197 1211 5198 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_0.ctrl" 60 0 "digpotp_0.tg_0.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 5101 1211 5102 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_0.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_0.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 5005 1211 5006 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_0.ctrl" 60 0 "digpotp_0.tg_0.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 4788 2018 4789 2019 l=30 w=200 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_0.ctrl" 60 0 "digpotp_0.tg_4.vgnd" 200 0 "digpotp_0.tg_0.nctrl" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 4588 1218 4589 1219 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_4.vgnd" 60 0 "digpotp_0.tg_4.vgnd" 2000 0 "digpotp_0.tg_4.vgnd" 0 0
+device msubckt sky130_fd_pr__nfet_01v8 2968 1218 2969 1219 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_4.a" 60 0 "digpotp_0.tg_4.a" 2000 0 "digpotp_0.tg_4.a" 0 0
+device msubckt sky130_fd_pr__nfet_01v8 2761 1211 2762 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_1.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_1.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 2665 1211 2666 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_1.ctrl" 60 0 "digpotp_0.tg_1.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 2569 1211 2570 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_1.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_1.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 2473 1211 2474 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_1.ctrl" 60 0 "digpotp_0.tg_1.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 2377 1211 2378 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_1.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_1.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 2281 1211 2282 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_1.ctrl" 60 0 "digpotp_0.tg_1.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 2185 1211 2186 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_1.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_1.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 2089 1211 2090 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_1.ctrl" 60 0 "digpotp_0.tg_1.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 1993 1211 1994 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_1.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_1.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 1897 1211 1898 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_1.ctrl" 60 0 "digpotp_0.tg_1.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 1801 1211 1802 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_1.ctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_1.b" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 1705 1211 1706 1212 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_1.ctrl" 60 0 "digpotp_0.tg_1.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__nfet_01v8 1488 2018 1489 2019 l=30 w=200 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_1.ctrl" 60 0 "digpotp_0.tg_4.vgnd" 200 0 "digpotp_0.tg_1.nctrl" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 1288 1218 1289 1219 l=30 w=1000 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_4.vgnd" 60 0 "digpotp_0.tg_4.vgnd" 2000 0 "digpotp_0.tg_4.vgnd" 0 0
+device msubckt sky130_fd_pr__nfet_01v8 33318 3868 33319 3869 l=200 w=200 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_4.vgnd" 400 0 "digpotp_0.tg_4.vgnd" 0 0 "digpotp_0.tg_4.vgnd" 400 0
+device msubckt sky130_fd_pr__nfet_01v8 32942 3868 32943 3869 l=200 w=200 "digpotp_0.tg_4.vgnd" "ota_0.d" 400 0 "ota_0.out" 200 0 "digpotp_0.tg_4.vgnd" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 32684 3868 32685 3869 l=200 w=200 "digpotp_0.tg_4.vgnd" "ota_0.d" 400 0 "digpotp_0.tg_4.vgnd" 200 0 "ota_0.out" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 32426 3868 32427 3869 l=200 w=200 "digpotp_0.tg_4.vgnd" "ota_0.d" 400 0 "ota_0.out" 200 0 "digpotp_0.tg_4.vgnd" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 32168 3868 32169 3869 l=200 w=200 "digpotp_0.tg_4.vgnd" "ota_0.d" 400 0 "digpotp_0.tg_4.vgnd" 200 0 "ota_0.out" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 31910 3868 31911 3869 l=200 w=200 "digpotp_0.tg_4.vgnd" "ota_0.d" 400 0 "ota_0.out" 200 0 "digpotp_0.tg_4.vgnd" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 31652 3868 31653 3869 l=200 w=200 "digpotp_0.tg_4.vgnd" "ota_0.d" 400 0 "digpotp_0.tg_4.vgnd" 200 0 "ota_0.out" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 31394 3868 31395 3869 l=200 w=200 "digpotp_0.tg_4.vgnd" "ota_0.d" 400 0 "ota_0.out" 200 0 "digpotp_0.tg_4.vgnd" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 31136 3868 31137 3869 l=200 w=200 "digpotp_0.tg_4.vgnd" "ota_0.d" 400 0 "digpotp_0.tg_4.vgnd" 200 0 "ota_0.out" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 30878 3868 30879 3869 l=200 w=200 "digpotp_0.tg_4.vgnd" "ota_0.d" 400 0 "ota_0.out" 200 0 "digpotp_0.tg_4.vgnd" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 30498 3868 30499 3869 l=200 w=200 "digpotp_0.tg_4.vgnd" "ota_0.c" 400 0 "digpotp_0.tg_4.vgnd" 200 0 "ota_0.d" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 30098 3868 30099 3869 l=200 w=200 "digpotp_0.tg_4.vgnd" "ota_0.c" 400 0 "ota_0.c" 200 0 "digpotp_0.tg_4.vgnd" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 29718 3868 29719 3869 l=200 w=200 "digpotp_0.tg_4.vgnd" "digpotp_0.tg_4.vgnd" 400 0 "digpotp_0.tg_4.vgnd" 400 0 "digpotp_0.tg_4.vgnd" 0 0
+device msubckt sky130_fd_pr__pfet_01v8 27484 2740 27485 2741 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_4.b" 60 0 "digpotp_0.tg_4.b" 2000 0 "digpotp_0.tg_4.b" 0 0
+device msubckt sky130_fd_pr__pfet_01v8 27257 2733 27258 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_4.nctrl" 60 0 "digpotp_0.tg_4.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 27161 2733 27162 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_4.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_4.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 27065 2733 27066 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_4.nctrl" 60 0 "digpotp_0.tg_4.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 26969 2733 26970 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_4.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_4.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 26873 2733 26874 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_4.nctrl" 60 0 "digpotp_0.tg_4.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 26777 2733 26778 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_4.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_4.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 26681 2733 26682 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_4.nctrl" 60 0 "digpotp_0.tg_4.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 26585 2733 26586 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_4.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_4.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 26489 2733 26490 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_4.nctrl" 60 0 "digpotp_0.tg_4.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 26393 2733 26394 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_4.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_4.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 26297 2733 26298 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_4.nctrl" 60 0 "digpotp_0.tg_4.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 26201 2733 26202 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_4.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_4.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 25984 2740 25985 2741 l=30 w=600 "digpotp_0.tg_4.vd" "digpotp_0.tg_4.ctrl" 60 0 "digpotp_0.tg_4.vd" 600 0 "digpotp_0.tg_4.nctrl" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 25784 2740 25785 2741 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_4.vd" 60 0 "digpotp_0.tg_4.vd" 2000 0 "digpotp_0.tg_4.vd" 0 0
+device msubckt sky130_fd_pr__pfet_01v8 23684 2740 23685 2741 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_7.b" 60 0 "digpotp_0.tg_7.b" 2000 0 "digpotp_0.tg_7.b" 0 0
+device msubckt sky130_fd_pr__pfet_01v8 23457 2733 23458 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_7.nctrl" 60 0 "digpotp_0.tg_7.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 23361 2733 23362 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_7.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_7.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 23265 2733 23266 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_7.nctrl" 60 0 "digpotp_0.tg_7.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 23169 2733 23170 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_7.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_7.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 23073 2733 23074 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_7.nctrl" 60 0 "digpotp_0.tg_7.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 22977 2733 22978 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_7.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_7.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 22881 2733 22882 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_7.nctrl" 60 0 "digpotp_0.tg_7.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 22785 2733 22786 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_7.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_7.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 22689 2733 22690 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_7.nctrl" 60 0 "digpotp_0.tg_7.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 22593 2733 22594 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_7.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_7.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 22497 2733 22498 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_7.nctrl" 60 0 "digpotp_0.tg_7.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 22401 2733 22402 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_7.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_7.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 22184 2740 22185 2741 l=30 w=600 "digpotp_0.tg_4.vd" "digpotp_0.tg_7.ctrl" 60 0 "digpotp_0.tg_4.vd" 600 0 "digpotp_0.tg_7.nctrl" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 21984 2740 21985 2741 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_4.vd" 60 0 "digpotp_0.tg_4.vd" 2000 0 "digpotp_0.tg_4.vd" 0 0
+device msubckt sky130_fd_pr__pfet_01v8 19984 2740 19985 2741 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_6.b" 60 0 "digpotp_0.tg_6.b" 2000 0 "digpotp_0.tg_6.b" 0 0
+device msubckt sky130_fd_pr__pfet_01v8 19757 2733 19758 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_6.nctrl" 60 0 "digpotp_0.tg_6.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 19661 2733 19662 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_6.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_6.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 19565 2733 19566 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_6.nctrl" 60 0 "digpotp_0.tg_6.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 19469 2733 19470 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_6.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_6.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 19373 2733 19374 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_6.nctrl" 60 0 "digpotp_0.tg_6.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 19277 2733 19278 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_6.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_6.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 19181 2733 19182 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_6.nctrl" 60 0 "digpotp_0.tg_6.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 19085 2733 19086 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_6.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_6.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 18989 2733 18990 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_6.nctrl" 60 0 "digpotp_0.tg_6.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 18893 2733 18894 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_6.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_6.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 18797 2733 18798 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_6.nctrl" 60 0 "digpotp_0.tg_6.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 18701 2733 18702 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_6.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_6.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 18484 2740 18485 2741 l=30 w=600 "digpotp_0.tg_4.vd" "digpotp_0.tg_6.ctrl" 60 0 "digpotp_0.tg_4.vd" 600 0 "digpotp_0.tg_6.nctrl" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 18284 2740 18285 2741 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_4.vd" 60 0 "digpotp_0.tg_4.vd" 2000 0 "digpotp_0.tg_4.vd" 0 0
+device msubckt sky130_fd_pr__pfet_01v8 16484 2740 16485 2741 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_5.b" 60 0 "digpotp_0.tg_5.b" 2000 0 "digpotp_0.tg_5.b" 0 0
+device msubckt sky130_fd_pr__pfet_01v8 16257 2733 16258 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_5.nctrl" 60 0 "digpotp_0.tg_5.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 16161 2733 16162 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_5.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_5.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 16065 2733 16066 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_5.nctrl" 60 0 "digpotp_0.tg_5.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 15969 2733 15970 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_5.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_5.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 15873 2733 15874 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_5.nctrl" 60 0 "digpotp_0.tg_5.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 15777 2733 15778 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_5.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_5.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 15681 2733 15682 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_5.nctrl" 60 0 "digpotp_0.tg_5.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 15585 2733 15586 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_5.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_5.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 15489 2733 15490 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_5.nctrl" 60 0 "digpotp_0.tg_5.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 15393 2733 15394 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_5.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_5.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 15297 2733 15298 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_5.nctrl" 60 0 "digpotp_0.tg_5.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 15201 2733 15202 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_5.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_5.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 14984 2740 14985 2741 l=30 w=600 "digpotp_0.tg_4.vd" "digpotp_0.tg_5.ctrl" 60 0 "digpotp_0.tg_4.vd" 600 0 "digpotp_0.tg_5.nctrl" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 14784 2740 14785 2741 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_4.vd" 60 0 "digpotp_0.tg_4.vd" 2000 0 "digpotp_0.tg_4.vd" 0 0
+device msubckt sky130_fd_pr__pfet_01v8 12884 2740 12885 2741 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_3.b" 60 0 "digpotp_0.tg_3.b" 2000 0 "digpotp_0.tg_3.b" 0 0
+device msubckt sky130_fd_pr__pfet_01v8 12657 2733 12658 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_3.nctrl" 60 0 "digpotp_0.tg_3.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 12561 2733 12562 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_3.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_3.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 12465 2733 12466 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_3.nctrl" 60 0 "digpotp_0.tg_3.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 12369 2733 12370 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_3.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_3.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 12273 2733 12274 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_3.nctrl" 60 0 "digpotp_0.tg_3.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 12177 2733 12178 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_3.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_3.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 12081 2733 12082 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_3.nctrl" 60 0 "digpotp_0.tg_3.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 11985 2733 11986 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_3.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_3.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 11889 2733 11890 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_3.nctrl" 60 0 "digpotp_0.tg_3.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 11793 2733 11794 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_3.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_3.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 11697 2733 11698 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_3.nctrl" 60 0 "digpotp_0.tg_3.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 11601 2733 11602 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_3.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_3.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 11384 2740 11385 2741 l=30 w=600 "digpotp_0.tg_4.vd" "digpotp_0.tg_3.ctrl" 60 0 "digpotp_0.tg_4.vd" 600 0 "digpotp_0.tg_3.nctrl" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 11184 2740 11185 2741 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_4.vd" 60 0 "digpotp_0.tg_4.vd" 2000 0 "digpotp_0.tg_4.vd" 0 0
+device msubckt sky130_fd_pr__pfet_01v8 9584 2740 9585 2741 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_2.b" 60 0 "digpotp_0.tg_2.b" 2000 0 "digpotp_0.tg_2.b" 0 0
+device msubckt sky130_fd_pr__pfet_01v8 9357 2733 9358 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_2.nctrl" 60 0 "digpotp_0.tg_2.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 9261 2733 9262 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_2.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_2.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 9165 2733 9166 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_2.nctrl" 60 0 "digpotp_0.tg_2.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 9069 2733 9070 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_2.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_2.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 8973 2733 8974 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_2.nctrl" 60 0 "digpotp_0.tg_2.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 8877 2733 8878 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_2.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_2.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 8781 2733 8782 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_2.nctrl" 60 0 "digpotp_0.tg_2.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 8685 2733 8686 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_2.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_2.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 8589 2733 8590 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_2.nctrl" 60 0 "digpotp_0.tg_2.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 8493 2733 8494 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_2.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_2.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 8397 2733 8398 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_2.nctrl" 60 0 "digpotp_0.tg_2.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 8301 2733 8302 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_2.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_2.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 8084 2740 8085 2741 l=30 w=600 "digpotp_0.tg_4.vd" "digpotp_0.tg_2.ctrl" 60 0 "digpotp_0.tg_4.vd" 600 0 "digpotp_0.tg_2.nctrl" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 7884 2740 7885 2741 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_4.vd" 60 0 "digpotp_0.tg_4.vd" 2000 0 "digpotp_0.tg_4.vd" 0 0
+device msubckt sky130_fd_pr__pfet_01v8 6284 2740 6285 2741 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_0.b" 60 0 "digpotp_0.tg_0.b" 2000 0 "digpotp_0.tg_0.b" 0 0
+device msubckt sky130_fd_pr__pfet_01v8 6057 2733 6058 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_0.nctrl" 60 0 "digpotp_0.tg_0.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 5961 2733 5962 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_0.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_0.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 5865 2733 5866 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_0.nctrl" 60 0 "digpotp_0.tg_0.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 5769 2733 5770 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_0.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_0.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 5673 2733 5674 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_0.nctrl" 60 0 "digpotp_0.tg_0.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 5577 2733 5578 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_0.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_0.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 5481 2733 5482 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_0.nctrl" 60 0 "digpotp_0.tg_0.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 5385 2733 5386 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_0.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_0.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 5289 2733 5290 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_0.nctrl" 60 0 "digpotp_0.tg_0.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 5193 2733 5194 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_0.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_0.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 5097 2733 5098 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_0.nctrl" 60 0 "digpotp_0.tg_0.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 5001 2733 5002 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_0.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_0.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 4784 2740 4785 2741 l=30 w=600 "digpotp_0.tg_4.vd" "digpotp_0.tg_0.ctrl" 60 0 "digpotp_0.tg_4.vd" 600 0 "digpotp_0.tg_0.nctrl" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 4584 2740 4585 2741 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_4.vd" 60 0 "digpotp_0.tg_4.vd" 2000 0 "digpotp_0.tg_4.vd" 0 0
+device msubckt sky130_fd_pr__pfet_01v8 2984 2740 2985 2741 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_1.b" 60 0 "digpotp_0.tg_1.b" 2000 0 "digpotp_0.tg_1.b" 0 0
+device msubckt sky130_fd_pr__pfet_01v8 2757 2733 2758 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_1.nctrl" 60 0 "digpotp_0.tg_1.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 2661 2733 2662 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_1.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_1.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 2565 2733 2566 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_1.nctrl" 60 0 "digpotp_0.tg_1.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 2469 2733 2470 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_1.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_1.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 2373 2733 2374 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_1.nctrl" 60 0 "digpotp_0.tg_1.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 2277 2733 2278 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_1.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_1.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 2181 2733 2182 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_1.nctrl" 60 0 "digpotp_0.tg_1.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 2085 2733 2086 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_1.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_1.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 1989 2733 1990 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_1.nctrl" 60 0 "digpotp_0.tg_1.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 1893 2733 1894 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_1.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_1.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 1797 2733 1798 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_1.nctrl" 60 0 "digpotp_0.tg_1.b" 1000 0 "digpotp_0.tg_4.a" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 1701 2733 1702 2734 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_1.nctrl" 60 0 "digpotp_0.tg_4.a" 1000 0 "digpotp_0.tg_1.b" 1000 0
+device msubckt sky130_fd_pr__pfet_01v8 1484 2740 1485 2741 l=30 w=600 "digpotp_0.tg_4.vd" "digpotp_0.tg_1.ctrl" 60 0 "digpotp_0.tg_4.vd" 600 0 "digpotp_0.tg_1.nctrl" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 1284 2740 1285 2741 l=30 w=1000 "digpotp_0.tg_4.vd" "digpotp_0.tg_4.vd" 60 0 "digpotp_0.tg_4.vd" 2000 0 "digpotp_0.tg_4.vd" 0 0
+device msubckt sky130_fd_pr__pfet_01v8 30894 4640 30895 4641 l=30 w=600 "digpotp_0.tg_4.vd" "ota_0.b" 60 0 "ota_0.b" 0 0 "ota_0.b" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 30690 4640 30691 4641 l=30 w=600 "digpotp_0.tg_4.vd" "ota_0.inp" 60 0 "ota_0.d" 600 0 "ota_0.b" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 30594 4640 30595 4641 l=30 w=600 "digpotp_0.tg_4.vd" "ota_0.inp" 60 0 "ota_0.b" 600 0 "ota_0.d" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 30498 4640 30499 4641 l=30 w=600 "digpotp_0.tg_4.vd" "ota_0.inp" 60 0 "ota_0.d" 600 0 "ota_0.b" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 30290 4640 30291 4641 l=30 w=600 "digpotp_0.tg_4.vd" "digpotp_0.n8" 60 0 "ota_0.b" 600 0 "ota_0.c" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 30194 4640 30195 4641 l=30 w=600 "digpotp_0.tg_4.vd" "digpotp_0.n8" 60 0 "ota_0.c" 600 0 "ota_0.b" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 30098 4640 30099 4641 l=30 w=600 "digpotp_0.tg_4.vd" "digpotp_0.n8" 60 0 "ota_0.b" 600 0 "ota_0.c" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 29874 4640 29875 4641 l=30 w=600 "digpotp_0.tg_4.vd" "ota_0.b" 60 0 "ota_0.b" 1200 0 "ota_0.b" 0 0
+device msubckt sky130_fd_pr__pfet_01v8 34234 5660 34235 5661 l=200 w=600 "digpotp_0.tg_4.vd" "digpotp_0.tg_4.vd" 400 0 "digpotp_0.tg_4.vd" 0 0 "digpotp_0.tg_4.vd" 1200 0
+device msubckt sky130_fd_pr__pfet_01v8 33856 5660 33857 5661 l=200 w=600 "digpotp_0.tg_4.vd" "ota_0.ib" 400 0 "ota_0.out" 600 0 "digpotp_0.tg_4.vd" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 33598 5660 33599 5661 l=200 w=600 "digpotp_0.tg_4.vd" "ota_0.ib" 400 0 "digpotp_0.tg_4.vd" 600 0 "ota_0.out" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 33340 5660 33341 5661 l=200 w=600 "digpotp_0.tg_4.vd" "ota_0.ib" 400 0 "ota_0.out" 600 0 "digpotp_0.tg_4.vd" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 33082 5660 33083 5661 l=200 w=600 "digpotp_0.tg_4.vd" "ota_0.ib" 400 0 "digpotp_0.tg_4.vd" 600 0 "ota_0.out" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 32824 5660 32825 5661 l=200 w=600 "digpotp_0.tg_4.vd" "ota_0.ib" 400 0 "ota_0.out" 600 0 "digpotp_0.tg_4.vd" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 32566 5660 32567 5661 l=200 w=600 "digpotp_0.tg_4.vd" "ota_0.ib" 400 0 "digpotp_0.tg_4.vd" 600 0 "ota_0.out" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 32308 5660 32309 5661 l=200 w=600 "digpotp_0.tg_4.vd" "ota_0.ib" 400 0 "ota_0.out" 600 0 "digpotp_0.tg_4.vd" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 32050 5660 32051 5661 l=200 w=600 "digpotp_0.tg_4.vd" "ota_0.ib" 400 0 "digpotp_0.tg_4.vd" 600 0 "ota_0.out" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 31792 5660 31793 5661 l=200 w=600 "digpotp_0.tg_4.vd" "ota_0.ib" 400 0 "ota_0.out" 600 0 "digpotp_0.tg_4.vd" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 31534 5660 31535 5661 l=200 w=600 "digpotp_0.tg_4.vd" "ota_0.ib" 400 0 "digpotp_0.tg_4.vd" 600 0 "ota_0.out" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 31150 5660 31151 5661 l=200 w=600 "digpotp_0.tg_4.vd" "ota_0.ib" 400 0 "digpotp_0.tg_4.vd" 600 0 "ota_0.b" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 30892 5660 30893 5661 l=200 w=600 "digpotp_0.tg_4.vd" "ota_0.ib" 400 0 "ota_0.b" 600 0 "digpotp_0.tg_4.vd" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 30634 5660 30635 5661 l=200 w=600 "digpotp_0.tg_4.vd" "ota_0.ib" 400 0 "digpotp_0.tg_4.vd" 600 0 "ota_0.b" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 30252 5660 30253 5661 l=200 w=600 "digpotp_0.tg_4.vd" "ota_0.ib" 400 0 "ota_0.ib" 600 0 "digpotp_0.tg_4.vd" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 29994 5660 29995 5661 l=200 w=600 "digpotp_0.tg_4.vd" "ota_0.ib" 400 0 "digpotp_0.tg_4.vd" 600 0 "ota_0.ib" 600 0
+device msubckt sky130_fd_pr__pfet_01v8 29614 5660 29615 5661 l=200 w=600 "digpotp_0.tg_4.vd" "digpotp_0.tg_4.vd" 400 0 "digpotp_0.tg_4.vd" 1200 0 "digpotp_0.tg_4.vd" 0 0
+device rsubckt sky130_fd_pr__res_xhigh_po_0p35 27842 4748 27843 4749 l=1084 "digpotp_0.tg_4.vgnd" "a_27842_4748#" 0 0 "digpotp_0.tg_4.b" 70 0 "a_27524_5832#" 70 0
+device rsubckt sky130_fd_pr__res_xhigh_po_0p35 27524 4748 27525 4749 l=1084 "digpotp_0.tg_4.vgnd" "a_27524_4748#" 0 0 "a_27206_4316#" 70 0 "a_27524_5832#" 70 0
+device rsubckt sky130_fd_pr__res_xhigh_po_0p35 27206 4748 27207 4749 l=1084 "digpotp_0.tg_4.vgnd" "a_27206_4748#" 0 0 "a_27206_4316#" 70 0 "a_26888_5832#" 70 0
+device rsubckt sky130_fd_pr__res_xhigh_po_0p35 26888 4748 26889 4749 l=1084 "digpotp_0.tg_4.vgnd" "a_26888_4748#" 0 0 "a_26570_4316#" 70 0 "a_26888_5832#" 70 0
+device rsubckt sky130_fd_pr__res_xhigh_po_0p35 26570 4748 26571 4749 l=1084 "digpotp_0.tg_4.vgnd" "a_26570_4748#" 0 0 "a_26570_4316#" 70 0 "a_26252_5832#" 70 0
+device rsubckt sky130_fd_pr__res_xhigh_po_0p35 26252 4748 26253 4749 l=1084 "digpotp_0.tg_4.vgnd" "a_26252_4748#" 0 0 "a_25934_4316#" 70 0 "a_26252_5832#" 70 0
+device rsubckt sky130_fd_pr__res_xhigh_po_0p35 25934 4748 25935 4749 l=1084 "digpotp_0.tg_4.vgnd" "a_25934_4748#" 0 0 "a_25934_4316#" 70 0 "a_25616_5832#" 70 0
+device rsubckt sky130_fd_pr__res_xhigh_po_0p35 25616 4748 25617 4749 l=1084 "digpotp_0.tg_4.vgnd" "a_25616_4748#" 0 0 "digpotp_0.n8" 70 0 "a_25616_5832#" 70 0
+device rsubckt sky130_fd_pr__res_xhigh_po_0p35 24070 4748 24071 4749 l=1084 "digpotp_0.tg_4.vgnd" "a_24070_4748#" 0 0 "digpotp_0.tg_7.b" 70 0 "a_23752_5832#" 70 0
+device rsubckt sky130_fd_pr__res_xhigh_po_0p35 23752 4748 23753 4749 l=1084 "digpotp_0.tg_4.vgnd" "a_23752_4748#" 0 0 "a_23434_4316#" 70 0 "a_23752_5832#" 70 0
+device rsubckt sky130_fd_pr__res_xhigh_po_0p35 23434 4748 23435 4749 l=1084 "digpotp_0.tg_4.vgnd" "a_23434_4748#" 0 0 "a_23434_4316#" 70 0 "a_23116_5832#" 70 0
+device rsubckt sky130_fd_pr__res_xhigh_po_0p35 23116 4748 23117 4749 l=1084 "digpotp_0.tg_4.vgnd" "a_23116_4748#" 0 0 "digpotp_0.n8" 70 0 "a_23116_5832#" 70 0
+device rsubckt sky130_fd_pr__res_xhigh_po_0p35 20334 4748 20335 4749 l=1084 "digpotp_0.tg_4.vgnd" "a_20334_4748#" 0 0 "digpotp_0.tg_6.b" 70 0 "a_20016_5832#" 70 0
+device rsubckt sky130_fd_pr__res_xhigh_po_0p35 20016 4748 20017 4749 l=1084 "digpotp_0.tg_4.vgnd" "a_20016_4748#" 0 0 "digpotp_0.n8" 70 0 "a_20016_5832#" 70 0
+device rsubckt sky130_fd_pr__res_xhigh_po_0p35 16816 4748 16817 4749 l=1084 "digpotp_0.tg_4.vgnd" "a_16816_4748#" 0 0 "digpotp_0.tg_5.b" 70 0 "digpotp_0.n8" 70 0
+device rsubckt sky130_fd_pr__res_xhigh_po_0p35 13216 4748 13217 4749 l=524 "digpotp_0.tg_4.vgnd" "a_13216_4748#" 0 0 "digpotp_0.tg_3.b" 70 0 "digpotp_0.n8" 70 0
+device rsubckt sky130_fd_pr__res_xhigh_po_0p35 9916 4748 9917 4749 l=244 "digpotp_0.tg_4.vgnd" "a_9916_4748#" 0 0 "digpotp_0.tg_2.b" 70 0 "digpotp_0.n8" 70 0
+device rsubckt sky130_fd_pr__res_xhigh_po_0p35 6616 4748 6617 4749 l=104 "digpotp_0.tg_4.vgnd" "a_6616_4748#" 0 0 "digpotp_0.tg_0.b" 70 0 "digpotp_0.n8" 70 0
+device rsubckt sky130_fd_pr__res_high_po_0p35 3316 4748 3317 4749 l=200 "digpotp_0.tg_4.vgnd" "a_3316_4748#" 0 0 "digpotp_0.tg_1.b" 70 0 "digpotp_0.n8" 70 0
+device rsubckt sky130_fd_pr__res_xhigh_po_0p35 27872 7088 27873 7089 l=1084 "digpotp_0.tg_4.vgnd" "a_27872_7088#" 0 0 "digpotp_0.n8" 70 0 "a_27554_8172#" 70 0
+device rsubckt sky130_fd_pr__res_xhigh_po_0p35 27554 7088 27555 7089 l=1084 "digpotp_0.tg_4.vgnd" "a_27554_7088#" 0 0 "a_27236_6656#" 70 0 "a_27554_8172#" 70 0
+device rsubckt sky130_fd_pr__res_xhigh_po_0p35 27236 7088 27237 7089 l=1084 "digpotp_0.tg_4.vgnd" "a_27236_7088#" 0 0 "a_27236_6656#" 70 0 "a_26918_8172#" 70 0
+device rsubckt sky130_fd_pr__res_xhigh_po_0p35 26918 7088 26919 7089 l=1084 "digpotp_0.tg_4.vgnd" "a_26918_7088#" 0 0 "a_26600_6656#" 70 0 "a_26918_8172#" 70 0
+device rsubckt sky130_fd_pr__res_xhigh_po_0p35 26600 7088 26601 7089 l=1084 "digpotp_0.tg_4.vgnd" "a_26600_7088#" 0 0 "a_26600_6656#" 70 0 "a_26282_8172#" 70 0
+device rsubckt sky130_fd_pr__res_xhigh_po_0p35 26282 7088 26283 7089 l=1084 "digpotp_0.tg_4.vgnd" "a_26282_7088#" 0 0 "a_25964_6656#" 70 0 "a_26282_8172#" 70 0
+device rsubckt sky130_fd_pr__res_xhigh_po_0p35 25964 7088 25965 7089 l=1084 "digpotp_0.tg_4.vgnd" "a_25964_7088#" 0 0 "a_25964_6656#" 70 0 "a_25646_8172#" 70 0
+device rsubckt sky130_fd_pr__res_xhigh_po_0p35 25646 7088 25647 7089 l=1084 "digpotp_0.tg_4.vgnd" "a_25646_7088#" 0 0 "ota_0.out" 70 0 "a_25646_8172#" 70 0

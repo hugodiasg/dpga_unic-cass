@@ -1,0 +1,29 @@
+digraph "sr" {
+label="sr";
+rankdir="LR";
+remincross=true;
+n4 [ shape=diamond, label="shift_reg", color="black", fontcolor="black" ];
+n5 [ shape=octagon, label="data", color="black", fontcolor="black" ];
+n6 [ shape=octagon, label="ss", color="black", fontcolor="black" ];
+n7 [ shape=octagon, label="sdi", color="black", fontcolor="black" ];
+n8 [ shape=octagon, label="reset", color="black", fontcolor="black" ];
+n9 [ shape=octagon, label="sclk", color="black", fontcolor="black" ];
+c12 [ shape=record, label="{{<p10> A}|$3\n$logic_not|{<p11> Y}}",  ];
+c13 [ shape=record, label="{{<p10> A}|$2\n$logic_not|{<p11> Y}}",  ];
+x1 [ shape=record, style=rounded, label="0 -&gt; 7:7 |<s1> 0:0 - 6:6 |<s0> 6:1 - 5:0 ", color="black", fontcolor="black" ];
+p0 [shape=box, style=rounded, label="PROC $1\n/shift/openlane/sr/src/shift_register.v:11.5-17.8"];
+x2 [shape=box, style=rounded, label="BUF", ];
+c12:p11:e -> p0:w [color="black", fontcolor="black", label=""];
+c13:p11:e -> p0:w [color="black", fontcolor="black", label=""];
+p0:e -> n4:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+n4:e -> p0:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+n4:e -> x1:s0:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+n4:e -> x2:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+x2:e -> n5:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+n6:e -> c12:p10:w [color="black", fontcolor="black", label=""];
+n7:e -> x1:s1:w [color="black", fontcolor="black", label=""];
+n8:e -> c13:p10:w [color="black", fontcolor="black", label=""];
+n8:e -> p0:w [color="black", fontcolor="black", label=""];
+n9:e -> p0:w [color="black", fontcolor="black", label=""];
+x1:e -> p0:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+}

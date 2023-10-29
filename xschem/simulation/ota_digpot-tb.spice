@@ -1,0 +1,4768 @@
+** sch_path: /foss/designs/projects/dpga-ieee-sscs-contest/xschem/ota_digpot-tb.sch
+**.subckt ota_digpot-tb
+Vdd vd GND 1.8
+.save i(vdd)
+Vc0 c0 GND {1.8*b0}
+.save i(vc0)
+Vc1 c1 GND {1.8*b1}
+.save i(vc1)
+Vc2 c2 GND {1.8*b2}
+.save i(vc2)
+Vc3 c3 GND {1.8*b3}
+.save i(vc3)
+Vc4 c4 GND {1.8*b4}
+.save i(vc4)
+Vc5 c5 GND {1.8*b5}
+.save i(vc5)
+Vc6 c6 GND {1.8*b6}
+.save i(vc6)
+Vc7 c7 GND {1.8*b7}
+.save i(vc7)
+Vss vs GND 0
+.save i(vss)
+Ibias GND ib 5.53u
+Vgnd in2 GND dc 0.9
+.save i(vgnd)
+Vin in1 GND dc 0.9 ac 1
+.save i(vin)
+Cl out GND 4p m=1
+x1 c5 c4 vd c6 c7 c0 c1 c2 c3 GND out in1 in2 ib ota_digpot_pex
+**** begin user architecture code
+
+.ac dec 2000 1 5Meg
+
+*.tran 0.01m 10m
+.end
+
+.control
+destroy all
+save all
+set color0=white
+set color1=black
+destroy all
+run
+let gain=abs(out)
+plot gain
+.endc
+
+
+.param b7=1 b6=0 b5=0 b4=0 b3=0 b2=0 b1=0 b0=0
+
+ .lib /foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.include /foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  projects/dpga-ieee-sscs-contest/xschem/ota_digpot_pex.sym # of pins=14
+** sym_path: /foss/designs/projects/dpga-ieee-sscs-contest/xschem/ota_digpot_pex.sym
+** sch_path: /foss/designs/projects/dpga-ieee-sscs-contest/xschem/ota_digpot_pex.sch
+.subckt ota_digpot_pex c5 c4 vd c6 c7 c0 c1 c2 c3 gnd out in1 in2 ib
+*.ipin in1
+*.ipin in2
+*.iopin ib
+*.opin out
+*.iopin gnd
+*.ipin c0
+*.ipin c1
+*.ipin c2
+*.ipin c3
+*.ipin c4
+*.ipin c5
+*.ipin c6
+*.ipin c7
+*.iopin vd
+**** begin user architecture code
+
+
+* NGSPICE file created from ota_digpot.ext - technology: sky130A
+
+*.subckt ota_digpot c5 c4 c6 c7 c0 c1 c2 c3 out in1 in2 ib gnd vd
+X0 in1.t61 digpotp_0.tg_3.nctrl.t2 digpotp_0.tg_3.b.t10 vd.t55 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X1 digpotp_0.tg_2.b.t13 digpotp_0.tg_2.nctrl.t2 in1.t160 vd.t112 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X2 digpotp_0.tg_6.b.t17 digpotp_0.tg_6.nctrl.t2 in1.t88 vd.t72 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X3 in1.t171 c3.t0 digpotp_0.tg_4.b.t13 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X4 digpotp_0.tg_3.b.t13 digpotp_0.n8.t2 gnd sky130_fd_pr__res_xhigh_po_0p35 l=2.62e+06u
+X5 in1.t109 digpotp_0.tg_5.nctrl.t2 digpotp_0.tg_5.b.t11 vd.t84 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X6 in1.t26 c3.t1 digpotp_0.tg_4.b.t12 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X7 digpotp_0.tg_4.nctrl.t0 c3.t2 gnd.t2 gnd.t1 sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=1e+06u l=150000u
+X8 digpotp_0.n8.t7 a_21466_5342# gnd sky130_fd_pr__res_xhigh_po_0p35 l=5.42e+06u
+X9 in1.t49 digpotp_0.tg_4.nctrl.t2 digpotp_0.tg_4.b.t17 vd.t43 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X10 digpotp_0.tg_4.b.t11 c3.t3 in1.t169 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X11 in1.t174 c3.t4 digpotp_0.tg_4.b.t10 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X12 digpotp_0.tg_4.b.t9 c3.t5 in1.t30 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X13 digpotp_0.tg_5.nctrl.t0 c2.t0 vd.t10 vd.t9 sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=3e+06u l=150000u
+X14 digpotp_0.tg_4.b.t8 c3.t6 in1.t39 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X15 in1.t47 c1.t0 digpotp_0.tg_6.b.t2 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X16 in1.t78 c3.t7 digpotp_0.tg_4.b.t7 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X17 digpotp_0.tg_4.b.t6 c3.t8 in1.t108 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X18 in1.t91 digpotp_0.tg_1.nctrl.t2 digpotp_0.tg_1.b.t17 vd.t75 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X19 in1.t60 digpotp_0.tg_3.nctrl.t3 digpotp_0.tg_3.b.t9 vd.t54 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X20 digpotp_0.tg_6.b.t22 c1.t1 in1.t165 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X21 in1.t187 c1.t2 digpotp_0.tg_6.b.t24 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X22 in1.t133 c1.t3 digpotp_0.tg_6.b.t19 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X23 digpotp_0.tg_6.b.t5 c1.t4 in1.t110 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X24 digpotp_0.n8.t5 a_26666_5342# gnd sky130_fd_pr__res_xhigh_po_0p35 l=5.42e+06u
+X25 vd.t5 ib.t4 out.t3 vd.t4 sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=7.5e+06u l=1e+06u
+X26 in1.t153 digpotp_0.tg_2.nctrl.t3 digpotp_0.tg_2.b.t12 vd.t108 sky130_fd_pr__pfet_01v8 ad=0p
++ pd=0u as=0p ps=0u w=5e+06u l=150000u
+X27 in1.t28 digpotp_0.tg_7.nctrl.t2 digpotp_0.tg_7.b.t23 vd.t23 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X28 digpotp_0.tg_6.b.t4 c1.t5 in1.t99 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X29 in1.t81 c4.t0 digpotp_0.tg_3.b.t15 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X30 in1.t19 digpotp_0.tg_2.nctrl.t4 digpotp_0.tg_2.b.t11 vd.t21 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X31 in1.t156 c1.t6 digpotp_0.tg_6.b.t21 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X32 digpotp_0.tg_6.b.t20 c1.t7 in1.t147 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X33 digpotp_0.tg_3.b.t17 c4.t1 in1.t94 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X34 in1.t116 c4.t2 digpotp_0.tg_3.b.t19 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X35 w_30480_5540.t2 ib.t5 vd.t115 vd.t114 sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u
++ l=1e+06u
+X36 digpotp_0.tg_6.b.t16 digpotp_0.tg_6.nctrl.t3 in1.t63 vd.t59 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X37 digpotp_0.tg_7.b.t22 digpotp_0.tg_7.nctrl.t3 in1.t29 vd.t24 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X38 vd.t34 ib.t2 ib.t3 vd.t33 sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=1e+06u
+X39 out.t4 a_31610_5759.t5 gnd.t3 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u
++ l=1e+06u
+X40 in1.t179 c4.t3 digpotp_0.tg_3.b.t24 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X41 digpotp_0.tg_3.b.t18 c4.t4 in1.t104 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X42 in1.t180 digpotp_0.tg_0.nctrl.t2 digpotp_0.tg_0.b.t14 vd.t122 sky130_fd_pr__pfet_01v8 ad=0p
++ pd=0u as=0p ps=0u w=5e+06u l=150000u
+X43 in1.t12 c0.t0 digpotp_0.tg_7.b.t0 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X44 digpotp_0.tg_3.b.t14 c4.t5 in1.t77 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X45 ib.t1 ib.t0 vd.t57 vd.t56 sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=1e+06u
+X46 gnd.t26 a_31610_5759.t6 out.t7 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u
++ l=1e+06u
+X47 in1.t176 c4.t6 digpotp_0.tg_3.b.t23 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X48 digpotp_0.tg_4.b.t14 digpotp_0.n8.t1 gnd sky130_fd_pr__res_xhigh_po_0p35 l=5.42e+06u
+X49 digpotp_0.tg_1.b.t16 digpotp_0.tg_1.nctrl.t3 in1.t11 vd.t18 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X50 in1.t181 digpotp_0.tg_6.nctrl.t4 digpotp_0.tg_6.b.t15 vd.t123 sky130_fd_pr__pfet_01v8 ad=0p
++ pd=0u as=0p ps=0u w=5e+06u l=150000u
+X51 in1.t13 c0.t1 digpotp_0.tg_7.b.t1 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X52 digpotp_0.tg_7.b.t7 c0.t2 in1.t96 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X53 digpotp_0.tg_7.b.t21 digpotp_0.tg_7.nctrl.t4 in1.t173 vd.t119 sky130_fd_pr__pfet_01v8 ad=0p
++ pd=0u as=0p ps=0u w=5e+06u l=150000u
+X54 digpotp_0.tg_7.b.t2 c0.t3 in1.t14 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X55 a_28256_3826# a_27938_5342# gnd sky130_fd_pr__res_xhigh_po_0p35 l=5.42e+06u
+X56 digpotp_0.tg_2.b.t10 digpotp_0.tg_2.nctrl.t5 in1.t184 vd.t126 sky130_fd_pr__pfet_01v8 ad=0p
++ pd=0u as=0p ps=0u w=5e+06u l=150000u
+X57 digpotp_0.tg_0.b.t22 digpotp_0.n8.t8 gnd sky130_fd_pr__res_high_po_0p35 l=1e+06u
+X58 in1.t32 digpotp_0.tg_6.nctrl.t5 digpotp_0.tg_6.b.t14 vd.t28 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X59 in1.t115 digpotp_0.tg_7.nctrl.t5 digpotp_0.tg_7.b.t20 vd.t90 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X60 digpotp_0.tg_0.b.t13 digpotp_0.tg_0.nctrl.t3 in1.t41 vd.t39 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X61 in1.t59 digpotp_0.tg_3.nctrl.t4 digpotp_0.tg_3.b.t2 vd.t53 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X62 digpotp_0.tg_5.b.t10 digpotp_0.tg_5.nctrl.t3 in1.t40 vd.t36 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X63 out.t6 a_26666_8882# gnd.t18 sky130_fd_pr__res_xhigh_po_0p35 l=5.42e+06u
+X64 digpotp_0.tg_5.b.t12 a_21466_5342# gnd sky130_fd_pr__res_xhigh_po_0p35 l=5.42e+06u
+X65 digpotp_0.tg_1.nctrl.t1 c6.t0 gnd.t17 gnd.t16 sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=1e+06u l=150000u
+X66 in1.t62 digpotp_0.tg_0.nctrl.t4 digpotp_0.tg_0.b.t12 vd.t58 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X67 in1.t90 digpotp_0.tg_1.nctrl.t4 digpotp_0.tg_1.b.t15 vd.t74 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X68 digpotp_0.tg_3.b.t1 digpotp_0.tg_3.nctrl.t5 in1.t58 vd.t52 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X69 in1.t31 digpotp_0.tg_5.nctrl.t4 digpotp_0.tg_5.b.t9 vd.t27 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X70 digpotp_0.tg_0.b.t17 c7.t0 in1.t38 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X71 digpotp_0.n8.t6 a_24266_5342# gnd sky130_fd_pr__res_xhigh_po_0p35 l=5.42e+06u
+X72 digpotp_0.tg_2.nctrl.t1 c5.t0 gnd.t22 gnd.t21 sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=1e+06u l=150000u
+X73 digpotp_0.tg_4.b.t23 digpotp_0.tg_4.nctrl.t3 in1.t162 vd.t113 sky130_fd_pr__pfet_01v8 ad=0p
++ pd=0u as=0p ps=0u w=5e+06u l=150000u
+X74 digpotp_0.tg_0.b.t11 digpotp_0.tg_0.nctrl.t5 in1.t106 vd.t82 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X75 digpotp_0.tg_1.b.t3 c6.t1 in1.t21 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X76 digpotp_0.tg_2.b.t9 digpotp_0.tg_2.nctrl.t6 in1.t185 vd.t127 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X77 a_26984_3826# a_26666_5342# gnd sky130_fd_pr__res_xhigh_po_0p35 l=5.42e+06u
+X78 a_30618_4910.t4 digpotp_0.n8.t9 w_30480_5540.t10 w_30480_5540.t9 sky130_fd_pr__pfet_01v8 ad=0p
++ pd=0u as=0p ps=0u w=3e+06u l=150000u
+X79 digpotp_0.tg_3.b.t12 digpotp_0.tg_3.nctrl.t6 in1.t57 vd.t51 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X80 in1.t182 digpotp_0.tg_0.nctrl.t6 digpotp_0.tg_0.b.t10 vd.t124 sky130_fd_pr__pfet_01v8 ad=0p
++ pd=0u as=0p ps=0u w=5e+06u l=150000u
+X81 in1.t164 digpotp_0.tg_7.nctrl.t6 digpotp_0.tg_7.b.t19 vd.t117 sky130_fd_pr__pfet_01v8 ad=0p
++ pd=0u as=0p ps=0u w=5e+06u l=150000u
+X82 digpotp_0.tg_7.nctrl.t0 c0.t4 vd.t30 vd.t29 sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=3e+06u l=150000u
+X83 digpotp_0.tg_5.nctrl.t1 c2.t1 gnd.t6 gnd.t5 sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=1e+06u l=150000u
+X84 a_28256_7366# a_27938_8882# gnd.t29 sky130_fd_pr__res_xhigh_po_0p35 l=5.42e+06u
+X85 in1.t56 digpotp_0.tg_3.nctrl.t7 digpotp_0.tg_3.b.t11 vd.t50 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X86 digpotp_0.tg_5.b.t8 digpotp_0.tg_5.nctrl.t5 in1.t114 vd.t89 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X87 digpotp_0.tg_2.b.t8 digpotp_0.tg_2.nctrl.t7 in1.t65 vd.t61 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X88 digpotp_0.tg_0.nctrl.t1 c7.t1 vd.t94 vd.t93 sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=3e+06u l=150000u
+X89 in1.t37 digpotp_0.tg_6.nctrl.t6 digpotp_0.tg_6.b.t13 vd.t35 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X90 gnd.t11 a_31610_5759.t7 out.t5 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u
++ l=1e+06u
+X91 digpotp_0.tg_4.b.t16 digpotp_0.tg_4.nctrl.t4 in1.t45 vd.t42 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X92 in1.t177 c2.t2 digpotp_0.tg_5.b.t23 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X93 a_24584_3826# a_24902_5342# gnd sky130_fd_pr__res_xhigh_po_0p35 l=5.42e+06u
+X94 a_28256_3826# a_28574_5342# gnd sky130_fd_pr__res_xhigh_po_0p35 l=5.42e+06u
+X95 digpotp_0.tg_5.b.t19 c2.t3 in1.t139 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X96 digpotp_0.tg_0.b.t9 digpotp_0.tg_0.nctrl.t7 in1.t150 vd.t105 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X97 in1.t55 digpotp_0.tg_3.nctrl.t8 digpotp_0.tg_3.b.t6 vd.t49 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X98 digpotp_0.tg_5.b.t13 c2.t4 in1.t46 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X99 in1.t145 c2.t5 digpotp_0.tg_5.b.t20 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X100 in1.t132 c5.t1 digpotp_0.tg_2.b.t18 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=5e+06u l=150000u
+X101 in1.t163 digpotp_0.tg_7.nctrl.t7 digpotp_0.tg_7.b.t18 vd.t116 sky130_fd_pr__pfet_01v8 ad=0p
++ pd=0u as=0p ps=0u w=5e+06u l=150000u
+X102 out a_31610_5759.t2 sky130_fd_pr__cap_mim_m3_1 l=1.8e+07u w=1.8e+07u
+X103 a_26984_7366# a_26666_8882# gnd.t12 sky130_fd_pr__res_xhigh_po_0p35 l=5.42e+06u
+X104 in1.t43 digpotp_0.tg_2.nctrl.t8 digpotp_0.tg_2.b.t7 vd.t41 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X105 digpotp_0.tg_2.b.t0 c5.t2 in1.t48 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X106 in1.t128 c5.t3 digpotp_0.tg_2.b.t15 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=5e+06u l=150000u
+X107 digpotp_0.tg_3.nctrl.t0 c4.t7 vd.t14 vd.t13 sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=3e+06u l=150000u
+X108 digpotp_0.tg_6.b.t12 digpotp_0.tg_6.nctrl.t7 in1.t86 vd.t70 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X109 digpotp_0.tg_2.b.t16 c5.t4 in1.t129 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=5e+06u l=150000u
+X110 in1.t149 digpotp_0.tg_0.nctrl.t8 digpotp_0.tg_0.b.t8 vd.t104 sky130_fd_pr__pfet_01v8 ad=0p
++ pd=0u as=0p ps=0u w=5e+06u l=150000u
+X111 a_24584_3826# a_24266_5342# gnd sky130_fd_pr__res_xhigh_po_0p35 l=5.42e+06u
+X112 in1.t138 digpotp_0.tg_4.nctrl.t5 digpotp_0.tg_4.b.t20 vd.t100 sky130_fd_pr__pfet_01v8 ad=0p
++ pd=0u as=0p ps=0u w=5e+06u l=150000u
+X113 a_31610_5759.t4 in2.t0 w_30480_5540.t14 w_30480_5540.t13 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=3e+06u l=150000u
+X114 in1.t178 digpotp_0.tg_6.nctrl.t8 digpotp_0.tg_6.b.t11 vd.t121 sky130_fd_pr__pfet_01v8 ad=0p
++ pd=0u as=0p ps=0u w=5e+06u l=150000u
+X115 digpotp_0.tg_1.b.t14 digpotp_0.tg_1.nctrl.t5 in1.t74 vd.t66 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X116 digpotp_0.tg_5.b.t7 digpotp_0.tg_5.nctrl.t6 in1.t113 vd.t88 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X117 in1.t25 c7.t2 digpotp_0.tg_0.b.t16 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X118 digpotp_0.tg_0.b.t1 c7.t3 in1.t4 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X119 a_28256_7366# a_28574_8882# gnd.t13 sky130_fd_pr__res_xhigh_po_0p35 l=5.42e+06u
+X120 digpotp_0.tg_1.b.t18 digpotp_0.n8.t3 gnd sky130_fd_pr__res_xhigh_po_0p35 l=520000u
+X121 in1.t15 c6.t2 digpotp_0.tg_1.b.t0 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X122 in1.t7 c7.t4 digpotp_0.tg_0.b.t2 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X123 in1.t64 digpotp_0.tg_6.nctrl.t9 digpotp_0.tg_6.b.t10 vd.t60 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X124 digpotp_0.tg_1.b.t24 c6.t3 in1.t124 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=5e+06u l=150000u
+X125 digpotp_0.tg_0.b.t7 digpotp_0.tg_0.nctrl.t9 in1.t148 vd.t103 sky130_fd_pr__pfet_01v8 ad=0p
++ pd=0u as=0p ps=0u w=5e+06u l=150000u
+X126 in1.t54 digpotp_0.tg_3.nctrl.t9 digpotp_0.tg_3.b.t5 vd.t48 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X127 digpotp_0.tg_5.b.t6 digpotp_0.tg_5.nctrl.t7 in1.t1 vd.t3 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X128 in1.t24 c6.t4 digpotp_0.tg_1.b.t4 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X129 in1.t127 digpotp_0.tg_5.nctrl.t8 digpotp_0.tg_5.b.t5 vd.t97 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X130 vd.t80 ib.t6 out.t2 vd.t79 sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=7.5e+06u l=1e+06u
+X131 digpotp_0.tg_1.b.t13 digpotp_0.tg_1.nctrl.t6 in1.t76 vd.t68 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X132 digpotp_0.tg_6.nctrl.t0 c1.t8 vd.t1 vd.t0 sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=3e+06u l=150000u
+X133 a_26984_3826# a_27302_5342# gnd sky130_fd_pr__res_xhigh_po_0p35 l=5.42e+06u
+X134 digpotp_0.tg_7.b.t8 a_28574_5342# gnd sky130_fd_pr__res_xhigh_po_0p35 l=5.42e+06u
+X135 digpotp_0.tg_7.nctrl.t1 c0.t5 gnd.t25 gnd.t24 sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=1e+06u l=150000u
+X136 w_30480_5540.t1 ib.t7 vd.t86 vd.t85 sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u
++ l=1e+06u
+X137 out.t1 ib.t8 vd.t38 vd.t37 sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=7.5e+06u l=1e+06u
+X138 digpotp_0.tg_2.b.t6 digpotp_0.tg_2.nctrl.t9 in1.t34 vd.t31 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X139 digpotp_0.tg_4.b.t5 c3.t9 in1.t167 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X140 in1.t154 digpotp_0.tg_4.nctrl.t6 digpotp_0.tg_4.b.t21 vd.t109 sky130_fd_pr__pfet_01v8 ad=0p
++ pd=0u as=0p ps=0u w=5e+06u l=150000u
+X141 digpotp_0.tg_7.b.t17 digpotp_0.tg_7.nctrl.t8 in1.t102 vd.t77 sky130_fd_pr__pfet_01v8 ad=0p
++ pd=0u as=0p ps=0u w=5e+06u l=150000u
+X142 in1.t27 c1.t9 digpotp_0.tg_6.b.t0 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X143 digpotp_0.tg_0.nctrl.t0 c7.t5 gnd.t10 gnd.t9 sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=1e+06u l=150000u
+X144 a_30618_4910.t3 digpotp_0.n8.t10 w_30480_5540.t8 w_30480_5540.t7 sky130_fd_pr__pfet_01v8 ad=0p
++ pd=0u as=0p ps=0u w=3e+06u l=150000u
+X145 in1.t151 digpotp_0.tg_0.nctrl.t10 digpotp_0.tg_0.b.t6 vd.t106 sky130_fd_pr__pfet_01v8 ad=0p
++ pd=0u as=0p ps=0u w=5e+06u l=150000u
+X146 digpotp_0.tg_3.b.t4 digpotp_0.tg_3.nctrl.t10 in1.t53 vd.t47 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X147 digpotp_0.tg_6.b.t18 c1.t10 in1.t125 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=5e+06u l=150000u
+X148 in1.t175 digpotp_0.tg_7.nctrl.t9 digpotp_0.tg_7.b.t16 vd.t120 sky130_fd_pr__pfet_01v8 ad=0p
++ pd=0u as=0p ps=0u w=5e+06u l=150000u
+X149 digpotp_0.tg_5.b.t14 c2.t6 in1.t68 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X150 digpotp_0.tg_6.b.t1 c1.t11 in1.t44 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X151 in1.t159 c2.t7 digpotp_0.tg_5.b.t21 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=5e+06u l=150000u
+X152 digpotp_0.tg_5.b.t16 c2.t8 in1.t100 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=5e+06u l=150000u
+X153 in1.t82 c4.t8 digpotp_0.tg_3.b.t16 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X154 in1.t69 digpotp_0.tg_1.nctrl.t7 digpotp_0.tg_1.b.t12 vd.t63 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X155 digpotp_0.tg_2.b.t5 digpotp_0.tg_2.nctrl.t10 in1.t157 vd.t110 sky130_fd_pr__pfet_01v8 ad=0p
++ pd=0u as=0p ps=0u w=5e+06u l=150000u
+X156 in1.t72 c2.t9 digpotp_0.tg_5.b.t15 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X157 digpotp_0.tg_3.b.t0 c4.t9 in1.t23 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X158 digpotp_0.tg_2.b.t17 c5.t5 in1.t130 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=5e+06u l=150000u
+X159 in1.t75 digpotp_0.tg_6.nctrl.t10 digpotp_0.tg_6.b.t9 vd.t67 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X160 digpotp_0.tg_3.b.t21 c4.t10 in1.t118 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=5e+06u l=150000u
+X161 in1.t170 c4.t11 digpotp_0.tg_3.b.t22 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=5e+06u l=150000u
+X162 digpotp_0.tg_2.b.t24 c5.t6 in1.t155 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=5e+06u l=150000u
+X163 in1.t136 c5.t7 digpotp_0.tg_2.b.t21 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=5e+06u l=150000u
+X164 digpotp_0.tg_4.b.t24 digpotp_0.tg_4.nctrl.t7 in1.t190 vd.t129 sky130_fd_pr__pfet_01v8 ad=0p
++ pd=0u as=0p ps=0u w=5e+06u l=150000u
+X165 in1.t93 c0.t6 digpotp_0.tg_7.b.t6 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X166 a_27620_3826# a_27938_5342# gnd sky130_fd_pr__res_xhigh_po_0p35 l=5.42e+06u
+X167 in1.t134 c5.t8 digpotp_0.tg_2.b.t19 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=5e+06u l=150000u
+X168 digpotp_0.tg_2.b.t22 c5.t9 in1.t142 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=5e+06u l=150000u
+X169 digpotp_0.tg_7.b.t4 c0.t7 in1.t35 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X170 digpotp_0.tg_3.nctrl.t1 c4.t12 gnd.t15 gnd.t14 sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=1e+06u l=150000u
+X171 a_26984_7366# a_27302_8882# gnd.t8 sky130_fd_pr__res_xhigh_po_0p35 l=5.42e+06u
+X172 digpotp_0.n8.t0 a_28574_8882# gnd.t0 sky130_fd_pr__res_xhigh_po_0p35 l=5.42e+06u
+X173 in1.t103 digpotp_0.tg_4.nctrl.t8 digpotp_0.tg_4.b.t18 vd.t78 sky130_fd_pr__pfet_01v8 ad=0p
++ pd=0u as=0p ps=0u w=5e+06u l=150000u
+X174 digpotp_0.tg_7.b.t15 digpotp_0.tg_7.nctrl.t10 in1.t188 vd.t128 sky130_fd_pr__pfet_01v8 ad=0p
++ pd=0u as=0p ps=0u w=5e+06u l=150000u
+X175 digpotp_0.tg_7.b.t5 c0.t8 in1.t83 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X176 in1.t172 c0.t9 digpotp_0.tg_7.b.t10 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=5e+06u l=150000u
+X177 digpotp_0.tg_3.b.t3 digpotp_0.tg_3.nctrl.t11 in1.t52 vd.t46 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X178 in1.t3 c7.t6 digpotp_0.tg_0.b.t0 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X179 in1.t67 digpotp_0.tg_2.nctrl.t11 digpotp_0.tg_2.b.t4 vd.t62 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X180 in1.t119 c7.t7 digpotp_0.tg_0.b.t20 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=5e+06u l=150000u
+X181 digpotp_0.tg_0.b.t18 c7.t8 in1.t66 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X182 digpotp_0.tg_4.b.t0 digpotp_0.tg_4.nctrl.t9 in1.t6 vd.t8 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X183 digpotp_0.tg_0.b.t15 c7.t9 in1.t18 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X184 in1.t140 c7.t10 digpotp_0.tg_0.b.t23 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=5e+06u l=150000u
+X185 in1.t16 c6.t5 digpotp_0.tg_1.b.t1 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X186 digpotp_0.tg_6.b.t8 digpotp_0.tg_6.nctrl.t11 in1.t9 vd.t12 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X187 digpotp_0.tg_0.b.t21 c7.t11 in1.t121 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=5e+06u l=150000u
+X188 a_27620_3826# a_27302_5342# gnd sky130_fd_pr__res_xhigh_po_0p35 l=5.42e+06u
+X189 in1.t144 digpotp_0.tg_5.nctrl.t9 digpotp_0.tg_5.b.t4 vd.t101 sky130_fd_pr__pfet_01v8 ad=0p
++ pd=0u as=0p ps=0u w=5e+06u l=150000u
+X190 digpotp_0.tg_0.b.t24 c7.t12 in1.t141 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=5e+06u l=150000u
+X191 in1.t84 c7.t13 digpotp_0.tg_0.b.t19 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=5e+06u l=150000u
+X192 digpotp_0.tg_1.b.t23 c6.t6 in1.t123 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=5e+06u l=150000u
+X193 in1.t20 c6.t7 digpotp_0.tg_1.b.t2 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X194 a_31610_5759.t0 in2.t1 w_30480_5540.t4 w_30480_5540.t3 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=3e+06u l=150000u
+X195 in1.t158 digpotp_0.tg_4.nctrl.t10 digpotp_0.tg_4.b.t22 vd.t111 sky130_fd_pr__pfet_01v8 ad=0p
++ pd=0u as=0p ps=0u w=5e+06u l=150000u
+X196 digpotp_0.tg_1.b.t22 c6.t8 in1.t122 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=5e+06u l=150000u
+X197 in1.t70 c6.t9 digpotp_0.tg_1.b.t5 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X198 digpotp_0.tg_1.b.t21 c6.t10 in1.t98 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=5e+06u l=150000u
+X199 digpotp_0.tg_5.b.t3 digpotp_0.tg_5.nctrl.t10 in1.t22 vd.t22 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X200 in1.t73 digpotp_0.tg_1.nctrl.t8 digpotp_0.tg_1.b.t11 vd.t65 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X201 in1.t97 c6.t11 digpotp_0.tg_1.b.t20 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=5e+06u l=150000u
+X202 digpotp_0.tg_1.b.t19 c6.t12 in1.t95 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=5e+06u l=150000u
+X203 out.t0 ib.t9 vd.t26 vd.t25 sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=7.5e+06u l=1e+06u
+X204 digpotp_0.tg_4.nctrl.t1 c3.t10 vd.t92 vd.t91 sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=3e+06u l=150000u
+X205 a_27620_7366# a_27938_8882# gnd.t7 sky130_fd_pr__res_xhigh_po_0p35 l=5.42e+06u
+X206 in1.t71 digpotp_0.tg_2.nctrl.t12 digpotp_0.tg_2.b.t3 vd.t64 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X207 digpotp_0.tg_3.b.t8 digpotp_0.tg_3.nctrl.t12 in1.t51 vd.t45 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X208 digpotp_0.tg_6.nctrl.t1 c1.t12 gnd.t20 gnd.t19 sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=1e+06u l=150000u
+X209 in1.t101 c3.t11 digpotp_0.tg_4.b.t4 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=5e+06u l=150000u
+X210 in1.t131 digpotp_0.tg_2.nctrl.t13 digpotp_0.tg_2.b.t2 vd.t98 sky130_fd_pr__pfet_01v8 ad=0p
++ pd=0u as=0p ps=0u w=5e+06u l=150000u
+X211 digpotp_0.tg_4.b.t3 c3.t12 in1.t17 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X212 w_30480_5540.t6 digpotp_0.n8.t11 a_30618_4910.t2 w_30480_5540.t5 sky130_fd_pr__pfet_01v8 ad=0p
++ pd=0u as=0p ps=0u w=3e+06u l=150000u
+X213 digpotp_0.tg_0.b.t5 digpotp_0.tg_0.nctrl.t11 in1.t152 vd.t107 sky130_fd_pr__pfet_01v8 ad=0p
++ pd=0u as=0p ps=0u w=5e+06u l=150000u
+X214 digpotp_0.tg_5.b.t2 digpotp_0.tg_5.nctrl.t11 in1.t146 vd.t102 sky130_fd_pr__pfet_01v8 ad=0p
++ pd=0u as=0p ps=0u w=5e+06u l=150000u
+X215 digpotp_0.tg_4.b.t1 digpotp_0.tg_4.nctrl.t11 in1.t8 vd.t11 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X216 digpotp_0.tg_6.b.t7 digpotp_0.tg_6.nctrl.t12 in1.t87 vd.t71 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X217 digpotp_0.tg_7.b.t14 digpotp_0.tg_7.nctrl.t11 in1.t105 vd.t81 sky130_fd_pr__pfet_01v8 ad=0p
++ pd=0u as=0p ps=0u w=5e+06u l=150000u
+X218 in1.t79 c3.t13 digpotp_0.tg_4.b.t2 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X219 gnd.t28 a_30618_4910.t0 a_30618_4910.t1 gnd.t27 sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=1e+06u l=1e+06u
+X220 in1.t5 digpotp_0.tg_5.nctrl.t12 digpotp_0.tg_5.b.t1 vd.t7 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X221 in1.t120 c2.t10 digpotp_0.tg_5.b.t18 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=5e+06u l=150000u
+X222 digpotp_0.tg_1.b.t10 digpotp_0.tg_1.nctrl.t9 in1.t89 vd.t73 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X223 in1.t161 c2.t11 digpotp_0.tg_5.b.t22 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=5e+06u l=150000u
+X224 a_27620_7366# a_27302_8882# gnd.t23 sky130_fd_pr__res_xhigh_po_0p35 l=5.42e+06u
+X225 in1.t80 c1.t13 digpotp_0.tg_6.b.t3 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X226 digpotp_0.tg_5.b.t24 c2.t12 in1.t191 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=5e+06u l=150000u
+X227 in1.t183 digpotp_0.tg_1.nctrl.t10 digpotp_0.tg_1.b.t9 vd.t125 sky130_fd_pr__pfet_01v8 ad=0p
++ pd=0u as=0p ps=0u w=5e+06u l=150000u
+X228 in1.t42 digpotp_0.tg_4.nctrl.t12 digpotp_0.tg_4.b.t15 vd.t40 sky130_fd_pr__pfet_01v8 ad=0p
++ pd=0u as=0p ps=0u w=5e+06u l=150000u
+X229 digpotp_0.tg_7.b.t13 digpotp_0.tg_7.nctrl.t12 in1.t166 vd.t118 sky130_fd_pr__pfet_01v8 ad=0p
++ pd=0u as=0p ps=0u w=5e+06u l=150000u
+X230 digpotp_0.tg_5.b.t17 c2.t13 in1.t112 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=5e+06u l=150000u
+X231 digpotp_0.tg_3.b.t20 c4.t13 in1.t117 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=5e+06u l=150000u
+X232 vd.t16 ib.t10 w_30480_5540.t0 vd.t15 sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u
++ l=1e+06u
+X233 digpotp_0.tg_6.b.t23 a_24902_5342# gnd sky130_fd_pr__res_xhigh_po_0p35 l=5.42e+06u
+X234 in1.t10 digpotp_0.tg_7.nctrl.t13 digpotp_0.tg_7.b.t12 vd.t17 sky130_fd_pr__pfet_01v8 ad=0p
++ pd=0u as=0p ps=0u w=5e+06u l=150000u
+X235 digpotp_0.tg_7.b.t3 c0.t10 in1.t33 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=5e+06u
++ l=150000u
+X236 in1.t135 c5.t10 digpotp_0.tg_2.b.t20 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=5e+06u l=150000u
+X237 digpotp_0.tg_0.b.t4 digpotp_0.tg_0.nctrl.t12 in1.t0 vd.t2 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X238 digpotp_0.tg_1.b.t8 digpotp_0.tg_1.nctrl.t11 in1.t85 vd.t69 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X239 digpotp_0.tg_7.b.t11 c0.t11 in1.t186 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=5e+06u l=150000u
+X240 in1.t189 c0.t12 digpotp_0.tg_7.b.t24 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=5e+06u l=150000u
+X241 in1.t143 c5.t11 digpotp_0.tg_2.b.t23 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=5e+06u l=150000u
+X242 digpotp_0.tg_6.b.t6 digpotp_0.tg_6.nctrl.t13 in1.t2 vd.t6 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X243 digpotp_0.tg_2.b.t14 c5.t12 in1.t126 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=5e+06u l=150000u
+X244 in1.t107 digpotp_0.tg_1.nctrl.t12 digpotp_0.tg_1.b.t7 vd.t83 sky130_fd_pr__pfet_01v8 ad=0p
++ pd=0u as=0p ps=0u w=5e+06u l=150000u
+X245 in1.t36 digpotp_0.tg_5.nctrl.t13 digpotp_0.tg_5.b.t0 vd.t32 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X246 in1.t168 c0.t13 digpotp_0.tg_7.b.t9 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=5e+06u l=150000u
+X247 digpotp_0.tg_2.b.t1 digpotp_0.n8.t4 gnd sky130_fd_pr__res_xhigh_po_0p35 l=1.22e+06u
+X248 w_30480_5540.t12 in2.t2 a_31610_5759.t3 w_30480_5540.t11 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=3e+06u l=150000u
+X249 digpotp_0.tg_4.b.t19 digpotp_0.tg_4.nctrl.t13 in1.t137 vd.t99 sky130_fd_pr__pfet_01v8 ad=0p
++ pd=0u as=0p ps=0u w=5e+06u l=150000u
+X250 digpotp_0.tg_1.nctrl.t0 c6.t13 vd.t20 vd.t19 sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=3e+06u l=150000u
+X251 a_31610_5759.t1 a_30618_4910.t5 gnd.t4 gnd sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=1e+06u l=1e+06u
+X252 in1.t111 digpotp_0.tg_0.nctrl.t13 digpotp_0.tg_0.b.t3 vd.t87 sky130_fd_pr__pfet_01v8 ad=0p
++ pd=0u as=0p ps=0u w=5e+06u l=150000u
+X253 digpotp_0.tg_3.b.t7 digpotp_0.tg_3.nctrl.t13 in1.t50 vd.t44 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+X254 digpotp_0.tg_2.nctrl.t0 c5.t13 vd.t96 vd.t95 sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=3e+06u l=150000u
+X255 digpotp_0.tg_1.b.t6 digpotp_0.tg_1.nctrl.t13 in1.t92 vd.t76 sky130_fd_pr__pfet_01v8 ad=0p pd=0u
++ as=0p ps=0u w=5e+06u l=150000u
+R0 digpotp_0.tg_3.nctrl.n14 digpotp_0.tg_3.nctrl.t11 894.913
+R1 digpotp_0.tg_3.nctrl.n14 digpotp_0.tg_3.nctrl.t4 837.073
+R2 digpotp_0.tg_3.nctrl.n11 digpotp_0.tg_3.nctrl.t9 837.073
+R3 digpotp_0.tg_3.nctrl.n8 digpotp_0.tg_3.nctrl.t3 837.073
+R4 digpotp_0.tg_3.nctrl.n5 digpotp_0.tg_3.nctrl.t8 837.073
+R5 digpotp_0.tg_3.nctrl.n2 digpotp_0.tg_3.nctrl.t2 837.073
+R6 digpotp_0.tg_3.nctrl.n0 digpotp_0.tg_3.nctrl.t7 837.073
+R7 digpotp_0.tg_3.nctrl.n13 digpotp_0.tg_3.nctrl.t13 837.073
+R8 digpotp_0.tg_3.nctrl.n10 digpotp_0.tg_3.nctrl.t6 837.073
+R9 digpotp_0.tg_3.nctrl.n7 digpotp_0.tg_3.nctrl.t10 837.073
+R10 digpotp_0.tg_3.nctrl.n4 digpotp_0.tg_3.nctrl.t5 837.073
+R11 digpotp_0.tg_3.nctrl.n1 digpotp_0.tg_3.nctrl.t12 837.073
+R12 digpotp_0.tg_3.nctrl.n2 digpotp_0.tg_3.nctrl.n1 57.84
+R13 digpotp_0.tg_3.nctrl.n5 digpotp_0.tg_3.nctrl.n4 57.84
+R14 digpotp_0.tg_3.nctrl.n8 digpotp_0.tg_3.nctrl.n7 57.84
+R15 digpotp_0.tg_3.nctrl.n11 digpotp_0.tg_3.nctrl.n10 57.84
+R16 digpotp_0.tg_3.nctrl.n14 digpotp_0.tg_3.nctrl.n13 57.84
+R17 digpotp_0.tg_3.nctrl.n16 digpotp_0.tg_3.nctrl.t1 18.051
+R18 digpotp_0.tg_3.nctrl.n3 digpotp_0.tg_3.nctrl.n0 13.632
+R19 digpotp_0.tg_3.nctrl.n3 digpotp_0.tg_3.nctrl.n2 13.414
+R20 digpotp_0.tg_3.nctrl.n6 digpotp_0.tg_3.nctrl.n5 13.414
+R21 digpotp_0.tg_3.nctrl.n9 digpotp_0.tg_3.nctrl.n8 13.414
+R22 digpotp_0.tg_3.nctrl.n12 digpotp_0.tg_3.nctrl.n11 13.414
+R23 digpotp_0.tg_3.nctrl.n15 digpotp_0.tg_3.nctrl.n14 13.414
+R24 digpotp_0.tg_3.nctrl.n16 digpotp_0.tg_3.nctrl.t0 10.118
+R25 digpotp_0.tg_3.nctrl digpotp_0.tg_3.nctrl.n16 0.699
+R26 digpotp_0.tg_3.nctrl digpotp_0.tg_3.nctrl.n15 0.618
+R27 digpotp_0.tg_3.nctrl.n6 digpotp_0.tg_3.nctrl.n3 0.218
+R28 digpotp_0.tg_3.nctrl.n9 digpotp_0.tg_3.nctrl.n6 0.218
+R29 digpotp_0.tg_3.nctrl.n12 digpotp_0.tg_3.nctrl.n9 0.218
+R30 digpotp_0.tg_3.nctrl.n15 digpotp_0.tg_3.nctrl.n12 0.218
+R31 digpotp_0.tg_3.b.n23 digpotp_0.tg_3.b.t13 10.66
+R32 digpotp_0.tg_3.b.n11 digpotp_0.tg_3.b.t11 6.501
+R33 digpotp_0.tg_3.b.n11 digpotp_0.tg_3.b.t8 6.501
+R34 digpotp_0.tg_3.b.n12 digpotp_0.tg_3.b.t10 6.501
+R35 digpotp_0.tg_3.b.n12 digpotp_0.tg_3.b.t1 6.501
+R36 digpotp_0.tg_3.b.n13 digpotp_0.tg_3.b.t6 6.501
+R37 digpotp_0.tg_3.b.n13 digpotp_0.tg_3.b.t4 6.501
+R38 digpotp_0.tg_3.b.n14 digpotp_0.tg_3.b.t9 6.501
+R39 digpotp_0.tg_3.b.n14 digpotp_0.tg_3.b.t12 6.501
+R40 digpotp_0.tg_3.b.n15 digpotp_0.tg_3.b.t5 6.501
+R41 digpotp_0.tg_3.b.n15 digpotp_0.tg_3.b.t7 6.501
+R42 digpotp_0.tg_3.b.n16 digpotp_0.tg_3.b.t2 6.501
+R43 digpotp_0.tg_3.b.n16 digpotp_0.tg_3.b.t3 6.501
+R44 digpotp_0.tg_3.b.n5 digpotp_0.tg_3.b.t15 4.585
+R45 digpotp_0.tg_3.b.n10 digpotp_0.tg_3.b.t21 4.362
+R46 digpotp_0.tg_3.b.n4 digpotp_0.tg_3.b.t19 3.96
+R47 digpotp_0.tg_3.b.n4 digpotp_0.tg_3.b.t18 3.96
+R48 digpotp_0.tg_3.b.n3 digpotp_0.tg_3.b.t24 3.96
+R49 digpotp_0.tg_3.b.n3 digpotp_0.tg_3.b.t14 3.96
+R50 digpotp_0.tg_3.b.n2 digpotp_0.tg_3.b.t23 3.96
+R51 digpotp_0.tg_3.b.n2 digpotp_0.tg_3.b.t17 3.96
+R52 digpotp_0.tg_3.b.n1 digpotp_0.tg_3.b.t22 3.96
+R53 digpotp_0.tg_3.b.n1 digpotp_0.tg_3.b.t20 3.96
+R54 digpotp_0.tg_3.b.n0 digpotp_0.tg_3.b.t16 3.96
+R55 digpotp_0.tg_3.b.n0 digpotp_0.tg_3.b.t0 3.96
+R56 digpotp_0.tg_3.b.n22 digpotp_0.tg_3.b.n10 1.068
+R57 digpotp_0.tg_3.b.n17 digpotp_0.tg_3.b.n16 0.595
+R58 digpotp_0.tg_3.b.n5 digpotp_0.tg_3.b.n4 0.402
+R59 digpotp_0.tg_3.b.n6 digpotp_0.tg_3.b.n3 0.402
+R60 digpotp_0.tg_3.b.n7 digpotp_0.tg_3.b.n2 0.402
+R61 digpotp_0.tg_3.b.n8 digpotp_0.tg_3.b.n1 0.402
+R62 digpotp_0.tg_3.b.n9 digpotp_0.tg_3.b.n0 0.402
+R63 digpotp_0.tg_3.b.n21 digpotp_0.tg_3.b.n11 0.377
+R64 digpotp_0.tg_3.b.n20 digpotp_0.tg_3.b.n12 0.377
+R65 digpotp_0.tg_3.b.n19 digpotp_0.tg_3.b.n13 0.377
+R66 digpotp_0.tg_3.b.n18 digpotp_0.tg_3.b.n14 0.377
+R67 digpotp_0.tg_3.b.n17 digpotp_0.tg_3.b.n15 0.377
+R68 digpotp_0.tg_3.b.n22 digpotp_0.tg_3.b.n21 0.275
+R69 digpotp_0.tg_3.b.n10 digpotp_0.tg_3.b.n9 0.218
+R70 digpotp_0.tg_3.b.n9 digpotp_0.tg_3.b.n8 0.218
+R71 digpotp_0.tg_3.b.n8 digpotp_0.tg_3.b.n7 0.218
+R72 digpotp_0.tg_3.b.n7 digpotp_0.tg_3.b.n6 0.218
+R73 digpotp_0.tg_3.b.n6 digpotp_0.tg_3.b.n5 0.218
+R74 digpotp_0.tg_3.b.n21 digpotp_0.tg_3.b.n20 0.218
+R75 digpotp_0.tg_3.b.n20 digpotp_0.tg_3.b.n19 0.218
+R76 digpotp_0.tg_3.b.n19 digpotp_0.tg_3.b.n18 0.218
+R77 digpotp_0.tg_3.b.n18 digpotp_0.tg_3.b.n17 0.218
+R78 digpotp_0.tg_3.b.n23 digpotp_0.tg_3.b.n22 0.118
+R79 digpotp_0.tg_3.b digpotp_0.tg_3.b.n23 0.062
+R80 in1.n177 in1.t62 6.9
+R81 in1.n149 in1.t115 6.9
+R82 in1.n126 in1.t178 6.9
+R83 in1.n103 in1.t5 6.9
+R84 in1.n80 in1.t103 6.9
+R85 in1.n57 in1.t56 6.9
+R86 in1.n34 in1.t67 6.9
+R87 in1.n11 in1.t183 6.9
+R88 in1.n182 in1.t106 6.729
+R89 in1.n154 in1.t102 6.729
+R90 in1.n131 in1.t87 6.729
+R91 in1.n108 in1.t40 6.729
+R92 in1.n85 in1.t6 6.729
+R93 in1.n62 in1.t52 6.729
+R94 in1.n39 in1.t185 6.729
+R95 in1.n16 in1.t85 6.729
+R96 in1.n176 in1.t150 6.501
+R97 in1.n176 in1.t151 6.501
+R98 in1.n175 in1.t152 6.501
+R99 in1.n175 in1.t182 6.501
+R100 in1.n174 in1.t148 6.501
+R101 in1.n174 in1.t111 6.501
+R102 in1.n173 in1.t41 6.501
+R103 in1.n173 in1.t149 6.501
+R104 in1.n172 in1.t0 6.501
+R105 in1.n172 in1.t180 6.501
+R106 in1.n148 in1.t188 6.501
+R107 in1.n148 in1.t10 6.501
+R108 in1.n147 in1.t29 6.501
+R109 in1.n147 in1.t175 6.501
+R110 in1.n146 in1.t105 6.501
+R111 in1.n146 in1.t164 6.501
+R112 in1.n145 in1.t173 6.501
+R113 in1.n145 in1.t163 6.501
+R114 in1.n144 in1.t166 6.501
+R115 in1.n144 in1.t28 6.501
+R116 in1.n125 in1.t2 6.501
+R117 in1.n125 in1.t181 6.501
+R118 in1.n124 in1.t88 6.501
+R119 in1.n124 in1.t64 6.501
+R120 in1.n123 in1.t9 6.501
+R121 in1.n123 in1.t32 6.501
+R122 in1.n122 in1.t86 6.501
+R123 in1.n122 in1.t75 6.501
+R124 in1.n121 in1.t63 6.501
+R125 in1.n121 in1.t37 6.501
+R126 in1.n102 in1.t114 6.501
+R127 in1.n102 in1.t127 6.501
+R128 in1.n101 in1.t22 6.501
+R129 in1.n101 in1.t31 6.501
+R130 in1.n100 in1.t113 6.501
+R131 in1.n100 in1.t36 6.501
+R132 in1.n99 in1.t146 6.501
+R133 in1.n99 in1.t109 6.501
+R134 in1.n98 in1.t1 6.501
+R135 in1.n98 in1.t144 6.501
+R136 in1.n79 in1.t8 6.501
+R137 in1.n79 in1.t49 6.501
+R138 in1.n78 in1.t162 6.501
+R139 in1.n78 in1.t158 6.501
+R140 in1.n77 in1.t137 6.501
+R141 in1.n77 in1.t138 6.501
+R142 in1.n76 in1.t190 6.501
+R143 in1.n76 in1.t42 6.501
+R144 in1.n75 in1.t45 6.501
+R145 in1.n75 in1.t154 6.501
+R146 in1.n56 in1.t51 6.501
+R147 in1.n56 in1.t61 6.501
+R148 in1.n55 in1.t58 6.501
+R149 in1.n55 in1.t55 6.501
+R150 in1.n54 in1.t53 6.501
+R151 in1.n54 in1.t60 6.501
+R152 in1.n53 in1.t57 6.501
+R153 in1.n53 in1.t54 6.501
+R154 in1.n52 in1.t50 6.501
+R155 in1.n52 in1.t59 6.501
+R156 in1.n33 in1.t184 6.501
+R157 in1.n33 in1.t43 6.501
+R158 in1.n32 in1.t157 6.501
+R159 in1.n32 in1.t19 6.501
+R160 in1.n31 in1.t65 6.501
+R161 in1.n31 in1.t131 6.501
+R162 in1.n30 in1.t160 6.501
+R163 in1.n30 in1.t153 6.501
+R164 in1.n29 in1.t34 6.501
+R165 in1.n29 in1.t71 6.501
+R166 in1.n10 in1.t92 6.501
+R167 in1.n10 in1.t90 6.501
+R168 in1.n9 in1.t74 6.501
+R169 in1.n9 in1.t107 6.501
+R170 in1.n8 in1.t11 6.501
+R171 in1.n8 in1.t69 6.501
+R172 in1.n7 in1.t89 6.501
+R173 in1.n7 in1.t91 6.501
+R174 in1.n6 in1.t76 6.501
+R175 in1.n6 in1.t73 6.501
+R176 in1.n166 in1.t38 3.96
+R177 in1.n166 in1.t25 3.96
+R178 in1.n167 in1.t4 3.96
+R179 in1.n167 in1.t7 3.96
+R180 in1.n168 in1.t121 3.96
+R181 in1.n168 in1.t84 3.96
+R182 in1.n169 in1.t66 3.96
+R183 in1.n169 in1.t140 3.96
+R184 in1.n170 in1.t141 3.96
+R185 in1.n170 in1.t119 3.96
+R186 in1.n171 in1.t18 3.96
+R187 in1.n171 in1.t3 3.96
+R188 in1.n138 in1.t83 3.96
+R189 in1.n138 in1.t93 3.96
+R190 in1.n139 in1.t35 3.96
+R191 in1.n139 in1.t172 3.96
+R192 in1.n140 in1.t186 3.96
+R193 in1.n140 in1.t168 3.96
+R194 in1.n141 in1.t33 3.96
+R195 in1.n141 in1.t189 3.96
+R196 in1.n142 in1.t14 3.96
+R197 in1.n142 in1.t13 3.96
+R198 in1.n143 in1.t96 3.96
+R199 in1.n143 in1.t12 3.96
+R200 in1.n115 in1.t44 3.96
+R201 in1.n115 in1.t27 3.96
+R202 in1.n116 in1.t125 3.96
+R203 in1.n116 in1.t80 3.96
+R204 in1.n117 in1.t99 3.96
+R205 in1.n117 in1.t156 3.96
+R206 in1.n118 in1.t165 3.96
+R207 in1.n118 in1.t133 3.96
+R208 in1.n119 in1.t147 3.96
+R209 in1.n119 in1.t187 3.96
+R210 in1.n120 in1.t110 3.96
+R211 in1.n120 in1.t47 3.96
+R212 in1.n92 in1.t46 3.96
+R213 in1.n92 in1.t177 3.96
+R214 in1.n93 in1.t139 3.96
+R215 in1.n93 in1.t145 3.96
+R216 in1.n94 in1.t100 3.96
+R217 in1.n94 in1.t72 3.96
+R218 in1.n95 in1.t68 3.96
+R219 in1.n95 in1.t159 3.96
+R220 in1.n96 in1.t112 3.96
+R221 in1.n96 in1.t161 3.96
+R222 in1.n97 in1.t191 3.96
+R223 in1.n97 in1.t120 3.96
+R224 in1.n69 in1.t167 3.96
+R225 in1.n69 in1.t101 3.96
+R226 in1.n70 in1.t17 3.96
+R227 in1.n70 in1.t79 3.96
+R228 in1.n71 in1.t39 3.96
+R229 in1.n71 in1.t78 3.96
+R230 in1.n72 in1.t169 3.96
+R231 in1.n72 in1.t174 3.96
+R232 in1.n73 in1.t108 3.96
+R233 in1.n73 in1.t26 3.96
+R234 in1.n74 in1.t30 3.96
+R235 in1.n74 in1.t171 3.96
+R236 in1.n46 in1.t118 3.96
+R237 in1.n46 in1.t82 3.96
+R238 in1.n47 in1.t23 3.96
+R239 in1.n47 in1.t170 3.96
+R240 in1.n48 in1.t117 3.96
+R241 in1.n48 in1.t176 3.96
+R242 in1.n49 in1.t94 3.96
+R243 in1.n49 in1.t179 3.96
+R244 in1.n50 in1.t77 3.96
+R245 in1.n50 in1.t116 3.96
+R246 in1.n51 in1.t104 3.96
+R247 in1.n51 in1.t81 3.96
+R248 in1.n23 in1.t129 3.96
+R249 in1.n23 in1.t132 3.96
+R250 in1.n24 in1.t48 3.96
+R251 in1.n24 in1.t128 3.96
+R252 in1.n25 in1.t155 3.96
+R253 in1.n25 in1.t134 3.96
+R254 in1.n26 in1.t130 3.96
+R255 in1.n26 in1.t136 3.96
+R256 in1.n27 in1.t142 3.96
+R257 in1.n27 in1.t143 3.96
+R258 in1.n28 in1.t126 3.96
+R259 in1.n28 in1.t135 3.96
+R260 in1.n0 in1.t21 3.96
+R261 in1.n0 in1.t15 3.96
+R262 in1.n1 in1.t124 3.96
+R263 in1.n1 in1.t24 3.96
+R264 in1.n2 in1.t122 3.96
+R265 in1.n2 in1.t97 3.96
+R266 in1.n3 in1.t123 3.96
+R267 in1.n3 in1.t70 3.96
+R268 in1.n4 in1.t95 3.96
+R269 in1.n4 in1.t20 3.96
+R270 in1.n5 in1.t98 3.96
+R271 in1.n5 in1.t16 3.96
+R272 in1.n190 in1.n189 2.5
+R273 in1.n161 in1 2.443
+R274 in1.n164 in1.n163 2.312
+R275 in1.n190 in1.n165 2.312
+R276 in1.n162 in1.n161 2.25
+R277 in1.n163 in1.n162 2.25
+R278 in1.n165 in1.n164 2.25
+R279 in1.n183 in1.n182 2.186
+R280 in1.n155 in1.n154 2.186
+R281 in1.n132 in1.n131 2.186
+R282 in1.n109 in1.n108 2.186
+R283 in1.n86 in1.n85 2.186
+R284 in1.n63 in1.n62 2.186
+R285 in1.n40 in1.n39 2.186
+R286 in1.n17 in1.n16 2.186
+R287 digpotp_0.tg_0.a in1.n188 0.342
+R288 in1 in1.n160 0.342
+R289 digpotp_0.tg_6.a in1.n137 0.342
+R290 digpotp_0.tg_5.a in1.n114 0.342
+R291 digpotp_0.tg_4.a in1.n91 0.342
+R292 digpotp_0.tg_3.a in1.n68 0.342
+R293 digpotp_0.tg_2.a in1.n45 0.342
+R294 digpotp_0.tg_1.a in1.n22 0.342
+R295 in1.n188 in1.n166 0.326
+R296 in1.n187 in1.n167 0.326
+R297 in1.n186 in1.n168 0.326
+R298 in1.n185 in1.n169 0.326
+R299 in1.n184 in1.n170 0.326
+R300 in1.n183 in1.n171 0.326
+R301 in1.n160 in1.n138 0.326
+R302 in1.n159 in1.n139 0.326
+R303 in1.n158 in1.n140 0.326
+R304 in1.n157 in1.n141 0.326
+R305 in1.n156 in1.n142 0.326
+R306 in1.n155 in1.n143 0.326
+R307 in1.n137 in1.n115 0.326
+R308 in1.n136 in1.n116 0.326
+R309 in1.n135 in1.n117 0.326
+R310 in1.n134 in1.n118 0.326
+R311 in1.n133 in1.n119 0.326
+R312 in1.n132 in1.n120 0.326
+R313 in1.n114 in1.n92 0.326
+R314 in1.n113 in1.n93 0.326
+R315 in1.n112 in1.n94 0.326
+R316 in1.n111 in1.n95 0.326
+R317 in1.n110 in1.n96 0.326
+R318 in1.n109 in1.n97 0.326
+R319 in1.n91 in1.n69 0.326
+R320 in1.n90 in1.n70 0.326
+R321 in1.n89 in1.n71 0.326
+R322 in1.n88 in1.n72 0.326
+R323 in1.n87 in1.n73 0.326
+R324 in1.n86 in1.n74 0.326
+R325 in1.n68 in1.n46 0.326
+R326 in1.n67 in1.n47 0.326
+R327 in1.n66 in1.n48 0.326
+R328 in1.n65 in1.n49 0.326
+R329 in1.n64 in1.n50 0.326
+R330 in1.n63 in1.n51 0.326
+R331 in1.n45 in1.n23 0.326
+R332 in1.n44 in1.n24 0.326
+R333 in1.n43 in1.n25 0.326
+R334 in1.n42 in1.n26 0.326
+R335 in1.n41 in1.n27 0.326
+R336 in1.n40 in1.n28 0.326
+R337 in1.n22 in1.n0 0.326
+R338 in1.n21 in1.n1 0.326
+R339 in1.n20 in1.n2 0.326
+R340 in1.n19 in1.n3 0.326
+R341 in1.n18 in1.n4 0.326
+R342 in1.n17 in1.n5 0.326
+R343 in1.n189 digpotp_0.tg_0.a 0.318
+R344 in1.n161 digpotp_0.tg_6.a 0.318
+R345 in1.n162 digpotp_0.tg_5.a 0.318
+R346 in1.n163 digpotp_0.tg_4.a 0.318
+R347 in1.n164 digpotp_0.tg_3.a 0.318
+R348 in1.n165 digpotp_0.tg_2.a 0.318
+R349 digpotp_0.tg_1.a in1.n190 0.318
+R350 in1.n177 in1.n176 0.228
+R351 in1.n178 in1.n175 0.228
+R352 in1.n179 in1.n174 0.228
+R353 in1.n180 in1.n173 0.228
+R354 in1.n181 in1.n172 0.228
+R355 in1.n149 in1.n148 0.228
+R356 in1.n150 in1.n147 0.228
+R357 in1.n151 in1.n146 0.228
+R358 in1.n152 in1.n145 0.228
+R359 in1.n153 in1.n144 0.228
+R360 in1.n126 in1.n125 0.228
+R361 in1.n127 in1.n124 0.228
+R362 in1.n128 in1.n123 0.228
+R363 in1.n129 in1.n122 0.228
+R364 in1.n130 in1.n121 0.228
+R365 in1.n103 in1.n102 0.228
+R366 in1.n104 in1.n101 0.228
+R367 in1.n105 in1.n100 0.228
+R368 in1.n106 in1.n99 0.228
+R369 in1.n107 in1.n98 0.228
+R370 in1.n80 in1.n79 0.228
+R371 in1.n81 in1.n78 0.228
+R372 in1.n82 in1.n77 0.228
+R373 in1.n83 in1.n76 0.228
+R374 in1.n84 in1.n75 0.228
+R375 in1.n57 in1.n56 0.228
+R376 in1.n58 in1.n55 0.228
+R377 in1.n59 in1.n54 0.228
+R378 in1.n60 in1.n53 0.228
+R379 in1.n61 in1.n52 0.228
+R380 in1.n34 in1.n33 0.228
+R381 in1.n35 in1.n32 0.228
+R382 in1.n36 in1.n31 0.228
+R383 in1.n37 in1.n30 0.228
+R384 in1.n38 in1.n29 0.228
+R385 in1.n11 in1.n10 0.228
+R386 in1.n12 in1.n9 0.228
+R387 in1.n13 in1.n8 0.228
+R388 in1.n14 in1.n7 0.228
+R389 in1.n15 in1.n6 0.228
+R390 in1.n178 in1.n177 0.171
+R391 in1.n179 in1.n178 0.171
+R392 in1.n180 in1.n179 0.171
+R393 in1.n181 in1.n180 0.171
+R394 in1.n182 in1.n181 0.171
+R395 in1.n188 in1.n187 0.171
+R396 in1.n187 in1.n186 0.171
+R397 in1.n186 in1.n185 0.171
+R398 in1.n185 in1.n184 0.171
+R399 in1.n184 in1.n183 0.171
+R400 in1.n150 in1.n149 0.171
+R401 in1.n151 in1.n150 0.171
+R402 in1.n152 in1.n151 0.171
+R403 in1.n153 in1.n152 0.171
+R404 in1.n154 in1.n153 0.171
+R405 in1.n160 in1.n159 0.171
+R406 in1.n159 in1.n158 0.171
+R407 in1.n158 in1.n157 0.171
+R408 in1.n157 in1.n156 0.171
+R409 in1.n156 in1.n155 0.171
+R410 in1.n127 in1.n126 0.171
+R411 in1.n128 in1.n127 0.171
+R412 in1.n129 in1.n128 0.171
+R413 in1.n130 in1.n129 0.171
+R414 in1.n131 in1.n130 0.171
+R415 in1.n137 in1.n136 0.171
+R416 in1.n136 in1.n135 0.171
+R417 in1.n135 in1.n134 0.171
+R418 in1.n134 in1.n133 0.171
+R419 in1.n133 in1.n132 0.171
+R420 in1.n104 in1.n103 0.171
+R421 in1.n105 in1.n104 0.171
+R422 in1.n106 in1.n105 0.171
+R423 in1.n107 in1.n106 0.171
+R424 in1.n108 in1.n107 0.171
+R425 in1.n114 in1.n113 0.171
+R426 in1.n113 in1.n112 0.171
+R427 in1.n112 in1.n111 0.171
+R428 in1.n111 in1.n110 0.171
+R429 in1.n110 in1.n109 0.171
+R430 in1.n81 in1.n80 0.171
+R431 in1.n82 in1.n81 0.171
+R432 in1.n83 in1.n82 0.171
+R433 in1.n84 in1.n83 0.171
+R434 in1.n85 in1.n84 0.171
+R435 in1.n91 in1.n90 0.171
+R436 in1.n90 in1.n89 0.171
+R437 in1.n89 in1.n88 0.171
+R438 in1.n88 in1.n87 0.171
+R439 in1.n87 in1.n86 0.171
+R440 in1.n58 in1.n57 0.171
+R441 in1.n59 in1.n58 0.171
+R442 in1.n60 in1.n59 0.171
+R443 in1.n61 in1.n60 0.171
+R444 in1.n62 in1.n61 0.171
+R445 in1.n68 in1.n67 0.171
+R446 in1.n67 in1.n66 0.171
+R447 in1.n66 in1.n65 0.171
+R448 in1.n65 in1.n64 0.171
+R449 in1.n64 in1.n63 0.171
+R450 in1.n35 in1.n34 0.171
+R451 in1.n36 in1.n35 0.171
+R452 in1.n37 in1.n36 0.171
+R453 in1.n38 in1.n37 0.171
+R454 in1.n39 in1.n38 0.171
+R455 in1.n45 in1.n44 0.171
+R456 in1.n44 in1.n43 0.171
+R457 in1.n43 in1.n42 0.171
+R458 in1.n42 in1.n41 0.171
+R459 in1.n41 in1.n40 0.171
+R460 in1.n12 in1.n11 0.171
+R461 in1.n13 in1.n12 0.171
+R462 in1.n14 in1.n13 0.171
+R463 in1.n15 in1.n14 0.171
+R464 in1.n16 in1.n15 0.171
+R465 in1.n22 in1.n21 0.171
+R466 in1.n21 in1.n20 0.171
+R467 in1.n20 in1.n19 0.171
+R468 in1.n19 in1.n18 0.171
+R469 in1.n18 in1.n17 0.171
+R470 in1.n189 digpotp_0.n0 0.162
+R471 vd.n20 vd.n13 5396.47
+R472 vd.n17 vd.n13 5396.47
+R473 vd.n7 vd.n0 3352.94
+R474 vd.n4 vd.n0 3352.94
+R475 vd.n36 vd.n32 2897.65
+R476 vd.n36 vd.n33 2897.65
+R477 vd.n19 vd.n18 575.623
+R478 vd.n21 vd.n19 575.623
+R479 vd.n22 vd.n21 391.162
+R480 vd.n18 vd.n14 391.162
+R481 vd.n6 vd.n5 357.646
+R482 vd.n8 vd.n6 357.646
+R483 vd.n52 vd.n49 346.503
+R484 vd.n83 vd.n80 346.503
+R485 vd.n110 vd.n107 346.503
+R486 vd.n137 vd.n134 346.503
+R487 vd.n164 vd.n161 346.503
+R488 vd.n191 vd.n188 346.503
+R489 vd.n218 vd.n215 346.503
+R490 vd.n241 vd.n238 346.503
+R491 vd.n35 vd.n34 309.082
+R492 vd.n35 vd.n27 309.082
+R493 vd.t15 vd.t114 236.127
+R494 vd.t15 vd.t85 236.127
+R495 vd.n9 vd.n8 223.632
+R496 vd.n5 vd.n1 223.632
+R497 vd.n32 vd.n29 199.02
+R498 vd.n33 vd.n28 199.02
+R499 vd.n38 vd.n27 187.122
+R500 vd.n34 vd.n31 187.122
+R501 vd.n23 vd.n22 166.682
+R502 vd.n23 vd.n14 166.682
+R503 vd.t93 vd.n52 144.518
+R504 vd.t19 vd.n83 144.518
+R505 vd.t95 vd.n110 144.518
+R506 vd.t13 vd.n137 144.518
+R507 vd.t91 vd.n164 144.518
+R508 vd.t9 vd.n191 144.518
+R509 vd.t0 vd.n218 144.518
+R510 vd.t29 vd.n241 144.518
+R511 vd.t4 vd.t25 126.47
+R512 vd.t37 vd.t79 126.47
+R513 vd.n7 vd.n2 124.807
+R514 vd.n4 vd.n3 124.807
+R515 vd.t15 vd.n9 121.098
+R516 vd.t15 vd.n1 121.098
+R517 vd.n59 vd.n58 113.317
+R518 vd.n55 vd.n54 113.317
+R519 vd.n86 vd.n85 113.317
+R520 vd.n69 vd.n68 113.317
+R521 vd.n113 vd.n112 113.317
+R522 vd.n96 vd.n95 113.317
+R523 vd.n140 vd.n139 113.317
+R524 vd.n123 vd.n122 113.317
+R525 vd.n167 vd.n166 113.317
+R526 vd.n150 vd.n149 113.317
+R527 vd.n194 vd.n193 113.317
+R528 vd.n177 vd.n176 113.317
+R529 vd.n221 vd.n220 113.317
+R530 vd.n204 vd.n203 113.317
+R531 vd.n248 vd.n247 113.317
+R532 vd.n244 vd.n243 113.317
+R533 vd.t58 vd.n41 107.026
+R534 vd.t125 vd.n72 107.026
+R535 vd.t62 vd.n99 107.026
+R536 vd.t50 vd.n126 107.026
+R537 vd.t78 vd.n153 107.026
+R538 vd.t7 vd.n180 107.026
+R539 vd.t121 vd.n207 107.026
+R540 vd.t90 vd.n230 107.026
+R541 vd.n49 vd.t82 107.023
+R542 vd.n80 vd.t69 107.023
+R543 vd.n107 vd.t127 107.023
+R544 vd.n134 vd.t46 107.023
+R545 vd.n161 vd.t8 107.023
+R546 vd.n188 vd.t36 107.023
+R547 vd.n215 vd.t71 107.023
+R548 vd.n238 vd.t77 107.023
+R549 vd.n37 vd.n29 105.65
+R550 vd.n37 vd.n28 105.65
+R551 vd.n2 vd.t114 89.697
+R552 vd.n3 vd.t85 89.697
+R553 vd.n20 vd.n15 67.367
+R554 vd.n17 vd.n16 67.367
+R555 vd.t105 vd.t58 63.421
+R556 vd.t106 vd.t105 63.421
+R557 vd.t107 vd.t106 63.421
+R558 vd.t124 vd.t107 63.421
+R559 vd.t103 vd.t124 63.421
+R560 vd.t39 vd.t87 63.421
+R561 vd.t104 vd.t39 63.421
+R562 vd.t2 vd.t104 63.421
+R563 vd.t122 vd.t2 63.421
+R564 vd.t82 vd.t122 63.421
+R565 vd.t76 vd.t125 63.421
+R566 vd.t74 vd.t76 63.421
+R567 vd.t66 vd.t74 63.421
+R568 vd.t83 vd.t66 63.421
+R569 vd.t18 vd.t83 63.421
+R570 vd.t73 vd.t63 63.421
+R571 vd.t75 vd.t73 63.421
+R572 vd.t68 vd.t75 63.421
+R573 vd.t65 vd.t68 63.421
+R574 vd.t69 vd.t65 63.421
+R575 vd.t126 vd.t62 63.421
+R576 vd.t41 vd.t126 63.421
+R577 vd.t110 vd.t41 63.421
+R578 vd.t21 vd.t110 63.421
+R579 vd.t61 vd.t21 63.421
+R580 vd.t112 vd.t98 63.421
+R581 vd.t108 vd.t112 63.421
+R582 vd.t31 vd.t108 63.421
+R583 vd.t64 vd.t31 63.421
+R584 vd.t127 vd.t64 63.421
+R585 vd.t45 vd.t50 63.421
+R586 vd.t55 vd.t45 63.421
+R587 vd.t52 vd.t55 63.421
+R588 vd.t49 vd.t52 63.421
+R589 vd.t47 vd.t49 63.421
+R590 vd.t51 vd.t54 63.421
+R591 vd.t48 vd.t51 63.421
+R592 vd.t44 vd.t48 63.421
+R593 vd.t53 vd.t44 63.421
+R594 vd.t46 vd.t53 63.421
+R595 vd.t11 vd.t78 63.421
+R596 vd.t43 vd.t11 63.421
+R597 vd.t113 vd.t43 63.421
+R598 vd.t111 vd.t113 63.421
+R599 vd.t99 vd.t111 63.421
+R600 vd.t129 vd.t100 63.421
+R601 vd.t40 vd.t129 63.421
+R602 vd.t42 vd.t40 63.421
+R603 vd.t109 vd.t42 63.421
+R604 vd.t8 vd.t109 63.421
+R605 vd.t89 vd.t7 63.421
+R606 vd.t97 vd.t89 63.421
+R607 vd.t22 vd.t97 63.421
+R608 vd.t27 vd.t22 63.421
+R609 vd.t88 vd.t27 63.421
+R610 vd.t102 vd.t32 63.421
+R611 vd.t84 vd.t102 63.421
+R612 vd.t3 vd.t84 63.421
+R613 vd.t101 vd.t3 63.421
+R614 vd.t36 vd.t101 63.421
+R615 vd.t6 vd.t121 63.421
+R616 vd.t123 vd.t6 63.421
+R617 vd.t72 vd.t123 63.421
+R618 vd.t60 vd.t72 63.421
+R619 vd.t12 vd.t60 63.421
+R620 vd.t70 vd.t28 63.421
+R621 vd.t67 vd.t70 63.421
+R622 vd.t59 vd.t67 63.421
+R623 vd.t35 vd.t59 63.421
+R624 vd.t71 vd.t35 63.421
+R625 vd.t128 vd.t90 63.421
+R626 vd.t17 vd.t128 63.421
+R627 vd.t24 vd.t17 63.421
+R628 vd.t120 vd.t24 63.421
+R629 vd.t81 vd.t120 63.421
+R630 vd.t119 vd.t117 63.421
+R631 vd.t116 vd.t119 63.421
+R632 vd.t118 vd.t116 63.421
+R633 vd.t23 vd.t118 63.421
+R634 vd.t77 vd.t23 63.421
+R635 vd.n23 vd.t25 63.235
+R636 vd.n23 vd.t79 63.235
+R637 vd.n15 vd.t4 50.492
+R638 vd.n16 vd.t37 50.492
+R639 vd.n46 vd.t103 31.71
+R640 vd.t87 vd.n46 31.71
+R641 vd.n77 vd.t18 31.71
+R642 vd.t63 vd.n77 31.71
+R643 vd.n104 vd.t61 31.71
+R644 vd.t98 vd.n104 31.71
+R645 vd.n131 vd.t47 31.71
+R646 vd.t54 vd.n131 31.71
+R647 vd.n158 vd.t99 31.71
+R648 vd.t100 vd.n158 31.71
+R649 vd.n185 vd.t88 31.71
+R650 vd.t32 vd.n185 31.71
+R651 vd.n212 vd.t12 31.71
+R652 vd.t28 vd.n212 31.71
+R653 vd.n235 vd.t81 31.71
+R654 vd.t117 vd.n235 31.71
+R655 vd.n30 vd.t34 10.53
+R656 vd.n66 vd.t94 10.154
+R657 vd.n93 vd.t20 10.154
+R658 vd.n120 vd.t96 10.154
+R659 vd.n147 vd.t14 10.154
+R660 vd.n174 vd.t92 10.154
+R661 vd.n201 vd.t10 10.154
+R662 vd.n228 vd.t1 10.154
+R663 vd.n255 vd.t30 10.154
+R664 vd.n30 vd.t57 9.724
+R665 vd.n26 vd.t86 9.724
+R666 vd.n25 vd.t115 9.521
+R667 vd.n25 vd.t16 9.521
+R668 vd.n29 vd.t33 8.109
+R669 vd.n28 vd.t56 8.109
+R670 vd.n264 ota_0.vd 8.032
+R671 vd.n11 vd.t5 4.754
+R672 vd.n12 vd.t38 4.294
+R673 vd.n10 vd.t26 3.808
+R674 vd.n10 vd.t80 3.808
+R675 vd.n24 vd.n23 2.738
+R676 vd.n263 vd.n262 2.272
+R677 vd.n260 vd.n259 2.102
+R678 vd.n262 vd.n261 2.102
+R679 vd.n258 vd.n257 2.045
+R680 vd.n259 vd.n258 2.045
+R681 vd.n261 vd.n260 2.045
+R682 vd.n257 vd.n256 1.931
+R683 vd.n26 vd.n25 1.009
+R684 vd.n24 vd.n12 0.649
+R685 ota_0.vd vd.n39 0.568
+R686 vd.n39 vd.n26 0.542
+R687 vd.n66 vd.n65 0.492
+R688 vd.n93 vd.n92 0.492
+R689 vd.n120 vd.n119 0.492
+R690 vd.n147 vd.n146 0.492
+R691 vd.n174 vd.n173 0.492
+R692 vd.n201 vd.n200 0.492
+R693 vd.n228 vd.n227 0.492
+R694 vd.n255 vd.n254 0.492
+R695 vd.n11 vd.n10 0.486
+R696 vd.n12 vd.n11 0.46
+R697 digpotp_0.vd vd 0.416
+R698 vd.t15 vd.n24 0.322
+R699 vd.n264 vd.n263 0.306
+R700 vd.n31 vd.n30 0.287
+R701 vd.n263 vd.n66 0.221
+R702 vd.n262 vd.n93 0.221
+R703 vd.n261 vd.n120 0.221
+R704 vd.n260 vd.n147 0.221
+R705 vd.n259 vd.n174 0.221
+R706 vd.n258 vd.n201 0.221
+R707 vd.n257 vd.n228 0.221
+R708 vd.n256 vd.n255 0.221
+R709 digpotp_0.vd vd.n264 0.195
+R710 vd.n39 vd.n38 0.189
+R711 vd.n22 vd.n15 0.184
+R712 vd.n16 vd.n14 0.184
+R713 vd.n9 vd.n2 0.161
+R714 vd.n3 vd.n1 0.161
+R715 vd.n38 vd.n37 0.101
+R716 vd.n37 vd.n31 0.101
+R717 vd.n63 vd.n56 0.066
+R718 vd.n90 vd.n70 0.066
+R719 vd.n117 vd.n97 0.066
+R720 vd.n144 vd.n124 0.066
+R721 vd.n171 vd.n151 0.066
+R722 vd.n198 vd.n178 0.066
+R723 vd.n225 vd.n205 0.066
+R724 vd.n252 vd.n245 0.066
+R725 vd.n61 vd.n60 0.066
+R726 vd.n88 vd.n87 0.066
+R727 vd.n115 vd.n114 0.066
+R728 vd.n142 vd.n141 0.066
+R729 vd.n169 vd.n168 0.066
+R730 vd.n196 vd.n195 0.066
+R731 vd.n223 vd.n222 0.066
+R732 vd.n250 vd.n249 0.066
+R733 vd.n60 vd.n59 0.066
+R734 vd.n56 vd.n55 0.066
+R735 vd.n87 vd.n86 0.066
+R736 vd.n70 vd.n69 0.066
+R737 vd.n114 vd.n113 0.066
+R738 vd.n97 vd.n96 0.066
+R739 vd.n141 vd.n140 0.066
+R740 vd.n124 vd.n123 0.066
+R741 vd.n168 vd.n167 0.066
+R742 vd.n151 vd.n150 0.066
+R743 vd.n195 vd.n194 0.066
+R744 vd.n178 vd.n177 0.066
+R745 vd.n222 vd.n221 0.066
+R746 vd.n205 vd.n204 0.066
+R747 vd.n249 vd.n248 0.066
+R748 vd.n245 vd.n244 0.066
+R749 vd.n263 digpotp_0.tg_0.vd 0.062
+R750 vd.n262 digpotp_0.tg_1.vd 0.062
+R751 vd.n261 digpotp_0.tg_2.vd 0.062
+R752 vd.n260 digpotp_0.tg_3.vd 0.062
+R753 vd.n259 digpotp_0.tg_4.vd 0.062
+R754 vd.n258 digpotp_0.tg_5.vd 0.062
+R755 vd.n257 digpotp_0.tg_6.vd 0.062
+R756 vd.n256 vd 0.062
+R757 ota_0.vd vd.t15 0.037
+R758 vd.n58 vd.n57 0.034
+R759 vd.n54 vd.n53 0.034
+R760 vd.n53 vd.t93 0.034
+R761 vd.n85 vd.n84 0.034
+R762 vd.n84 vd.t19 0.034
+R763 vd.n68 vd.n67 0.034
+R764 vd.n112 vd.n111 0.034
+R765 vd.n111 vd.t95 0.034
+R766 vd.n95 vd.n94 0.034
+R767 vd.n139 vd.n138 0.034
+R768 vd.n138 vd.t13 0.034
+R769 vd.n122 vd.n121 0.034
+R770 vd.n166 vd.n165 0.034
+R771 vd.n165 vd.t91 0.034
+R772 vd.n149 vd.n148 0.034
+R773 vd.n193 vd.n192 0.034
+R774 vd.n192 vd.t9 0.034
+R775 vd.n176 vd.n175 0.034
+R776 vd.n220 vd.n219 0.034
+R777 vd.n219 vd.t0 0.034
+R778 vd.n203 vd.n202 0.034
+R779 vd.n247 vd.n246 0.034
+R780 vd.n243 vd.n242 0.034
+R781 vd.n242 vd.t29 0.034
+R782 vd.n36 vd.n35 0.008
+R783 vd.n37 vd.n36 0.008
+R784 vd.n51 vd.n50 0.006
+R785 vd.n52 vd.n51 0.006
+R786 vd.n82 vd.n81 0.006
+R787 vd.n83 vd.n82 0.006
+R788 vd.n109 vd.n108 0.006
+R789 vd.n110 vd.n109 0.006
+R790 vd.n136 vd.n135 0.006
+R791 vd.n137 vd.n136 0.006
+R792 vd.n163 vd.n162 0.006
+R793 vd.n164 vd.n163 0.006
+R794 vd.n190 vd.n189 0.006
+R795 vd.n191 vd.n190 0.006
+R796 vd.n217 vd.n216 0.006
+R797 vd.n218 vd.n217 0.006
+R798 vd.n240 vd.n239 0.006
+R799 vd.n241 vd.n240 0.006
+R800 vd.n5 vd.n4 0.006
+R801 vd.n8 vd.n7 0.006
+R802 vd.n34 vd.n33 0.006
+R803 vd.n32 vd.n27 0.006
+R804 vd.n6 vd.n0 0.005
+R805 vd.t15 vd.n0 0.005
+R806 vd.n19 vd.n13 0.004
+R807 vd.n23 vd.n13 0.004
+R808 vd.n48 vd.n47 0.004
+R809 vd.n49 vd.n48 0.004
+R810 vd.n43 vd.n42 0.004
+R811 vd.n46 vd.n43 0.004
+R812 vd.n41 vd.n40 0.004
+R813 vd.n45 vd.n44 0.004
+R814 vd.n46 vd.n45 0.004
+R815 vd.n79 vd.n78 0.004
+R816 vd.n80 vd.n79 0.004
+R817 vd.n74 vd.n73 0.004
+R818 vd.n77 vd.n74 0.004
+R819 vd.n72 vd.n71 0.004
+R820 vd.n76 vd.n75 0.004
+R821 vd.n77 vd.n76 0.004
+R822 vd.n106 vd.n105 0.004
+R823 vd.n107 vd.n106 0.004
+R824 vd.n101 vd.n100 0.004
+R825 vd.n104 vd.n101 0.004
+R826 vd.n99 vd.n98 0.004
+R827 vd.n103 vd.n102 0.004
+R828 vd.n104 vd.n103 0.004
+R829 vd.n133 vd.n132 0.004
+R830 vd.n134 vd.n133 0.004
+R831 vd.n128 vd.n127 0.004
+R832 vd.n131 vd.n128 0.004
+R833 vd.n126 vd.n125 0.004
+R834 vd.n130 vd.n129 0.004
+R835 vd.n131 vd.n130 0.004
+R836 vd.n160 vd.n159 0.004
+R837 vd.n161 vd.n160 0.004
+R838 vd.n155 vd.n154 0.004
+R839 vd.n158 vd.n155 0.004
+R840 vd.n153 vd.n152 0.004
+R841 vd.n157 vd.n156 0.004
+R842 vd.n158 vd.n157 0.004
+R843 vd.n187 vd.n186 0.004
+R844 vd.n188 vd.n187 0.004
+R845 vd.n182 vd.n181 0.004
+R846 vd.n185 vd.n182 0.004
+R847 vd.n180 vd.n179 0.004
+R848 vd.n184 vd.n183 0.004
+R849 vd.n185 vd.n184 0.004
+R850 vd.n214 vd.n213 0.004
+R851 vd.n215 vd.n214 0.004
+R852 vd.n209 vd.n208 0.004
+R853 vd.n212 vd.n209 0.004
+R854 vd.n207 vd.n206 0.004
+R855 vd.n211 vd.n210 0.004
+R856 vd.n212 vd.n211 0.004
+R857 vd.n237 vd.n236 0.004
+R858 vd.n238 vd.n237 0.004
+R859 vd.n232 vd.n231 0.004
+R860 vd.n235 vd.n232 0.004
+R861 vd.n230 vd.n229 0.004
+R862 vd.n234 vd.n233 0.004
+R863 vd.n235 vd.n234 0.004
+R864 vd.n18 vd.n17 0.003
+R865 vd.n21 vd.n20 0.003
+R866 vd.n64 vd.n63 0.001
+R867 vd.n91 vd.n90 0.001
+R868 vd.n118 vd.n117 0.001
+R869 vd.n145 vd.n144 0.001
+R870 vd.n172 vd.n171 0.001
+R871 vd.n199 vd.n198 0.001
+R872 vd.n226 vd.n225 0.001
+R873 vd.n253 vd.n252 0.001
+R874 vd.n65 vd.n64 0.001
+R875 vd.n92 vd.n91 0.001
+R876 vd.n119 vd.n118 0.001
+R877 vd.n146 vd.n145 0.001
+R878 vd.n173 vd.n172 0.001
+R879 vd.n200 vd.n199 0.001
+R880 vd.n227 vd.n226 0.001
+R881 vd.n254 vd.n253 0.001
+R882 vd.n62 vd.n61 0.001
+R883 vd.n89 vd.n88 0.001
+R884 vd.n116 vd.n115 0.001
+R885 vd.n143 vd.n142 0.001
+R886 vd.n170 vd.n169 0.001
+R887 vd.n197 vd.n196 0.001
+R888 vd.n224 vd.n223 0.001
+R889 vd.n251 vd.n250 0.001
+R890 vd.n63 vd.n62 0.001
+R891 vd.n90 vd.n89 0.001
+R892 vd.n117 vd.n116 0.001
+R893 vd.n144 vd.n143 0.001
+R894 vd.n171 vd.n170 0.001
+R895 vd.n198 vd.n197 0.001
+R896 vd.n225 vd.n224 0.001
+R897 vd.n252 vd.n251 0.001
+R898 digpotp_0.tg_2.nctrl.n14 digpotp_0.tg_2.nctrl.t6 894.913
+R899 digpotp_0.tg_2.nctrl.n14 digpotp_0.tg_2.nctrl.t12 837.073
+R900 digpotp_0.tg_2.nctrl.n11 digpotp_0.tg_2.nctrl.t3 837.073
+R901 digpotp_0.tg_2.nctrl.n8 digpotp_0.tg_2.nctrl.t13 837.073
+R902 digpotp_0.tg_2.nctrl.n5 digpotp_0.tg_2.nctrl.t4 837.073
+R903 digpotp_0.tg_2.nctrl.n2 digpotp_0.tg_2.nctrl.t8 837.073
+R904 digpotp_0.tg_2.nctrl.n0 digpotp_0.tg_2.nctrl.t11 837.073
+R905 digpotp_0.tg_2.nctrl.n13 digpotp_0.tg_2.nctrl.t9 837.073
+R906 digpotp_0.tg_2.nctrl.n10 digpotp_0.tg_2.nctrl.t2 837.073
+R907 digpotp_0.tg_2.nctrl.n7 digpotp_0.tg_2.nctrl.t7 837.073
+R908 digpotp_0.tg_2.nctrl.n4 digpotp_0.tg_2.nctrl.t10 837.073
+R909 digpotp_0.tg_2.nctrl.n1 digpotp_0.tg_2.nctrl.t5 837.073
+R910 digpotp_0.tg_2.nctrl.n2 digpotp_0.tg_2.nctrl.n1 57.84
+R911 digpotp_0.tg_2.nctrl.n5 digpotp_0.tg_2.nctrl.n4 57.84
+R912 digpotp_0.tg_2.nctrl.n8 digpotp_0.tg_2.nctrl.n7 57.84
+R913 digpotp_0.tg_2.nctrl.n11 digpotp_0.tg_2.nctrl.n10 57.84
+R914 digpotp_0.tg_2.nctrl.n14 digpotp_0.tg_2.nctrl.n13 57.84
+R915 digpotp_0.tg_2.nctrl.n16 digpotp_0.tg_2.nctrl.t1 18.051
+R916 digpotp_0.tg_2.nctrl.n3 digpotp_0.tg_2.nctrl.n0 13.632
+R917 digpotp_0.tg_2.nctrl.n3 digpotp_0.tg_2.nctrl.n2 13.414
+R918 digpotp_0.tg_2.nctrl.n6 digpotp_0.tg_2.nctrl.n5 13.414
+R919 digpotp_0.tg_2.nctrl.n9 digpotp_0.tg_2.nctrl.n8 13.414
+R920 digpotp_0.tg_2.nctrl.n12 digpotp_0.tg_2.nctrl.n11 13.414
+R921 digpotp_0.tg_2.nctrl.n15 digpotp_0.tg_2.nctrl.n14 13.414
+R922 digpotp_0.tg_2.nctrl.n16 digpotp_0.tg_2.nctrl.t0 10.118
+R923 digpotp_0.tg_2.nctrl digpotp_0.tg_2.nctrl.n16 0.699
+R924 digpotp_0.tg_2.nctrl digpotp_0.tg_2.nctrl.n15 0.618
+R925 digpotp_0.tg_2.nctrl.n6 digpotp_0.tg_2.nctrl.n3 0.218
+R926 digpotp_0.tg_2.nctrl.n9 digpotp_0.tg_2.nctrl.n6 0.218
+R927 digpotp_0.tg_2.nctrl.n12 digpotp_0.tg_2.nctrl.n9 0.218
+R928 digpotp_0.tg_2.nctrl.n15 digpotp_0.tg_2.nctrl.n12 0.218
+R929 digpotp_0.tg_2.b.n23 digpotp_0.tg_2.b.t1 10.506
+R930 digpotp_0.tg_2.b.n11 digpotp_0.tg_2.b.t4 6.501
+R931 digpotp_0.tg_2.b.n11 digpotp_0.tg_2.b.t10 6.501
+R932 digpotp_0.tg_2.b.n12 digpotp_0.tg_2.b.t7 6.501
+R933 digpotp_0.tg_2.b.n12 digpotp_0.tg_2.b.t5 6.501
+R934 digpotp_0.tg_2.b.n13 digpotp_0.tg_2.b.t11 6.501
+R935 digpotp_0.tg_2.b.n13 digpotp_0.tg_2.b.t8 6.501
+R936 digpotp_0.tg_2.b.n14 digpotp_0.tg_2.b.t2 6.501
+R937 digpotp_0.tg_2.b.n14 digpotp_0.tg_2.b.t13 6.501
+R938 digpotp_0.tg_2.b.n15 digpotp_0.tg_2.b.t12 6.501
+R939 digpotp_0.tg_2.b.n15 digpotp_0.tg_2.b.t6 6.501
+R940 digpotp_0.tg_2.b.n16 digpotp_0.tg_2.b.t3 6.501
+R941 digpotp_0.tg_2.b.n16 digpotp_0.tg_2.b.t9 6.501
+R942 digpotp_0.tg_2.b.n5 digpotp_0.tg_2.b.t20 4.585
+R943 digpotp_0.tg_2.b.n10 digpotp_0.tg_2.b.t16 4.362
+R944 digpotp_0.tg_2.b.n4 digpotp_0.tg_2.b.t23 3.96
+R945 digpotp_0.tg_2.b.n4 digpotp_0.tg_2.b.t14 3.96
+R946 digpotp_0.tg_2.b.n3 digpotp_0.tg_2.b.t21 3.96
+R947 digpotp_0.tg_2.b.n3 digpotp_0.tg_2.b.t22 3.96
+R948 digpotp_0.tg_2.b.n2 digpotp_0.tg_2.b.t19 3.96
+R949 digpotp_0.tg_2.b.n2 digpotp_0.tg_2.b.t17 3.96
+R950 digpotp_0.tg_2.b.n1 digpotp_0.tg_2.b.t15 3.96
+R951 digpotp_0.tg_2.b.n1 digpotp_0.tg_2.b.t24 3.96
+R952 digpotp_0.tg_2.b.n0 digpotp_0.tg_2.b.t18 3.96
+R953 digpotp_0.tg_2.b.n0 digpotp_0.tg_2.b.t0 3.96
+R954 digpotp_0.tg_2.b.n22 digpotp_0.tg_2.b.n10 1.068
+R955 digpotp_0.tg_2.b.n17 digpotp_0.tg_2.b.n16 0.595
+R956 digpotp_0.tg_2.b.n5 digpotp_0.tg_2.b.n4 0.402
+R957 digpotp_0.tg_2.b.n6 digpotp_0.tg_2.b.n3 0.402
+R958 digpotp_0.tg_2.b.n7 digpotp_0.tg_2.b.n2 0.402
+R959 digpotp_0.tg_2.b.n8 digpotp_0.tg_2.b.n1 0.402
+R960 digpotp_0.tg_2.b.n9 digpotp_0.tg_2.b.n0 0.402
+R961 digpotp_0.tg_2.b.n21 digpotp_0.tg_2.b.n11 0.377
+R962 digpotp_0.tg_2.b.n20 digpotp_0.tg_2.b.n12 0.377
+R963 digpotp_0.tg_2.b.n19 digpotp_0.tg_2.b.n13 0.377
+R964 digpotp_0.tg_2.b.n18 digpotp_0.tg_2.b.n14 0.377
+R965 digpotp_0.tg_2.b.n17 digpotp_0.tg_2.b.n15 0.377
+R966 digpotp_0.tg_2.b.n22 digpotp_0.tg_2.b.n21 0.275
+R967 digpotp_0.tg_2.b.n10 digpotp_0.tg_2.b.n9 0.218
+R968 digpotp_0.tg_2.b.n9 digpotp_0.tg_2.b.n8 0.218
+R969 digpotp_0.tg_2.b.n8 digpotp_0.tg_2.b.n7 0.218
+R970 digpotp_0.tg_2.b.n7 digpotp_0.tg_2.b.n6 0.218
+R971 digpotp_0.tg_2.b.n6 digpotp_0.tg_2.b.n5 0.218
+R972 digpotp_0.tg_2.b.n21 digpotp_0.tg_2.b.n20 0.218
+R973 digpotp_0.tg_2.b.n20 digpotp_0.tg_2.b.n19 0.218
+R974 digpotp_0.tg_2.b.n19 digpotp_0.tg_2.b.n18 0.218
+R975 digpotp_0.tg_2.b.n18 digpotp_0.tg_2.b.n17 0.218
+R976 digpotp_0.tg_2.b.n23 digpotp_0.tg_2.b.n22 0.118
+R977 digpotp_0.tg_2.b digpotp_0.tg_2.b.n23 0.062
+R978 digpotp_0.tg_6.nctrl.n14 digpotp_0.tg_6.nctrl.t12 894.913
+R979 digpotp_0.tg_6.nctrl.n14 digpotp_0.tg_6.nctrl.t6 837.073
+R980 digpotp_0.tg_6.nctrl.n11 digpotp_0.tg_6.nctrl.t10 837.073
+R981 digpotp_0.tg_6.nctrl.n8 digpotp_0.tg_6.nctrl.t5 837.073
+R982 digpotp_0.tg_6.nctrl.n5 digpotp_0.tg_6.nctrl.t9 837.073
+R983 digpotp_0.tg_6.nctrl.n2 digpotp_0.tg_6.nctrl.t4 837.073
+R984 digpotp_0.tg_6.nctrl.n0 digpotp_0.tg_6.nctrl.t8 837.073
+R985 digpotp_0.tg_6.nctrl.n13 digpotp_0.tg_6.nctrl.t3 837.073
+R986 digpotp_0.tg_6.nctrl.n10 digpotp_0.tg_6.nctrl.t7 837.073
+R987 digpotp_0.tg_6.nctrl.n7 digpotp_0.tg_6.nctrl.t11 837.073
+R988 digpotp_0.tg_6.nctrl.n4 digpotp_0.tg_6.nctrl.t2 837.073
+R989 digpotp_0.tg_6.nctrl.n1 digpotp_0.tg_6.nctrl.t13 837.073
+R990 digpotp_0.tg_6.nctrl.n2 digpotp_0.tg_6.nctrl.n1 57.84
+R991 digpotp_0.tg_6.nctrl.n5 digpotp_0.tg_6.nctrl.n4 57.84
+R992 digpotp_0.tg_6.nctrl.n8 digpotp_0.tg_6.nctrl.n7 57.84
+R993 digpotp_0.tg_6.nctrl.n11 digpotp_0.tg_6.nctrl.n10 57.84
+R994 digpotp_0.tg_6.nctrl.n14 digpotp_0.tg_6.nctrl.n13 57.84
+R995 digpotp_0.tg_6.nctrl.n16 digpotp_0.tg_6.nctrl.t1 18.051
+R996 digpotp_0.tg_6.nctrl.n3 digpotp_0.tg_6.nctrl.n0 13.632
+R997 digpotp_0.tg_6.nctrl.n3 digpotp_0.tg_6.nctrl.n2 13.414
+R998 digpotp_0.tg_6.nctrl.n6 digpotp_0.tg_6.nctrl.n5 13.414
+R999 digpotp_0.tg_6.nctrl.n9 digpotp_0.tg_6.nctrl.n8 13.414
+R1000 digpotp_0.tg_6.nctrl.n12 digpotp_0.tg_6.nctrl.n11 13.414
+R1001 digpotp_0.tg_6.nctrl.n15 digpotp_0.tg_6.nctrl.n14 13.414
+R1002 digpotp_0.tg_6.nctrl.n16 digpotp_0.tg_6.nctrl.t0 10.118
+R1003 digpotp_0.tg_6.nctrl digpotp_0.tg_6.nctrl.n16 0.699
+R1004 digpotp_0.tg_6.nctrl digpotp_0.tg_6.nctrl.n15 0.618
+R1005 digpotp_0.tg_6.nctrl.n6 digpotp_0.tg_6.nctrl.n3 0.218
+R1006 digpotp_0.tg_6.nctrl.n9 digpotp_0.tg_6.nctrl.n6 0.218
+R1007 digpotp_0.tg_6.nctrl.n12 digpotp_0.tg_6.nctrl.n9 0.218
+R1008 digpotp_0.tg_6.nctrl.n15 digpotp_0.tg_6.nctrl.n12 0.218
+R1009 digpotp_0.tg_6.b.n23 digpotp_0.tg_6.b.t23 10.701
+R1010 digpotp_0.tg_6.b.n11 digpotp_0.tg_6.b.t11 6.501
+R1011 digpotp_0.tg_6.b.n11 digpotp_0.tg_6.b.t6 6.501
+R1012 digpotp_0.tg_6.b.n12 digpotp_0.tg_6.b.t15 6.501
+R1013 digpotp_0.tg_6.b.n12 digpotp_0.tg_6.b.t17 6.501
+R1014 digpotp_0.tg_6.b.n13 digpotp_0.tg_6.b.t10 6.501
+R1015 digpotp_0.tg_6.b.n13 digpotp_0.tg_6.b.t8 6.501
+R1016 digpotp_0.tg_6.b.n14 digpotp_0.tg_6.b.t14 6.501
+R1017 digpotp_0.tg_6.b.n14 digpotp_0.tg_6.b.t12 6.501
+R1018 digpotp_0.tg_6.b.n15 digpotp_0.tg_6.b.t9 6.501
+R1019 digpotp_0.tg_6.b.n15 digpotp_0.tg_6.b.t16 6.501
+R1020 digpotp_0.tg_6.b.n16 digpotp_0.tg_6.b.t13 6.501
+R1021 digpotp_0.tg_6.b.n16 digpotp_0.tg_6.b.t7 6.501
+R1022 digpotp_0.tg_6.b.n5 digpotp_0.tg_6.b.t2 4.585
+R1023 digpotp_0.tg_6.b.n10 digpotp_0.tg_6.b.t1 4.362
+R1024 digpotp_0.tg_6.b.n4 digpotp_0.tg_6.b.t24 3.96
+R1025 digpotp_0.tg_6.b.n4 digpotp_0.tg_6.b.t5 3.96
+R1026 digpotp_0.tg_6.b.n3 digpotp_0.tg_6.b.t19 3.96
+R1027 digpotp_0.tg_6.b.n3 digpotp_0.tg_6.b.t20 3.96
+R1028 digpotp_0.tg_6.b.n2 digpotp_0.tg_6.b.t21 3.96
+R1029 digpotp_0.tg_6.b.n2 digpotp_0.tg_6.b.t22 3.96
+R1030 digpotp_0.tg_6.b.n1 digpotp_0.tg_6.b.t3 3.96
+R1031 digpotp_0.tg_6.b.n1 digpotp_0.tg_6.b.t4 3.96
+R1032 digpotp_0.tg_6.b.n0 digpotp_0.tg_6.b.t0 3.96
+R1033 digpotp_0.tg_6.b.n0 digpotp_0.tg_6.b.t18 3.96
+R1034 digpotp_0.tg_6.b.n22 digpotp_0.tg_6.b.n10 1.068
+R1035 digpotp_0.tg_6.b.n17 digpotp_0.tg_6.b.n16 0.595
+R1036 digpotp_0.tg_6.b.n5 digpotp_0.tg_6.b.n4 0.402
+R1037 digpotp_0.tg_6.b.n6 digpotp_0.tg_6.b.n3 0.402
+R1038 digpotp_0.tg_6.b.n7 digpotp_0.tg_6.b.n2 0.402
+R1039 digpotp_0.tg_6.b.n8 digpotp_0.tg_6.b.n1 0.402
+R1040 digpotp_0.tg_6.b.n9 digpotp_0.tg_6.b.n0 0.402
+R1041 digpotp_0.tg_6.b.n21 digpotp_0.tg_6.b.n11 0.377
+R1042 digpotp_0.tg_6.b.n20 digpotp_0.tg_6.b.n12 0.377
+R1043 digpotp_0.tg_6.b.n19 digpotp_0.tg_6.b.n13 0.377
+R1044 digpotp_0.tg_6.b.n18 digpotp_0.tg_6.b.n14 0.377
+R1045 digpotp_0.tg_6.b.n17 digpotp_0.tg_6.b.n15 0.377
+R1046 digpotp_0.tg_6.b.n22 digpotp_0.tg_6.b.n21 0.275
+R1047 digpotp_0.tg_6.b.n10 digpotp_0.tg_6.b.n9 0.218
+R1048 digpotp_0.tg_6.b.n9 digpotp_0.tg_6.b.n8 0.218
+R1049 digpotp_0.tg_6.b.n8 digpotp_0.tg_6.b.n7 0.218
+R1050 digpotp_0.tg_6.b.n7 digpotp_0.tg_6.b.n6 0.218
+R1051 digpotp_0.tg_6.b.n6 digpotp_0.tg_6.b.n5 0.218
+R1052 digpotp_0.tg_6.b.n21 digpotp_0.tg_6.b.n20 0.218
+R1053 digpotp_0.tg_6.b.n20 digpotp_0.tg_6.b.n19 0.218
+R1054 digpotp_0.tg_6.b.n19 digpotp_0.tg_6.b.n18 0.218
+R1055 digpotp_0.tg_6.b.n18 digpotp_0.tg_6.b.n17 0.218
+R1056 digpotp_0.tg_6.b.n23 digpotp_0.tg_6.b.n22 0.118
+R1057 digpotp_0.tg_6.b digpotp_0.tg_6.b.n23 0.062
+R1058 c3.n3 c3.t9 901.568
+R1059 c3.n3 c3.t11 835.466
+R1060 c3.n12 c3.t1 835.466
+R1061 c3.n10 c3.t4 835.466
+R1062 c3.n7 c3.t7 835.466
+R1063 c3.n5 c3.t13 835.466
+R1064 c3.n14 c3.t0 835.466
+R1065 c3.n4 c3.t12 835.466
+R1066 c3.n6 c3.t6 835.466
+R1067 c3.n1 c3.t3 835.466
+R1068 c3.n11 c3.t8 835.466
+R1069 c3.n13 c3.t5 835.466
+R1070 c3.t2 c3.t10 803.658
+R1071 c3.n16 c3.t2 234.281
+R1072 c3.n4 c3.n3 66.102
+R1073 c3.n5 c3.n4 66.102
+R1074 c3.n6 c3.n5 66.102
+R1075 c3.n7 c3.n6 66.102
+R1076 c3.n7 c3.n1 66.102
+R1077 c3.n10 c3.n1 66.102
+R1078 c3.n11 c3.n10 66.102
+R1079 c3.n12 c3.n11 66.102
+R1080 c3.n13 c3.n12 66.102
+R1081 c3.n14 c3.n13 66.102
+R1082 c3.n3 c3.n2 13.632
+R1083 c3.n15 c3.n14 13.414
+R1084 c3.n12 c3.n0 13.414
+R1085 c3.n10 c3.n9 13.414
+R1086 c3.n8 c3.n7 13.414
+R1087 c3.n5 c3.n2 13.414
+R1088 digpotp_0.c3 c3 3.45
+R1089 digpotp_0.c3 c3 2.525
+R1090 c3.n16 c3.n15 0.987
+R1091 c3 c3.n16 0.454
+R1092 c3.n8 c3.n2 0.218
+R1093 c3.n9 c3.n8 0.218
+R1094 c3.n9 c3.n0 0.218
+R1095 c3.n15 c3.n0 0.218
+R1096 digpotp_0.tg_4.b.n23 digpotp_0.tg_4.b.t14 10.589
+R1097 digpotp_0.tg_4.b.n11 digpotp_0.tg_4.b.t18 6.501
+R1098 digpotp_0.tg_4.b.n11 digpotp_0.tg_4.b.t1 6.501
+R1099 digpotp_0.tg_4.b.n12 digpotp_0.tg_4.b.t17 6.501
+R1100 digpotp_0.tg_4.b.n12 digpotp_0.tg_4.b.t23 6.501
+R1101 digpotp_0.tg_4.b.n13 digpotp_0.tg_4.b.t22 6.501
+R1102 digpotp_0.tg_4.b.n13 digpotp_0.tg_4.b.t19 6.501
+R1103 digpotp_0.tg_4.b.n14 digpotp_0.tg_4.b.t20 6.501
+R1104 digpotp_0.tg_4.b.n14 digpotp_0.tg_4.b.t24 6.501
+R1105 digpotp_0.tg_4.b.n15 digpotp_0.tg_4.b.t15 6.501
+R1106 digpotp_0.tg_4.b.n15 digpotp_0.tg_4.b.t16 6.501
+R1107 digpotp_0.tg_4.b.n16 digpotp_0.tg_4.b.t21 6.501
+R1108 digpotp_0.tg_4.b.n16 digpotp_0.tg_4.b.t0 6.501
+R1109 digpotp_0.tg_4.b.n5 digpotp_0.tg_4.b.t13 4.585
+R1110 digpotp_0.tg_4.b.n10 digpotp_0.tg_4.b.t5 4.362
+R1111 digpotp_0.tg_4.b.n4 digpotp_0.tg_4.b.t12 3.96
+R1112 digpotp_0.tg_4.b.n4 digpotp_0.tg_4.b.t9 3.96
+R1113 digpotp_0.tg_4.b.n3 digpotp_0.tg_4.b.t10 3.96
+R1114 digpotp_0.tg_4.b.n3 digpotp_0.tg_4.b.t6 3.96
+R1115 digpotp_0.tg_4.b.n2 digpotp_0.tg_4.b.t7 3.96
+R1116 digpotp_0.tg_4.b.n2 digpotp_0.tg_4.b.t11 3.96
+R1117 digpotp_0.tg_4.b.n1 digpotp_0.tg_4.b.t2 3.96
+R1118 digpotp_0.tg_4.b.n1 digpotp_0.tg_4.b.t8 3.96
+R1119 digpotp_0.tg_4.b.n0 digpotp_0.tg_4.b.t4 3.96
+R1120 digpotp_0.tg_4.b.n0 digpotp_0.tg_4.b.t3 3.96
+R1121 digpotp_0.tg_4.b.n22 digpotp_0.tg_4.b.n10 1.068
+R1122 digpotp_0.tg_4.b.n17 digpotp_0.tg_4.b.n16 0.595
+R1123 digpotp_0.tg_4.b.n5 digpotp_0.tg_4.b.n4 0.402
+R1124 digpotp_0.tg_4.b.n6 digpotp_0.tg_4.b.n3 0.402
+R1125 digpotp_0.tg_4.b.n7 digpotp_0.tg_4.b.n2 0.402
+R1126 digpotp_0.tg_4.b.n8 digpotp_0.tg_4.b.n1 0.402
+R1127 digpotp_0.tg_4.b.n9 digpotp_0.tg_4.b.n0 0.402
+R1128 digpotp_0.tg_4.b.n21 digpotp_0.tg_4.b.n11 0.377
+R1129 digpotp_0.tg_4.b.n20 digpotp_0.tg_4.b.n12 0.377
+R1130 digpotp_0.tg_4.b.n19 digpotp_0.tg_4.b.n13 0.377
+R1131 digpotp_0.tg_4.b.n18 digpotp_0.tg_4.b.n14 0.377
+R1132 digpotp_0.tg_4.b.n17 digpotp_0.tg_4.b.n15 0.377
+R1133 digpotp_0.tg_4.b.n22 digpotp_0.tg_4.b.n21 0.275
+R1134 digpotp_0.tg_4.b.n10 digpotp_0.tg_4.b.n9 0.218
+R1135 digpotp_0.tg_4.b.n9 digpotp_0.tg_4.b.n8 0.218
+R1136 digpotp_0.tg_4.b.n8 digpotp_0.tg_4.b.n7 0.218
+R1137 digpotp_0.tg_4.b.n7 digpotp_0.tg_4.b.n6 0.218
+R1138 digpotp_0.tg_4.b.n6 digpotp_0.tg_4.b.n5 0.218
+R1139 digpotp_0.tg_4.b.n21 digpotp_0.tg_4.b.n20 0.218
+R1140 digpotp_0.tg_4.b.n20 digpotp_0.tg_4.b.n19 0.218
+R1141 digpotp_0.tg_4.b.n19 digpotp_0.tg_4.b.n18 0.218
+R1142 digpotp_0.tg_4.b.n18 digpotp_0.tg_4.b.n17 0.218
+R1143 digpotp_0.tg_4.b.n23 digpotp_0.tg_4.b.n22 0.118
+R1144 digpotp_0.tg_4.b digpotp_0.tg_4.b.n23 0.062
+R1145 gnd.n129 gnd.n128 13506.1
+R1146 gnd.n128 gnd.n122 13506.1
+R1147 gnd.n124 gnd.n122 8279.79
+R1148 gnd.n131 gnd.n129 8279.79
+R1149 gnd.n131 gnd.n120 5226.29
+R1150 gnd.n149 gnd.n137 2798.56
+R1151 gnd.n146 gnd.n138 2798.56
+R1152 gnd.n10 gnd.n3 2306.06
+R1153 gnd.n7 gnd.n4 2306.06
+R1154 gnd.n24 gnd.n17 2306.06
+R1155 gnd.n21 gnd.n18 2306.06
+R1156 gnd.n38 gnd.n31 2306.06
+R1157 gnd.n35 gnd.n32 2306.06
+R1158 gnd.n52 gnd.n45 2306.06
+R1159 gnd.n49 gnd.n46 2306.06
+R1160 gnd.n66 gnd.n59 2306.06
+R1161 gnd.n63 gnd.n60 2306.06
+R1162 gnd.n80 gnd.n73 2306.06
+R1163 gnd.n77 gnd.n74 2306.06
+R1164 gnd.n94 gnd.n87 2306.06
+R1165 gnd.n91 gnd.n88 2306.06
+R1166 gnd.n108 gnd.n101 2306.06
+R1167 gnd.n105 gnd.n102 2306.06
+R1168 gnd.n149 gnd.n148 1067.02
+R1169 gnd.n147 gnd.n146 1067.01
+R1170 gnd.n127 gnd.n121 877.552
+R1171 gnd.n127 gnd.n126 877.552
+R1172 gnd.n9 gnd.n4 754.445
+R1173 gnd.n23 gnd.n18 754.445
+R1174 gnd.n37 gnd.n32 754.445
+R1175 gnd.n51 gnd.n46 754.445
+R1176 gnd.n65 gnd.n60 754.445
+R1177 gnd.n79 gnd.n74 754.445
+R1178 gnd.n93 gnd.n88 754.445
+R1179 gnd.n107 gnd.n102 754.445
+R1180 gnd.n8 gnd.n3 754.426
+R1181 gnd.n22 gnd.n17 754.426
+R1182 gnd.n36 gnd.n31 754.426
+R1183 gnd.n50 gnd.n45 754.426
+R1184 gnd.n64 gnd.n59 754.426
+R1185 gnd.n78 gnd.n73 754.426
+R1186 gnd.n92 gnd.n87 754.426
+R1187 gnd.n106 gnd.n101 754.426
+R1188 gnd.t13 gnd.t29 613.684
+R1189 gnd.t29 gnd.t7 613.684
+R1190 gnd.t8 gnd.t23 613.684
+R1191 gnd.t12 gnd.t8 613.684
+R1192 gnd.n126 gnd.n125 537.979
+R1193 gnd.n132 gnd.n121 537.975
+R1194 gnd.n130 gnd.t0 407.192
+R1195 gnd.n123 gnd.t18 407.192
+R1196 gnd.n125 gnd.n120 318.855
+R1197 gnd.n133 gnd.n132 315.654
+R1198 gnd.t7 gnd.n120 306.842
+R1199 gnd.t23 gnd.n120 306.842
+R1200 gnd.t0 gnd.n129 285.621
+R1201 gnd.t18 gnd.n122 285.621
+R1202 gnd.n130 gnd.t13 206.491
+R1203 gnd.n123 gnd.t12 206.491
+R1204 gnd.n145 gnd.n136 181.834
+R1205 gnd.n150 gnd.n136 181.834
+R1206 gnd.n6 gnd.n2 149.834
+R1207 gnd.n11 gnd.n2 149.834
+R1208 gnd.n20 gnd.n16 149.834
+R1209 gnd.n25 gnd.n16 149.834
+R1210 gnd.n34 gnd.n30 149.834
+R1211 gnd.n39 gnd.n30 149.834
+R1212 gnd.n48 gnd.n44 149.834
+R1213 gnd.n53 gnd.n44 149.834
+R1214 gnd.n62 gnd.n58 149.834
+R1215 gnd.n67 gnd.n58 149.834
+R1216 gnd.n76 gnd.n72 149.834
+R1217 gnd.n81 gnd.n72 149.834
+R1218 gnd.n90 gnd.n86 149.834
+R1219 gnd.n95 gnd.n86 149.834
+R1220 gnd.n104 gnd.n100 149.834
+R1221 gnd.n109 gnd.n100 149.834
+R1222 gnd.n145 gnd.n144 108.422
+R1223 gnd.n151 gnd.n150 108.422
+R1224 gnd.n12 gnd.n1 78.682
+R1225 gnd.n26 gnd.n15 78.682
+R1226 gnd.n40 gnd.n29 78.682
+R1227 gnd.n54 gnd.n43 78.682
+R1228 gnd.n68 gnd.n57 78.682
+R1229 gnd.n82 gnd.n71 78.682
+R1230 gnd.n96 gnd.n85 78.682
+R1231 gnd.n110 gnd.n99 78.682
+R1232 gnd.n144 gnd.n135 73.411
+R1233 gnd.n151 gnd.n135 73.411
+R1234 gnd.n6 gnd.n5 71.714
+R1235 gnd.n20 gnd.n19 71.714
+R1236 gnd.n34 gnd.n33 71.714
+R1237 gnd.n48 gnd.n47 71.714
+R1238 gnd.n62 gnd.n61 71.714
+R1239 gnd.n76 gnd.n75 71.714
+R1240 gnd.n90 gnd.n89 71.714
+R1241 gnd.n104 gnd.n103 71.714
+R1242 gnd.n12 gnd.n11 71.152
+R1243 gnd.n26 gnd.n25 71.152
+R1244 gnd.n40 gnd.n39 71.152
+R1245 gnd.n54 gnd.n53 71.152
+R1246 gnd.n68 gnd.n67 71.152
+R1247 gnd.n82 gnd.n81 71.152
+R1248 gnd.n96 gnd.n95 71.152
+R1249 gnd.n110 gnd.n109 71.152
+R1250 gnd.n139 gnd.t4 17.596
+R1251 gnd.n139 gnd.t28 17.571
+R1252 gnd.n0 gnd.t10 17.447
+R1253 gnd.n14 gnd.t17 17.447
+R1254 gnd.n28 gnd.t22 17.447
+R1255 gnd.n42 gnd.t15 17.447
+R1256 gnd.n56 gnd.t2 17.447
+R1257 gnd.n70 gnd.t6 17.447
+R1258 gnd.n84 gnd.t20 17.447
+R1259 gnd.n98 gnd.t25 17.447
+R1260 gnd.n155 gnd.n154 6.996
+R1261 gnd.n141 gnd.t11 6.046
+R1262 gnd.n140 gnd.t3 5.8
+R1263 gnd.n140 gnd.t26 5.8
+R1264 gnd.n156 gnd 3
+R1265 gnd.n119 gnd.n118 2.272
+R1266 gnd.n116 gnd.n115 2.102
+R1267 gnd.n118 gnd.n117 2.102
+R1268 gnd.n154 gnd.n133 2.097
+R1269 gnd.n142 gnd.n141 2.077
+R1270 gnd.n114 gnd.n113 2.045
+R1271 gnd.n115 gnd.n114 2.045
+R1272 gnd.n117 gnd.n116 2.045
+R1273 gnd.n113 gnd.n112 1.931
+R1274 digpotp_0.gnd gnd.n156 1.75
+R1275 gnd.n141 gnd.n140 0.706
+R1276 gnd.n154 gnd.n153 0.648
+R1277 gnd.n153 gnd.n152 0.413
+R1278 gnd.n156 gnd 0.333
+R1279 gnd.n155 gnd.n119 0.306
+R1280 gnd.n13 gnd.n12 0.268
+R1281 gnd.n27 gnd.n26 0.268
+R1282 gnd.n41 gnd.n40 0.268
+R1283 gnd.n55 gnd.n54 0.268
+R1284 gnd.n69 gnd.n68 0.268
+R1285 gnd.n83 gnd.n82 0.268
+R1286 gnd.n97 gnd.n96 0.268
+R1287 gnd.n111 gnd.n110 0.268
+R1288 digpotp_0.gnd gnd.n155 0.25
+R1289 gnd.n156 digpotp_0.gnd 0.194
+R1290 gnd.n142 gnd.n139 0.166
+R1291 gnd.n7 gnd.n6 0.109
+R1292 gnd.n11 gnd.n10 0.109
+R1293 gnd.n21 gnd.n20 0.109
+R1294 gnd.n25 gnd.n24 0.109
+R1295 gnd.n35 gnd.n34 0.109
+R1296 gnd.n39 gnd.n38 0.109
+R1297 gnd.n49 gnd.n48 0.109
+R1298 gnd.n53 gnd.n52 0.109
+R1299 gnd.n63 gnd.n62 0.109
+R1300 gnd.n67 gnd.n66 0.109
+R1301 gnd.n77 gnd.n76 0.109
+R1302 gnd.n81 gnd.n80 0.109
+R1303 gnd.n91 gnd.n90 0.109
+R1304 gnd.n95 gnd.n94 0.109
+R1305 gnd.n105 gnd.n104 0.109
+R1306 gnd.n109 gnd.n108 0.109
+R1307 gnd.n8 gnd.n7 0.074
+R1308 gnd.n22 gnd.n21 0.074
+R1309 gnd.n36 gnd.n35 0.074
+R1310 gnd.n50 gnd.n49 0.074
+R1311 gnd.n64 gnd.n63 0.074
+R1312 gnd.n78 gnd.n77 0.074
+R1313 gnd.n92 gnd.n91 0.074
+R1314 gnd.n106 gnd.n105 0.074
+R1315 gnd.n10 gnd.n9 0.074
+R1316 gnd.n24 gnd.n23 0.074
+R1317 gnd.n38 gnd.n37 0.074
+R1318 gnd.n52 gnd.n51 0.074
+R1319 gnd.n66 gnd.n65 0.074
+R1320 gnd.n80 gnd.n79 0.074
+R1321 gnd.n94 gnd.n93 0.074
+R1322 gnd.n108 gnd.n107 0.074
+R1323 gnd.n119 gnd.n13 0.068
+R1324 gnd.n118 gnd.n27 0.068
+R1325 gnd.n117 gnd.n41 0.068
+R1326 gnd.n116 gnd.n55 0.068
+R1327 gnd.n115 gnd.n69 0.068
+R1328 gnd.n114 gnd.n83 0.068
+R1329 gnd.n113 gnd.n97 0.068
+R1330 gnd.n112 gnd.n111 0.068
+R1331 gnd.n153 ota_0.vs 0.062
+R1332 gnd.n119 digpotp_0.tg_0.vgnd 0.062
+R1333 gnd.n118 digpotp_0.tg_1.vgnd 0.062
+R1334 gnd.n117 digpotp_0.tg_2.vgnd 0.062
+R1335 gnd.n116 digpotp_0.tg_3.vgnd 0.062
+R1336 gnd.n115 digpotp_0.tg_4.vgnd 0.062
+R1337 gnd.n114 digpotp_0.tg_5.vgnd 0.062
+R1338 gnd.n113 digpotp_0.tg_6.vgnd 0.062
+R1339 gnd.n112 gnd 0.062
+R1340 gnd.n132 gnd.n131 0.051
+R1341 gnd.n131 gnd.n130 0.051
+R1342 gnd.n124 gnd.n123 0.051
+R1343 gnd.n143 gnd.n142 0.049
+R1344 gnd.n125 gnd.n124 0.048
+R1345 gnd.n137 gnd.n136 0.046
+R1346 gnd.n146 gnd.n145 0.042
+R1347 gnd.n150 gnd.n149 0.042
+R1348 gnd.n4 gnd.n2 0.042
+R1349 gnd.n18 gnd.n16 0.042
+R1350 gnd.n32 gnd.n30 0.042
+R1351 gnd.n46 gnd.n44 0.042
+R1352 gnd.n60 gnd.n58 0.042
+R1353 gnd.n74 gnd.n72 0.042
+R1354 gnd.n88 gnd.n86 0.042
+R1355 gnd.n102 gnd.n100 0.042
+R1356 gnd.n143 gnd.n134 0.04
+R1357 gnd.n152 gnd.n134 0.04
+R1358 gnd.n9 gnd.t9 0.036
+R1359 gnd.n23 gnd.t16 0.036
+R1360 gnd.n37 gnd.t21 0.036
+R1361 gnd.n51 gnd.t14 0.036
+R1362 gnd.n65 gnd.t1 0.036
+R1363 gnd.n79 gnd.t5 0.036
+R1364 gnd.n93 gnd.t19 0.036
+R1365 gnd.n107 gnd.t24 0.036
+R1366 gnd.t9 gnd.n8 0.036
+R1367 gnd.t16 gnd.n22 0.036
+R1368 gnd.t21 gnd.n36 0.036
+R1369 gnd.t14 gnd.n50 0.036
+R1370 gnd.t1 gnd.n64 0.036
+R1371 gnd.t5 gnd.n78 0.036
+R1372 gnd.t19 gnd.n92 0.036
+R1373 gnd.t24 gnd.n106 0.036
+R1374 gnd.n5 gnd.n0 0.035
+R1375 gnd.n19 gnd.n14 0.035
+R1376 gnd.n33 gnd.n28 0.035
+R1377 gnd.n47 gnd.n42 0.035
+R1378 gnd.n61 gnd.n56 0.035
+R1379 gnd.n75 gnd.n70 0.035
+R1380 gnd.n89 gnd.n84 0.035
+R1381 gnd.n103 gnd.n98 0.035
+R1382 gnd.n147 gnd.n137 0.029
+R1383 gnd.n13 gnd.n0 0.021
+R1384 gnd.n27 gnd.n14 0.021
+R1385 gnd.n41 gnd.n28 0.021
+R1386 gnd.n55 gnd.n42 0.021
+R1387 gnd.n69 gnd.n56 0.021
+R1388 gnd.n83 gnd.n70 0.021
+R1389 gnd.n97 gnd.n84 0.021
+R1390 gnd.n111 gnd.n98 0.021
+R1391 gnd.t27 gnd.n147 0.018
+R1392 gnd.n152 gnd.n151 0.018
+R1393 gnd.n144 gnd.n143 0.017
+R1394 gnd.n129 gnd.n121 0.007
+R1395 gnd.n126 gnd.n122 0.007
+R1396 gnd.n128 gnd.n127 0.006
+R1397 gnd.n128 gnd.n120 0.006
+R1398 gnd.n148 gnd.n138 0.001
+R1399 gnd.n5 gnd.n1 0.001
+R1400 gnd.n19 gnd.n15 0.001
+R1401 gnd.n33 gnd.n29 0.001
+R1402 gnd.n47 gnd.n43 0.001
+R1403 gnd.n61 gnd.n57 0.001
+R1404 gnd.n75 gnd.n71 0.001
+R1405 gnd.n89 gnd.n85 0.001
+R1406 gnd.n103 gnd.n99 0.001
+R1407 gnd.n138 gnd.n135 0.001
+R1408 gnd.n3 gnd.n1 0.001
+R1409 gnd.n17 gnd.n15 0.001
+R1410 gnd.n31 gnd.n29 0.001
+R1411 gnd.n45 gnd.n43 0.001
+R1412 gnd.n59 gnd.n57 0.001
+R1413 gnd.n73 gnd.n71 0.001
+R1414 gnd.n87 gnd.n85 0.001
+R1415 gnd.n101 gnd.n99 0.001
+R1416 gnd.n148 gnd.t27 0.001
+R1417 gnd.n135 gnd.n134 0.001
+R1418 gnd.n133 gnd.n120 0.001
+R1419 digpotp_0.n8.n9 digpotp_0.n8.t9 573.58
+R1420 digpotp_0.n8.n9 digpotp_0.n8.t10 573.58
+R1421 digpotp_0.n8.n9 digpotp_0.n8.t11 515.74
+R1422 ota_0.inn digpotp_0.n8.n9 16.413
+R1423 digpotp_0.n8.n10 digpotp_0.n8.t0 11.305
+R1424 digpotp_0.n8.n0 digpotp_0.n8.t8 10.94
+R1425 digpotp_0.n8.n6 digpotp_0.n8.t5 9.983
+R1426 digpotp_0.n8.n4 digpotp_0.n8.t7 9.92
+R1427 digpotp_0.n8.n5 digpotp_0.n8.t6 9.87
+R1428 digpotp_0.n8.n0 digpotp_0.n8.t3 9.771
+R1429 digpotp_0.n8.n1 digpotp_0.n8.t4 9.712
+R1430 digpotp_0.n8.n2 digpotp_0.n8.t2 9.613
+R1431 digpotp_0.n8.n3 digpotp_0.n8.t1 9.448
+R1432 digpotp_0.n8.n1 digpotp_0.n8.n0 1.315
+R1433 digpotp_0.n8.n3 digpotp_0.n8.n2 1.227
+R1434 digpotp_0.n8.n2 digpotp_0.n8.n1 1.115
+R1435 digpotp_0.n8.n8 digpotp_0.n8.n6 1.041
+R1436 digpotp_0.n8.n5 digpotp_0.n8.n4 0.98
+R1437 digpotp_0.n8.n4 digpotp_0.n8.n3 0.921
+R1438 digpotp_0.n8.n6 digpotp_0.n8.n5 0.786
+R1439 digpotp_0.n8.n8 digpotp_0.n8.n7 0.281
+R1440 digpotp_0.n8.n7 digpotp_0.n8 0.25
+R1441 digpotp_0.n8.n11 digpotp_0.n8.n10 0.075
+R1442 digpotp_0.n8.n10 ota_0.inn 0.062
+R1443 digpotp_0.n8.n12 digpotp_0.n8.n11 0.05
+R1444 digpotp_0.n8.n12 digpotp_0.n8.n8 0.031
+R1445 digpotp_0.n8.n7 digpotp_0.n8 0.031
+R1446 digpotp_0.n8 digpotp_0.n8.n12 0.025
+R1447 digpotp_0.tg_5.nctrl.n14 digpotp_0.tg_5.nctrl.t3 894.913
+R1448 digpotp_0.tg_5.nctrl.n14 digpotp_0.tg_5.nctrl.t9 837.073
+R1449 digpotp_0.tg_5.nctrl.n11 digpotp_0.tg_5.nctrl.t2 837.073
+R1450 digpotp_0.tg_5.nctrl.n8 digpotp_0.tg_5.nctrl.t13 837.073
+R1451 digpotp_0.tg_5.nctrl.n5 digpotp_0.tg_5.nctrl.t4 837.073
+R1452 digpotp_0.tg_5.nctrl.n2 digpotp_0.tg_5.nctrl.t8 837.073
+R1453 digpotp_0.tg_5.nctrl.n0 digpotp_0.tg_5.nctrl.t12 837.073
+R1454 digpotp_0.tg_5.nctrl.n13 digpotp_0.tg_5.nctrl.t7 837.073
+R1455 digpotp_0.tg_5.nctrl.n10 digpotp_0.tg_5.nctrl.t11 837.073
+R1456 digpotp_0.tg_5.nctrl.n7 digpotp_0.tg_5.nctrl.t6 837.073
+R1457 digpotp_0.tg_5.nctrl.n4 digpotp_0.tg_5.nctrl.t10 837.073
+R1458 digpotp_0.tg_5.nctrl.n1 digpotp_0.tg_5.nctrl.t5 837.073
+R1459 digpotp_0.tg_5.nctrl.n2 digpotp_0.tg_5.nctrl.n1 57.84
+R1460 digpotp_0.tg_5.nctrl.n5 digpotp_0.tg_5.nctrl.n4 57.84
+R1461 digpotp_0.tg_5.nctrl.n8 digpotp_0.tg_5.nctrl.n7 57.84
+R1462 digpotp_0.tg_5.nctrl.n11 digpotp_0.tg_5.nctrl.n10 57.84
+R1463 digpotp_0.tg_5.nctrl.n14 digpotp_0.tg_5.nctrl.n13 57.84
+R1464 digpotp_0.tg_5.nctrl.n16 digpotp_0.tg_5.nctrl.t1 18.051
+R1465 digpotp_0.tg_5.nctrl.n3 digpotp_0.tg_5.nctrl.n0 13.632
+R1466 digpotp_0.tg_5.nctrl.n3 digpotp_0.tg_5.nctrl.n2 13.414
+R1467 digpotp_0.tg_5.nctrl.n6 digpotp_0.tg_5.nctrl.n5 13.414
+R1468 digpotp_0.tg_5.nctrl.n9 digpotp_0.tg_5.nctrl.n8 13.414
+R1469 digpotp_0.tg_5.nctrl.n12 digpotp_0.tg_5.nctrl.n11 13.414
+R1470 digpotp_0.tg_5.nctrl.n15 digpotp_0.tg_5.nctrl.n14 13.414
+R1471 digpotp_0.tg_5.nctrl.n16 digpotp_0.tg_5.nctrl.t0 10.118
+R1472 digpotp_0.tg_5.nctrl digpotp_0.tg_5.nctrl.n16 0.699
+R1473 digpotp_0.tg_5.nctrl digpotp_0.tg_5.nctrl.n15 0.618
+R1474 digpotp_0.tg_5.nctrl.n6 digpotp_0.tg_5.nctrl.n3 0.218
+R1475 digpotp_0.tg_5.nctrl.n9 digpotp_0.tg_5.nctrl.n6 0.218
+R1476 digpotp_0.tg_5.nctrl.n12 digpotp_0.tg_5.nctrl.n9 0.218
+R1477 digpotp_0.tg_5.nctrl.n15 digpotp_0.tg_5.nctrl.n12 0.218
+R1478 digpotp_0.tg_5.b.n23 digpotp_0.tg_5.b.t12 10.586
+R1479 digpotp_0.tg_5.b.n11 digpotp_0.tg_5.b.t1 6.501
+R1480 digpotp_0.tg_5.b.n11 digpotp_0.tg_5.b.t8 6.501
+R1481 digpotp_0.tg_5.b.n12 digpotp_0.tg_5.b.t5 6.501
+R1482 digpotp_0.tg_5.b.n12 digpotp_0.tg_5.b.t3 6.501
+R1483 digpotp_0.tg_5.b.n13 digpotp_0.tg_5.b.t9 6.501
+R1484 digpotp_0.tg_5.b.n13 digpotp_0.tg_5.b.t7 6.501
+R1485 digpotp_0.tg_5.b.n14 digpotp_0.tg_5.b.t0 6.501
+R1486 digpotp_0.tg_5.b.n14 digpotp_0.tg_5.b.t2 6.501
+R1487 digpotp_0.tg_5.b.n15 digpotp_0.tg_5.b.t11 6.501
+R1488 digpotp_0.tg_5.b.n15 digpotp_0.tg_5.b.t6 6.501
+R1489 digpotp_0.tg_5.b.n16 digpotp_0.tg_5.b.t4 6.501
+R1490 digpotp_0.tg_5.b.n16 digpotp_0.tg_5.b.t10 6.501
+R1491 digpotp_0.tg_5.b.n5 digpotp_0.tg_5.b.t18 4.585
+R1492 digpotp_0.tg_5.b.n10 digpotp_0.tg_5.b.t13 4.362
+R1493 digpotp_0.tg_5.b.n4 digpotp_0.tg_5.b.t22 3.96
+R1494 digpotp_0.tg_5.b.n4 digpotp_0.tg_5.b.t24 3.96
+R1495 digpotp_0.tg_5.b.n3 digpotp_0.tg_5.b.t21 3.96
+R1496 digpotp_0.tg_5.b.n3 digpotp_0.tg_5.b.t17 3.96
+R1497 digpotp_0.tg_5.b.n2 digpotp_0.tg_5.b.t15 3.96
+R1498 digpotp_0.tg_5.b.n2 digpotp_0.tg_5.b.t14 3.96
+R1499 digpotp_0.tg_5.b.n1 digpotp_0.tg_5.b.t20 3.96
+R1500 digpotp_0.tg_5.b.n1 digpotp_0.tg_5.b.t16 3.96
+R1501 digpotp_0.tg_5.b.n0 digpotp_0.tg_5.b.t23 3.96
+R1502 digpotp_0.tg_5.b.n0 digpotp_0.tg_5.b.t19 3.96
+R1503 digpotp_0.tg_5.b.n22 digpotp_0.tg_5.b.n10 1.068
+R1504 digpotp_0.tg_5.b.n17 digpotp_0.tg_5.b.n16 0.595
+R1505 digpotp_0.tg_5.b.n5 digpotp_0.tg_5.b.n4 0.402
+R1506 digpotp_0.tg_5.b.n6 digpotp_0.tg_5.b.n3 0.402
+R1507 digpotp_0.tg_5.b.n7 digpotp_0.tg_5.b.n2 0.402
+R1508 digpotp_0.tg_5.b.n8 digpotp_0.tg_5.b.n1 0.402
+R1509 digpotp_0.tg_5.b.n9 digpotp_0.tg_5.b.n0 0.402
+R1510 digpotp_0.tg_5.b.n21 digpotp_0.tg_5.b.n11 0.377
+R1511 digpotp_0.tg_5.b.n20 digpotp_0.tg_5.b.n12 0.377
+R1512 digpotp_0.tg_5.b.n19 digpotp_0.tg_5.b.n13 0.377
+R1513 digpotp_0.tg_5.b.n18 digpotp_0.tg_5.b.n14 0.377
+R1514 digpotp_0.tg_5.b.n17 digpotp_0.tg_5.b.n15 0.377
+R1515 digpotp_0.tg_5.b.n22 digpotp_0.tg_5.b.n21 0.275
+R1516 digpotp_0.tg_5.b.n10 digpotp_0.tg_5.b.n9 0.218
+R1517 digpotp_0.tg_5.b.n9 digpotp_0.tg_5.b.n8 0.218
+R1518 digpotp_0.tg_5.b.n8 digpotp_0.tg_5.b.n7 0.218
+R1519 digpotp_0.tg_5.b.n7 digpotp_0.tg_5.b.n6 0.218
+R1520 digpotp_0.tg_5.b.n6 digpotp_0.tg_5.b.n5 0.218
+R1521 digpotp_0.tg_5.b.n21 digpotp_0.tg_5.b.n20 0.218
+R1522 digpotp_0.tg_5.b.n20 digpotp_0.tg_5.b.n19 0.218
+R1523 digpotp_0.tg_5.b.n19 digpotp_0.tg_5.b.n18 0.218
+R1524 digpotp_0.tg_5.b.n18 digpotp_0.tg_5.b.n17 0.218
+R1525 digpotp_0.tg_5.b.n23 digpotp_0.tg_5.b.n22 0.118
+R1526 digpotp_0.tg_5.b digpotp_0.tg_5.b.n23 0.062
+R1527 digpotp_0.tg_4.nctrl.n14 digpotp_0.tg_4.nctrl.t9 894.913
+R1528 digpotp_0.tg_4.nctrl.n14 digpotp_0.tg_4.nctrl.t6 837.073
+R1529 digpotp_0.tg_4.nctrl.n11 digpotp_0.tg_4.nctrl.t12 837.073
+R1530 digpotp_0.tg_4.nctrl.n8 digpotp_0.tg_4.nctrl.t5 837.073
+R1531 digpotp_0.tg_4.nctrl.n5 digpotp_0.tg_4.nctrl.t10 837.073
+R1532 digpotp_0.tg_4.nctrl.n2 digpotp_0.tg_4.nctrl.t2 837.073
+R1533 digpotp_0.tg_4.nctrl.n0 digpotp_0.tg_4.nctrl.t8 837.073
+R1534 digpotp_0.tg_4.nctrl.n13 digpotp_0.tg_4.nctrl.t4 837.073
+R1535 digpotp_0.tg_4.nctrl.n10 digpotp_0.tg_4.nctrl.t7 837.073
+R1536 digpotp_0.tg_4.nctrl.n7 digpotp_0.tg_4.nctrl.t13 837.073
+R1537 digpotp_0.tg_4.nctrl.n4 digpotp_0.tg_4.nctrl.t3 837.073
+R1538 digpotp_0.tg_4.nctrl.n1 digpotp_0.tg_4.nctrl.t11 837.073
+R1539 digpotp_0.tg_4.nctrl.n2 digpotp_0.tg_4.nctrl.n1 57.84
+R1540 digpotp_0.tg_4.nctrl.n5 digpotp_0.tg_4.nctrl.n4 57.84
+R1541 digpotp_0.tg_4.nctrl.n8 digpotp_0.tg_4.nctrl.n7 57.84
+R1542 digpotp_0.tg_4.nctrl.n11 digpotp_0.tg_4.nctrl.n10 57.84
+R1543 digpotp_0.tg_4.nctrl.n14 digpotp_0.tg_4.nctrl.n13 57.84
+R1544 digpotp_0.tg_4.nctrl.n16 digpotp_0.tg_4.nctrl.t0 18.051
+R1545 digpotp_0.tg_4.nctrl.n3 digpotp_0.tg_4.nctrl.n0 13.632
+R1546 digpotp_0.tg_4.nctrl.n3 digpotp_0.tg_4.nctrl.n2 13.414
+R1547 digpotp_0.tg_4.nctrl.n6 digpotp_0.tg_4.nctrl.n5 13.414
+R1548 digpotp_0.tg_4.nctrl.n9 digpotp_0.tg_4.nctrl.n8 13.414
+R1549 digpotp_0.tg_4.nctrl.n12 digpotp_0.tg_4.nctrl.n11 13.414
+R1550 digpotp_0.tg_4.nctrl.n15 digpotp_0.tg_4.nctrl.n14 13.414
+R1551 digpotp_0.tg_4.nctrl.n16 digpotp_0.tg_4.nctrl.t1 10.118
+R1552 digpotp_0.tg_4.nctrl digpotp_0.tg_4.nctrl.n16 0.699
+R1553 digpotp_0.tg_4.nctrl digpotp_0.tg_4.nctrl.n15 0.618
+R1554 digpotp_0.tg_4.nctrl.n6 digpotp_0.tg_4.nctrl.n3 0.218
+R1555 digpotp_0.tg_4.nctrl.n9 digpotp_0.tg_4.nctrl.n6 0.218
+R1556 digpotp_0.tg_4.nctrl.n12 digpotp_0.tg_4.nctrl.n9 0.218
+R1557 digpotp_0.tg_4.nctrl.n15 digpotp_0.tg_4.nctrl.n12 0.218
+R1558 c2.n3 c2.t4 901.568
+R1559 c2.n3 c2.t2 835.466
+R1560 c2.n12 c2.t11 835.466
+R1561 c2.n10 c2.t7 835.466
+R1562 c2.n7 c2.t9 835.466
+R1563 c2.n5 c2.t5 835.466
+R1564 c2.n14 c2.t10 835.466
+R1565 c2.n4 c2.t3 835.466
+R1566 c2.n6 c2.t8 835.466
+R1567 c2.n1 c2.t6 835.466
+R1568 c2.n11 c2.t13 835.466
+R1569 c2.n13 c2.t12 835.466
+R1570 c2.t1 c2.t0 803.658
+R1571 c2.n16 c2.t1 234.281
+R1572 c2.n4 c2.n3 66.102
+R1573 c2.n5 c2.n4 66.102
+R1574 c2.n6 c2.n5 66.102
+R1575 c2.n7 c2.n6 66.102
+R1576 c2.n7 c2.n1 66.102
+R1577 c2.n10 c2.n1 66.102
+R1578 c2.n11 c2.n10 66.102
+R1579 c2.n12 c2.n11 66.102
+R1580 c2.n13 c2.n12 66.102
+R1581 c2.n14 c2.n13 66.102
+R1582 c2.n3 c2.n2 13.632
+R1583 c2.n15 c2.n14 13.414
+R1584 c2.n12 c2.n0 13.414
+R1585 c2.n10 c2.n9 13.414
+R1586 c2.n8 c2.n7 13.414
+R1587 c2.n5 c2.n2 13.414
+R1588 digpotp_0.c2 c2 3.387
+R1589 digpotp_0.c2 c2 2.525
+R1590 c2.n16 c2.n15 0.987
+R1591 c2 c2.n16 0.454
+R1592 c2.n8 c2.n2 0.218
+R1593 c2.n9 c2.n8 0.218
+R1594 c2.n9 c2.n0 0.218
+R1595 c2.n15 c2.n0 0.218
+R1596 c1.n3 c1.t11 901.568
+R1597 c1.n3 c1.t9 835.466
+R1598 c1.n12 c1.t2 835.466
+R1599 c1.n10 c1.t3 835.466
+R1600 c1.n7 c1.t6 835.466
+R1601 c1.n5 c1.t13 835.466
+R1602 c1.n14 c1.t0 835.466
+R1603 c1.n4 c1.t10 835.466
+R1604 c1.n6 c1.t5 835.466
+R1605 c1.n1 c1.t1 835.466
+R1606 c1.n11 c1.t7 835.466
+R1607 c1.n13 c1.t4 835.466
+R1608 c1.t12 c1.t8 803.658
+R1609 c1.n16 c1.t12 234.281
+R1610 c1.n4 c1.n3 66.102
+R1611 c1.n5 c1.n4 66.102
+R1612 c1.n6 c1.n5 66.102
+R1613 c1.n7 c1.n6 66.102
+R1614 c1.n7 c1.n1 66.102
+R1615 c1.n10 c1.n1 66.102
+R1616 c1.n11 c1.n10 66.102
+R1617 c1.n12 c1.n11 66.102
+R1618 c1.n13 c1.n12 66.102
+R1619 c1.n14 c1.n13 66.102
+R1620 c1.n3 c1.n2 13.632
+R1621 c1.n15 c1.n14 13.414
+R1622 c1.n12 c1.n0 13.414
+R1623 c1.n10 c1.n9 13.414
+R1624 c1.n8 c1.n7 13.414
+R1625 c1.n5 c1.n2 13.414
+R1626 digpotp_0.c1 c1 3.387
+R1627 digpotp_0.c1 c1 2.525
+R1628 c1.n16 c1.n15 0.987
+R1629 c1 c1.n16 0.454
+R1630 c1.n8 c1.n2 0.218
+R1631 c1.n9 c1.n8 0.218
+R1632 c1.n9 c1.n0 0.218
+R1633 c1.n15 c1.n0 0.218
+R1634 digpotp_0.tg_1.nctrl.n14 digpotp_0.tg_1.nctrl.t11 894.913
+R1635 digpotp_0.tg_1.nctrl.n14 digpotp_0.tg_1.nctrl.t8 837.073
+R1636 digpotp_0.tg_1.nctrl.n11 digpotp_0.tg_1.nctrl.t2 837.073
+R1637 digpotp_0.tg_1.nctrl.n8 digpotp_0.tg_1.nctrl.t7 837.073
+R1638 digpotp_0.tg_1.nctrl.n5 digpotp_0.tg_1.nctrl.t12 837.073
+R1639 digpotp_0.tg_1.nctrl.n2 digpotp_0.tg_1.nctrl.t4 837.073
+R1640 digpotp_0.tg_1.nctrl.n0 digpotp_0.tg_1.nctrl.t10 837.073
+R1641 digpotp_0.tg_1.nctrl.n13 digpotp_0.tg_1.nctrl.t6 837.073
+R1642 digpotp_0.tg_1.nctrl.n10 digpotp_0.tg_1.nctrl.t9 837.073
+R1643 digpotp_0.tg_1.nctrl.n7 digpotp_0.tg_1.nctrl.t3 837.073
+R1644 digpotp_0.tg_1.nctrl.n4 digpotp_0.tg_1.nctrl.t5 837.073
+R1645 digpotp_0.tg_1.nctrl.n1 digpotp_0.tg_1.nctrl.t13 837.073
+R1646 digpotp_0.tg_1.nctrl.n2 digpotp_0.tg_1.nctrl.n1 57.84
+R1647 digpotp_0.tg_1.nctrl.n5 digpotp_0.tg_1.nctrl.n4 57.84
+R1648 digpotp_0.tg_1.nctrl.n8 digpotp_0.tg_1.nctrl.n7 57.84
+R1649 digpotp_0.tg_1.nctrl.n11 digpotp_0.tg_1.nctrl.n10 57.84
+R1650 digpotp_0.tg_1.nctrl.n14 digpotp_0.tg_1.nctrl.n13 57.84
+R1651 digpotp_0.tg_1.nctrl.n16 digpotp_0.tg_1.nctrl.t1 18.051
+R1652 digpotp_0.tg_1.nctrl.n3 digpotp_0.tg_1.nctrl.n0 13.632
+R1653 digpotp_0.tg_1.nctrl.n3 digpotp_0.tg_1.nctrl.n2 13.414
+R1654 digpotp_0.tg_1.nctrl.n6 digpotp_0.tg_1.nctrl.n5 13.414
+R1655 digpotp_0.tg_1.nctrl.n9 digpotp_0.tg_1.nctrl.n8 13.414
+R1656 digpotp_0.tg_1.nctrl.n12 digpotp_0.tg_1.nctrl.n11 13.414
+R1657 digpotp_0.tg_1.nctrl.n15 digpotp_0.tg_1.nctrl.n14 13.414
+R1658 digpotp_0.tg_1.nctrl.n16 digpotp_0.tg_1.nctrl.t0 10.118
+R1659 digpotp_0.tg_1.nctrl digpotp_0.tg_1.nctrl.n16 0.699
+R1660 digpotp_0.tg_1.nctrl digpotp_0.tg_1.nctrl.n15 0.618
+R1661 digpotp_0.tg_1.nctrl.n6 digpotp_0.tg_1.nctrl.n3 0.218
+R1662 digpotp_0.tg_1.nctrl.n9 digpotp_0.tg_1.nctrl.n6 0.218
+R1663 digpotp_0.tg_1.nctrl.n12 digpotp_0.tg_1.nctrl.n9 0.218
+R1664 digpotp_0.tg_1.nctrl.n15 digpotp_0.tg_1.nctrl.n12 0.218
+R1665 digpotp_0.tg_1.b.n23 digpotp_0.tg_1.b.t18 10.734
+R1666 digpotp_0.tg_1.b.n11 digpotp_0.tg_1.b.t9 6.501
+R1667 digpotp_0.tg_1.b.n11 digpotp_0.tg_1.b.t6 6.501
+R1668 digpotp_0.tg_1.b.n12 digpotp_0.tg_1.b.t15 6.501
+R1669 digpotp_0.tg_1.b.n12 digpotp_0.tg_1.b.t14 6.501
+R1670 digpotp_0.tg_1.b.n13 digpotp_0.tg_1.b.t7 6.501
+R1671 digpotp_0.tg_1.b.n13 digpotp_0.tg_1.b.t16 6.501
+R1672 digpotp_0.tg_1.b.n14 digpotp_0.tg_1.b.t12 6.501
+R1673 digpotp_0.tg_1.b.n14 digpotp_0.tg_1.b.t10 6.501
+R1674 digpotp_0.tg_1.b.n15 digpotp_0.tg_1.b.t17 6.501
+R1675 digpotp_0.tg_1.b.n15 digpotp_0.tg_1.b.t13 6.501
+R1676 digpotp_0.tg_1.b.n16 digpotp_0.tg_1.b.t11 6.501
+R1677 digpotp_0.tg_1.b.n16 digpotp_0.tg_1.b.t8 6.501
+R1678 digpotp_0.tg_1.b.n5 digpotp_0.tg_1.b.t1 4.585
+R1679 digpotp_0.tg_1.b.n10 digpotp_0.tg_1.b.t3 4.362
+R1680 digpotp_0.tg_1.b.n4 digpotp_0.tg_1.b.t2 3.96
+R1681 digpotp_0.tg_1.b.n4 digpotp_0.tg_1.b.t21 3.96
+R1682 digpotp_0.tg_1.b.n3 digpotp_0.tg_1.b.t5 3.96
+R1683 digpotp_0.tg_1.b.n3 digpotp_0.tg_1.b.t19 3.96
+R1684 digpotp_0.tg_1.b.n2 digpotp_0.tg_1.b.t20 3.96
+R1685 digpotp_0.tg_1.b.n2 digpotp_0.tg_1.b.t23 3.96
+R1686 digpotp_0.tg_1.b.n1 digpotp_0.tg_1.b.t4 3.96
+R1687 digpotp_0.tg_1.b.n1 digpotp_0.tg_1.b.t22 3.96
+R1688 digpotp_0.tg_1.b.n0 digpotp_0.tg_1.b.t0 3.96
+R1689 digpotp_0.tg_1.b.n0 digpotp_0.tg_1.b.t24 3.96
+R1690 digpotp_0.tg_1.b.n22 digpotp_0.tg_1.b.n10 1.068
+R1691 digpotp_0.tg_1.b.n17 digpotp_0.tg_1.b.n16 0.595
+R1692 digpotp_0.tg_1.b.n5 digpotp_0.tg_1.b.n4 0.402
+R1693 digpotp_0.tg_1.b.n6 digpotp_0.tg_1.b.n3 0.402
+R1694 digpotp_0.tg_1.b.n7 digpotp_0.tg_1.b.n2 0.402
+R1695 digpotp_0.tg_1.b.n8 digpotp_0.tg_1.b.n1 0.402
+R1696 digpotp_0.tg_1.b.n9 digpotp_0.tg_1.b.n0 0.402
+R1697 digpotp_0.tg_1.b.n21 digpotp_0.tg_1.b.n11 0.377
+R1698 digpotp_0.tg_1.b.n20 digpotp_0.tg_1.b.n12 0.377
+R1699 digpotp_0.tg_1.b.n19 digpotp_0.tg_1.b.n13 0.377
+R1700 digpotp_0.tg_1.b.n18 digpotp_0.tg_1.b.n14 0.377
+R1701 digpotp_0.tg_1.b.n17 digpotp_0.tg_1.b.n15 0.377
+R1702 digpotp_0.tg_1.b.n22 digpotp_0.tg_1.b.n21 0.275
+R1703 digpotp_0.tg_1.b.n10 digpotp_0.tg_1.b.n9 0.218
+R1704 digpotp_0.tg_1.b.n9 digpotp_0.tg_1.b.n8 0.218
+R1705 digpotp_0.tg_1.b.n8 digpotp_0.tg_1.b.n7 0.218
+R1706 digpotp_0.tg_1.b.n7 digpotp_0.tg_1.b.n6 0.218
+R1707 digpotp_0.tg_1.b.n6 digpotp_0.tg_1.b.n5 0.218
+R1708 digpotp_0.tg_1.b.n21 digpotp_0.tg_1.b.n20 0.218
+R1709 digpotp_0.tg_1.b.n20 digpotp_0.tg_1.b.n19 0.218
+R1710 digpotp_0.tg_1.b.n19 digpotp_0.tg_1.b.n18 0.218
+R1711 digpotp_0.tg_1.b.n18 digpotp_0.tg_1.b.n17 0.218
+R1712 digpotp_0.tg_1.b.n23 digpotp_0.tg_1.b.n22 0.118
+R1713 digpotp_0.tg_1.b digpotp_0.tg_1.b.n23 0.062
+R1714 ib.n1 ib.t4 196.581
+R1715 ib.n1 ib.t9 196.178
+R1716 ib.n2 ib.t6 196.178
+R1717 ib.n3 ib.t8 196.178
+R1718 ib.n9 ib.t0 87.728
+R1719 ib.n7 ib.t2 87.728
+R1720 ib.n6 ib.t7 87.728
+R1721 ib.n5 ib.t10 87.728
+R1722 ib.n4 ib.t5 87.728
+R1723 ib.n0 ib.t3 9.521
+R1724 ib.n0 ib.t1 9.521
+R1725 ib.n10 ib 4.4
+R1726 ib.n4 ib.n3 2.692
+R1727 ib.n7 ib.n6 1.471
+R1728 ib.n10 ib.n9 1.056
+R1729 ib.n8 ib.n0 0.568
+R1730 ib.n2 ib.n1 0.403
+R1731 ib.n3 ib.n2 0.403
+R1732 ib.n5 ib.n4 0.403
+R1733 ib.n6 ib.n5 0.403
+R1734 ib.n8 ib.n7 0.209
+R1735 ib.n9 ib.n8 0.193
+R1736 ib ib.n10 0.087
+R1737 out.n6 out.t6 14.358
+R1738 out.n4 out.t7 6.779
+R1739 out.n3 out.t5 5.8
+R1740 out.n3 out.t4 5.8
+R1741 out.n0 out.t3 3.808
+R1742 out.n0 out.t0 3.808
+R1743 out.n1 out.t2 3.808
+R1744 out.n1 out.t1 3.808
+R1745 out.n5 out.n4 3.135
+R1746 out.n7 out.n2 2.231
+R1747 out.n2 out.n1 1.645
+R1748 out.n2 out.n0 0.839
+R1749 out.n6 out 0.34
+R1750 out.n4 out.n3 0.173
+R1751 out.n5 out 0.14
+R1752 out.n7 out.n5 0.031
+R1753 out.n7 out.n6 0.028
+R1754 out out.n7 0.011
+R1755 digpotp_0.tg_7.nctrl.n14 digpotp_0.tg_7.nctrl.t8 894.913
+R1756 digpotp_0.tg_7.nctrl.n14 digpotp_0.tg_7.nctrl.t2 837.073
+R1757 digpotp_0.tg_7.nctrl.n11 digpotp_0.tg_7.nctrl.t7 837.073
+R1758 digpotp_0.tg_7.nctrl.n8 digpotp_0.tg_7.nctrl.t6 837.073
+R1759 digpotp_0.tg_7.nctrl.n5 digpotp_0.tg_7.nctrl.t9 837.073
+R1760 digpotp_0.tg_7.nctrl.n2 digpotp_0.tg_7.nctrl.t13 837.073
+R1761 digpotp_0.tg_7.nctrl.n0 digpotp_0.tg_7.nctrl.t5 837.073
+R1762 digpotp_0.tg_7.nctrl.n13 digpotp_0.tg_7.nctrl.t12 837.073
+R1763 digpotp_0.tg_7.nctrl.n10 digpotp_0.tg_7.nctrl.t4 837.073
+R1764 digpotp_0.tg_7.nctrl.n7 digpotp_0.tg_7.nctrl.t11 837.073
+R1765 digpotp_0.tg_7.nctrl.n4 digpotp_0.tg_7.nctrl.t3 837.073
+R1766 digpotp_0.tg_7.nctrl.n1 digpotp_0.tg_7.nctrl.t10 837.073
+R1767 digpotp_0.tg_7.nctrl.n2 digpotp_0.tg_7.nctrl.n1 57.84
+R1768 digpotp_0.tg_7.nctrl.n5 digpotp_0.tg_7.nctrl.n4 57.84
+R1769 digpotp_0.tg_7.nctrl.n8 digpotp_0.tg_7.nctrl.n7 57.84
+R1770 digpotp_0.tg_7.nctrl.n11 digpotp_0.tg_7.nctrl.n10 57.84
+R1771 digpotp_0.tg_7.nctrl.n14 digpotp_0.tg_7.nctrl.n13 57.84
+R1772 digpotp_0.tg_7.nctrl.n16 digpotp_0.tg_7.nctrl.t1 18.051
+R1773 digpotp_0.tg_7.nctrl.n3 digpotp_0.tg_7.nctrl.n0 13.632
+R1774 digpotp_0.tg_7.nctrl.n3 digpotp_0.tg_7.nctrl.n2 13.414
+R1775 digpotp_0.tg_7.nctrl.n6 digpotp_0.tg_7.nctrl.n5 13.414
+R1776 digpotp_0.tg_7.nctrl.n9 digpotp_0.tg_7.nctrl.n8 13.414
+R1777 digpotp_0.tg_7.nctrl.n12 digpotp_0.tg_7.nctrl.n11 13.414
+R1778 digpotp_0.tg_7.nctrl.n15 digpotp_0.tg_7.nctrl.n14 13.414
+R1779 digpotp_0.tg_7.nctrl.n16 digpotp_0.tg_7.nctrl.t0 10.118
+R1780 digpotp_0.tg_7.nctrl digpotp_0.tg_7.nctrl.n16 0.699
+R1781 digpotp_0.tg_7.nctrl digpotp_0.tg_7.nctrl.n15 0.618
+R1782 digpotp_0.tg_7.nctrl.n6 digpotp_0.tg_7.nctrl.n3 0.218
+R1783 digpotp_0.tg_7.nctrl.n9 digpotp_0.tg_7.nctrl.n6 0.218
+R1784 digpotp_0.tg_7.nctrl.n12 digpotp_0.tg_7.nctrl.n9 0.218
+R1785 digpotp_0.tg_7.nctrl.n15 digpotp_0.tg_7.nctrl.n12 0.218
+R1786 digpotp_0.tg_7.b.n23 digpotp_0.tg_7.b.t8 10.49
+R1787 digpotp_0.tg_7.b.n11 digpotp_0.tg_7.b.t20 6.501
+R1788 digpotp_0.tg_7.b.n11 digpotp_0.tg_7.b.t15 6.501
+R1789 digpotp_0.tg_7.b.n12 digpotp_0.tg_7.b.t12 6.501
+R1790 digpotp_0.tg_7.b.n12 digpotp_0.tg_7.b.t22 6.501
+R1791 digpotp_0.tg_7.b.n13 digpotp_0.tg_7.b.t16 6.501
+R1792 digpotp_0.tg_7.b.n13 digpotp_0.tg_7.b.t14 6.501
+R1793 digpotp_0.tg_7.b.n14 digpotp_0.tg_7.b.t19 6.501
+R1794 digpotp_0.tg_7.b.n14 digpotp_0.tg_7.b.t21 6.501
+R1795 digpotp_0.tg_7.b.n15 digpotp_0.tg_7.b.t18 6.501
+R1796 digpotp_0.tg_7.b.n15 digpotp_0.tg_7.b.t13 6.501
+R1797 digpotp_0.tg_7.b.n16 digpotp_0.tg_7.b.t23 6.501
+R1798 digpotp_0.tg_7.b.n16 digpotp_0.tg_7.b.t17 6.501
+R1799 digpotp_0.tg_7.b.n5 digpotp_0.tg_7.b.t0 4.585
+R1800 digpotp_0.tg_7.b.n10 digpotp_0.tg_7.b.t5 4.362
+R1801 digpotp_0.tg_7.b.n4 digpotp_0.tg_7.b.t1 3.96
+R1802 digpotp_0.tg_7.b.n4 digpotp_0.tg_7.b.t7 3.96
+R1803 digpotp_0.tg_7.b.n3 digpotp_0.tg_7.b.t24 3.96
+R1804 digpotp_0.tg_7.b.n3 digpotp_0.tg_7.b.t2 3.96
+R1805 digpotp_0.tg_7.b.n2 digpotp_0.tg_7.b.t9 3.96
+R1806 digpotp_0.tg_7.b.n2 digpotp_0.tg_7.b.t3 3.96
+R1807 digpotp_0.tg_7.b.n1 digpotp_0.tg_7.b.t10 3.96
+R1808 digpotp_0.tg_7.b.n1 digpotp_0.tg_7.b.t11 3.96
+R1809 digpotp_0.tg_7.b.n0 digpotp_0.tg_7.b.t6 3.96
+R1810 digpotp_0.tg_7.b.n0 digpotp_0.tg_7.b.t4 3.96
+R1811 digpotp_0.tg_7.b.n22 digpotp_0.tg_7.b.n10 1.068
+R1812 digpotp_0.tg_7.b.n17 digpotp_0.tg_7.b.n16 0.595
+R1813 digpotp_0.tg_7.b.n5 digpotp_0.tg_7.b.n4 0.402
+R1814 digpotp_0.tg_7.b.n6 digpotp_0.tg_7.b.n3 0.402
+R1815 digpotp_0.tg_7.b.n7 digpotp_0.tg_7.b.n2 0.402
+R1816 digpotp_0.tg_7.b.n8 digpotp_0.tg_7.b.n1 0.402
+R1817 digpotp_0.tg_7.b.n9 digpotp_0.tg_7.b.n0 0.402
+R1818 digpotp_0.tg_7.b.n21 digpotp_0.tg_7.b.n11 0.377
+R1819 digpotp_0.tg_7.b.n20 digpotp_0.tg_7.b.n12 0.377
+R1820 digpotp_0.tg_7.b.n19 digpotp_0.tg_7.b.n13 0.377
+R1821 digpotp_0.tg_7.b.n18 digpotp_0.tg_7.b.n14 0.377
+R1822 digpotp_0.tg_7.b.n17 digpotp_0.tg_7.b.n15 0.377
+R1823 digpotp_0.tg_7.b.n22 digpotp_0.tg_7.b.n21 0.275
+R1824 digpotp_0.tg_7.b.n10 digpotp_0.tg_7.b.n9 0.218
+R1825 digpotp_0.tg_7.b.n9 digpotp_0.tg_7.b.n8 0.218
+R1826 digpotp_0.tg_7.b.n8 digpotp_0.tg_7.b.n7 0.218
+R1827 digpotp_0.tg_7.b.n7 digpotp_0.tg_7.b.n6 0.218
+R1828 digpotp_0.tg_7.b.n6 digpotp_0.tg_7.b.n5 0.218
+R1829 digpotp_0.tg_7.b.n21 digpotp_0.tg_7.b.n20 0.218
+R1830 digpotp_0.tg_7.b.n20 digpotp_0.tg_7.b.n19 0.218
+R1831 digpotp_0.tg_7.b.n19 digpotp_0.tg_7.b.n18 0.218
+R1832 digpotp_0.tg_7.b.n18 digpotp_0.tg_7.b.n17 0.218
+R1833 digpotp_0.tg_7.b.n23 digpotp_0.tg_7.b.n22 0.118
+R1834 digpotp_0.tg_7.b digpotp_0.tg_7.b.n23 0.062
+R1835 c4.n3 c4.t10 901.568
+R1836 c4.n3 c4.t8 835.466
+R1837 c4.n12 c4.t2 835.466
+R1838 c4.n10 c4.t3 835.466
+R1839 c4.n7 c4.t6 835.466
+R1840 c4.n5 c4.t11 835.466
+R1841 c4.n14 c4.t0 835.466
+R1842 c4.n4 c4.t9 835.466
+R1843 c4.n6 c4.t13 835.466
+R1844 c4.n1 c4.t1 835.466
+R1845 c4.n11 c4.t5 835.466
+R1846 c4.n13 c4.t4 835.466
+R1847 c4.t12 c4.t7 803.658
+R1848 c4.n16 c4.t12 234.281
+R1849 c4.n4 c4.n3 66.102
+R1850 c4.n5 c4.n4 66.102
+R1851 c4.n6 c4.n5 66.102
+R1852 c4.n7 c4.n6 66.102
+R1853 c4.n7 c4.n1 66.102
+R1854 c4.n10 c4.n1 66.102
+R1855 c4.n11 c4.n10 66.102
+R1856 c4.n12 c4.n11 66.102
+R1857 c4.n13 c4.n12 66.102
+R1858 c4.n14 c4.n13 66.102
+R1859 c4.n3 c4.n2 13.632
+R1860 c4.n15 c4.n14 13.414
+R1861 c4.n12 c4.n0 13.414
+R1862 c4.n10 c4.n9 13.414
+R1863 c4.n8 c4.n7 13.414
+R1864 c4.n5 c4.n2 13.414
+R1865 digpotp_0.c4 c4 3.45
+R1866 digpotp_0.c4 c4 2.525
+R1867 c4.n16 c4.n15 0.987
+R1868 c4 c4.n16 0.454
+R1869 c4.n8 c4.n2 0.218
+R1870 c4.n9 c4.n8 0.218
+R1871 c4.n9 c4.n0 0.218
+R1872 c4.n15 c4.n0 0.218
+R1873 w_30480_5540.n7 w_30480_5540.t13 148.866
+R1874 w_30480_5540.n5 w_30480_5540.t7 148.866
+R1875 w_30480_5540.n5 w_30480_5540.t5 109.214
+R1876 w_30480_5540.n0 w_30480_5540.t11 108.825
+R1877 w_30480_5540.t11 w_30480_5540.t3 87.861
+R1878 w_30480_5540.t5 w_30480_5540.t9 87.861
+R1879 w_30480_5540.n4 w_30480_5540.t10 11.492
+R1880 w_30480_5540.n8 w_30480_5540.t14 11.092
+R1881 w_30480_5540.n3 w_30480_5540.t8 10.835
+R1882 w_30480_5540.n3 w_30480_5540.t6 10.835
+R1883 w_30480_5540.t4 w_30480_5540.n9 10.835
+R1884 w_30480_5540.n9 w_30480_5540.t12 10.835
+R1885 w_30480_5540.n2 w_30480_5540.t2 9.792
+R1886 w_30480_5540.n1 w_30480_5540.t0 9.521
+R1887 w_30480_5540.n1 w_30480_5540.t1 9.521
+R1888 w_30480_5540.n6 w_30480_5540.n2 4.293
+R1889 w_30480_5540.n2 w_30480_5540.n1 1.077
+R1890 w_30480_5540.n9 w_30480_5540.n8 0.657
+R1891 w_30480_5540.n6 w_30480_5540.n5 0.439
+R1892 w_30480_5540.n5 w_30480_5540.n4 0.437
+R1893 w_30480_5540.n7 w_30480_5540.n0 0.389
+R1894 w_30480_5540.n7 w_30480_5540.n6 0.36
+R1895 w_30480_5540.n4 w_30480_5540.n3 0.257
+R1896 w_30480_5540.n8 w_30480_5540.n7 0.237
+R1897 a_31610_5759.n0 a_31610_5759.t7 86.002
+R1898 a_31610_5759.n1 a_31610_5759.t6 85.559
+R1899 a_31610_5759.n0 a_31610_5759.t5 85.559
+R1900 a_31610_5759.n3 a_31610_5759.t1 17.857
+R1901 a_31610_5759.t0 a_31610_5759.n5 11.052
+R1902 a_31610_5759.n4 a_31610_5759.t3 10.835
+R1903 a_31610_5759.n4 a_31610_5759.t4 10.835
+R1904 a_31610_5759.n5 a_31610_5759.n3 1.539
+R1905 a_31610_5759.n2 a_31610_5759.n1 0.903
+R1906 a_31610_5759.n2 a_31610_5759.t2 0.565
+R1907 a_31610_5759.n5 a_31610_5759.n4 0.516
+R1908 a_31610_5759.n1 a_31610_5759.n0 0.443
+R1909 a_31610_5759.n3 a_31610_5759.n2 0.389
+R1910 digpotp_0.tg_0.nctrl.n14 digpotp_0.tg_0.nctrl.t5 894.913
+R1911 digpotp_0.tg_0.nctrl.n14 digpotp_0.tg_0.nctrl.t2 837.073
+R1912 digpotp_0.tg_0.nctrl.n11 digpotp_0.tg_0.nctrl.t8 837.073
+R1913 digpotp_0.tg_0.nctrl.n8 digpotp_0.tg_0.nctrl.t13 837.073
+R1914 digpotp_0.tg_0.nctrl.n5 digpotp_0.tg_0.nctrl.t6 837.073
+R1915 digpotp_0.tg_0.nctrl.n2 digpotp_0.tg_0.nctrl.t10 837.073
+R1916 digpotp_0.tg_0.nctrl.n0 digpotp_0.tg_0.nctrl.t4 837.073
+R1917 digpotp_0.tg_0.nctrl.n13 digpotp_0.tg_0.nctrl.t12 837.073
+R1918 digpotp_0.tg_0.nctrl.n10 digpotp_0.tg_0.nctrl.t3 837.073
+R1919 digpotp_0.tg_0.nctrl.n7 digpotp_0.tg_0.nctrl.t9 837.073
+R1920 digpotp_0.tg_0.nctrl.n4 digpotp_0.tg_0.nctrl.t11 837.073
+R1921 digpotp_0.tg_0.nctrl.n1 digpotp_0.tg_0.nctrl.t7 837.073
+R1922 digpotp_0.tg_0.nctrl.n2 digpotp_0.tg_0.nctrl.n1 57.84
+R1923 digpotp_0.tg_0.nctrl.n5 digpotp_0.tg_0.nctrl.n4 57.84
+R1924 digpotp_0.tg_0.nctrl.n8 digpotp_0.tg_0.nctrl.n7 57.84
+R1925 digpotp_0.tg_0.nctrl.n11 digpotp_0.tg_0.nctrl.n10 57.84
+R1926 digpotp_0.tg_0.nctrl.n14 digpotp_0.tg_0.nctrl.n13 57.84
+R1927 digpotp_0.tg_0.nctrl.n16 digpotp_0.tg_0.nctrl.t0 18.051
+R1928 digpotp_0.tg_0.nctrl.n3 digpotp_0.tg_0.nctrl.n0 13.632
+R1929 digpotp_0.tg_0.nctrl.n3 digpotp_0.tg_0.nctrl.n2 13.414
+R1930 digpotp_0.tg_0.nctrl.n6 digpotp_0.tg_0.nctrl.n5 13.414
+R1931 digpotp_0.tg_0.nctrl.n9 digpotp_0.tg_0.nctrl.n8 13.414
+R1932 digpotp_0.tg_0.nctrl.n12 digpotp_0.tg_0.nctrl.n11 13.414
+R1933 digpotp_0.tg_0.nctrl.n15 digpotp_0.tg_0.nctrl.n14 13.414
+R1934 digpotp_0.tg_0.nctrl.n16 digpotp_0.tg_0.nctrl.t1 10.118
+R1935 digpotp_0.tg_0.nctrl digpotp_0.tg_0.nctrl.n16 0.699
+R1936 digpotp_0.tg_0.nctrl digpotp_0.tg_0.nctrl.n15 0.618
+R1937 digpotp_0.tg_0.nctrl.n6 digpotp_0.tg_0.nctrl.n3 0.218
+R1938 digpotp_0.tg_0.nctrl.n9 digpotp_0.tg_0.nctrl.n6 0.218
+R1939 digpotp_0.tg_0.nctrl.n12 digpotp_0.tg_0.nctrl.n9 0.218
+R1940 digpotp_0.tg_0.nctrl.n15 digpotp_0.tg_0.nctrl.n12 0.218
+R1941 digpotp_0.tg_0.b.n23 digpotp_0.tg_0.b.t22 10.55
+R1942 digpotp_0.tg_0.b.n11 digpotp_0.tg_0.b.t12 6.501
+R1943 digpotp_0.tg_0.b.n11 digpotp_0.tg_0.b.t9 6.501
+R1944 digpotp_0.tg_0.b.n12 digpotp_0.tg_0.b.t6 6.501
+R1945 digpotp_0.tg_0.b.n12 digpotp_0.tg_0.b.t5 6.501
+R1946 digpotp_0.tg_0.b.n13 digpotp_0.tg_0.b.t10 6.501
+R1947 digpotp_0.tg_0.b.n13 digpotp_0.tg_0.b.t7 6.501
+R1948 digpotp_0.tg_0.b.n14 digpotp_0.tg_0.b.t3 6.501
+R1949 digpotp_0.tg_0.b.n14 digpotp_0.tg_0.b.t13 6.501
+R1950 digpotp_0.tg_0.b.n15 digpotp_0.tg_0.b.t8 6.501
+R1951 digpotp_0.tg_0.b.n15 digpotp_0.tg_0.b.t4 6.501
+R1952 digpotp_0.tg_0.b.n16 digpotp_0.tg_0.b.t14 6.501
+R1953 digpotp_0.tg_0.b.n16 digpotp_0.tg_0.b.t11 6.501
+R1954 digpotp_0.tg_0.b.n5 digpotp_0.tg_0.b.t0 4.585
+R1955 digpotp_0.tg_0.b.n10 digpotp_0.tg_0.b.t17 4.362
+R1956 digpotp_0.tg_0.b.n4 digpotp_0.tg_0.b.t20 3.96
+R1957 digpotp_0.tg_0.b.n4 digpotp_0.tg_0.b.t15 3.96
+R1958 digpotp_0.tg_0.b.n3 digpotp_0.tg_0.b.t23 3.96
+R1959 digpotp_0.tg_0.b.n3 digpotp_0.tg_0.b.t24 3.96
+R1960 digpotp_0.tg_0.b.n2 digpotp_0.tg_0.b.t19 3.96
+R1961 digpotp_0.tg_0.b.n2 digpotp_0.tg_0.b.t18 3.96
+R1962 digpotp_0.tg_0.b.n1 digpotp_0.tg_0.b.t2 3.96
+R1963 digpotp_0.tg_0.b.n1 digpotp_0.tg_0.b.t21 3.96
+R1964 digpotp_0.tg_0.b.n0 digpotp_0.tg_0.b.t16 3.96
+R1965 digpotp_0.tg_0.b.n0 digpotp_0.tg_0.b.t1 3.96
+R1966 digpotp_0.tg_0.b.n22 digpotp_0.tg_0.b.n10 1.068
+R1967 digpotp_0.tg_0.b.n17 digpotp_0.tg_0.b.n16 0.595
+R1968 digpotp_0.tg_0.b.n5 digpotp_0.tg_0.b.n4 0.402
+R1969 digpotp_0.tg_0.b.n6 digpotp_0.tg_0.b.n3 0.402
+R1970 digpotp_0.tg_0.b.n7 digpotp_0.tg_0.b.n2 0.402
+R1971 digpotp_0.tg_0.b.n8 digpotp_0.tg_0.b.n1 0.402
+R1972 digpotp_0.tg_0.b.n9 digpotp_0.tg_0.b.n0 0.402
+R1973 digpotp_0.tg_0.b.n21 digpotp_0.tg_0.b.n11 0.377
+R1974 digpotp_0.tg_0.b.n20 digpotp_0.tg_0.b.n12 0.377
+R1975 digpotp_0.tg_0.b.n19 digpotp_0.tg_0.b.n13 0.377
+R1976 digpotp_0.tg_0.b.n18 digpotp_0.tg_0.b.n14 0.377
+R1977 digpotp_0.tg_0.b.n17 digpotp_0.tg_0.b.n15 0.377
+R1978 digpotp_0.tg_0.b.n22 digpotp_0.tg_0.b.n21 0.275
+R1979 digpotp_0.tg_0.b.n10 digpotp_0.tg_0.b.n9 0.218
+R1980 digpotp_0.tg_0.b.n9 digpotp_0.tg_0.b.n8 0.218
+R1981 digpotp_0.tg_0.b.n8 digpotp_0.tg_0.b.n7 0.218
+R1982 digpotp_0.tg_0.b.n7 digpotp_0.tg_0.b.n6 0.218
+R1983 digpotp_0.tg_0.b.n6 digpotp_0.tg_0.b.n5 0.218
+R1984 digpotp_0.tg_0.b.n21 digpotp_0.tg_0.b.n20 0.218
+R1985 digpotp_0.tg_0.b.n20 digpotp_0.tg_0.b.n19 0.218
+R1986 digpotp_0.tg_0.b.n19 digpotp_0.tg_0.b.n18 0.218
+R1987 digpotp_0.tg_0.b.n18 digpotp_0.tg_0.b.n17 0.218
+R1988 digpotp_0.tg_0.b.n23 digpotp_0.tg_0.b.n22 0.118
+R1989 digpotp_0.tg_0.b digpotp_0.tg_0.b.n23 0.062
+R1990 c0.n3 c0.t8 901.568
+R1991 c0.n3 c0.t6 835.466
+R1992 c0.n12 c0.t1 835.466
+R1993 c0.n10 c0.t12 835.466
+R1994 c0.n7 c0.t13 835.466
+R1995 c0.n5 c0.t9 835.466
+R1996 c0.n14 c0.t0 835.466
+R1997 c0.n4 c0.t7 835.466
+R1998 c0.n6 c0.t11 835.466
+R1999 c0.n1 c0.t10 835.466
+R2000 c0.n11 c0.t3 835.466
+R2001 c0.n13 c0.t2 835.466
+R2002 c0.t5 c0.t4 803.658
+R2003 c0.n16 c0.t5 234.281
+R2004 c0.n4 c0.n3 66.102
+R2005 c0.n5 c0.n4 66.102
+R2006 c0.n6 c0.n5 66.102
+R2007 c0.n7 c0.n6 66.102
+R2008 c0.n7 c0.n1 66.102
+R2009 c0.n10 c0.n1 66.102
+R2010 c0.n11 c0.n10 66.102
+R2011 c0.n12 c0.n11 66.102
+R2012 c0.n13 c0.n12 66.102
+R2013 c0.n14 c0.n13 66.102
+R2014 c0.n3 c0.n2 13.632
+R2015 c0.n15 c0.n14 13.414
+R2016 c0.n12 c0.n0 13.414
+R2017 c0.n10 c0.n9 13.414
+R2018 c0.n8 c0.n7 13.414
+R2019 c0.n5 c0.n2 13.414
+R2020 digpotp_0.c0 c0 3.612
+R2021 digpotp_0.c0 c0 3.325
+R2022 c0.n16 c0.n15 0.987
+R2023 c0 c0.n16 0.454
+R2024 c0.n8 c0.n2 0.218
+R2025 c0.n9 c0.n8 0.218
+R2026 c0.n9 c0.n0 0.218
+R2027 c0.n15 c0.n0 0.218
+R2028 c6.n3 c6.t1 901.568
+R2029 c6.n3 c6.t2 835.466
+R2030 c6.n12 c6.t7 835.466
+R2031 c6.n10 c6.t9 835.466
+R2032 c6.n7 c6.t11 835.466
+R2033 c6.n5 c6.t4 835.466
+R2034 c6.n14 c6.t5 835.466
+R2035 c6.n4 c6.t3 835.466
+R2036 c6.n6 c6.t8 835.466
+R2037 c6.n1 c6.t6 835.466
+R2038 c6.n11 c6.t12 835.466
+R2039 c6.n13 c6.t10 835.466
+R2040 c6.t0 c6.t13 803.658
+R2041 c6.n16 c6.t0 234.281
+R2042 c6.n4 c6.n3 66.102
+R2043 c6.n5 c6.n4 66.102
+R2044 c6.n6 c6.n5 66.102
+R2045 c6.n7 c6.n6 66.102
+R2046 c6.n7 c6.n1 66.102
+R2047 c6.n10 c6.n1 66.102
+R2048 c6.n11 c6.n10 66.102
+R2049 c6.n12 c6.n11 66.102
+R2050 c6.n13 c6.n12 66.102
+R2051 c6.n14 c6.n13 66.102
+R2052 c6.n3 c6.n2 13.632
+R2053 c6.n15 c6.n14 13.414
+R2054 c6.n12 c6.n0 13.414
+R2055 c6.n10 c6.n9 13.414
+R2056 c6.n8 c6.n7 13.414
+R2057 c6.n5 c6.n2 13.414
+R2058 digpotp_0.c6 c6 3.512
+R2059 digpotp_0.c6 c6 2.525
+R2060 c6.n16 c6.n15 0.987
+R2061 c6 c6.n16 0.454
+R2062 c6.n8 c6.n2 0.218
+R2063 c6.n9 c6.n8 0.218
+R2064 c6.n9 c6.n0 0.218
+R2065 c6.n15 c6.n0 0.218
+R2066 c7.n3 c7.t0 901.568
+R2067 c7.n3 c7.t2 835.466
+R2068 c7.n12 c7.t7 835.466
+R2069 c7.n10 c7.t10 835.466
+R2070 c7.n7 c7.t13 835.466
+R2071 c7.n5 c7.t4 835.466
+R2072 c7.n14 c7.t6 835.466
+R2073 c7.n4 c7.t3 835.466
+R2074 c7.n6 c7.t11 835.466
+R2075 c7.n1 c7.t8 835.466
+R2076 c7.n11 c7.t12 835.466
+R2077 c7.n13 c7.t9 835.466
+R2078 c7.t5 c7.t1 803.658
+R2079 c7.n16 c7.t5 234.281
+R2080 c7.n4 c7.n3 66.102
+R2081 c7.n5 c7.n4 66.102
+R2082 c7.n6 c7.n5 66.102
+R2083 c7.n7 c7.n6 66.102
+R2084 c7.n7 c7.n1 66.102
+R2085 c7.n10 c7.n1 66.102
+R2086 c7.n11 c7.n10 66.102
+R2087 c7.n12 c7.n11 66.102
+R2088 c7.n13 c7.n12 66.102
+R2089 c7.n14 c7.n13 66.102
+R2090 c7.n3 c7.n2 13.632
+R2091 c7.n15 c7.n14 13.414
+R2092 c7.n12 c7.n0 13.414
+R2093 c7.n10 c7.n9 13.414
+R2094 c7.n8 c7.n7 13.414
+R2095 c7.n5 c7.n2 13.414
+R2096 digpotp_0.c7 c7 3.312
+R2097 digpotp_0.c7 c7 2.525
+R2098 c7.n16 c7.n15 0.987
+R2099 c7 c7.n16 0.454
+R2100 c7.n8 c7.n2 0.218
+R2101 c7.n9 c7.n8 0.218
+R2102 c7.n9 c7.n0 0.218
+R2103 c7.n15 c7.n0 0.218
+R2104 c5.n3 c5.t4 901.568
+R2105 c5.n3 c5.t1 835.466
+R2106 c5.n12 c5.t11 835.466
+R2107 c5.n10 c5.t7 835.466
+R2108 c5.n7 c5.t8 835.466
+R2109 c5.n5 c5.t3 835.466
+R2110 c5.n14 c5.t10 835.466
+R2111 c5.n4 c5.t2 835.466
+R2112 c5.n6 c5.t6 835.466
+R2113 c5.n1 c5.t5 835.466
+R2114 c5.n11 c5.t9 835.466
+R2115 c5.n13 c5.t12 835.466
+R2116 c5.t0 c5.t13 803.658
+R2117 c5.n16 c5.t0 234.281
+R2118 c5.n4 c5.n3 66.102
+R2119 c5.n5 c5.n4 66.102
+R2120 c5.n6 c5.n5 66.102
+R2121 c5.n7 c5.n6 66.102
+R2122 c5.n7 c5.n1 66.102
+R2123 c5.n10 c5.n1 66.102
+R2124 c5.n11 c5.n10 66.102
+R2125 c5.n12 c5.n11 66.102
+R2126 c5.n13 c5.n12 66.102
+R2127 c5.n14 c5.n13 66.102
+R2128 c5.n3 c5.n2 13.632
+R2129 c5.n15 c5.n14 13.414
+R2130 c5.n12 c5.n0 13.414
+R2131 c5.n10 c5.n9 13.414
+R2132 c5.n8 c5.n7 13.414
+R2133 c5.n5 c5.n2 13.414
+R2134 digpotp_0.c5 c5 3.45
+R2135 digpotp_0.c5 c5 2.525
+R2136 c5.n16 c5.n15 0.987
+R2137 c5 c5.n16 0.454
+R2138 c5.n8 c5.n2 0.218
+R2139 c5.n9 c5.n8 0.218
+R2140 c5.n9 c5.n0 0.218
+R2141 c5.n15 c5.n0 0.218
+R2142 a_30618_4910.n0 a_30618_4910.t5 40.071
+R2143 a_30618_4910.n0 a_30618_4910.t0 37.359
+R2144 a_30618_4910.n1 a_30618_4910.t1 17.512
+R2145 a_30618_4910.n2 a_30618_4910.t3 11.507
+R2146 a_30618_4910.n3 a_30618_4910.t2 10.835
+R2147 a_30618_4910.t4 a_30618_4910.n3 10.835
+R2148 a_30618_4910.n2 a_30618_4910.n1 2.581
+R2149 a_30618_4910.n1 a_30618_4910.n0 0.362
+R2150 a_30618_4910.n3 a_30618_4910.n2 0.27
+R2151 in2.n0 in2.t0 573.58
+R2152 in2.n0 in2.t1 573.58
+R2153 in2.n0 in2.t2 515.74
+R2154 in2 in2.n0 18.03
+C0 a_24902_5342# c0 0.06fF
+C1 a_24584_3826# c0 0.01fF
+C2 c1 a_24266_5342# 0.01fF
+C3 c1 digpotp_0.tg_6.nctrl 0.33fF
+C4 c1 digpotp_0.n8 0.66fF
+C5 digpotp_0.tg_4.b digpotp_0.tg_4.nctrl 0.53fF
+C6 c3 digpotp_0.tg_3.b 0.16fF
+C7 digpotp_0.tg_2.nctrl digpotp_0.tg_1.b 0.00fF
+C8 c6 digpotp_0.tg_1.b 1.07fF
+C9 in2 digpotp_0.n8 0.54fF
+C10 digpotp_0.tg_3.b digpotp_0.n8 0.07fF
+C11 digpotp_0.tg_1.nctrl vd 3.26fF
+C12 digpotp_0.tg_3.nctrl c3 0.01fF
+C13 out digpotp_0.tg_7.b 0.01fF
+C14 digpotp_0.tg_6.b digpotp_0.tg_6.nctrl 0.55fF
+C15 digpotp_0.tg_6.b digpotp_0.n8 0.13fF
+C16 digpotp_0.tg_6.nctrl digpotp_0.tg_5.b 0.00fF
+C17 digpotp_0.tg_3.nctrl digpotp_0.n8 0.01fF
+C18 a_26984_7366# a_27302_5342# 0.00fF
+C19 a_27302_8882# vd 0.10fF
+C20 digpotp_0.n8 digpotp_0.tg_5.b 0.28fF
+C21 c1 vd 1.92fF
+C22 a_28574_5342# digpotp_0.tg_7.b 0.02fF
+C23 in2 vd 0.91fF
+C24 digpotp_0.tg_3.b vd 1.69fF
+C25 a_27620_7366# digpotp_0.n8 0.01fF
+C26 a_27302_8882# a_26666_8882# 0.21fF
+C27 a_26984_7366# a_26666_5342# 0.00fF
+C28 digpotp_0.tg_6.b a_26984_3826# 0.00fF
+C29 digpotp_0.tg_6.b vd 1.68fF
+C30 in2 a_28256_7366# 0.01fF
+C31 a_24902_5342# a_26666_5342# 0.00fF
+C32 digpotp_0.tg_3.nctrl vd 3.28fF
+C33 digpotp_0.tg_1.nctrl digpotp_0.tg_1.b 0.56fF
+C34 vd digpotp_0.tg_5.b 1.65fF
+C35 c0 a_24266_5342# 0.03fF
+C36 digpotp_0.tg_6.nctrl c0 0.01fF
+C37 c0 digpotp_0.n8 0.84fF
+C38 digpotp_0.n8 ib 0.04fF
+C39 a_27938_5342# digpotp_0.n8 0.59fF
+C40 a_27620_7366# vd 0.10fF
+C41 a_27938_8882# a_27302_8882# 0.22fF
+C42 a_27938_5342# a_28256_3826# 0.02fF
+C43 digpotp_0.tg_7.nctrl a_28256_3826# 0.08fF
+C44 a_27302_8882# out 0.08fF
+C45 a_27938_8882# in2 0.01fF
+C46 a_27620_7366# a_28256_7366# 0.22fF
+C47 c0 a_26984_3826# 0.01fF
+C48 c0 vd 1.91fF
+C49 ib vd 10.03fF
+C50 a_27302_5342# digpotp_0.n8 0.58fF
+C51 in2 out 1.17fF
+C52 digpotp_0.tg_7.nctrl vd 2.81fF
+C53 digpotp_0.tg_7.nctrl a_26984_3826# 0.04fF
+C54 c7 digpotp_0.tg_0.nctrl 0.33fF
+C55 c6 digpotp_0.tg_1.nctrl 0.32fF
+C56 a_27620_3826# c0 0.00fF
+C57 a_28256_7366# ib 0.00fF
+C58 a_28574_8882# digpotp_0.n8 0.02fF
+C59 a_27938_5342# a_28256_7366# 0.00fF
+C60 a_26666_5342# digpotp_0.n8 0.60fF
+C61 a_27620_3826# a_27938_5342# 0.02fF
+C62 digpotp_0.tg_7.nctrl a_27620_3826# 0.08fF
+C63 a_27938_8882# a_27620_7366# 0.02fF
+C64 a_26984_3826# a_27302_5342# 0.02fF
+C65 a_27620_7366# out 0.02fF
+C66 c2 digpotp_0.tg_5.nctrl 0.33fF
+C67 c4 digpotp_0.tg_2.b 0.19fF
+C68 digpotp_0.tg_0.nctrl vd 3.29fF
+C69 digpotp_0.tg_3.b digpotp_0.tg_4.nctrl 0.00fF
+C70 c7 digpotp_0.tg_0.b 1.08fF
+C71 a_28574_8882# vd 0.10fF
+C72 c5 c4 0.02fF
+C73 a_27620_3826# a_27302_5342# 0.02fF
+C74 a_27938_8882# ib 0.00fF
+C75 digpotp_0.tg_0.b digpotp_0.n8 0.09fF
+C76 c0 out 0.12fF
+C77 a_26666_5342# a_26984_3826# 0.02fF
+C78 ib out 2.00fF
+C79 a_24584_3826# a_24902_5342# 0.02fF
+C80 a_21466_5342# c1 0.04fF
+C81 a_28256_7366# a_28574_8882# 0.02fF
+C82 a_28574_8882# a_26666_8882# 0.00fF
+C83 a_27938_5342# a_28574_5342# 0.21fF
+C84 digpotp_0.tg_0.b vd 1.61fF
+C85 c3 c4 0.01fF
+C86 c0 digpotp_0.tg_7.b 1.08fF
+C87 a_21466_5342# digpotp_0.tg_5.b 0.02fF
+C88 c5 digpotp_0.tg_2.b 1.07fF
+C89 c4 digpotp_0.n8 0.69fF
+C90 c3 c2 0.01fF
+C91 digpotp_0.tg_7.nctrl digpotp_0.tg_7.b 0.53fF
+C92 a_27938_8882# a_28574_8882# 0.20fF
+C93 c2 digpotp_0.n8 0.56fF
+C94 a_28574_5342# a_27302_5342# 0.02fF
+C95 a_28574_8882# out 0.08fF
+C96 a_26666_5342# out 0.00fF
+C97 c1 digpotp_0.tg_6.b 1.08fF
+C98 a_26984_7366# digpotp_0.n8 0.00fF
+C99 a_24902_5342# a_24266_5342# 0.21fF
+C100 a_24584_3826# a_24266_5342# 0.02fF
+C101 a_24584_3826# digpotp_0.tg_6.nctrl 0.11fF
+C102 c4 vd 1.93fF
+C103 c1 digpotp_0.tg_5.b 0.16fF
+C104 a_24902_5342# digpotp_0.n8 0.62fF
+C105 a_24584_3826# digpotp_0.n8 0.32fF
+C106 digpotp_0.tg_5.nctrl digpotp_0.n8 0.10fF
+C107 a_28574_5342# a_26666_5342# 0.00fF
+C108 digpotp_0.tg_3.nctrl digpotp_0.tg_3.b 0.54fF
+C109 c2 vd 1.95fF
+C110 a_27302_8882# a_27620_7366# 0.02fF
+C111 digpotp_0.n8 digpotp_0.tg_2.b 0.09fF
+C112 c6 digpotp_0.tg_0.nctrl 0.01fF
+C113 a_27620_7366# in2 0.00fF
+C114 c5 digpotp_0.n8 0.66fF
+C115 a_26984_7366# vd 0.11fF
+C116 a_24584_3826# vd 0.05fF
+C117 digpotp_0.tg_5.nctrl vd 3.22fF
+C118 c1 c0 0.12fF
+C119 digpotp_0.tg_4.b c2 0.16fF
+C120 in2 ib 1.03fF
+C121 vd digpotp_0.tg_2.b 1.65fF
+C122 digpotp_0.tg_7.nctrl c1 0.00fF
+C123 a_26984_7366# a_28256_7366# 0.02fF
+C124 c5 vd 1.93fF
+C125 a_26984_7366# a_26666_8882# 0.02fF
+C126 c6 digpotp_0.tg_0.b 0.12fF
+C127 digpotp_0.tg_6.b c0 0.19fF
+C128 c3 digpotp_0.n8 0.64fF
+C129 digpotp_0.n8 a_24266_5342# 0.69fF
+C130 digpotp_0.tg_6.nctrl digpotp_0.n8 0.07fF
+C131 digpotp_0.tg_7.nctrl digpotp_0.tg_6.b 0.00fF
+C132 digpotp_0.tg_4.b digpotp_0.tg_5.nctrl 0.00fF
+C133 a_28256_3826# digpotp_0.n8 0.03fF
+C134 a_27302_8882# a_28574_8882# 0.02fF
+C135 a_27620_7366# a_27938_5342# 0.00fF
+C136 a_26984_7366# out 0.20fF
+C137 in2 a_28574_8882# 0.05fF
+C138 c3 vd 1.93fF
+C139 c7 vd 2.86fF
+C140 c5 digpotp_0.tg_1.b 0.16fF
+C141 digpotp_0.tg_6.nctrl vd 3.22fF
+C142 digpotp_0.tg_2.nctrl c4 0.01fF
+C143 digpotp_0.n8 vd 0.50fF
+C144 a_26984_3826# digpotp_0.n8 0.30fF
+C145 a_28256_3826# vd 0.02fF
+C146 a_28256_3826# a_26984_3826# 0.02fF
+C147 digpotp_0.tg_7.nctrl c0 0.33fF
+C148 a_27620_7366# a_27302_5342# 0.00fF
+C149 digpotp_0.tg_4.nctrl c2 0.01fF
+C150 a_28256_7366# digpotp_0.n8 0.21fF
+C151 a_27620_3826# digpotp_0.n8 0.09fF
+C152 c3 digpotp_0.tg_4.b 1.07fF
+C153 a_27620_3826# a_28256_3826# 0.21fF
+C154 a_26984_3826# vd 0.05fF
+C155 c0 a_27302_5342# 0.01fF
+C156 digpotp_0.tg_4.b digpotp_0.n8 0.03fF
+C157 digpotp_0.n8 digpotp_0.tg_1.b 0.10fF
+C158 digpotp_0.tg_2.nctrl digpotp_0.tg_2.b 0.53fF
+C159 a_27938_5342# a_27302_5342# 0.20fF
+C160 a_28256_7366# vd 0.11fF
+C161 c6 c5 0.01fF
+C162 c5 digpotp_0.tg_2.nctrl 0.32fF
+C163 a_27620_3826# vd 0.02fF
+C164 a_27620_3826# a_26984_3826# 0.21fF
+C165 a_28574_8882# ib 0.00fF
+C166 vd a_26666_8882# 0.10fF
+C167 a_26666_5342# c0 0.06fF
+C168 digpotp_0.n8 out 0.00fF
+C169 digpotp_0.tg_4.b vd 1.68fF
+C170 a_27938_5342# a_26666_5342# 0.02fF
+C171 vd digpotp_0.tg_1.b 1.71fF
+C172 c2 c1 0.01fF
+C173 digpotp_0.tg_3.b c4 1.07fF
+C174 a_28574_5342# digpotp_0.n8 0.73fF
+C175 a_28256_3826# a_28574_5342# 0.02fF
+C176 a_27938_8882# vd 0.10fF
+C177 a_26984_7366# a_27302_8882# 0.02fF
+C178 digpotp_0.tg_3.nctrl c4 0.32fF
+C179 c6 c7 0.01fF
+C180 vd out 4.28fF
+C181 a_26666_5342# a_27302_5342# 0.21fF
+C182 digpotp_0.n8 digpotp_0.tg_7.b 0.02fF
+C183 c6 digpotp_0.n8 0.66fF
+C184 c3 digpotp_0.tg_4.nctrl 0.32fF
+C185 a_28256_3826# digpotp_0.tg_7.b 0.21fF
+C186 c2 digpotp_0.tg_5.b 1.08fF
+C187 a_27938_8882# a_28256_7366# 0.02fF
+C188 digpotp_0.tg_5.nctrl c1 0.01fF
+C189 digpotp_0.tg_1.nctrl c5 0.01fF
+C190 a_27938_8882# a_26666_8882# 0.02fF
+C191 a_28256_7366# out 0.00fF
+C192 a_26666_8882# out 0.14fF
+C193 a_24902_5342# digpotp_0.tg_6.b 0.02fF
+C194 a_24584_3826# digpotp_0.tg_6.b 0.20fF
+C195 vd digpotp_0.tg_7.b 0.88fF
+C196 a_26984_3826# digpotp_0.tg_7.b 0.00fF
+C197 a_28574_5342# a_28256_7366# 0.00fF
+C198 c6 vd 1.92fF
+C199 digpotp_0.tg_2.nctrl vd 3.28fF
+C200 digpotp_0.tg_5.nctrl digpotp_0.tg_5.b 0.53fF
+C201 a_21466_5342# digpotp_0.n8 0.74fF
+C202 digpotp_0.tg_0.nctrl digpotp_0.tg_0.b 0.53fF
+C203 digpotp_0.tg_4.nctrl vd 3.28fF
+C204 digpotp_0.tg_3.nctrl digpotp_0.tg_2.b 0.00fF
+C205 a_26984_7366# a_27620_7366# 0.22fF
+C206 a_27938_8882# out 0.08fF
+C207 a_27620_3826# digpotp_0.tg_7.b 0.03fF
+C208 digpotp_0.tg_1.nctrl digpotp_0.n8 0.03fF
+C209 digpotp_0.tg_7.nctrl gnd 1.63fF $ **FLOATING
+C210 c0 gnd 12.48fF
+C211 digpotp_0.tg_6.nctrl gnd 1.88fF $ **FLOATING
+C212 c1 gnd 11.96fF
+C213 digpotp_0.tg_5.nctrl gnd 1.86fF $ **FLOATING
+C214 c2 gnd 11.99fF
+C215 digpotp_0.tg_4.nctrl gnd 2.09fF $ **FLOATING
+C216 c3 gnd 12.09fF
+C217 digpotp_0.tg_3.nctrl gnd 2.08fF $ **FLOATING
+C218 c4 gnd 11.97fF
+C219 digpotp_0.tg_2.nctrl gnd 2.08fF $ **FLOATING
+C220 c5 gnd 12.08fF
+C221 digpotp_0.tg_1.nctrl gnd 1.88fF $ **FLOATING
+C222 c6 gnd 12.36fF
+C223 digpotp_0.tg_0.nctrl gnd 2.11fF $ **FLOATING
+C224 c7 gnd 14.23fF
+C225 in2 gnd 9.25fF
+C226 digpotp_0.tg_7.b gnd 2.92fF $ **FLOATING
+C227 a_28574_5342# gnd 0.96fF
+C228 a_28256_3826# gnd 0.85fF
+C229 a_27938_5342# gnd 0.92fF
+C230 a_27620_3826# gnd 0.84fF
+C231 a_27302_5342# gnd 0.94fF
+C232 a_26984_3826# gnd 0.91fF
+C233 a_26666_5342# gnd 1.13fF
+C234 digpotp_0.tg_6.b gnd 3.45fF $ **FLOATING
+C235 a_24902_5342# gnd 1.03fF
+C236 a_24584_3826# gnd 0.87fF
+C237 a_24266_5342# gnd 1.10fF
+C238 digpotp_0.tg_5.b gnd 3.44fF $ **FLOATING
+C239 a_21466_5342# gnd 1.29fF
+C240 digpotp_0.tg_4.b gnd 3.68fF $ **FLOATING
+C241 digpotp_0.tg_3.b gnd 3.71fF $ **FLOATING
+C242 digpotp_0.tg_2.b gnd 3.60fF $ **FLOATING
+C243 digpotp_0.tg_1.b gnd 3.72fF $ **FLOATING
+C244 digpotp_0.tg_0.b gnd 3.73fF $ **FLOATING
+C245 ib gnd 7.22fF
+C246 digpotp_0.n8 gnd 28.86fF $ **FLOATING
+C247 a_28574_8882# gnd 0.99fF
+C248 a_28256_7366# gnd 0.87fF
+C249 a_27938_8882# gnd 0.84fF
+C250 a_27620_7366# gnd 0.90fF
+C251 a_27302_8882# gnd 0.82fF
+C252 a_26984_7366# gnd 0.93fF
+C253 out gnd 13.42fF
+C254 a_26666_8882# gnd 1.05fF
+C255 vd gnd 126.51fF
+C256 in2.t2 gnd 0.03fF
+C257 in2.t1 gnd 0.06fF
+C258 in2.t0 gnd 0.06fF
+C259 in2.n0 gnd 0.11fF $ **FLOATING
+C260 a_30618_4910.t2 gnd 0.10fF
+C261 a_30618_4910.t3 gnd 0.13fF
+C262 a_30618_4910.t1 gnd 0.03fF
+C263 a_30618_4910.t5 gnd 0.70fF
+C264 a_30618_4910.t0 gnd 0.67fF
+C265 a_30618_4910.n0 gnd 0.97fF $ **FLOATING
+C266 a_30618_4910.n1 gnd 0.67fF $ **FLOATING
+C267 a_30618_4910.n2 gnd 1.08fF $ **FLOATING
+C268 a_30618_4910.n3 gnd 0.49fF $ **FLOATING
+C269 a_30618_4910.t4 gnd 0.10fF
+C270 c5.t13 gnd 0.12fF
+C271 c5.t0 gnd 0.11fF
+C272 c5.n0 gnd 0.07fF $ **FLOATING
+C273 c5.t10 gnd 0.07fF
+C274 c5.t12 gnd 0.11fF
+C275 c5.t11 gnd 0.07fF
+C276 c5.t9 gnd 0.11fF
+C277 c5.t7 gnd 0.07fF
+C278 c5.t5 gnd 0.11fF
+C279 c5.n1 gnd 0.04fF $ **FLOATING
+C280 c5.n2 gnd 0.11fF $ **FLOATING
+C281 c5.t8 gnd 0.07fF
+C282 c5.t6 gnd 0.11fF
+C283 c5.t3 gnd 0.07fF
+C284 c5.t2 gnd 0.11fF
+C285 c5.t1 gnd 0.07fF
+C286 c5.t4 gnd 0.11fF
+C287 c5.n3 gnd 0.08fF $ **FLOATING
+C288 c5.n4 gnd 0.04fF $ **FLOATING
+C289 c5.n5 gnd 0.05fF $ **FLOATING
+C290 c5.n6 gnd 0.04fF $ **FLOATING
+C291 c5.n7 gnd 0.05fF $ **FLOATING
+C292 c5.n8 gnd 0.07fF $ **FLOATING
+C293 c5.n9 gnd 0.07fF $ **FLOATING
+C294 c5.n10 gnd 0.05fF $ **FLOATING
+C295 c5.n11 gnd 0.04fF $ **FLOATING
+C296 c5.n12 gnd 0.05fF $ **FLOATING
+C297 c5.n13 gnd 0.04fF $ **FLOATING
+C298 c5.n14 gnd 0.04fF $ **FLOATING
+C299 c5.n15 gnd 0.18fF $ **FLOATING
+C300 c5.n16 gnd 0.50fF $ **FLOATING
+C301 digpotp_0.c5 gnd 2.89fF $ **FLOATING
+C302 c7.t1 gnd 0.17fF
+C303 c7.t5 gnd 0.15fF
+C304 c7.n0 gnd 0.10fF $ **FLOATING
+C305 c7.t6 gnd 0.10fF
+C306 c7.t9 gnd 0.15fF
+C307 c7.t7 gnd 0.10fF
+C308 c7.t12 gnd 0.15fF
+C309 c7.t10 gnd 0.10fF
+C310 c7.t8 gnd 0.15fF
+C311 c7.n1 gnd 0.06fF $ **FLOATING
+C312 c7.n2 gnd 0.16fF $ **FLOATING
+C313 c7.t13 gnd 0.10fF
+C314 c7.t11 gnd 0.15fF
+C315 c7.t4 gnd 0.10fF
+C316 c7.t3 gnd 0.15fF
+C317 c7.t2 gnd 0.10fF
+C318 c7.t0 gnd 0.16fF
+C319 c7.n3 gnd 0.12fF $ **FLOATING
+C320 c7.n4 gnd 0.06fF $ **FLOATING
+C321 c7.n5 gnd 0.07fF $ **FLOATING
+C322 c7.n6 gnd 0.06fF $ **FLOATING
+C323 c7.n7 gnd 0.07fF $ **FLOATING
+C324 c7.n8 gnd 0.10fF $ **FLOATING
+C325 c7.n9 gnd 0.10fF $ **FLOATING
+C326 c7.n10 gnd 0.07fF $ **FLOATING
+C327 c7.n11 gnd 0.06fF $ **FLOATING
+C328 c7.n12 gnd 0.07fF $ **FLOATING
+C329 c7.n13 gnd 0.06fF $ **FLOATING
+C330 c7.n14 gnd 0.06fF $ **FLOATING
+C331 c7.n15 gnd 0.26fF $ **FLOATING
+C332 c7.n16 gnd 0.72fF $ **FLOATING
+C333 digpotp_0.c7 gnd 4.05fF $ **FLOATING
+C334 c6.t13 gnd 0.12fF
+C335 c6.t0 gnd 0.11fF
+C336 c6.n0 gnd 0.07fF $ **FLOATING
+C337 c6.t5 gnd 0.07fF
+C338 c6.t10 gnd 0.11fF
+C339 c6.t7 gnd 0.07fF
+C340 c6.t12 gnd 0.11fF
+C341 c6.t9 gnd 0.07fF
+C342 c6.t6 gnd 0.11fF
+C343 c6.n1 gnd 0.04fF $ **FLOATING
+C344 c6.n2 gnd 0.11fF $ **FLOATING
+C345 c6.t11 gnd 0.07fF
+C346 c6.t8 gnd 0.11fF
+C347 c6.t4 gnd 0.07fF
+C348 c6.t3 gnd 0.11fF
+C349 c6.t2 gnd 0.07fF
+C350 c6.t1 gnd 0.11fF
+C351 c6.n3 gnd 0.08fF $ **FLOATING
+C352 c6.n4 gnd 0.04fF $ **FLOATING
+C353 c6.n5 gnd 0.05fF $ **FLOATING
+C354 c6.n6 gnd 0.04fF $ **FLOATING
+C355 c6.n7 gnd 0.05fF $ **FLOATING
+C356 c6.n8 gnd 0.07fF $ **FLOATING
+C357 c6.n9 gnd 0.07fF $ **FLOATING
+C358 c6.n10 gnd 0.05fF $ **FLOATING
+C359 c6.n11 gnd 0.04fF $ **FLOATING
+C360 c6.n12 gnd 0.05fF $ **FLOATING
+C361 c6.n13 gnd 0.04fF $ **FLOATING
+C362 c6.n14 gnd 0.04fF $ **FLOATING
+C363 c6.n15 gnd 0.19fF $ **FLOATING
+C364 c6.n16 gnd 0.51fF $ **FLOATING
+C365 digpotp_0.c6 gnd 2.96fF $ **FLOATING
+C366 c0.t4 gnd 0.11fF
+C367 c0.t5 gnd 0.10fF
+C368 c0.n0 gnd 0.06fF $ **FLOATING
+C369 c0.t0 gnd 0.06fF
+C370 c0.t2 gnd 0.10fF
+C371 c0.t1 gnd 0.06fF
+C372 c0.t3 gnd 0.10fF
+C373 c0.t12 gnd 0.06fF
+C374 c0.t10 gnd 0.10fF
+C375 c0.n1 gnd 0.04fF $ **FLOATING
+C376 c0.n2 gnd 0.10fF $ **FLOATING
+C377 c0.t13 gnd 0.06fF
+C378 c0.t11 gnd 0.10fF
+C379 c0.t9 gnd 0.06fF
+C380 c0.t7 gnd 0.10fF
+C381 c0.t6 gnd 0.06fF
+C382 c0.t8 gnd 0.10fF
+C383 c0.n3 gnd 0.07fF $ **FLOATING
+C384 c0.n4 gnd 0.04fF $ **FLOATING
+C385 c0.n5 gnd 0.04fF $ **FLOATING
+C386 c0.n6 gnd 0.04fF $ **FLOATING
+C387 c0.n7 gnd 0.04fF $ **FLOATING
+C388 c0.n8 gnd 0.06fF $ **FLOATING
+C389 c0.n9 gnd 0.06fF $ **FLOATING
+C390 c0.n10 gnd 0.04fF $ **FLOATING
+C391 c0.n11 gnd 0.04fF $ **FLOATING
+C392 c0.n12 gnd 0.04fF $ **FLOATING
+C393 c0.n13 gnd 0.04fF $ **FLOATING
+C394 c0.n14 gnd 0.04fF $ **FLOATING
+C395 c0.n15 gnd 0.17fF $ **FLOATING
+C396 c0.n16 gnd 0.46fF $ **FLOATING
+C397 digpotp_0.c0 gnd 3.15fF $ **FLOATING
+C398 digpotp_0.tg_0.b.t17 gnd 0.21fF
+C399 digpotp_0.tg_0.b.t16 gnd 0.14fF
+C400 digpotp_0.tg_0.b.t1 gnd 0.14fF
+C401 digpotp_0.tg_0.b.n0 gnd 0.68fF $ **FLOATING
+C402 digpotp_0.tg_0.b.t2 gnd 0.14fF
+C403 digpotp_0.tg_0.b.t21 gnd 0.14fF
+C404 digpotp_0.tg_0.b.n1 gnd 0.68fF $ **FLOATING
+C405 digpotp_0.tg_0.b.t19 gnd 0.14fF
+C406 digpotp_0.tg_0.b.t18 gnd 0.14fF
+C407 digpotp_0.tg_0.b.n2 gnd 0.68fF $ **FLOATING
+C408 digpotp_0.tg_0.b.t23 gnd 0.14fF
+C409 digpotp_0.tg_0.b.t24 gnd 0.14fF
+C410 digpotp_0.tg_0.b.n3 gnd 0.68fF $ **FLOATING
+C411 digpotp_0.tg_0.b.t20 gnd 0.14fF
+C412 digpotp_0.tg_0.b.t15 gnd 0.14fF
+C413 digpotp_0.tg_0.b.n4 gnd 0.68fF $ **FLOATING
+C414 digpotp_0.tg_0.b.t0 gnd 0.25fF
+C415 digpotp_0.tg_0.b.n5 gnd 1.00fF $ **FLOATING
+C416 digpotp_0.tg_0.b.n6 gnd 0.20fF $ **FLOATING
+C417 digpotp_0.tg_0.b.n7 gnd 0.20fF $ **FLOATING
+C418 digpotp_0.tg_0.b.n8 gnd 0.20fF $ **FLOATING
+C419 digpotp_0.tg_0.b.n9 gnd 0.20fF $ **FLOATING
+C420 digpotp_0.tg_0.b.n10 gnd 1.29fF $ **FLOATING
+C421 digpotp_0.tg_0.b.t12 gnd 0.14fF
+C422 digpotp_0.tg_0.b.t9 gnd 0.14fF
+C423 digpotp_0.tg_0.b.n11 gnd 0.68fF $ **FLOATING
+C424 digpotp_0.tg_0.b.t6 gnd 0.14fF
+C425 digpotp_0.tg_0.b.t5 gnd 0.14fF
+C426 digpotp_0.tg_0.b.n12 gnd 0.68fF $ **FLOATING
+C427 digpotp_0.tg_0.b.t10 gnd 0.14fF
+C428 digpotp_0.tg_0.b.t7 gnd 0.14fF
+C429 digpotp_0.tg_0.b.n13 gnd 0.68fF $ **FLOATING
+C430 digpotp_0.tg_0.b.t3 gnd 0.14fF
+C431 digpotp_0.tg_0.b.t13 gnd 0.14fF
+C432 digpotp_0.tg_0.b.n14 gnd 0.68fF $ **FLOATING
+C433 digpotp_0.tg_0.b.t8 gnd 0.14fF
+C434 digpotp_0.tg_0.b.t4 gnd 0.14fF
+C435 digpotp_0.tg_0.b.n15 gnd 0.68fF $ **FLOATING
+C436 digpotp_0.tg_0.b.t14 gnd 0.14fF
+C437 digpotp_0.tg_0.b.t11 gnd 0.14fF
+C438 digpotp_0.tg_0.b.n16 gnd 0.74fF $ **FLOATING
+C439 digpotp_0.tg_0.b.n17 gnd 0.30fF $ **FLOATING
+C440 digpotp_0.tg_0.b.n18 gnd 0.20fF $ **FLOATING
+C441 digpotp_0.tg_0.b.n19 gnd 0.20fF $ **FLOATING
+C442 digpotp_0.tg_0.b.n20 gnd 0.20fF $ **FLOATING
+C443 digpotp_0.tg_0.b.n21 gnd 0.22fF $ **FLOATING
+C444 digpotp_0.tg_0.b.n22 gnd 0.59fF $ **FLOATING
+C445 digpotp_0.tg_0.b.t22 gnd 0.58fF
+C446 digpotp_0.tg_0.b.n23 gnd 2.33fF $ **FLOATING
+C447 digpotp_0.tg_0.nctrl.t4 gnd 0.07fF
+C448 digpotp_0.tg_0.nctrl.n0 gnd 0.05fF $ **FLOATING
+C449 digpotp_0.tg_0.nctrl.t10 gnd 0.07fF
+C450 digpotp_0.tg_0.nctrl.t7 gnd 0.11fF
+C451 digpotp_0.tg_0.nctrl.n1 gnd 0.05fF $ **FLOATING
+C452 digpotp_0.tg_0.nctrl.n2 gnd 0.05fF $ **FLOATING
+C453 digpotp_0.tg_0.nctrl.n3 gnd 0.11fF $ **FLOATING
+C454 digpotp_0.tg_0.nctrl.t6 gnd 0.07fF
+C455 digpotp_0.tg_0.nctrl.t11 gnd 0.11fF
+C456 digpotp_0.tg_0.nctrl.n4 gnd 0.05fF $ **FLOATING
+C457 digpotp_0.tg_0.nctrl.n5 gnd 0.05fF $ **FLOATING
+C458 digpotp_0.tg_0.nctrl.n6 gnd 0.07fF $ **FLOATING
+C459 digpotp_0.tg_0.nctrl.t13 gnd 0.07fF
+C460 digpotp_0.tg_0.nctrl.t9 gnd 0.11fF
+C461 digpotp_0.tg_0.nctrl.n7 gnd 0.05fF $ **FLOATING
+C462 digpotp_0.tg_0.nctrl.n8 gnd 0.05fF $ **FLOATING
+C463 digpotp_0.tg_0.nctrl.n9 gnd 0.07fF $ **FLOATING
+C464 digpotp_0.tg_0.nctrl.t8 gnd 0.07fF
+C465 digpotp_0.tg_0.nctrl.t3 gnd 0.11fF
+C466 digpotp_0.tg_0.nctrl.n10 gnd 0.05fF $ **FLOATING
+C467 digpotp_0.tg_0.nctrl.n11 gnd 0.05fF $ **FLOATING
+C468 digpotp_0.tg_0.nctrl.n12 gnd 0.07fF $ **FLOATING
+C469 digpotp_0.tg_0.nctrl.t2 gnd 0.07fF
+C470 digpotp_0.tg_0.nctrl.t12 gnd 0.11fF
+C471 digpotp_0.tg_0.nctrl.n13 gnd 0.05fF $ **FLOATING
+C472 digpotp_0.tg_0.nctrl.t5 gnd 0.11fF
+C473 digpotp_0.tg_0.nctrl.n14 gnd 0.09fF $ **FLOATING
+C474 digpotp_0.tg_0.nctrl.n15 gnd 0.12fF $ **FLOATING
+C475 digpotp_0.tg_0.nctrl.t0 gnd 0.01fF
+C476 digpotp_0.tg_0.nctrl.t1 gnd 0.04fF
+C477 digpotp_0.tg_0.nctrl.n16 gnd 0.87fF $ **FLOATING
+C478 a_31610_5759.t7 gnd 0.33fF
+C479 a_31610_5759.t5 gnd 0.33fF
+C480 a_31610_5759.n0 gnd 0.34fF $ **FLOATING
+C481 a_31610_5759.t6 gnd 0.33fF
+C482 a_31610_5759.n1 gnd 0.19fF $ **FLOATING
+C483 a_31610_5759.t2 gnd 38.87fF
+C484 a_31610_5759.n2 gnd 0.18fF $ **FLOATING
+C485 a_31610_5759.t1 gnd 0.01fF
+C486 a_31610_5759.n3 gnd 0.22fF $ **FLOATING
+C487 a_31610_5759.t3 gnd 0.03fF
+C488 a_31610_5759.t4 gnd 0.03fF
+C489 a_31610_5759.n4 gnd 0.15fF $ **FLOATING
+C490 a_31610_5759.n5 gnd 0.29fF $ **FLOATING
+C491 a_31610_5759.t0 gnd 0.03fF
+C492 w_30480_5540.t12 gnd 0.03fF
+C493 w_30480_5540.t14 gnd 0.03fF
+C494 w_30480_5540.t3 gnd 0.89fF
+C495 w_30480_5540.t11 gnd 0.51fF
+C496 w_30480_5540.n0 gnd 0.05fF $ **FLOATING
+C497 w_30480_5540.t13 gnd 0.37fF
+C498 w_30480_5540.t2 gnd 0.03fF
+C499 w_30480_5540.t0 gnd 0.02fF
+C500 w_30480_5540.t1 gnd 0.02fF
+C501 w_30480_5540.n1 gnd 0.19fF $ **FLOATING
+C502 w_30480_5540.n2 gnd 0.57fF $ **FLOATING
+C503 w_30480_5540.t9 gnd 0.89fF
+C504 w_30480_5540.t5 gnd 0.51fF
+C505 w_30480_5540.t7 gnd 0.37fF
+C506 w_30480_5540.t8 gnd 0.03fF
+C507 w_30480_5540.t6 gnd 0.03fF
+C508 w_30480_5540.n3 gnd 0.14fF $ **FLOATING
+C509 w_30480_5540.t10 gnd 0.04fF
+C510 w_30480_5540.n4 gnd 0.21fF $ **FLOATING
+C511 w_30480_5540.n5 gnd 0.70fF $ **FLOATING
+C512 w_30480_5540.n6 gnd 0.36fF $ **FLOATING
+C513 w_30480_5540.n7 gnd 0.65fF $ **FLOATING
+C514 w_30480_5540.n8 gnd 0.20fF $ **FLOATING
+C515 w_30480_5540.n9 gnd 0.15fF $ **FLOATING
+C516 w_30480_5540.t4 gnd 0.03fF
+C517 c4.t7 gnd 0.12fF
+C518 c4.t12 gnd 0.11fF
+C519 c4.n0 gnd 0.07fF $ **FLOATING
+C520 c4.t0 gnd 0.07fF
+C521 c4.t4 gnd 0.11fF
+C522 c4.t2 gnd 0.07fF
+C523 c4.t5 gnd 0.11fF
+C524 c4.t3 gnd 0.07fF
+C525 c4.t1 gnd 0.11fF
+C526 c4.n1 gnd 0.04fF $ **FLOATING
+C527 c4.n2 gnd 0.11fF $ **FLOATING
+C528 c4.t6 gnd 0.07fF
+C529 c4.t13 gnd 0.11fF
+C530 c4.t11 gnd 0.07fF
+C531 c4.t9 gnd 0.11fF
+C532 c4.t8 gnd 0.07fF
+C533 c4.t10 gnd 0.11fF
+C534 c4.n3 gnd 0.08fF $ **FLOATING
+C535 c4.n4 gnd 0.04fF $ **FLOATING
+C536 c4.n5 gnd 0.05fF $ **FLOATING
+C537 c4.n6 gnd 0.04fF $ **FLOATING
+C538 c4.n7 gnd 0.05fF $ **FLOATING
+C539 c4.n8 gnd 0.07fF $ **FLOATING
+C540 c4.n9 gnd 0.07fF $ **FLOATING
+C541 c4.n10 gnd 0.05fF $ **FLOATING
+C542 c4.n11 gnd 0.04fF $ **FLOATING
+C543 c4.n12 gnd 0.05fF $ **FLOATING
+C544 c4.n13 gnd 0.04fF $ **FLOATING
+C545 c4.n14 gnd 0.04fF $ **FLOATING
+C546 c4.n15 gnd 0.18fF $ **FLOATING
+C547 c4.n16 gnd 0.50fF $ **FLOATING
+C548 digpotp_0.c4 gnd 2.86fF $ **FLOATING
+C549 digpotp_0.tg_7.b.t5 gnd 0.19fF
+C550 digpotp_0.tg_7.b.t6 gnd 0.12fF
+C551 digpotp_0.tg_7.b.t4 gnd 0.12fF
+C552 digpotp_0.tg_7.b.n0 gnd 0.62fF $ **FLOATING
+C553 digpotp_0.tg_7.b.t10 gnd 0.12fF
+C554 digpotp_0.tg_7.b.t11 gnd 0.12fF
+C555 digpotp_0.tg_7.b.n1 gnd 0.62fF $ **FLOATING
+C556 digpotp_0.tg_7.b.t9 gnd 0.12fF
+C557 digpotp_0.tg_7.b.t3 gnd 0.12fF
+C558 digpotp_0.tg_7.b.n2 gnd 0.62fF $ **FLOATING
+C559 digpotp_0.tg_7.b.t24 gnd 0.12fF
+C560 digpotp_0.tg_7.b.t2 gnd 0.12fF
+C561 digpotp_0.tg_7.b.n3 gnd 0.62fF $ **FLOATING
+C562 digpotp_0.tg_7.b.t1 gnd 0.12fF
+C563 digpotp_0.tg_7.b.t7 gnd 0.12fF
+C564 digpotp_0.tg_7.b.n4 gnd 0.62fF $ **FLOATING
+C565 digpotp_0.tg_7.b.t0 gnd 0.23fF
+C566 digpotp_0.tg_7.b.n5 gnd 0.93fF $ **FLOATING
+C567 digpotp_0.tg_7.b.n6 gnd 0.19fF $ **FLOATING
+C568 digpotp_0.tg_7.b.n7 gnd 0.19fF $ **FLOATING
+C569 digpotp_0.tg_7.b.n8 gnd 0.19fF $ **FLOATING
+C570 digpotp_0.tg_7.b.n9 gnd 0.19fF $ **FLOATING
+C571 digpotp_0.tg_7.b.n10 gnd 1.19fF $ **FLOATING
+C572 digpotp_0.tg_7.b.t20 gnd 0.12fF
+C573 digpotp_0.tg_7.b.t15 gnd 0.12fF
+C574 digpotp_0.tg_7.b.n11 gnd 0.62fF $ **FLOATING
+C575 digpotp_0.tg_7.b.t12 gnd 0.12fF
+C576 digpotp_0.tg_7.b.t22 gnd 0.12fF
+C577 digpotp_0.tg_7.b.n12 gnd 0.62fF $ **FLOATING
+C578 digpotp_0.tg_7.b.t16 gnd 0.12fF
+C579 digpotp_0.tg_7.b.t14 gnd 0.12fF
+C580 digpotp_0.tg_7.b.n13 gnd 0.62fF $ **FLOATING
+C581 digpotp_0.tg_7.b.t19 gnd 0.12fF
+C582 digpotp_0.tg_7.b.t21 gnd 0.12fF
+C583 digpotp_0.tg_7.b.n14 gnd 0.62fF $ **FLOATING
+C584 digpotp_0.tg_7.b.t18 gnd 0.12fF
+C585 digpotp_0.tg_7.b.t13 gnd 0.12fF
+C586 digpotp_0.tg_7.b.n15 gnd 0.62fF $ **FLOATING
+C587 digpotp_0.tg_7.b.t23 gnd 0.12fF
+C588 digpotp_0.tg_7.b.t17 gnd 0.12fF
+C589 digpotp_0.tg_7.b.n16 gnd 0.68fF $ **FLOATING
+C590 digpotp_0.tg_7.b.n17 gnd 0.28fF $ **FLOATING
+C591 digpotp_0.tg_7.b.n18 gnd 0.18fF $ **FLOATING
+C592 digpotp_0.tg_7.b.n19 gnd 0.18fF $ **FLOATING
+C593 digpotp_0.tg_7.b.n20 gnd 0.18fF $ **FLOATING
+C594 digpotp_0.tg_7.b.n21 gnd 0.20fF $ **FLOATING
+C595 digpotp_0.tg_7.b.n22 gnd 0.54fF $ **FLOATING
+C596 digpotp_0.tg_7.b.t8 gnd 0.59fF
+C597 digpotp_0.tg_7.b.n23 gnd 2.81fF $ **FLOATING
+C598 digpotp_0.tg_7.nctrl.t5 gnd 0.06fF
+C599 digpotp_0.tg_7.nctrl.n0 gnd 0.04fF $ **FLOATING
+C600 digpotp_0.tg_7.nctrl.t13 gnd 0.06fF
+C601 digpotp_0.tg_7.nctrl.t10 gnd 0.09fF
+C602 digpotp_0.tg_7.nctrl.n1 gnd 0.04fF $ **FLOATING
+C603 digpotp_0.tg_7.nctrl.n2 gnd 0.04fF $ **FLOATING
+C604 digpotp_0.tg_7.nctrl.n3 gnd 0.09fF $ **FLOATING
+C605 digpotp_0.tg_7.nctrl.t9 gnd 0.06fF
+C606 digpotp_0.tg_7.nctrl.t3 gnd 0.09fF
+C607 digpotp_0.tg_7.nctrl.n4 gnd 0.04fF $ **FLOATING
+C608 digpotp_0.tg_7.nctrl.n5 gnd 0.04fF $ **FLOATING
+C609 digpotp_0.tg_7.nctrl.n6 gnd 0.06fF $ **FLOATING
+C610 digpotp_0.tg_7.nctrl.t6 gnd 0.06fF
+C611 digpotp_0.tg_7.nctrl.t11 gnd 0.09fF
+C612 digpotp_0.tg_7.nctrl.n7 gnd 0.04fF $ **FLOATING
+C613 digpotp_0.tg_7.nctrl.n8 gnd 0.04fF $ **FLOATING
+C614 digpotp_0.tg_7.nctrl.n9 gnd 0.06fF $ **FLOATING
+C615 digpotp_0.tg_7.nctrl.t7 gnd 0.06fF
+C616 digpotp_0.tg_7.nctrl.t4 gnd 0.09fF
+C617 digpotp_0.tg_7.nctrl.n10 gnd 0.04fF $ **FLOATING
+C618 digpotp_0.tg_7.nctrl.n11 gnd 0.04fF $ **FLOATING
+C619 digpotp_0.tg_7.nctrl.n12 gnd 0.06fF $ **FLOATING
+C620 digpotp_0.tg_7.nctrl.t2 gnd 0.06fF
+C621 digpotp_0.tg_7.nctrl.t12 gnd 0.09fF
+C622 digpotp_0.tg_7.nctrl.n13 gnd 0.04fF $ **FLOATING
+C623 digpotp_0.tg_7.nctrl.t8 gnd 0.09fF
+C624 digpotp_0.tg_7.nctrl.n14 gnd 0.07fF $ **FLOATING
+C625 digpotp_0.tg_7.nctrl.n15 gnd 0.10fF $ **FLOATING
+C626 digpotp_0.tg_7.nctrl.t1 gnd 0.01fF
+C627 digpotp_0.tg_7.nctrl.t0 gnd 0.03fF
+C628 digpotp_0.tg_7.nctrl.n16 gnd 0.74fF $ **FLOATING
+C629 out.t3 gnd 0.13fF
+C630 out.t0 gnd 0.13fF
+C631 out.n0 gnd 0.73fF $ **FLOATING
+C632 out.t2 gnd 0.13fF
+C633 out.t1 gnd 0.13fF
+C634 out.n1 gnd 0.83fF $ **FLOATING
+C635 out.n2 gnd 0.64fF $ **FLOATING
+C636 out.t5 gnd 0.05fF
+C637 out.t4 gnd 0.05fF
+C638 out.n3 gnd 0.29fF $ **FLOATING
+C639 out.t7 gnd 0.12fF
+C640 out.n4 gnd 1.33fF $ **FLOATING
+C641 out.n5 gnd 0.49fF $ **FLOATING
+C642 out.t6 gnd 7.41fF
+C643 out.n6 gnd 32.40fF $ **FLOATING
+C644 out.n7 gnd 0.41fF $ **FLOATING
+C645 ib.t3 gnd 0.03fF
+C646 ib.t1 gnd 0.03fF
+C647 ib.n0 gnd 0.19fF $ **FLOATING
+C648 ib.t4 gnd 0.90fF
+C649 ib.t9 gnd 0.90fF
+C650 ib.n1 gnd 0.77fF $ **FLOATING
+C651 ib.t6 gnd 0.90fF
+C652 ib.n2 gnd 0.39fF $ **FLOATING
+C653 ib.t8 gnd 0.90fF
+C654 ib.n3 gnd 0.60fF $ **FLOATING
+C655 ib.t5 gnd 0.44fF
+C656 ib.n4 gnd 0.45fF $ **FLOATING
+C657 ib.t10 gnd 0.44fF
+C658 ib.n5 gnd 0.24fF $ **FLOATING
+C659 ib.t7 gnd 0.44fF
+C660 ib.n6 gnd 0.33fF $ **FLOATING
+C661 ib.t2 gnd 0.44fF
+C662 ib.n7 gnd 0.31fF $ **FLOATING
+C663 ib.n8 gnd 0.08fF $ **FLOATING
+C664 ib.t0 gnd 0.44fF
+C665 ib.n9 gnd 0.28fF $ **FLOATING
+C666 ib.n10 gnd 2.57fF $ **FLOATING
+C667 digpotp_0.tg_1.b.t3 gnd 0.20fF
+C668 digpotp_0.tg_1.b.t0 gnd 0.13fF
+C669 digpotp_0.tg_1.b.t24 gnd 0.13fF
+C670 digpotp_0.tg_1.b.n0 gnd 0.66fF $ **FLOATING
+C671 digpotp_0.tg_1.b.t4 gnd 0.13fF
+C672 digpotp_0.tg_1.b.t22 gnd 0.13fF
+C673 digpotp_0.tg_1.b.n1 gnd 0.66fF $ **FLOATING
+C674 digpotp_0.tg_1.b.t20 gnd 0.13fF
+C675 digpotp_0.tg_1.b.t23 gnd 0.13fF
+C676 digpotp_0.tg_1.b.n2 gnd 0.66fF $ **FLOATING
+C677 digpotp_0.tg_1.b.t5 gnd 0.13fF
+C678 digpotp_0.tg_1.b.t19 gnd 0.13fF
+C679 digpotp_0.tg_1.b.n3 gnd 0.66fF $ **FLOATING
+C680 digpotp_0.tg_1.b.t2 gnd 0.13fF
+C681 digpotp_0.tg_1.b.t21 gnd 0.13fF
+C682 digpotp_0.tg_1.b.n4 gnd 0.66fF $ **FLOATING
+C683 digpotp_0.tg_1.b.t1 gnd 0.24fF
+C684 digpotp_0.tg_1.b.n5 gnd 0.97fF $ **FLOATING
+C685 digpotp_0.tg_1.b.n6 gnd 0.20fF $ **FLOATING
+C686 digpotp_0.tg_1.b.n7 gnd 0.20fF $ **FLOATING
+C687 digpotp_0.tg_1.b.n8 gnd 0.20fF $ **FLOATING
+C688 digpotp_0.tg_1.b.n9 gnd 0.20fF $ **FLOATING
+C689 digpotp_0.tg_1.b.n10 gnd 1.25fF $ **FLOATING
+C690 digpotp_0.tg_1.b.t9 gnd 0.13fF
+C691 digpotp_0.tg_1.b.t6 gnd 0.13fF
+C692 digpotp_0.tg_1.b.n11 gnd 0.66fF $ **FLOATING
+C693 digpotp_0.tg_1.b.t15 gnd 0.13fF
+C694 digpotp_0.tg_1.b.t14 gnd 0.13fF
+C695 digpotp_0.tg_1.b.n12 gnd 0.66fF $ **FLOATING
+C696 digpotp_0.tg_1.b.t7 gnd 0.13fF
+C697 digpotp_0.tg_1.b.t16 gnd 0.13fF
+C698 digpotp_0.tg_1.b.n13 gnd 0.66fF $ **FLOATING
+C699 digpotp_0.tg_1.b.t12 gnd 0.13fF
+C700 digpotp_0.tg_1.b.t10 gnd 0.13fF
+C701 digpotp_0.tg_1.b.n14 gnd 0.66fF $ **FLOATING
+C702 digpotp_0.tg_1.b.t17 gnd 0.13fF
+C703 digpotp_0.tg_1.b.t13 gnd 0.13fF
+C704 digpotp_0.tg_1.b.n15 gnd 0.66fF $ **FLOATING
+C705 digpotp_0.tg_1.b.t11 gnd 0.13fF
+C706 digpotp_0.tg_1.b.t8 gnd 0.13fF
+C707 digpotp_0.tg_1.b.n16 gnd 0.71fF $ **FLOATING
+C708 digpotp_0.tg_1.b.n17 gnd 0.29fF $ **FLOATING
+C709 digpotp_0.tg_1.b.n18 gnd 0.19fF $ **FLOATING
+C710 digpotp_0.tg_1.b.n19 gnd 0.19fF $ **FLOATING
+C711 digpotp_0.tg_1.b.n20 gnd 0.19fF $ **FLOATING
+C712 digpotp_0.tg_1.b.n21 gnd 0.21fF $ **FLOATING
+C713 digpotp_0.tg_1.b.n22 gnd 0.57fF $ **FLOATING
+C714 digpotp_0.tg_1.b.t18 gnd 0.61fF
+C715 digpotp_0.tg_1.b.n23 gnd 2.82fF $ **FLOATING
+C716 digpotp_0.tg_1.nctrl.t10 gnd 0.07fF
+C717 digpotp_0.tg_1.nctrl.n0 gnd 0.05fF $ **FLOATING
+C718 digpotp_0.tg_1.nctrl.t4 gnd 0.07fF
+C719 digpotp_0.tg_1.nctrl.t13 gnd 0.10fF
+C720 digpotp_0.tg_1.nctrl.n1 gnd 0.05fF $ **FLOATING
+C721 digpotp_0.tg_1.nctrl.n2 gnd 0.05fF $ **FLOATING
+C722 digpotp_0.tg_1.nctrl.n3 gnd 0.11fF $ **FLOATING
+C723 digpotp_0.tg_1.nctrl.t12 gnd 0.07fF
+C724 digpotp_0.tg_1.nctrl.t5 gnd 0.10fF
+C725 digpotp_0.tg_1.nctrl.n4 gnd 0.05fF $ **FLOATING
+C726 digpotp_0.tg_1.nctrl.n5 gnd 0.05fF $ **FLOATING
+C727 digpotp_0.tg_1.nctrl.n6 gnd 0.07fF $ **FLOATING
+C728 digpotp_0.tg_1.nctrl.t7 gnd 0.07fF
+C729 digpotp_0.tg_1.nctrl.t3 gnd 0.10fF
+C730 digpotp_0.tg_1.nctrl.n7 gnd 0.05fF $ **FLOATING
+C731 digpotp_0.tg_1.nctrl.n8 gnd 0.05fF $ **FLOATING
+C732 digpotp_0.tg_1.nctrl.n9 gnd 0.07fF $ **FLOATING
+C733 digpotp_0.tg_1.nctrl.t2 gnd 0.07fF
+C734 digpotp_0.tg_1.nctrl.t9 gnd 0.10fF
+C735 digpotp_0.tg_1.nctrl.n10 gnd 0.05fF $ **FLOATING
+C736 digpotp_0.tg_1.nctrl.n11 gnd 0.05fF $ **FLOATING
+C737 digpotp_0.tg_1.nctrl.n12 gnd 0.07fF $ **FLOATING
+C738 digpotp_0.tg_1.nctrl.t8 gnd 0.07fF
+C739 digpotp_0.tg_1.nctrl.t6 gnd 0.10fF
+C740 digpotp_0.tg_1.nctrl.n13 gnd 0.05fF $ **FLOATING
+C741 digpotp_0.tg_1.nctrl.t11 gnd 0.11fF
+C742 digpotp_0.tg_1.nctrl.n14 gnd 0.09fF $ **FLOATING
+C743 digpotp_0.tg_1.nctrl.n15 gnd 0.12fF $ **FLOATING
+C744 digpotp_0.tg_1.nctrl.t1 gnd 0.01fF
+C745 digpotp_0.tg_1.nctrl.t0 gnd 0.04fF
+C746 digpotp_0.tg_1.nctrl.n16 gnd 0.86fF $ **FLOATING
+C747 c1.t8 gnd 0.12fF
+C748 c1.t12 gnd 0.11fF
+C749 c1.n0 gnd 0.07fF $ **FLOATING
+C750 c1.t0 gnd 0.07fF
+C751 c1.t4 gnd 0.11fF
+C752 c1.t2 gnd 0.07fF
+C753 c1.t7 gnd 0.11fF
+C754 c1.t3 gnd 0.07fF
+C755 c1.t1 gnd 0.11fF
+C756 c1.n1 gnd 0.04fF $ **FLOATING
+C757 c1.n2 gnd 0.11fF $ **FLOATING
+C758 c1.t6 gnd 0.07fF
+C759 c1.t5 gnd 0.11fF
+C760 c1.t13 gnd 0.07fF
+C761 c1.t10 gnd 0.11fF
+C762 c1.t9 gnd 0.07fF
+C763 c1.t11 gnd 0.11fF
+C764 c1.n3 gnd 0.08fF $ **FLOATING
+C765 c1.n4 gnd 0.04fF $ **FLOATING
+C766 c1.n5 gnd 0.05fF $ **FLOATING
+C767 c1.n6 gnd 0.04fF $ **FLOATING
+C768 c1.n7 gnd 0.05fF $ **FLOATING
+C769 c1.n8 gnd 0.07fF $ **FLOATING
+C770 c1.n9 gnd 0.07fF $ **FLOATING
+C771 c1.n10 gnd 0.05fF $ **FLOATING
+C772 c1.n11 gnd 0.04fF $ **FLOATING
+C773 c1.n12 gnd 0.05fF $ **FLOATING
+C774 c1.n13 gnd 0.04fF $ **FLOATING
+C775 c1.n14 gnd 0.04fF $ **FLOATING
+C776 c1.n15 gnd 0.18fF $ **FLOATING
+C777 c1.n16 gnd 0.50fF $ **FLOATING
+C778 digpotp_0.c1 gnd 2.85fF $ **FLOATING
+C779 c2.t0 gnd 0.12fF
+C780 c2.t1 gnd 0.11fF
+C781 c2.n0 gnd 0.07fF $ **FLOATING
+C782 c2.t10 gnd 0.07fF
+C783 c2.t12 gnd 0.11fF
+C784 c2.t11 gnd 0.07fF
+C785 c2.t13 gnd 0.11fF
+C786 c2.t7 gnd 0.07fF
+C787 c2.t6 gnd 0.11fF
+C788 c2.n1 gnd 0.04fF $ **FLOATING
+C789 c2.n2 gnd 0.11fF $ **FLOATING
+C790 c2.t9 gnd 0.07fF
+C791 c2.t8 gnd 0.11fF
+C792 c2.t5 gnd 0.07fF
+C793 c2.t3 gnd 0.11fF
+C794 c2.t2 gnd 0.07fF
+C795 c2.t4 gnd 0.11fF
+C796 c2.n3 gnd 0.08fF $ **FLOATING
+C797 c2.n4 gnd 0.04fF $ **FLOATING
+C798 c2.n5 gnd 0.05fF $ **FLOATING
+C799 c2.n6 gnd 0.04fF $ **FLOATING
+C800 c2.n7 gnd 0.05fF $ **FLOATING
+C801 c2.n8 gnd 0.07fF $ **FLOATING
+C802 c2.n9 gnd 0.07fF $ **FLOATING
+C803 c2.n10 gnd 0.05fF $ **FLOATING
+C804 c2.n11 gnd 0.04fF $ **FLOATING
+C805 c2.n12 gnd 0.05fF $ **FLOATING
+C806 c2.n13 gnd 0.04fF $ **FLOATING
+C807 c2.n14 gnd 0.04fF $ **FLOATING
+C808 c2.n15 gnd 0.18fF $ **FLOATING
+C809 c2.n16 gnd 0.50fF $ **FLOATING
+C810 digpotp_0.c2 gnd 2.85fF $ **FLOATING
+C811 digpotp_0.tg_4.nctrl.t8 gnd 0.07fF
+C812 digpotp_0.tg_4.nctrl.n0 gnd 0.05fF $ **FLOATING
+C813 digpotp_0.tg_4.nctrl.t2 gnd 0.07fF
+C814 digpotp_0.tg_4.nctrl.t11 gnd 0.10fF
+C815 digpotp_0.tg_4.nctrl.n1 gnd 0.05fF $ **FLOATING
+C816 digpotp_0.tg_4.nctrl.n2 gnd 0.05fF $ **FLOATING
+C817 digpotp_0.tg_4.nctrl.n3 gnd 0.11fF $ **FLOATING
+C818 digpotp_0.tg_4.nctrl.t10 gnd 0.07fF
+C819 digpotp_0.tg_4.nctrl.t3 gnd 0.10fF
+C820 digpotp_0.tg_4.nctrl.n4 gnd 0.05fF $ **FLOATING
+C821 digpotp_0.tg_4.nctrl.n5 gnd 0.05fF $ **FLOATING
+C822 digpotp_0.tg_4.nctrl.n6 gnd 0.07fF $ **FLOATING
+C823 digpotp_0.tg_4.nctrl.t5 gnd 0.07fF
+C824 digpotp_0.tg_4.nctrl.t13 gnd 0.10fF
+C825 digpotp_0.tg_4.nctrl.n7 gnd 0.05fF $ **FLOATING
+C826 digpotp_0.tg_4.nctrl.n8 gnd 0.05fF $ **FLOATING
+C827 digpotp_0.tg_4.nctrl.n9 gnd 0.07fF $ **FLOATING
+C828 digpotp_0.tg_4.nctrl.t12 gnd 0.07fF
+C829 digpotp_0.tg_4.nctrl.t7 gnd 0.10fF
+C830 digpotp_0.tg_4.nctrl.n10 gnd 0.05fF $ **FLOATING
+C831 digpotp_0.tg_4.nctrl.n11 gnd 0.05fF $ **FLOATING
+C832 digpotp_0.tg_4.nctrl.n12 gnd 0.07fF $ **FLOATING
+C833 digpotp_0.tg_4.nctrl.t6 gnd 0.07fF
+C834 digpotp_0.tg_4.nctrl.t4 gnd 0.10fF
+C835 digpotp_0.tg_4.nctrl.n13 gnd 0.05fF $ **FLOATING
+C836 digpotp_0.tg_4.nctrl.t9 gnd 0.11fF
+C837 digpotp_0.tg_4.nctrl.n14 gnd 0.09fF $ **FLOATING
+C838 digpotp_0.tg_4.nctrl.n15 gnd 0.12fF $ **FLOATING
+C839 digpotp_0.tg_4.nctrl.t0 gnd 0.01fF
+C840 digpotp_0.tg_4.nctrl.t1 gnd 0.04fF
+C841 digpotp_0.tg_4.nctrl.n16 gnd 0.86fF $ **FLOATING
+C842 digpotp_0.tg_5.b.t13 gnd 0.20fF
+C843 digpotp_0.tg_5.b.t23 gnd 0.13fF
+C844 digpotp_0.tg_5.b.t19 gnd 0.13fF
+C845 digpotp_0.tg_5.b.n0 gnd 0.66fF $ **FLOATING
+C846 digpotp_0.tg_5.b.t20 gnd 0.13fF
+C847 digpotp_0.tg_5.b.t16 gnd 0.13fF
+C848 digpotp_0.tg_5.b.n1 gnd 0.66fF $ **FLOATING
+C849 digpotp_0.tg_5.b.t15 gnd 0.13fF
+C850 digpotp_0.tg_5.b.t14 gnd 0.13fF
+C851 digpotp_0.tg_5.b.n2 gnd 0.66fF $ **FLOATING
+C852 digpotp_0.tg_5.b.t21 gnd 0.13fF
+C853 digpotp_0.tg_5.b.t17 gnd 0.13fF
+C854 digpotp_0.tg_5.b.n3 gnd 0.66fF $ **FLOATING
+C855 digpotp_0.tg_5.b.t22 gnd 0.13fF
+C856 digpotp_0.tg_5.b.t24 gnd 0.13fF
+C857 digpotp_0.tg_5.b.n4 gnd 0.66fF $ **FLOATING
+C858 digpotp_0.tg_5.b.t18 gnd 0.24fF
+C859 digpotp_0.tg_5.b.n5 gnd 0.98fF $ **FLOATING
+C860 digpotp_0.tg_5.b.n6 gnd 0.20fF $ **FLOATING
+C861 digpotp_0.tg_5.b.n7 gnd 0.20fF $ **FLOATING
+C862 digpotp_0.tg_5.b.n8 gnd 0.20fF $ **FLOATING
+C863 digpotp_0.tg_5.b.n9 gnd 0.20fF $ **FLOATING
+C864 digpotp_0.tg_5.b.n10 gnd 1.26fF $ **FLOATING
+C865 digpotp_0.tg_5.b.t1 gnd 0.13fF
+C866 digpotp_0.tg_5.b.t8 gnd 0.13fF
+C867 digpotp_0.tg_5.b.n11 gnd 0.66fF $ **FLOATING
+C868 digpotp_0.tg_5.b.t5 gnd 0.13fF
+C869 digpotp_0.tg_5.b.t3 gnd 0.13fF
+C870 digpotp_0.tg_5.b.n12 gnd 0.66fF $ **FLOATING
+C871 digpotp_0.tg_5.b.t9 gnd 0.13fF
+C872 digpotp_0.tg_5.b.t7 gnd 0.13fF
+C873 digpotp_0.tg_5.b.n13 gnd 0.66fF $ **FLOATING
+C874 digpotp_0.tg_5.b.t0 gnd 0.13fF
+C875 digpotp_0.tg_5.b.t2 gnd 0.13fF
+C876 digpotp_0.tg_5.b.n14 gnd 0.66fF $ **FLOATING
+C877 digpotp_0.tg_5.b.t11 gnd 0.13fF
+C878 digpotp_0.tg_5.b.t6 gnd 0.13fF
+C879 digpotp_0.tg_5.b.n15 gnd 0.66fF $ **FLOATING
+C880 digpotp_0.tg_5.b.t4 gnd 0.13fF
+C881 digpotp_0.tg_5.b.t10 gnd 0.13fF
+C882 digpotp_0.tg_5.b.n16 gnd 0.72fF $ **FLOATING
+C883 digpotp_0.tg_5.b.n17 gnd 0.30fF $ **FLOATING
+C884 digpotp_0.tg_5.b.n18 gnd 0.19fF $ **FLOATING
+C885 digpotp_0.tg_5.b.n19 gnd 0.19fF $ **FLOATING
+C886 digpotp_0.tg_5.b.n20 gnd 0.19fF $ **FLOATING
+C887 digpotp_0.tg_5.b.n21 gnd 0.21fF $ **FLOATING
+C888 digpotp_0.tg_5.b.n22 gnd 0.57fF $ **FLOATING
+C889 digpotp_0.tg_5.b.t12 gnd 0.58fF
+C890 digpotp_0.tg_5.b.n23 gnd 2.47fF $ **FLOATING
+C891 digpotp_0.tg_5.nctrl.t12 gnd 0.07fF
+C892 digpotp_0.tg_5.nctrl.n0 gnd 0.05fF $ **FLOATING
+C893 digpotp_0.tg_5.nctrl.t8 gnd 0.07fF
+C894 digpotp_0.tg_5.nctrl.t5 gnd 0.10fF
+C895 digpotp_0.tg_5.nctrl.n1 gnd 0.05fF $ **FLOATING
+C896 digpotp_0.tg_5.nctrl.n2 gnd 0.05fF $ **FLOATING
+C897 digpotp_0.tg_5.nctrl.n3 gnd 0.11fF $ **FLOATING
+C898 digpotp_0.tg_5.nctrl.t4 gnd 0.07fF
+C899 digpotp_0.tg_5.nctrl.t10 gnd 0.10fF
+C900 digpotp_0.tg_5.nctrl.n4 gnd 0.05fF $ **FLOATING
+C901 digpotp_0.tg_5.nctrl.n5 gnd 0.05fF $ **FLOATING
+C902 digpotp_0.tg_5.nctrl.n6 gnd 0.07fF $ **FLOATING
+C903 digpotp_0.tg_5.nctrl.t13 gnd 0.07fF
+C904 digpotp_0.tg_5.nctrl.t6 gnd 0.10fF
+C905 digpotp_0.tg_5.nctrl.n7 gnd 0.05fF $ **FLOATING
+C906 digpotp_0.tg_5.nctrl.n8 gnd 0.05fF $ **FLOATING
+C907 digpotp_0.tg_5.nctrl.n9 gnd 0.07fF $ **FLOATING
+C908 digpotp_0.tg_5.nctrl.t2 gnd 0.07fF
+C909 digpotp_0.tg_5.nctrl.t11 gnd 0.10fF
+C910 digpotp_0.tg_5.nctrl.n10 gnd 0.05fF $ **FLOATING
+C911 digpotp_0.tg_5.nctrl.n11 gnd 0.05fF $ **FLOATING
+C912 digpotp_0.tg_5.nctrl.n12 gnd 0.07fF $ **FLOATING
+C913 digpotp_0.tg_5.nctrl.t9 gnd 0.07fF
+C914 digpotp_0.tg_5.nctrl.t7 gnd 0.10fF
+C915 digpotp_0.tg_5.nctrl.n13 gnd 0.05fF $ **FLOATING
+C916 digpotp_0.tg_5.nctrl.t3 gnd 0.11fF
+C917 digpotp_0.tg_5.nctrl.n14 gnd 0.08fF $ **FLOATING
+C918 digpotp_0.tg_5.nctrl.n15 gnd 0.11fF $ **FLOATING
+C919 digpotp_0.tg_5.nctrl.t1 gnd 0.01fF
+C920 digpotp_0.tg_5.nctrl.t0 gnd 0.04fF
+C921 digpotp_0.tg_5.nctrl.n16 gnd 0.85fF $ **FLOATING
+C922 digpotp_0.n8.t5 gnd 0.17fF
+C923 digpotp_0.n8.t6 gnd 0.16fF
+C924 digpotp_0.n8.t7 gnd 0.17fF
+C925 digpotp_0.n8.t2 gnd 0.13fF
+C926 digpotp_0.n8.t4 gnd 0.13fF
+C927 digpotp_0.n8.t3 gnd 0.14fF
+C928 digpotp_0.n8.t8 gnd 0.37fF
+C929 digpotp_0.n8.n0 gnd 5.50fF $ **FLOATING
+C930 digpotp_0.n8.n1 gnd 3.43fF $ **FLOATING
+C931 digpotp_0.n8.n2 gnd 3.19fF $ **FLOATING
+C932 digpotp_0.n8.t1 gnd 0.12fF
+C933 digpotp_0.n8.n3 gnd 2.76fF $ **FLOATING
+C934 digpotp_0.n8.n4 gnd 3.36fF $ **FLOATING
+C935 digpotp_0.n8.n5 gnd 3.07fF $ **FLOATING
+C936 digpotp_0.n8.n6 gnd 3.01fF $ **FLOATING
+C937 digpotp_0.n8.n7 gnd 0.01fF $ **FLOATING
+C938 digpotp_0.n8.n8 gnd 1.28fF $ **FLOATING
+C939 digpotp_0.n8.t11 gnd 0.03fF
+C940 digpotp_0.n8.t10 gnd 0.05fF
+C941 digpotp_0.n8.t9 gnd 0.05fF
+C942 digpotp_0.n8.n9 gnd 0.08fF $ **FLOATING
+C943 ota_0.inn gnd 0.27fF $ **FLOATING
+C944 digpotp_0.n8.t0 gnd 0.20fF
+C945 digpotp_0.n8.n10 gnd 1.12fF $ **FLOATING
+C946 digpotp_0.n8.n11 gnd 0.04fF $ **FLOATING
+C947 digpotp_0.n8.n12 gnd 0.03fF $ **FLOATING
+C948 digpotp_0.tg_4.b.t5 gnd 0.20fF
+C949 digpotp_0.tg_4.b.t4 gnd 0.13fF
+C950 digpotp_0.tg_4.b.t3 gnd 0.13fF
+C951 digpotp_0.tg_4.b.n0 gnd 0.66fF $ **FLOATING
+C952 digpotp_0.tg_4.b.t2 gnd 0.13fF
+C953 digpotp_0.tg_4.b.t8 gnd 0.13fF
+C954 digpotp_0.tg_4.b.n1 gnd 0.66fF $ **FLOATING
+C955 digpotp_0.tg_4.b.t7 gnd 0.13fF
+C956 digpotp_0.tg_4.b.t11 gnd 0.13fF
+C957 digpotp_0.tg_4.b.n2 gnd 0.66fF $ **FLOATING
+C958 digpotp_0.tg_4.b.t10 gnd 0.13fF
+C959 digpotp_0.tg_4.b.t6 gnd 0.13fF
+C960 digpotp_0.tg_4.b.n3 gnd 0.66fF $ **FLOATING
+C961 digpotp_0.tg_4.b.t12 gnd 0.13fF
+C962 digpotp_0.tg_4.b.t9 gnd 0.13fF
+C963 digpotp_0.tg_4.b.n4 gnd 0.66fF $ **FLOATING
+C964 digpotp_0.tg_4.b.t13 gnd 0.24fF
+C965 digpotp_0.tg_4.b.n5 gnd 0.98fF $ **FLOATING
+C966 digpotp_0.tg_4.b.n6 gnd 0.20fF $ **FLOATING
+C967 digpotp_0.tg_4.b.n7 gnd 0.20fF $ **FLOATING
+C968 digpotp_0.tg_4.b.n8 gnd 0.20fF $ **FLOATING
+C969 digpotp_0.tg_4.b.n9 gnd 0.20fF $ **FLOATING
+C970 digpotp_0.tg_4.b.n10 gnd 1.27fF $ **FLOATING
+C971 digpotp_0.tg_4.b.t18 gnd 0.13fF
+C972 digpotp_0.tg_4.b.t1 gnd 0.13fF
+C973 digpotp_0.tg_4.b.n11 gnd 0.66fF $ **FLOATING
+C974 digpotp_0.tg_4.b.t17 gnd 0.13fF
+C975 digpotp_0.tg_4.b.t23 gnd 0.13fF
+C976 digpotp_0.tg_4.b.n12 gnd 0.66fF $ **FLOATING
+C977 digpotp_0.tg_4.b.t22 gnd 0.13fF
+C978 digpotp_0.tg_4.b.t19 gnd 0.13fF
+C979 digpotp_0.tg_4.b.n13 gnd 0.66fF $ **FLOATING
+C980 digpotp_0.tg_4.b.t20 gnd 0.13fF
+C981 digpotp_0.tg_4.b.t24 gnd 0.13fF
+C982 digpotp_0.tg_4.b.n14 gnd 0.66fF $ **FLOATING
+C983 digpotp_0.tg_4.b.t15 gnd 0.13fF
+C984 digpotp_0.tg_4.b.t16 gnd 0.13fF
+C985 digpotp_0.tg_4.b.n15 gnd 0.66fF $ **FLOATING
+C986 digpotp_0.tg_4.b.t21 gnd 0.13fF
+C987 digpotp_0.tg_4.b.t0 gnd 0.13fF
+C988 digpotp_0.tg_4.b.n16 gnd 0.72fF $ **FLOATING
+C989 digpotp_0.tg_4.b.n17 gnd 0.30fF $ **FLOATING
+C990 digpotp_0.tg_4.b.n18 gnd 0.19fF $ **FLOATING
+C991 digpotp_0.tg_4.b.n19 gnd 0.19fF $ **FLOATING
+C992 digpotp_0.tg_4.b.n20 gnd 0.19fF $ **FLOATING
+C993 digpotp_0.tg_4.b.n21 gnd 0.22fF $ **FLOATING
+C994 digpotp_0.tg_4.b.n22 gnd 0.58fF $ **FLOATING
+C995 digpotp_0.tg_4.b.t14 gnd 0.60fF
+C996 digpotp_0.tg_4.b.n23 gnd 2.63fF $ **FLOATING
+C997 c3.t10 gnd 0.12fF
+C998 c3.t2 gnd 0.11fF
+C999 c3.n0 gnd 0.07fF $ **FLOATING
+C1000 c3.t0 gnd 0.07fF
+C1001 c3.t5 gnd 0.11fF
+C1002 c3.t1 gnd 0.07fF
+C1003 c3.t8 gnd 0.11fF
+C1004 c3.t4 gnd 0.07fF
+C1005 c3.t3 gnd 0.11fF
+C1006 c3.n1 gnd 0.04fF $ **FLOATING
+C1007 c3.n2 gnd 0.11fF $ **FLOATING
+C1008 c3.t7 gnd 0.07fF
+C1009 c3.t6 gnd 0.11fF
+C1010 c3.t13 gnd 0.07fF
+C1011 c3.t12 gnd 0.11fF
+C1012 c3.t11 gnd 0.07fF
+C1013 c3.t9 gnd 0.11fF
+C1014 c3.n3 gnd 0.08fF $ **FLOATING
+C1015 c3.n4 gnd 0.04fF $ **FLOATING
+C1016 c3.n5 gnd 0.05fF $ **FLOATING
+C1017 c3.n6 gnd 0.04fF $ **FLOATING
+C1018 c3.n7 gnd 0.05fF $ **FLOATING
+C1019 c3.n8 gnd 0.07fF $ **FLOATING
+C1020 c3.n9 gnd 0.07fF $ **FLOATING
+C1021 c3.n10 gnd 0.05fF $ **FLOATING
+C1022 c3.n11 gnd 0.04fF $ **FLOATING
+C1023 c3.n12 gnd 0.05fF $ **FLOATING
+C1024 c3.n13 gnd 0.04fF $ **FLOATING
+C1025 c3.n14 gnd 0.04fF $ **FLOATING
+C1026 c3.n15 gnd 0.18fF $ **FLOATING
+C1027 c3.n16 gnd 0.50fF $ **FLOATING
+C1028 digpotp_0.c3 gnd 2.89fF $ **FLOATING
+C1029 digpotp_0.tg_6.b.t1 gnd 0.20fF
+C1030 digpotp_0.tg_6.b.t0 gnd 0.13fF
+C1031 digpotp_0.tg_6.b.t18 gnd 0.13fF
+C1032 digpotp_0.tg_6.b.n0 gnd 0.65fF $ **FLOATING
+C1033 digpotp_0.tg_6.b.t3 gnd 0.13fF
+C1034 digpotp_0.tg_6.b.t4 gnd 0.13fF
+C1035 digpotp_0.tg_6.b.n1 gnd 0.65fF $ **FLOATING
+C1036 digpotp_0.tg_6.b.t21 gnd 0.13fF
+C1037 digpotp_0.tg_6.b.t22 gnd 0.13fF
+C1038 digpotp_0.tg_6.b.n2 gnd 0.65fF $ **FLOATING
+C1039 digpotp_0.tg_6.b.t19 gnd 0.13fF
+C1040 digpotp_0.tg_6.b.t20 gnd 0.13fF
+C1041 digpotp_0.tg_6.b.n3 gnd 0.65fF $ **FLOATING
+C1042 digpotp_0.tg_6.b.t24 gnd 0.13fF
+C1043 digpotp_0.tg_6.b.t5 gnd 0.13fF
+C1044 digpotp_0.tg_6.b.n4 gnd 0.65fF $ **FLOATING
+C1045 digpotp_0.tg_6.b.t2 gnd 0.24fF
+C1046 digpotp_0.tg_6.b.n5 gnd 0.97fF $ **FLOATING
+C1047 digpotp_0.tg_6.b.n6 gnd 0.19fF $ **FLOATING
+C1048 digpotp_0.tg_6.b.n7 gnd 0.19fF $ **FLOATING
+C1049 digpotp_0.tg_6.b.n8 gnd 0.19fF $ **FLOATING
+C1050 digpotp_0.tg_6.b.n9 gnd 0.19fF $ **FLOATING
+C1051 digpotp_0.tg_6.b.n10 gnd 1.24fF $ **FLOATING
+C1052 digpotp_0.tg_6.b.t11 gnd 0.13fF
+C1053 digpotp_0.tg_6.b.t6 gnd 0.13fF
+C1054 digpotp_0.tg_6.b.n11 gnd 0.65fF $ **FLOATING
+C1055 digpotp_0.tg_6.b.t15 gnd 0.13fF
+C1056 digpotp_0.tg_6.b.t17 gnd 0.13fF
+C1057 digpotp_0.tg_6.b.n12 gnd 0.65fF $ **FLOATING
+C1058 digpotp_0.tg_6.b.t10 gnd 0.13fF
+C1059 digpotp_0.tg_6.b.t8 gnd 0.13fF
+C1060 digpotp_0.tg_6.b.n13 gnd 0.65fF $ **FLOATING
+C1061 digpotp_0.tg_6.b.t14 gnd 0.13fF
+C1062 digpotp_0.tg_6.b.t12 gnd 0.13fF
+C1063 digpotp_0.tg_6.b.n14 gnd 0.65fF $ **FLOATING
+C1064 digpotp_0.tg_6.b.t9 gnd 0.13fF
+C1065 digpotp_0.tg_6.b.t16 gnd 0.13fF
+C1066 digpotp_0.tg_6.b.n15 gnd 0.65fF $ **FLOATING
+C1067 digpotp_0.tg_6.b.t13 gnd 0.13fF
+C1068 digpotp_0.tg_6.b.t7 gnd 0.13fF
+C1069 digpotp_0.tg_6.b.n16 gnd 0.71fF $ **FLOATING
+C1070 digpotp_0.tg_6.b.n17 gnd 0.29fF $ **FLOATING
+C1071 digpotp_0.tg_6.b.n18 gnd 0.19fF $ **FLOATING
+C1072 digpotp_0.tg_6.b.n19 gnd 0.19fF $ **FLOATING
+C1073 digpotp_0.tg_6.b.n20 gnd 0.19fF $ **FLOATING
+C1074 digpotp_0.tg_6.b.n21 gnd 0.21fF $ **FLOATING
+C1075 digpotp_0.tg_6.b.n22 gnd 0.56fF $ **FLOATING
+C1076 digpotp_0.tg_6.b.t23 gnd 0.60fF
+C1077 digpotp_0.tg_6.b.n23 gnd 2.71fF $ **FLOATING
+C1078 digpotp_0.tg_6.nctrl.t8 gnd 0.07fF
+C1079 digpotp_0.tg_6.nctrl.n0 gnd 0.05fF $ **FLOATING
+C1080 digpotp_0.tg_6.nctrl.t4 gnd 0.07fF
+C1081 digpotp_0.tg_6.nctrl.t13 gnd 0.10fF
+C1082 digpotp_0.tg_6.nctrl.n1 gnd 0.05fF $ **FLOATING
+C1083 digpotp_0.tg_6.nctrl.n2 gnd 0.05fF $ **FLOATING
+C1084 digpotp_0.tg_6.nctrl.n3 gnd 0.11fF $ **FLOATING
+C1085 digpotp_0.tg_6.nctrl.t9 gnd 0.07fF
+C1086 digpotp_0.tg_6.nctrl.t2 gnd 0.10fF
+C1087 digpotp_0.tg_6.nctrl.n4 gnd 0.05fF $ **FLOATING
+C1088 digpotp_0.tg_6.nctrl.n5 gnd 0.05fF $ **FLOATING
+C1089 digpotp_0.tg_6.nctrl.n6 gnd 0.07fF $ **FLOATING
+C1090 digpotp_0.tg_6.nctrl.t5 gnd 0.07fF
+C1091 digpotp_0.tg_6.nctrl.t11 gnd 0.10fF
+C1092 digpotp_0.tg_6.nctrl.n7 gnd 0.05fF $ **FLOATING
+C1093 digpotp_0.tg_6.nctrl.n8 gnd 0.05fF $ **FLOATING
+C1094 digpotp_0.tg_6.nctrl.n9 gnd 0.07fF $ **FLOATING
+C1095 digpotp_0.tg_6.nctrl.t10 gnd 0.07fF
+C1096 digpotp_0.tg_6.nctrl.t7 gnd 0.10fF
+C1097 digpotp_0.tg_6.nctrl.n10 gnd 0.05fF $ **FLOATING
+C1098 digpotp_0.tg_6.nctrl.n11 gnd 0.05fF $ **FLOATING
+C1099 digpotp_0.tg_6.nctrl.n12 gnd 0.07fF $ **FLOATING
+C1100 digpotp_0.tg_6.nctrl.t6 gnd 0.07fF
+C1101 digpotp_0.tg_6.nctrl.t3 gnd 0.10fF
+C1102 digpotp_0.tg_6.nctrl.n13 gnd 0.05fF $ **FLOATING
+C1103 digpotp_0.tg_6.nctrl.t12 gnd 0.11fF
+C1104 digpotp_0.tg_6.nctrl.n14 gnd 0.08fF $ **FLOATING
+C1105 digpotp_0.tg_6.nctrl.n15 gnd 0.11fF $ **FLOATING
+C1106 digpotp_0.tg_6.nctrl.t1 gnd 0.01fF
+C1107 digpotp_0.tg_6.nctrl.t0 gnd 0.04fF
+C1108 digpotp_0.tg_6.nctrl.n16 gnd 0.85fF $ **FLOATING
+C1109 digpotp_0.tg_2.b.t16 gnd 0.20fF
+C1110 digpotp_0.tg_2.b.t18 gnd 0.13fF
+C1111 digpotp_0.tg_2.b.t0 gnd 0.13fF
+C1112 digpotp_0.tg_2.b.n0 gnd 0.66fF $ **FLOATING
+C1113 digpotp_0.tg_2.b.t15 gnd 0.13fF
+C1114 digpotp_0.tg_2.b.t24 gnd 0.13fF
+C1115 digpotp_0.tg_2.b.n1 gnd 0.66fF $ **FLOATING
+C1116 digpotp_0.tg_2.b.t19 gnd 0.13fF
+C1117 digpotp_0.tg_2.b.t17 gnd 0.13fF
+C1118 digpotp_0.tg_2.b.n2 gnd 0.66fF $ **FLOATING
+C1119 digpotp_0.tg_2.b.t21 gnd 0.13fF
+C1120 digpotp_0.tg_2.b.t22 gnd 0.13fF
+C1121 digpotp_0.tg_2.b.n3 gnd 0.66fF $ **FLOATING
+C1122 digpotp_0.tg_2.b.t23 gnd 0.13fF
+C1123 digpotp_0.tg_2.b.t14 gnd 0.13fF
+C1124 digpotp_0.tg_2.b.n4 gnd 0.66fF $ **FLOATING
+C1125 digpotp_0.tg_2.b.t20 gnd 0.24fF
+C1126 digpotp_0.tg_2.b.n5 gnd 0.98fF $ **FLOATING
+C1127 digpotp_0.tg_2.b.n6 gnd 0.20fF $ **FLOATING
+C1128 digpotp_0.tg_2.b.n7 gnd 0.20fF $ **FLOATING
+C1129 digpotp_0.tg_2.b.n8 gnd 0.20fF $ **FLOATING
+C1130 digpotp_0.tg_2.b.n9 gnd 0.20fF $ **FLOATING
+C1131 digpotp_0.tg_2.b.n10 gnd 1.27fF $ **FLOATING
+C1132 digpotp_0.tg_2.b.t4 gnd 0.13fF
+C1133 digpotp_0.tg_2.b.t10 gnd 0.13fF
+C1134 digpotp_0.tg_2.b.n11 gnd 0.66fF $ **FLOATING
+C1135 digpotp_0.tg_2.b.t7 gnd 0.13fF
+C1136 digpotp_0.tg_2.b.t5 gnd 0.13fF
+C1137 digpotp_0.tg_2.b.n12 gnd 0.66fF $ **FLOATING
+C1138 digpotp_0.tg_2.b.t11 gnd 0.13fF
+C1139 digpotp_0.tg_2.b.t8 gnd 0.13fF
+C1140 digpotp_0.tg_2.b.n13 gnd 0.66fF $ **FLOATING
+C1141 digpotp_0.tg_2.b.t2 gnd 0.13fF
+C1142 digpotp_0.tg_2.b.t13 gnd 0.13fF
+C1143 digpotp_0.tg_2.b.n14 gnd 0.66fF $ **FLOATING
+C1144 digpotp_0.tg_2.b.t12 gnd 0.13fF
+C1145 digpotp_0.tg_2.b.t6 gnd 0.13fF
+C1146 digpotp_0.tg_2.b.n15 gnd 0.66fF $ **FLOATING
+C1147 digpotp_0.tg_2.b.t3 gnd 0.13fF
+C1148 digpotp_0.tg_2.b.t9 gnd 0.13fF
+C1149 digpotp_0.tg_2.b.n16 gnd 0.72fF $ **FLOATING
+C1150 digpotp_0.tg_2.b.n17 gnd 0.30fF $ **FLOATING
+C1151 digpotp_0.tg_2.b.n18 gnd 0.19fF $ **FLOATING
+C1152 digpotp_0.tg_2.b.n19 gnd 0.19fF $ **FLOATING
+C1153 digpotp_0.tg_2.b.n20 gnd 0.19fF $ **FLOATING
+C1154 digpotp_0.tg_2.b.n21 gnd 0.22fF $ **FLOATING
+C1155 digpotp_0.tg_2.b.n22 gnd 0.58fF $ **FLOATING
+C1156 digpotp_0.tg_2.b.t1 gnd 0.59fF
+C1157 digpotp_0.tg_2.b.n23 gnd 2.54fF $ **FLOATING
+C1158 digpotp_0.tg_2.nctrl.t11 gnd 0.07fF
+C1159 digpotp_0.tg_2.nctrl.n0 gnd 0.05fF $ **FLOATING
+C1160 digpotp_0.tg_2.nctrl.t8 gnd 0.07fF
+C1161 digpotp_0.tg_2.nctrl.t5 gnd 0.10fF
+C1162 digpotp_0.tg_2.nctrl.n1 gnd 0.05fF $ **FLOATING
+C1163 digpotp_0.tg_2.nctrl.n2 gnd 0.05fF $ **FLOATING
+C1164 digpotp_0.tg_2.nctrl.n3 gnd 0.11fF $ **FLOATING
+C1165 digpotp_0.tg_2.nctrl.t4 gnd 0.07fF
+C1166 digpotp_0.tg_2.nctrl.t10 gnd 0.10fF
+C1167 digpotp_0.tg_2.nctrl.n4 gnd 0.05fF $ **FLOATING
+C1168 digpotp_0.tg_2.nctrl.n5 gnd 0.05fF $ **FLOATING
+C1169 digpotp_0.tg_2.nctrl.n6 gnd 0.07fF $ **FLOATING
+C1170 digpotp_0.tg_2.nctrl.t13 gnd 0.07fF
+C1171 digpotp_0.tg_2.nctrl.t7 gnd 0.10fF
+C1172 digpotp_0.tg_2.nctrl.n7 gnd 0.05fF $ **FLOATING
+C1173 digpotp_0.tg_2.nctrl.n8 gnd 0.05fF $ **FLOATING
+C1174 digpotp_0.tg_2.nctrl.n9 gnd 0.07fF $ **FLOATING
+C1175 digpotp_0.tg_2.nctrl.t3 gnd 0.07fF
+C1176 digpotp_0.tg_2.nctrl.t2 gnd 0.10fF
+C1177 digpotp_0.tg_2.nctrl.n10 gnd 0.05fF $ **FLOATING
+C1178 digpotp_0.tg_2.nctrl.n11 gnd 0.05fF $ **FLOATING
+C1179 digpotp_0.tg_2.nctrl.n12 gnd 0.07fF $ **FLOATING
+C1180 digpotp_0.tg_2.nctrl.t12 gnd 0.07fF
+C1181 digpotp_0.tg_2.nctrl.t9 gnd 0.10fF
+C1182 digpotp_0.tg_2.nctrl.n13 gnd 0.05fF $ **FLOATING
+C1183 digpotp_0.tg_2.nctrl.t6 gnd 0.11fF
+C1184 digpotp_0.tg_2.nctrl.n14 gnd 0.09fF $ **FLOATING
+C1185 digpotp_0.tg_2.nctrl.n15 gnd 0.12fF $ **FLOATING
+C1186 digpotp_0.tg_2.nctrl.t1 gnd 0.01fF
+C1187 digpotp_0.tg_2.nctrl.t0 gnd 0.04fF
+C1188 digpotp_0.tg_2.nctrl.n16 gnd 0.86fF $ **FLOATING
+C1189 vd.t85 gnd 0.52fF
+C1190 vd.n0 gnd 0.09fF $ **FLOATING
+C1191 vd.t114 gnd 0.52fF
+C1192 vd.n1 gnd 0.07fF $ **FLOATING
+C1193 vd.n2 gnd 0.38fF $ **FLOATING
+C1194 vd.n3 gnd 0.38fF $ **FLOATING
+C1195 vd.n4 gnd 0.44fF $ **FLOATING
+C1196 vd.n5 gnd 0.08fF $ **FLOATING
+C1197 vd.n6 gnd 0.09fF $ **FLOATING
+C1198 vd.n7 gnd 0.44fF $ **FLOATING
+C1199 vd.n8 gnd 0.08fF $ **FLOATING
+C1200 vd.n9 gnd 0.07fF $ **FLOATING
+C1201 vd.t38 gnd 0.11fF
+C1202 vd.t26 gnd 0.06fF
+C1203 vd.t80 gnd 0.06fF
+C1204 vd.n10 gnd 0.33fF $ **FLOATING
+C1205 vd.t5 gnd 0.15fF
+C1206 vd.n11 gnd 0.63fF $ **FLOATING
+C1207 vd.n12 gnd 0.55fF $ **FLOATING
+C1208 vd.n13 gnd 0.15fF $ **FLOATING
+C1209 vd.t79 gnd 1.06fF
+C1210 vd.t25 gnd 1.06fF
+C1211 vd.n14 gnd 0.11fF $ **FLOATING
+C1212 vd.t4 gnd 0.99fF
+C1213 vd.n15 gnd 0.70fF $ **FLOATING
+C1214 vd.t37 gnd 0.99fF
+C1215 vd.n16 gnd 0.70fF $ **FLOATING
+C1216 vd.n17 gnd 0.80fF $ **FLOATING
+C1217 vd.n18 gnd 0.12fF $ **FLOATING
+C1218 vd.n19 gnd 0.15fF $ **FLOATING
+C1219 vd.n20 gnd 0.80fF $ **FLOATING
+C1220 vd.n21 gnd 0.12fF $ **FLOATING
+C1221 vd.n22 gnd 0.11fF $ **FLOATING
+C1222 vd.n23 gnd 1.57fF $ **FLOATING
+C1223 vd.n24 gnd 0.61fF $ **FLOATING
+C1224 vd.t15 gnd 1.33fF
+C1225 vd.t86 gnd 0.03fF
+C1226 vd.t115 gnd 0.02fF
+C1227 vd.t16 gnd 0.02fF
+C1228 vd.n25 gnd 0.19fF $ **FLOATING
+C1229 vd.n26 gnd 0.29fF $ **FLOATING
+C1230 vd.n27 gnd 0.06fF $ **FLOATING
+C1231 vd.t56 gnd 0.54fF
+C1232 vd.t33 gnd 0.54fF
+C1233 vd.t57 gnd 0.03fF
+C1234 vd.t34 gnd 0.04fF
+C1235 vd.n30 gnd 0.49fF $ **FLOATING
+C1236 vd.n31 gnd 0.46fF $ **FLOATING
+C1237 vd.n32 gnd 0.59fF $ **FLOATING
+C1238 vd.n33 gnd 0.59fF $ **FLOATING
+C1239 vd.n34 gnd 0.06fF $ **FLOATING
+C1240 vd.n35 gnd 0.08fF $ **FLOATING
+C1241 vd.n36 gnd 0.08fF $ **FLOATING
+C1242 vd.n37 gnd 0.85fF $ **FLOATING
+C1243 vd.n38 gnd 0.43fF $ **FLOATING
+C1244 vd.n39 gnd 0.45fF $ **FLOATING
+C1245 ota_0.vd gnd 32.99fF $ **FLOATING
+C1246 digpotp_0.tg_0.vd gnd 0.03fF $ **FLOATING
+C1247 vd.n40 gnd 0.13fF $ **FLOATING
+C1248 vd.n41 gnd 0.67fF $ **FLOATING
+C1249 vd.t58 gnd 0.52fF
+C1250 vd.t105 gnd 0.39fF
+C1251 vd.t106 gnd 0.39fF
+C1252 vd.t107 gnd 0.39fF
+C1253 vd.t124 gnd 0.39fF
+C1254 vd.t103 gnd 0.29fF
+C1255 vd.n42 gnd 0.13fF $ **FLOATING
+C1256 vd.n43 gnd 0.13fF $ **FLOATING
+C1257 vd.n44 gnd 0.13fF $ **FLOATING
+C1258 vd.n45 gnd 0.13fF $ **FLOATING
+C1259 vd.n46 gnd 0.19fF $ **FLOATING
+C1260 vd.t87 gnd 0.29fF
+C1261 vd.t39 gnd 0.39fF
+C1262 vd.t104 gnd 0.39fF
+C1263 vd.t2 gnd 0.39fF
+C1264 vd.t122 gnd 0.39fF
+C1265 vd.t82 gnd 0.52fF
+C1266 vd.n47 gnd 0.13fF $ **FLOATING
+C1267 vd.n48 gnd 0.13fF $ **FLOATING
+C1268 vd.n49 gnd 0.98fF $ **FLOATING
+C1269 vd.n50 gnd 0.06fF $ **FLOATING
+C1270 vd.n51 gnd 0.06fF $ **FLOATING
+C1271 vd.n52 gnd 0.79fF $ **FLOATING
+C1272 vd.t93 gnd 0.46fF
+C1273 vd.n53 gnd 0.05fF $ **FLOATING
+C1274 vd.n54 gnd 0.05fF $ **FLOATING
+C1275 vd.n55 gnd 0.03fF $ **FLOATING
+C1276 vd.n56 gnd 0.03fF $ **FLOATING
+C1277 vd.n57 gnd 0.05fF $ **FLOATING
+C1278 vd.n58 gnd 0.05fF $ **FLOATING
+C1279 vd.n59 gnd 0.03fF $ **FLOATING
+C1280 vd.n60 gnd 0.03fF $ **FLOATING
+C1281 vd.n62 gnd 0.39fF $ **FLOATING
+C1282 vd.n64 gnd 0.03fF $ **FLOATING
+C1283 vd.n65 gnd 0.07fF $ **FLOATING
+C1284 vd.t94 gnd 0.04fF
+C1285 vd.n66 gnd 0.26fF $ **FLOATING
+C1286 digpotp_0.tg_1.vd gnd 0.03fF $ **FLOATING
+C1287 vd.n67 gnd 0.05fF $ **FLOATING
+C1288 vd.n68 gnd 0.05fF $ **FLOATING
+C1289 vd.n69 gnd 0.03fF $ **FLOATING
+C1290 vd.n70 gnd 0.03fF $ **FLOATING
+C1291 vd.n71 gnd 0.13fF $ **FLOATING
+C1292 vd.n72 gnd 0.67fF $ **FLOATING
+C1293 vd.t125 gnd 0.52fF
+C1294 vd.t76 gnd 0.39fF
+C1295 vd.t74 gnd 0.39fF
+C1296 vd.t66 gnd 0.39fF
+C1297 vd.t83 gnd 0.39fF
+C1298 vd.t18 gnd 0.29fF
+C1299 vd.n73 gnd 0.13fF $ **FLOATING
+C1300 vd.n74 gnd 0.13fF $ **FLOATING
+C1301 vd.n75 gnd 0.13fF $ **FLOATING
+C1302 vd.n76 gnd 0.13fF $ **FLOATING
+C1303 vd.n77 gnd 0.19fF $ **FLOATING
+C1304 vd.t63 gnd 0.29fF
+C1305 vd.t73 gnd 0.39fF
+C1306 vd.t75 gnd 0.39fF
+C1307 vd.t68 gnd 0.39fF
+C1308 vd.t65 gnd 0.39fF
+C1309 vd.t69 gnd 0.52fF
+C1310 vd.n78 gnd 0.13fF $ **FLOATING
+C1311 vd.n79 gnd 0.13fF $ **FLOATING
+C1312 vd.n80 gnd 0.98fF $ **FLOATING
+C1313 vd.n81 gnd 0.06fF $ **FLOATING
+C1314 vd.n82 gnd 0.06fF $ **FLOATING
+C1315 vd.n83 gnd 0.79fF $ **FLOATING
+C1316 vd.t19 gnd 0.46fF
+C1317 vd.n84 gnd 0.05fF $ **FLOATING
+C1318 vd.n85 gnd 0.05fF $ **FLOATING
+C1319 vd.n86 gnd 0.03fF $ **FLOATING
+C1320 vd.n87 gnd 0.03fF $ **FLOATING
+C1321 vd.n89 gnd 0.39fF $ **FLOATING
+C1322 vd.n91 gnd 0.03fF $ **FLOATING
+C1323 vd.n92 gnd 0.07fF $ **FLOATING
+C1324 vd.t20 gnd 0.04fF
+C1325 vd.n93 gnd 0.26fF $ **FLOATING
+C1326 digpotp_0.tg_2.vd gnd 0.03fF $ **FLOATING
+C1327 vd.n94 gnd 0.05fF $ **FLOATING
+C1328 vd.n95 gnd 0.05fF $ **FLOATING
+C1329 vd.n96 gnd 0.03fF $ **FLOATING
+C1330 vd.n97 gnd 0.03fF $ **FLOATING
+C1331 vd.n98 gnd 0.13fF $ **FLOATING
+C1332 vd.n99 gnd 0.67fF $ **FLOATING
+C1333 vd.t62 gnd 0.52fF
+C1334 vd.t126 gnd 0.39fF
+C1335 vd.t41 gnd 0.39fF
+C1336 vd.t110 gnd 0.39fF
+C1337 vd.t21 gnd 0.39fF
+C1338 vd.t61 gnd 0.29fF
+C1339 vd.n100 gnd 0.13fF $ **FLOATING
+C1340 vd.n101 gnd 0.13fF $ **FLOATING
+C1341 vd.n102 gnd 0.13fF $ **FLOATING
+C1342 vd.n103 gnd 0.13fF $ **FLOATING
+C1343 vd.n104 gnd 0.19fF $ **FLOATING
+C1344 vd.t98 gnd 0.29fF
+C1345 vd.t112 gnd 0.39fF
+C1346 vd.t108 gnd 0.39fF
+C1347 vd.t31 gnd 0.39fF
+C1348 vd.t64 gnd 0.39fF
+C1349 vd.t127 gnd 0.52fF
+C1350 vd.n105 gnd 0.13fF $ **FLOATING
+C1351 vd.n106 gnd 0.13fF $ **FLOATING
+C1352 vd.n107 gnd 0.98fF $ **FLOATING
+C1353 vd.n108 gnd 0.06fF $ **FLOATING
+C1354 vd.n109 gnd 0.06fF $ **FLOATING
+C1355 vd.n110 gnd 0.79fF $ **FLOATING
+C1356 vd.t95 gnd 0.46fF
+C1357 vd.n111 gnd 0.05fF $ **FLOATING
+C1358 vd.n112 gnd 0.05fF $ **FLOATING
+C1359 vd.n113 gnd 0.03fF $ **FLOATING
+C1360 vd.n114 gnd 0.03fF $ **FLOATING
+C1361 vd.n116 gnd 0.39fF $ **FLOATING
+C1362 vd.n118 gnd 0.03fF $ **FLOATING
+C1363 vd.n119 gnd 0.07fF $ **FLOATING
+C1364 vd.t96 gnd 0.04fF
+C1365 vd.n120 gnd 0.26fF $ **FLOATING
+C1366 digpotp_0.tg_3.vd gnd 0.03fF $ **FLOATING
+C1367 vd.n121 gnd 0.05fF $ **FLOATING
+C1368 vd.n122 gnd 0.05fF $ **FLOATING
+C1369 vd.n123 gnd 0.03fF $ **FLOATING
+C1370 vd.n124 gnd 0.03fF $ **FLOATING
+C1371 vd.n125 gnd 0.13fF $ **FLOATING
+C1372 vd.n126 gnd 0.67fF $ **FLOATING
+C1373 vd.t50 gnd 0.52fF
+C1374 vd.t45 gnd 0.39fF
+C1375 vd.t55 gnd 0.39fF
+C1376 vd.t52 gnd 0.39fF
+C1377 vd.t49 gnd 0.39fF
+C1378 vd.t47 gnd 0.29fF
+C1379 vd.n127 gnd 0.13fF $ **FLOATING
+C1380 vd.n128 gnd 0.13fF $ **FLOATING
+C1381 vd.n129 gnd 0.13fF $ **FLOATING
+C1382 vd.n130 gnd 0.13fF $ **FLOATING
+C1383 vd.n131 gnd 0.19fF $ **FLOATING
+C1384 vd.t54 gnd 0.29fF
+C1385 vd.t51 gnd 0.39fF
+C1386 vd.t48 gnd 0.39fF
+C1387 vd.t44 gnd 0.39fF
+C1388 vd.t53 gnd 0.39fF
+C1389 vd.t46 gnd 0.52fF
+C1390 vd.n132 gnd 0.13fF $ **FLOATING
+C1391 vd.n133 gnd 0.13fF $ **FLOATING
+C1392 vd.n134 gnd 0.98fF $ **FLOATING
+C1393 vd.n135 gnd 0.06fF $ **FLOATING
+C1394 vd.n136 gnd 0.06fF $ **FLOATING
+C1395 vd.n137 gnd 0.79fF $ **FLOATING
+C1396 vd.t13 gnd 0.46fF
+C1397 vd.n138 gnd 0.05fF $ **FLOATING
+C1398 vd.n139 gnd 0.05fF $ **FLOATING
+C1399 vd.n140 gnd 0.03fF $ **FLOATING
+C1400 vd.n141 gnd 0.03fF $ **FLOATING
+C1401 vd.n143 gnd 0.39fF $ **FLOATING
+C1402 vd.n145 gnd 0.03fF $ **FLOATING
+C1403 vd.n146 gnd 0.07fF $ **FLOATING
+C1404 vd.t14 gnd 0.04fF
+C1405 vd.n147 gnd 0.26fF $ **FLOATING
+C1406 digpotp_0.tg_4.vd gnd 0.03fF $ **FLOATING
+C1407 vd.n148 gnd 0.05fF $ **FLOATING
+C1408 vd.n149 gnd 0.05fF $ **FLOATING
+C1409 vd.n150 gnd 0.03fF $ **FLOATING
+C1410 vd.n151 gnd 0.03fF $ **FLOATING
+C1411 vd.n152 gnd 0.13fF $ **FLOATING
+C1412 vd.n153 gnd 0.67fF $ **FLOATING
+C1413 vd.t78 gnd 0.52fF
+C1414 vd.t11 gnd 0.39fF
+C1415 vd.t43 gnd 0.39fF
+C1416 vd.t113 gnd 0.39fF
+C1417 vd.t111 gnd 0.39fF
+C1418 vd.t99 gnd 0.29fF
+C1419 vd.n154 gnd 0.13fF $ **FLOATING
+C1420 vd.n155 gnd 0.13fF $ **FLOATING
+C1421 vd.n156 gnd 0.13fF $ **FLOATING
+C1422 vd.n157 gnd 0.13fF $ **FLOATING
+C1423 vd.n158 gnd 0.19fF $ **FLOATING
+C1424 vd.t100 gnd 0.29fF
+C1425 vd.t129 gnd 0.39fF
+C1426 vd.t40 gnd 0.39fF
+C1427 vd.t42 gnd 0.39fF
+C1428 vd.t109 gnd 0.39fF
+C1429 vd.t8 gnd 0.52fF
+C1430 vd.n159 gnd 0.13fF $ **FLOATING
+C1431 vd.n160 gnd 0.13fF $ **FLOATING
+C1432 vd.n161 gnd 0.98fF $ **FLOATING
+C1433 vd.n162 gnd 0.06fF $ **FLOATING
+C1434 vd.n163 gnd 0.06fF $ **FLOATING
+C1435 vd.n164 gnd 0.79fF $ **FLOATING
+C1436 vd.t91 gnd 0.46fF
+C1437 vd.n165 gnd 0.05fF $ **FLOATING
+C1438 vd.n166 gnd 0.05fF $ **FLOATING
+C1439 vd.n167 gnd 0.03fF $ **FLOATING
+C1440 vd.n168 gnd 0.03fF $ **FLOATING
+C1441 vd.n170 gnd 0.39fF $ **FLOATING
+C1442 vd.n172 gnd 0.03fF $ **FLOATING
+C1443 vd.n173 gnd 0.07fF $ **FLOATING
+C1444 vd.t92 gnd 0.04fF
+C1445 vd.n174 gnd 0.26fF $ **FLOATING
+C1446 digpotp_0.tg_5.vd gnd 0.03fF $ **FLOATING
+C1447 vd.n175 gnd 0.05fF $ **FLOATING
+C1448 vd.n176 gnd 0.05fF $ **FLOATING
+C1449 vd.n177 gnd 0.03fF $ **FLOATING
+C1450 vd.n178 gnd 0.03fF $ **FLOATING
+C1451 vd.n179 gnd 0.13fF $ **FLOATING
+C1452 vd.n180 gnd 0.67fF $ **FLOATING
+C1453 vd.t7 gnd 0.52fF
+C1454 vd.t89 gnd 0.39fF
+C1455 vd.t97 gnd 0.39fF
+C1456 vd.t22 gnd 0.39fF
+C1457 vd.t27 gnd 0.39fF
+C1458 vd.t88 gnd 0.29fF
+C1459 vd.n181 gnd 0.13fF $ **FLOATING
+C1460 vd.n182 gnd 0.13fF $ **FLOATING
+C1461 vd.n183 gnd 0.13fF $ **FLOATING
+C1462 vd.n184 gnd 0.13fF $ **FLOATING
+C1463 vd.n185 gnd 0.19fF $ **FLOATING
+C1464 vd.t32 gnd 0.29fF
+C1465 vd.t102 gnd 0.39fF
+C1466 vd.t84 gnd 0.39fF
+C1467 vd.t3 gnd 0.39fF
+C1468 vd.t101 gnd 0.39fF
+C1469 vd.t36 gnd 0.52fF
+C1470 vd.n186 gnd 0.13fF $ **FLOATING
+C1471 vd.n187 gnd 0.13fF $ **FLOATING
+C1472 vd.n188 gnd 0.98fF $ **FLOATING
+C1473 vd.n189 gnd 0.06fF $ **FLOATING
+C1474 vd.n190 gnd 0.06fF $ **FLOATING
+C1475 vd.n191 gnd 0.79fF $ **FLOATING
+C1476 vd.t9 gnd 0.46fF
+C1477 vd.n192 gnd 0.05fF $ **FLOATING
+C1478 vd.n193 gnd 0.05fF $ **FLOATING
+C1479 vd.n194 gnd 0.03fF $ **FLOATING
+C1480 vd.n195 gnd 0.03fF $ **FLOATING
+C1481 vd.n197 gnd 0.39fF $ **FLOATING
+C1482 vd.n199 gnd 0.03fF $ **FLOATING
+C1483 vd.n200 gnd 0.07fF $ **FLOATING
+C1484 vd.t10 gnd 0.04fF
+C1485 vd.n201 gnd 0.26fF $ **FLOATING
+C1486 digpotp_0.tg_6.vd gnd 0.03fF $ **FLOATING
+C1487 vd.n202 gnd 0.05fF $ **FLOATING
+C1488 vd.n203 gnd 0.05fF $ **FLOATING
+C1489 vd.n204 gnd 0.03fF $ **FLOATING
+C1490 vd.n205 gnd 0.03fF $ **FLOATING
+C1491 vd.n206 gnd 0.13fF $ **FLOATING
+C1492 vd.n207 gnd 0.67fF $ **FLOATING
+C1493 vd.t121 gnd 0.52fF
+C1494 vd.t6 gnd 0.39fF
+C1495 vd.t123 gnd 0.39fF
+C1496 vd.t72 gnd 0.39fF
+C1497 vd.t60 gnd 0.39fF
+C1498 vd.t12 gnd 0.29fF
+C1499 vd.n208 gnd 0.13fF $ **FLOATING
+C1500 vd.n209 gnd 0.13fF $ **FLOATING
+C1501 vd.n210 gnd 0.13fF $ **FLOATING
+C1502 vd.n211 gnd 0.13fF $ **FLOATING
+C1503 vd.n212 gnd 0.19fF $ **FLOATING
+C1504 vd.t28 gnd 0.29fF
+C1505 vd.t70 gnd 0.39fF
+C1506 vd.t67 gnd 0.39fF
+C1507 vd.t59 gnd 0.39fF
+C1508 vd.t35 gnd 0.39fF
+C1509 vd.t71 gnd 0.52fF
+C1510 vd.n213 gnd 0.13fF $ **FLOATING
+C1511 vd.n214 gnd 0.13fF $ **FLOATING
+C1512 vd.n215 gnd 0.98fF $ **FLOATING
+C1513 vd.n216 gnd 0.06fF $ **FLOATING
+C1514 vd.n217 gnd 0.06fF $ **FLOATING
+C1515 vd.n218 gnd 0.79fF $ **FLOATING
+C1516 vd.t0 gnd 0.46fF
+C1517 vd.n219 gnd 0.05fF $ **FLOATING
+C1518 vd.n220 gnd 0.05fF $ **FLOATING
+C1519 vd.n221 gnd 0.03fF $ **FLOATING
+C1520 vd.n222 gnd 0.03fF $ **FLOATING
+C1521 vd.n224 gnd 0.39fF $ **FLOATING
+C1522 vd.n226 gnd 0.03fF $ **FLOATING
+C1523 vd.n227 gnd 0.07fF $ **FLOATING
+C1524 vd.t1 gnd 0.04fF
+C1525 vd.n228 gnd 0.26fF $ **FLOATING
+C1526 vd.n229 gnd 0.13fF $ **FLOATING
+C1527 vd.n230 gnd 0.67fF $ **FLOATING
+C1528 vd.t90 gnd 0.52fF
+C1529 vd.t128 gnd 0.39fF
+C1530 vd.t17 gnd 0.39fF
+C1531 vd.t24 gnd 0.39fF
+C1532 vd.t120 gnd 0.39fF
+C1533 vd.t81 gnd 0.29fF
+C1534 vd.n231 gnd 0.13fF $ **FLOATING
+C1535 vd.n232 gnd 0.13fF $ **FLOATING
+C1536 vd.n233 gnd 0.13fF $ **FLOATING
+C1537 vd.n234 gnd 0.13fF $ **FLOATING
+C1538 vd.n235 gnd 0.19fF $ **FLOATING
+C1539 vd.t117 gnd 0.29fF
+C1540 vd.t119 gnd 0.39fF
+C1541 vd.t116 gnd 0.39fF
+C1542 vd.t118 gnd 0.39fF
+C1543 vd.t23 gnd 0.39fF
+C1544 vd.t77 gnd 0.52fF
+C1545 vd.n236 gnd 0.13fF $ **FLOATING
+C1546 vd.n237 gnd 0.13fF $ **FLOATING
+C1547 vd.n238 gnd 0.98fF $ **FLOATING
+C1548 vd.n239 gnd 0.06fF $ **FLOATING
+C1549 vd.n240 gnd 0.06fF $ **FLOATING
+C1550 vd.n241 gnd 0.79fF $ **FLOATING
+C1551 vd.t29 gnd 0.46fF
+C1552 vd.n242 gnd 0.05fF $ **FLOATING
+C1553 vd.n243 gnd 0.05fF $ **FLOATING
+C1554 vd.n244 gnd 0.03fF $ **FLOATING
+C1555 vd.n245 gnd 0.03fF $ **FLOATING
+C1556 vd.n246 gnd 0.05fF $ **FLOATING
+C1557 vd.n247 gnd 0.05fF $ **FLOATING
+C1558 vd.n248 gnd 0.03fF $ **FLOATING
+C1559 vd.n249 gnd 0.03fF $ **FLOATING
+C1560 vd.n251 gnd 0.39fF $ **FLOATING
+C1561 vd.n253 gnd 0.03fF $ **FLOATING
+C1562 vd.n254 gnd 0.07fF $ **FLOATING
+C1563 vd.t30 gnd 0.04fF
+C1564 vd.n255 gnd 0.26fF $ **FLOATING
+C1565 vd.n256 gnd 1.21fF $ **FLOATING
+C1566 vd.n257 gnd 2.26fF $ **FLOATING
+C1567 vd.n258 gnd 2.32fF $ **FLOATING
+C1568 vd.n259 gnd 2.35fF $ **FLOATING
+C1569 vd.n260 gnd 2.35fF $ **FLOATING
+C1570 vd.n261 gnd 2.35fF $ **FLOATING
+C1571 vd.n262 gnd 2.47fF $ **FLOATING
+C1572 vd.n263 gnd 1.49fF $ **FLOATING
+C1573 vd.n264 gnd 32.45fF $ **FLOATING
+C1574 digpotp_0.vd gnd 0.45fF $ **FLOATING
+C1575 in1.t21 gnd 0.11fF
+C1576 in1.t15 gnd 0.11fF
+C1577 in1.n0 gnd 0.55fF $ **FLOATING
+C1578 in1.t124 gnd 0.11fF
+C1579 in1.t24 gnd 0.11fF
+C1580 in1.n1 gnd 0.55fF $ **FLOATING
+C1581 in1.t122 gnd 0.11fF
+C1582 in1.t97 gnd 0.11fF
+C1583 in1.n2 gnd 0.55fF $ **FLOATING
+C1584 in1.t123 gnd 0.11fF
+C1585 in1.t70 gnd 0.11fF
+C1586 in1.n3 gnd 0.55fF $ **FLOATING
+C1587 in1.t95 gnd 0.11fF
+C1588 in1.t20 gnd 0.11fF
+C1589 in1.n4 gnd 0.55fF $ **FLOATING
+C1590 in1.t98 gnd 0.11fF
+C1591 in1.t16 gnd 0.11fF
+C1592 in1.n5 gnd 0.55fF $ **FLOATING
+C1593 in1.t85 gnd 0.13fF
+C1594 in1.t76 gnd 0.11fF
+C1595 in1.t73 gnd 0.11fF
+C1596 in1.n6 gnd 0.55fF $ **FLOATING
+C1597 in1.t89 gnd 0.11fF
+C1598 in1.t91 gnd 0.11fF
+C1599 in1.n7 gnd 0.55fF $ **FLOATING
+C1600 in1.t11 gnd 0.11fF
+C1601 in1.t69 gnd 0.11fF
+C1602 in1.n8 gnd 0.55fF $ **FLOATING
+C1603 in1.t74 gnd 0.11fF
+C1604 in1.t107 gnd 0.11fF
+C1605 in1.n9 gnd 0.55fF $ **FLOATING
+C1606 in1.t92 gnd 0.11fF
+C1607 in1.t90 gnd 0.11fF
+C1608 in1.n10 gnd 0.55fF $ **FLOATING
+C1609 in1.t183 gnd 0.15fF
+C1610 in1.n11 gnd 0.95fF $ **FLOATING
+C1611 in1.n12 gnd 0.18fF $ **FLOATING
+C1612 in1.n13 gnd 0.18fF $ **FLOATING
+C1613 in1.n14 gnd 0.18fF $ **FLOATING
+C1614 in1.n15 gnd 0.18fF $ **FLOATING
+C1615 in1.n16 gnd 1.94fF $ **FLOATING
+C1616 in1.n17 gnd 1.33fF $ **FLOATING
+C1617 in1.n18 gnd 0.20fF $ **FLOATING
+C1618 in1.n19 gnd 0.20fF $ **FLOATING
+C1619 in1.n20 gnd 0.20fF $ **FLOATING
+C1620 in1.n21 gnd 0.20fF $ **FLOATING
+C1621 in1.n22 gnd 0.32fF $ **FLOATING
+C1622 in1.t129 gnd 0.11fF
+C1623 in1.t132 gnd 0.11fF
+C1624 in1.n23 gnd 0.55fF $ **FLOATING
+C1625 in1.t48 gnd 0.11fF
+C1626 in1.t128 gnd 0.11fF
+C1627 in1.n24 gnd 0.55fF $ **FLOATING
+C1628 in1.t155 gnd 0.11fF
+C1629 in1.t134 gnd 0.11fF
+C1630 in1.n25 gnd 0.55fF $ **FLOATING
+C1631 in1.t130 gnd 0.11fF
+C1632 in1.t136 gnd 0.11fF
+C1633 in1.n26 gnd 0.55fF $ **FLOATING
+C1634 in1.t142 gnd 0.11fF
+C1635 in1.t143 gnd 0.11fF
+C1636 in1.n27 gnd 0.55fF $ **FLOATING
+C1637 in1.t126 gnd 0.11fF
+C1638 in1.t135 gnd 0.11fF
+C1639 in1.n28 gnd 0.55fF $ **FLOATING
+C1640 in1.t185 gnd 0.13fF
+C1641 in1.t34 gnd 0.11fF
+C1642 in1.t71 gnd 0.11fF
+C1643 in1.n29 gnd 0.55fF $ **FLOATING
+C1644 in1.t160 gnd 0.11fF
+C1645 in1.t153 gnd 0.11fF
+C1646 in1.n30 gnd 0.55fF $ **FLOATING
+C1647 in1.t65 gnd 0.11fF
+C1648 in1.t131 gnd 0.11fF
+C1649 in1.n31 gnd 0.55fF $ **FLOATING
+C1650 in1.t157 gnd 0.11fF
+C1651 in1.t19 gnd 0.11fF
+C1652 in1.n32 gnd 0.55fF $ **FLOATING
+C1653 in1.t184 gnd 0.11fF
+C1654 in1.t43 gnd 0.11fF
+C1655 in1.n33 gnd 0.55fF $ **FLOATING
+C1656 in1.t67 gnd 0.15fF
+C1657 in1.n34 gnd 0.95fF $ **FLOATING
+C1658 in1.n35 gnd 0.18fF $ **FLOATING
+C1659 in1.n36 gnd 0.18fF $ **FLOATING
+C1660 in1.n37 gnd 0.18fF $ **FLOATING
+C1661 in1.n38 gnd 0.18fF $ **FLOATING
+C1662 in1.n39 gnd 1.94fF $ **FLOATING
+C1663 in1.n40 gnd 1.33fF $ **FLOATING
+C1664 in1.n41 gnd 0.20fF $ **FLOATING
+C1665 in1.n42 gnd 0.20fF $ **FLOATING
+C1666 in1.n43 gnd 0.20fF $ **FLOATING
+C1667 in1.n44 gnd 0.20fF $ **FLOATING
+C1668 in1.n45 gnd 0.32fF $ **FLOATING
+C1669 digpotp_0.tg_2.a gnd 0.69fF $ **FLOATING
+C1670 in1.t118 gnd 0.11fF
+C1671 in1.t82 gnd 0.11fF
+C1672 in1.n46 gnd 0.55fF $ **FLOATING
+C1673 in1.t23 gnd 0.11fF
+C1674 in1.t170 gnd 0.11fF
+C1675 in1.n47 gnd 0.55fF $ **FLOATING
+C1676 in1.t117 gnd 0.11fF
+C1677 in1.t176 gnd 0.11fF
+C1678 in1.n48 gnd 0.55fF $ **FLOATING
+C1679 in1.t94 gnd 0.11fF
+C1680 in1.t179 gnd 0.11fF
+C1681 in1.n49 gnd 0.55fF $ **FLOATING
+C1682 in1.t77 gnd 0.11fF
+C1683 in1.t116 gnd 0.11fF
+C1684 in1.n50 gnd 0.55fF $ **FLOATING
+C1685 in1.t104 gnd 0.11fF
+C1686 in1.t81 gnd 0.11fF
+C1687 in1.n51 gnd 0.55fF $ **FLOATING
+C1688 in1.t52 gnd 0.13fF
+C1689 in1.t50 gnd 0.11fF
+C1690 in1.t59 gnd 0.11fF
+C1691 in1.n52 gnd 0.55fF $ **FLOATING
+C1692 in1.t57 gnd 0.11fF
+C1693 in1.t54 gnd 0.11fF
+C1694 in1.n53 gnd 0.55fF $ **FLOATING
+C1695 in1.t53 gnd 0.11fF
+C1696 in1.t60 gnd 0.11fF
+C1697 in1.n54 gnd 0.55fF $ **FLOATING
+C1698 in1.t58 gnd 0.11fF
+C1699 in1.t55 gnd 0.11fF
+C1700 in1.n55 gnd 0.55fF $ **FLOATING
+C1701 in1.t51 gnd 0.11fF
+C1702 in1.t61 gnd 0.11fF
+C1703 in1.n56 gnd 0.55fF $ **FLOATING
+C1704 in1.t56 gnd 0.15fF
+C1705 in1.n57 gnd 0.95fF $ **FLOATING
+C1706 in1.n58 gnd 0.18fF $ **FLOATING
+C1707 in1.n59 gnd 0.18fF $ **FLOATING
+C1708 in1.n60 gnd 0.18fF $ **FLOATING
+C1709 in1.n61 gnd 0.18fF $ **FLOATING
+C1710 in1.n62 gnd 1.94fF $ **FLOATING
+C1711 in1.n63 gnd 1.33fF $ **FLOATING
+C1712 in1.n64 gnd 0.20fF $ **FLOATING
+C1713 in1.n65 gnd 0.20fF $ **FLOATING
+C1714 in1.n66 gnd 0.20fF $ **FLOATING
+C1715 in1.n67 gnd 0.20fF $ **FLOATING
+C1716 in1.n68 gnd 0.32fF $ **FLOATING
+C1717 digpotp_0.tg_3.a gnd 0.69fF $ **FLOATING
+C1718 in1.t167 gnd 0.11fF
+C1719 in1.t101 gnd 0.11fF
+C1720 in1.n69 gnd 0.55fF $ **FLOATING
+C1721 in1.t17 gnd 0.11fF
+C1722 in1.t79 gnd 0.11fF
+C1723 in1.n70 gnd 0.55fF $ **FLOATING
+C1724 in1.t39 gnd 0.11fF
+C1725 in1.t78 gnd 0.11fF
+C1726 in1.n71 gnd 0.55fF $ **FLOATING
+C1727 in1.t169 gnd 0.11fF
+C1728 in1.t174 gnd 0.11fF
+C1729 in1.n72 gnd 0.55fF $ **FLOATING
+C1730 in1.t108 gnd 0.11fF
+C1731 in1.t26 gnd 0.11fF
+C1732 in1.n73 gnd 0.55fF $ **FLOATING
+C1733 in1.t30 gnd 0.11fF
+C1734 in1.t171 gnd 0.11fF
+C1735 in1.n74 gnd 0.55fF $ **FLOATING
+C1736 in1.t6 gnd 0.13fF
+C1737 in1.t45 gnd 0.11fF
+C1738 in1.t154 gnd 0.11fF
+C1739 in1.n75 gnd 0.55fF $ **FLOATING
+C1740 in1.t190 gnd 0.11fF
+C1741 in1.t42 gnd 0.11fF
+C1742 in1.n76 gnd 0.55fF $ **FLOATING
+C1743 in1.t137 gnd 0.11fF
+C1744 in1.t138 gnd 0.11fF
+C1745 in1.n77 gnd 0.55fF $ **FLOATING
+C1746 in1.t162 gnd 0.11fF
+C1747 in1.t158 gnd 0.11fF
+C1748 in1.n78 gnd 0.55fF $ **FLOATING
+C1749 in1.t8 gnd 0.11fF
+C1750 in1.t49 gnd 0.11fF
+C1751 in1.n79 gnd 0.55fF $ **FLOATING
+C1752 in1.t103 gnd 0.15fF
+C1753 in1.n80 gnd 0.95fF $ **FLOATING
+C1754 in1.n81 gnd 0.18fF $ **FLOATING
+C1755 in1.n82 gnd 0.18fF $ **FLOATING
+C1756 in1.n83 gnd 0.18fF $ **FLOATING
+C1757 in1.n84 gnd 0.18fF $ **FLOATING
+C1758 in1.n85 gnd 1.94fF $ **FLOATING
+C1759 in1.n86 gnd 1.33fF $ **FLOATING
+C1760 in1.n87 gnd 0.20fF $ **FLOATING
+C1761 in1.n88 gnd 0.20fF $ **FLOATING
+C1762 in1.n89 gnd 0.20fF $ **FLOATING
+C1763 in1.n90 gnd 0.20fF $ **FLOATING
+C1764 in1.n91 gnd 0.32fF $ **FLOATING
+C1765 digpotp_0.tg_4.a gnd 0.69fF $ **FLOATING
+C1766 in1.t46 gnd 0.11fF
+C1767 in1.t177 gnd 0.11fF
+C1768 in1.n92 gnd 0.55fF $ **FLOATING
+C1769 in1.t139 gnd 0.11fF
+C1770 in1.t145 gnd 0.11fF
+C1771 in1.n93 gnd 0.55fF $ **FLOATING
+C1772 in1.t100 gnd 0.11fF
+C1773 in1.t72 gnd 0.11fF
+C1774 in1.n94 gnd 0.55fF $ **FLOATING
+C1775 in1.t68 gnd 0.11fF
+C1776 in1.t159 gnd 0.11fF
+C1777 in1.n95 gnd 0.55fF $ **FLOATING
+C1778 in1.t112 gnd 0.11fF
+C1779 in1.t161 gnd 0.11fF
+C1780 in1.n96 gnd 0.55fF $ **FLOATING
+C1781 in1.t191 gnd 0.11fF
+C1782 in1.t120 gnd 0.11fF
+C1783 in1.n97 gnd 0.55fF $ **FLOATING
+C1784 in1.t40 gnd 0.13fF
+C1785 in1.t1 gnd 0.11fF
+C1786 in1.t144 gnd 0.11fF
+C1787 in1.n98 gnd 0.55fF $ **FLOATING
+C1788 in1.t146 gnd 0.11fF
+C1789 in1.t109 gnd 0.11fF
+C1790 in1.n99 gnd 0.55fF $ **FLOATING
+C1791 in1.t113 gnd 0.11fF
+C1792 in1.t36 gnd 0.11fF
+C1793 in1.n100 gnd 0.55fF $ **FLOATING
+C1794 in1.t22 gnd 0.11fF
+C1795 in1.t31 gnd 0.11fF
+C1796 in1.n101 gnd 0.55fF $ **FLOATING
+C1797 in1.t114 gnd 0.11fF
+C1798 in1.t127 gnd 0.11fF
+C1799 in1.n102 gnd 0.55fF $ **FLOATING
+C1800 in1.t5 gnd 0.15fF
+C1801 in1.n103 gnd 0.95fF $ **FLOATING
+C1802 in1.n104 gnd 0.18fF $ **FLOATING
+C1803 in1.n105 gnd 0.18fF $ **FLOATING
+C1804 in1.n106 gnd 0.18fF $ **FLOATING
+C1805 in1.n107 gnd 0.18fF $ **FLOATING
+C1806 in1.n108 gnd 1.94fF $ **FLOATING
+C1807 in1.n109 gnd 1.33fF $ **FLOATING
+C1808 in1.n110 gnd 0.20fF $ **FLOATING
+C1809 in1.n111 gnd 0.20fF $ **FLOATING
+C1810 in1.n112 gnd 0.20fF $ **FLOATING
+C1811 in1.n113 gnd 0.20fF $ **FLOATING
+C1812 in1.n114 gnd 0.32fF $ **FLOATING
+C1813 digpotp_0.tg_5.a gnd 0.69fF $ **FLOATING
+C1814 in1.t44 gnd 0.11fF
+C1815 in1.t27 gnd 0.11fF
+C1816 in1.n115 gnd 0.55fF $ **FLOATING
+C1817 in1.t125 gnd 0.11fF
+C1818 in1.t80 gnd 0.11fF
+C1819 in1.n116 gnd 0.55fF $ **FLOATING
+C1820 in1.t99 gnd 0.11fF
+C1821 in1.t156 gnd 0.11fF
+C1822 in1.n117 gnd 0.55fF $ **FLOATING
+C1823 in1.t165 gnd 0.11fF
+C1824 in1.t133 gnd 0.11fF
+C1825 in1.n118 gnd 0.55fF $ **FLOATING
+C1826 in1.t147 gnd 0.11fF
+C1827 in1.t187 gnd 0.11fF
+C1828 in1.n119 gnd 0.55fF $ **FLOATING
+C1829 in1.t110 gnd 0.11fF
+C1830 in1.t47 gnd 0.11fF
+C1831 in1.n120 gnd 0.55fF $ **FLOATING
+C1832 in1.t87 gnd 0.13fF
+C1833 in1.t63 gnd 0.11fF
+C1834 in1.t37 gnd 0.11fF
+C1835 in1.n121 gnd 0.55fF $ **FLOATING
+C1836 in1.t86 gnd 0.11fF
+C1837 in1.t75 gnd 0.11fF
+C1838 in1.n122 gnd 0.55fF $ **FLOATING
+C1839 in1.t9 gnd 0.11fF
+C1840 in1.t32 gnd 0.11fF
+C1841 in1.n123 gnd 0.55fF $ **FLOATING
+C1842 in1.t88 gnd 0.11fF
+C1843 in1.t64 gnd 0.11fF
+C1844 in1.n124 gnd 0.55fF $ **FLOATING
+C1845 in1.t2 gnd 0.11fF
+C1846 in1.t181 gnd 0.11fF
+C1847 in1.n125 gnd 0.55fF $ **FLOATING
+C1848 in1.t178 gnd 0.15fF
+C1849 in1.n126 gnd 0.95fF $ **FLOATING
+C1850 in1.n127 gnd 0.18fF $ **FLOATING
+C1851 in1.n128 gnd 0.18fF $ **FLOATING
+C1852 in1.n129 gnd 0.18fF $ **FLOATING
+C1853 in1.n130 gnd 0.18fF $ **FLOATING
+C1854 in1.n131 gnd 1.94fF $ **FLOATING
+C1855 in1.n132 gnd 1.33fF $ **FLOATING
+C1856 in1.n133 gnd 0.20fF $ **FLOATING
+C1857 in1.n134 gnd 0.20fF $ **FLOATING
+C1858 in1.n135 gnd 0.20fF $ **FLOATING
+C1859 in1.n136 gnd 0.20fF $ **FLOATING
+C1860 in1.n137 gnd 0.32fF $ **FLOATING
+C1861 digpotp_0.tg_6.a gnd 0.69fF $ **FLOATING
+C1862 in1.t83 gnd 0.11fF
+C1863 in1.t93 gnd 0.11fF
+C1864 in1.n138 gnd 0.55fF $ **FLOATING
+C1865 in1.t35 gnd 0.11fF
+C1866 in1.t172 gnd 0.11fF
+C1867 in1.n139 gnd 0.55fF $ **FLOATING
+C1868 in1.t186 gnd 0.11fF
+C1869 in1.t168 gnd 0.11fF
+C1870 in1.n140 gnd 0.55fF $ **FLOATING
+C1871 in1.t33 gnd 0.11fF
+C1872 in1.t189 gnd 0.11fF
+C1873 in1.n141 gnd 0.55fF $ **FLOATING
+C1874 in1.t14 gnd 0.11fF
+C1875 in1.t13 gnd 0.11fF
+C1876 in1.n142 gnd 0.55fF $ **FLOATING
+C1877 in1.t96 gnd 0.11fF
+C1878 in1.t12 gnd 0.11fF
+C1879 in1.n143 gnd 0.55fF $ **FLOATING
+C1880 in1.t102 gnd 0.13fF
+C1881 in1.t166 gnd 0.11fF
+C1882 in1.t28 gnd 0.11fF
+C1883 in1.n144 gnd 0.55fF $ **FLOATING
+C1884 in1.t173 gnd 0.11fF
+C1885 in1.t163 gnd 0.11fF
+C1886 in1.n145 gnd 0.55fF $ **FLOATING
+C1887 in1.t105 gnd 0.11fF
+C1888 in1.t164 gnd 0.11fF
+C1889 in1.n146 gnd 0.55fF $ **FLOATING
+C1890 in1.t29 gnd 0.11fF
+C1891 in1.t175 gnd 0.11fF
+C1892 in1.n147 gnd 0.55fF $ **FLOATING
+C1893 in1.t188 gnd 0.11fF
+C1894 in1.t10 gnd 0.11fF
+C1895 in1.n148 gnd 0.55fF $ **FLOATING
+C1896 in1.t115 gnd 0.15fF
+C1897 in1.n149 gnd 0.95fF $ **FLOATING
+C1898 in1.n150 gnd 0.18fF $ **FLOATING
+C1899 in1.n151 gnd 0.18fF $ **FLOATING
+C1900 in1.n152 gnd 0.18fF $ **FLOATING
+C1901 in1.n153 gnd 0.18fF $ **FLOATING
+C1902 in1.n154 gnd 1.94fF $ **FLOATING
+C1903 in1.n155 gnd 1.33fF $ **FLOATING
+C1904 in1.n156 gnd 0.20fF $ **FLOATING
+C1905 in1.n157 gnd 0.20fF $ **FLOATING
+C1906 in1.n158 gnd 0.20fF $ **FLOATING
+C1907 in1.n159 gnd 0.20fF $ **FLOATING
+C1908 in1.n160 gnd 0.32fF $ **FLOATING
+C1909 in1.n161 gnd 5.44fF $ **FLOATING
+C1910 in1.n162 gnd 5.22fF $ **FLOATING
+C1911 in1.n163 gnd 5.28fF $ **FLOATING
+C1912 in1.n164 gnd 5.28fF $ **FLOATING
+C1913 in1.n165 gnd 5.28fF $ **FLOATING
+C1914 in1.t38 gnd 0.11fF
+C1915 in1.t25 gnd 0.11fF
+C1916 in1.n166 gnd 0.55fF $ **FLOATING
+C1917 in1.t4 gnd 0.11fF
+C1918 in1.t7 gnd 0.11fF
+C1919 in1.n167 gnd 0.55fF $ **FLOATING
+C1920 in1.t121 gnd 0.11fF
+C1921 in1.t84 gnd 0.11fF
+C1922 in1.n168 gnd 0.55fF $ **FLOATING
+C1923 in1.t66 gnd 0.11fF
+C1924 in1.t140 gnd 0.11fF
+C1925 in1.n169 gnd 0.55fF $ **FLOATING
+C1926 in1.t141 gnd 0.11fF
+C1927 in1.t119 gnd 0.11fF
+C1928 in1.n170 gnd 0.55fF $ **FLOATING
+C1929 in1.t18 gnd 0.11fF
+C1930 in1.t3 gnd 0.11fF
+C1931 in1.n171 gnd 0.55fF $ **FLOATING
+C1932 in1.t106 gnd 0.13fF
+C1933 in1.t0 gnd 0.11fF
+C1934 in1.t180 gnd 0.11fF
+C1935 in1.n172 gnd 0.55fF $ **FLOATING
+C1936 in1.t41 gnd 0.11fF
+C1937 in1.t149 gnd 0.11fF
+C1938 in1.n173 gnd 0.55fF $ **FLOATING
+C1939 in1.t148 gnd 0.11fF
+C1940 in1.t111 gnd 0.11fF
+C1941 in1.n174 gnd 0.55fF $ **FLOATING
+C1942 in1.t152 gnd 0.11fF
+C1943 in1.t182 gnd 0.11fF
+C1944 in1.n175 gnd 0.55fF $ **FLOATING
+C1945 in1.t150 gnd 0.11fF
+C1946 in1.t151 gnd 0.11fF
+C1947 in1.n176 gnd 0.55fF $ **FLOATING
+C1948 in1.t62 gnd 0.15fF
+C1949 in1.n177 gnd 0.95fF $ **FLOATING
+C1950 in1.n178 gnd 0.18fF $ **FLOATING
+C1951 in1.n179 gnd 0.18fF $ **FLOATING
+C1952 in1.n180 gnd 0.18fF $ **FLOATING
+C1953 in1.n181 gnd 0.18fF $ **FLOATING
+C1954 in1.n182 gnd 1.94fF $ **FLOATING
+C1955 in1.n183 gnd 1.33fF $ **FLOATING
+C1956 in1.n184 gnd 0.20fF $ **FLOATING
+C1957 in1.n185 gnd 0.20fF $ **FLOATING
+C1958 in1.n186 gnd 0.20fF $ **FLOATING
+C1959 in1.n187 gnd 0.20fF $ **FLOATING
+C1960 in1.n188 gnd 0.32fF $ **FLOATING
+C1961 digpotp_0.tg_0.a gnd 0.69fF $ **FLOATING
+C1962 digpotp_0.n0 gnd 0.18fF $ **FLOATING
+C1963 in1.n189 gnd 3.36fF $ **FLOATING
+C1964 in1.n190 gnd 5.56fF $ **FLOATING
+C1965 digpotp_0.tg_1.a gnd 0.69fF $ **FLOATING
+C1966 digpotp_0.tg_3.b.t21 gnd 0.20fF
+C1967 digpotp_0.tg_3.b.t16 gnd 0.13fF
+C1968 digpotp_0.tg_3.b.t0 gnd 0.13fF
+C1969 digpotp_0.tg_3.b.n0 gnd 0.66fF $ **FLOATING
+C1970 digpotp_0.tg_3.b.t22 gnd 0.13fF
+C1971 digpotp_0.tg_3.b.t20 gnd 0.13fF
+C1972 digpotp_0.tg_3.b.n1 gnd 0.66fF $ **FLOATING
+C1973 digpotp_0.tg_3.b.t23 gnd 0.13fF
+C1974 digpotp_0.tg_3.b.t17 gnd 0.13fF
+C1975 digpotp_0.tg_3.b.n2 gnd 0.66fF $ **FLOATING
+C1976 digpotp_0.tg_3.b.t24 gnd 0.13fF
+C1977 digpotp_0.tg_3.b.t14 gnd 0.13fF
+C1978 digpotp_0.tg_3.b.n3 gnd 0.66fF $ **FLOATING
+C1979 digpotp_0.tg_3.b.t19 gnd 0.13fF
+C1980 digpotp_0.tg_3.b.t18 gnd 0.13fF
+C1981 digpotp_0.tg_3.b.n4 gnd 0.66fF $ **FLOATING
+C1982 digpotp_0.tg_3.b.t15 gnd 0.24fF
+C1983 digpotp_0.tg_3.b.n5 gnd 0.99fF $ **FLOATING
+C1984 digpotp_0.tg_3.b.n6 gnd 0.20fF $ **FLOATING
+C1985 digpotp_0.tg_3.b.n7 gnd 0.20fF $ **FLOATING
+C1986 digpotp_0.tg_3.b.n8 gnd 0.20fF $ **FLOATING
+C1987 digpotp_0.tg_3.b.n9 gnd 0.20fF $ **FLOATING
+C1988 digpotp_0.tg_3.b.n10 gnd 1.27fF $ **FLOATING
+C1989 digpotp_0.tg_3.b.t11 gnd 0.13fF
+C1990 digpotp_0.tg_3.b.t8 gnd 0.13fF
+C1991 digpotp_0.tg_3.b.n11 gnd 0.66fF $ **FLOATING
+C1992 digpotp_0.tg_3.b.t10 gnd 0.13fF
+C1993 digpotp_0.tg_3.b.t1 gnd 0.13fF
+C1994 digpotp_0.tg_3.b.n12 gnd 0.66fF $ **FLOATING
+C1995 digpotp_0.tg_3.b.t6 gnd 0.13fF
+C1996 digpotp_0.tg_3.b.t4 gnd 0.13fF
+C1997 digpotp_0.tg_3.b.n13 gnd 0.66fF $ **FLOATING
+C1998 digpotp_0.tg_3.b.t9 gnd 0.13fF
+C1999 digpotp_0.tg_3.b.t12 gnd 0.13fF
+C2000 digpotp_0.tg_3.b.n14 gnd 0.66fF $ **FLOATING
+C2001 digpotp_0.tg_3.b.t5 gnd 0.13fF
+C2002 digpotp_0.tg_3.b.t7 gnd 0.13fF
+C2003 digpotp_0.tg_3.b.n15 gnd 0.66fF $ **FLOATING
+C2004 digpotp_0.tg_3.b.t2 gnd 0.13fF
+C2005 digpotp_0.tg_3.b.t3 gnd 0.13fF
+C2006 digpotp_0.tg_3.b.n16 gnd 0.72fF $ **FLOATING
+C2007 digpotp_0.tg_3.b.n17 gnd 0.30fF $ **FLOATING
+C2008 digpotp_0.tg_3.b.n18 gnd 0.19fF $ **FLOATING
+C2009 digpotp_0.tg_3.b.n19 gnd 0.19fF $ **FLOATING
+C2010 digpotp_0.tg_3.b.n20 gnd 0.19fF $ **FLOATING
+C2011 digpotp_0.tg_3.b.n21 gnd 0.22fF $ **FLOATING
+C2012 digpotp_0.tg_3.b.n22 gnd 0.58fF $ **FLOATING
+C2013 digpotp_0.tg_3.b.t13 gnd 0.60fF
+C2014 digpotp_0.tg_3.b.n23 gnd 2.66fF $ **FLOATING
+C2015 digpotp_0.tg_3.nctrl.t7 gnd 0.07fF
+C2016 digpotp_0.tg_3.nctrl.n0 gnd 0.05fF $ **FLOATING
+C2017 digpotp_0.tg_3.nctrl.t2 gnd 0.07fF
+C2018 digpotp_0.tg_3.nctrl.t12 gnd 0.10fF
+C2019 digpotp_0.tg_3.nctrl.n1 gnd 0.05fF $ **FLOATING
+C2020 digpotp_0.tg_3.nctrl.n2 gnd 0.05fF $ **FLOATING
+C2021 digpotp_0.tg_3.nctrl.n3 gnd 0.11fF $ **FLOATING
+C2022 digpotp_0.tg_3.nctrl.t8 gnd 0.07fF
+C2023 digpotp_0.tg_3.nctrl.t5 gnd 0.10fF
+C2024 digpotp_0.tg_3.nctrl.n4 gnd 0.05fF $ **FLOATING
+C2025 digpotp_0.tg_3.nctrl.n5 gnd 0.05fF $ **FLOATING
+C2026 digpotp_0.tg_3.nctrl.n6 gnd 0.07fF $ **FLOATING
+C2027 digpotp_0.tg_3.nctrl.t3 gnd 0.07fF
+C2028 digpotp_0.tg_3.nctrl.t10 gnd 0.10fF
+C2029 digpotp_0.tg_3.nctrl.n7 gnd 0.05fF $ **FLOATING
+C2030 digpotp_0.tg_3.nctrl.n8 gnd 0.05fF $ **FLOATING
+C2031 digpotp_0.tg_3.nctrl.n9 gnd 0.07fF $ **FLOATING
+C2032 digpotp_0.tg_3.nctrl.t9 gnd 0.07fF
+C2033 digpotp_0.tg_3.nctrl.t6 gnd 0.10fF
+C2034 digpotp_0.tg_3.nctrl.n10 gnd 0.05fF $ **FLOATING
+C2035 digpotp_0.tg_3.nctrl.n11 gnd 0.05fF $ **FLOATING
+C2036 digpotp_0.tg_3.nctrl.n12 gnd 0.07fF $ **FLOATING
+C2037 digpotp_0.tg_3.nctrl.t4 gnd 0.07fF
+C2038 digpotp_0.tg_3.nctrl.t13 gnd 0.10fF
+C2039 digpotp_0.tg_3.nctrl.n13 gnd 0.05fF $ **FLOATING
+C2040 digpotp_0.tg_3.nctrl.t11 gnd 0.11fF
+C2041 digpotp_0.tg_3.nctrl.n14 gnd 0.09fF $ **FLOATING
+C2042 digpotp_0.tg_3.nctrl.n15 gnd 0.12fF $ **FLOATING
+C2043 digpotp_0.tg_3.nctrl.t1 gnd 0.01fF
+C2044 digpotp_0.tg_3.nctrl.t0 gnd 0.04fF
+C2045 digpotp_0.tg_3.nctrl.n16 gnd 0.86fF $ **FLOATING
+*.ends
+
+
+
+**** end user architecture code
+.ends
+
+.GLOBAL GND
+.end

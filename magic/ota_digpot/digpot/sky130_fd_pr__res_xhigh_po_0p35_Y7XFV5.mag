@@ -1,0 +1,68 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1698522189
+<< pwell >>
+rect -360 -1700 360 1700
+<< psubdiff >>
+rect -324 1630 -228 1664
+rect 228 1630 324 1664
+rect -324 1568 -290 1630
+rect 290 1568 324 1630
+rect -324 -1630 -290 -1568
+rect 290 -1630 324 -1568
+rect -324 -1664 -228 -1630
+rect 228 -1664 324 -1630
+<< psubdiffcont >>
+rect -228 1630 228 1664
+rect -324 -1568 -290 1568
+rect 290 -1568 324 1568
+rect -228 -1664 228 -1630
+<< xpolycontact >>
+rect -194 1102 -124 1534
+rect -194 -1534 -124 -1102
+rect 124 1102 194 1534
+rect 124 -1534 194 -1102
+<< xpolyres >>
+rect -194 -1102 -124 1102
+rect 124 -1102 194 1102
+<< locali >>
+rect -324 1630 -228 1664
+rect 228 1630 324 1664
+rect -324 1568 -290 1630
+rect 290 1568 324 1630
+rect -324 -1630 -290 -1568
+rect 290 -1630 324 -1568
+rect -324 -1664 -228 -1630
+rect 228 -1664 324 -1630
+<< viali >>
+rect -178 1119 -140 1516
+rect 140 1119 178 1516
+rect -178 -1516 -140 -1119
+rect 140 -1516 178 -1119
+<< metal1 >>
+rect -184 1516 -134 1528
+rect -184 1119 -178 1516
+rect -140 1119 -134 1516
+rect -184 1107 -134 1119
+rect 134 1516 184 1528
+rect 134 1119 140 1516
+rect 178 1119 184 1516
+rect 134 1107 184 1119
+rect -184 -1119 -134 -1107
+rect -184 -1516 -178 -1119
+rect -140 -1516 -134 -1119
+rect -184 -1528 -134 -1516
+rect 134 -1119 184 -1107
+rect 134 -1516 140 -1119
+rect 178 -1516 184 -1119
+rect 134 -1528 184 -1516
+<< res0p35 >>
+rect -196 -1104 -122 1104
+rect 122 -1104 196 1104
+<< properties >>
+string FIXED_BBOX -307 -1647 307 1647
+string gencell sky130_fd_pr__res_xhigh_po_0p35
+string library sky130
+string parameters w 0.350 l 11.02 m 1 nx 2 wmin 0.350 lmin 0.50 rho 2000 val 64.046k dummy 0 dw 0.0 term 188.2 sterm 0.0 caplen 0 wmax 0.350 guard 1 glc 1 grc 1 gtc 1 gbc 1 compatible {sky130_fd_pr__res_xhigh_po_0p35  sky130_fd_pr__res_xhigh_po_0p69 sky130_fd_pr__res_xhigh_po_1p41  sky130_fd_pr__res_xhigh_po_2p85 sky130_fd_pr__res_xhigh_po_5p73} full_metal 1 n_guard 0 hv_guard 0 vias 1 viagb 0 viagt 0 viagl 0 viagr 0
+<< end >>

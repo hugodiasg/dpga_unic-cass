@@ -1,0 +1,275 @@
+** sch_path: /foss/designs/projects/dpga2/xschem/ota_tb-tran.sch
+**.subckt ota_tb-tran
+ibias ib GND 5.53u
+VDD vd GND 1.8
+.save i(vdd)
+VSS vs GND 0
+.save i(vss)
+Cl out GND 4p m=1
+VDD1 inp GND 0.9
+.save i(vdd1)
+VDD2 inn GND sin(0.9 0.1 1)
+.save i(vdd2)
+X1 vd ib out inp inn vs ota-pex
+**** begin user architecture code
+
+*cmd step stop
+.control
+destroy all
+set color0=white
+set color1=black
+save all
+tran 1m 2
+run
+plot out inn inp
+.endc
+
+ .lib /foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.include /foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  projects/dpga-ieee-sscs-contest/xschem/ota-pex.sym # of pins=6
+** sym_path: /foss/designs/projects/dpga-ieee-sscs-contest/xschem/ota-pex.sym
+** sch_path: /foss/designs/projects/dpga-ieee-sscs-contest/xschem/ota-pex.sch
+.subckt ota-pex vd ib out inp inn vs
+*.iopin vd
+*.iopin vs
+*.iopin ib
+*.ipin in1
+*.ipin in2
+*.opin out
+**** begin user architecture code
+
+
+* NGSPICE file created from ota.ext - technology: sky130A
+
+*.subckt ota ib inn inp out vs vd
+X0 vs.t5 a_5530_2419.t5 out.t3 vs sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=1e+06u
+X1 vs.t4 a_5530_2419.t6 out.t1 vs sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=1e+06u
+X2 out.t2 a_5530_2419.t7 vs.t3 vs sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=1e+06u
+X3 out.t6 ib.t4 vd.t17 vd.t16 sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=7.5e+06u l=1e+06u
+X4 vd.t15 ib.t5 out.t4 vd.t14 sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=7.5e+06u l=1e+06u
+X5 w_4400_2200.t6 ib.t6 vd.t13 vd.t12 sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u
++ l=1e+06u
+X6 out.t5 ib.t7 vd.t11 vd.t10 sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=7.5e+06u l=1e+06u
+X7 a_4538_1570.t2 inn.t0 w_4400_2200.t12 w_4400_2200.t11 sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p
++ ps=0u w=3e+06u l=150000u
+X8 out.t7 a_5530_2419.t3 sky130_fd_pr__cap_mim_m3_1 l=1.8e+07u w=1.8e+07u
+X9 vd.t7 ib.t8 out.t0 vd.t6 sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=7.5e+06u l=1e+06u
+X10 a_5530_2419.t0 inp.t0 w_4400_2200.t3 w_4400_2200.t2 sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p
++ ps=0u w=3e+06u l=150000u
+X11 w_4400_2200.t5 ib.t9 vd.t9 vd.t8 sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u
++ l=1e+06u
+X12 w_4400_2200.t14 inn.t1 a_4538_1570.t1 w_4400_2200.t13 sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p
++ ps=0u w=3e+06u l=150000u
+X13 vd.t5 ib.t10 w_4400_2200.t4 vd.t4 sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u
++ l=1e+06u
+X14 w_4400_2200.t8 inp.t1 a_5530_2419.t2 w_4400_2200.t7 sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p
++ ps=0u w=3e+06u l=150000u
+X15 a_4538_1570.t0 inn.t2 w_4400_2200.t1 w_4400_2200.t0 sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p
++ ps=0u w=3e+06u l=150000u
+X16 vd.t3 ib.t0 ib.t1 vd.t2 sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=1e+06u
+X17 ib.t3 ib.t2 vd.t1 vd.t0 sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=3e+06u l=1e+06u
+X18 vs.t1 a_4538_1570.t3 a_4538_1570.t4 vs.t0 sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u
++ w=1e+06u l=1e+06u
+X19 a_5530_2419.t4 inp.t2 w_4400_2200.t10 w_4400_2200.t9 sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p
++ ps=0u w=3e+06u l=150000u
+X20 a_5530_2419.t1 a_4538_1570.t5 vs.t2 vs sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u
++ l=1e+06u
+R0 a_5530_2419.n0 a_5530_2419.t5 86.002
+R1 a_5530_2419.n1 a_5530_2419.t6 85.559
+R2 a_5530_2419.n0 a_5530_2419.t7 85.559
+R3 a_5530_2419.n3 a_5530_2419.t1 17.857
+R4 a_5530_2419.t0 a_5530_2419.n5 11.052
+R5 a_5530_2419.n4 a_5530_2419.t2 10.835
+R6 a_5530_2419.n4 a_5530_2419.t4 10.835
+R7 a_5530_2419.n5 a_5530_2419.n3 1.539
+R8 a_5530_2419.n2 a_5530_2419.n1 0.903
+R9 a_5530_2419.n2 a_5530_2419.t3 0.565
+R10 a_5530_2419.n5 a_5530_2419.n4 0.516
+R11 a_5530_2419.n1 a_5530_2419.n0 0.443
+R12 a_5530_2419.n3 a_5530_2419.n2 0.389
+R13 out.n4 out.t1 6.779
+R14 out.n3 out.t3 5.8
+R15 out.n3 out.t2 5.8
+R16 out.n0 out.t0 3.808
+R17 out.n0 out.t6 3.808
+R18 out.n1 out.t4 3.808
+R19 out.n1 out.t5 3.808
+R20 out.n7 out.n2 2.247
+R21 out.n2 out.n1 1.645
+R22 out.n5 out.t7 1.368
+R23 out.n5 out.n4 1.182
+R24 out.n6 out.n5 1.093
+R25 out.n2 out.n0 0.839
+R26 out.n4 out.n3 0.173
+R27 out.n7 out.n6 0.125
+R28 out out.n7 0.069
+R29 out.n6 out 0.031
+R30 vs.n6 vs.n5 108.422
+R31 vs.n17 vs.n16 108.422
+R32 vs.n0 vs.t2 17.596
+R33 vs.n0 vs.t1 17.571
+R34 vs.n2 vs.t5 6.046
+R35 vs.n1 vs.t3 5.8
+R36 vs.n1 vs.t4 5.8
+R37 vs.n3 vs.n2 2.077
+R38 vs.n2 vs.n1 0.706
+R39 vs vs.n18 0.476
+R40 vs.n3 vs.n0 0.166
+R41 vs.n7 vs.n3 0.049
+R42 vs.n9 vs.n8 0.046
+R43 vs.n5 vs.n4 0.042
+R44 vs.n16 vs.n15 0.042
+R45 vs.n14 vs.n7 0.04
+R46 vs.n18 vs.n14 0.04
+R47 vs.n10 vs.n9 0.029
+R48 vs.t0 vs.n10 0.018
+R49 vs.n18 vs.n17 0.018
+R50 vs.n7 vs.n6 0.017
+R51 vs.n12 vs.n11 0.001
+R52 vs.n13 vs.n12 0.001
+R53 vs.n11 vs.t0 0.001
+R54 vs.n14 vs.n13 0.001
+R55 ib.n1 ib.t8 196.581
+R56 ib.n1 ib.t4 196.178
+R57 ib.n2 ib.t5 196.178
+R58 ib.n3 ib.t7 196.178
+R59 ib.n9 ib.t2 87.728
+R60 ib.n7 ib.t0 87.728
+R61 ib.n6 ib.t6 87.728
+R62 ib.n5 ib.t10 87.728
+R63 ib.n4 ib.t9 87.728
+R64 ib.n0 ib.t1 9.521
+R65 ib.n0 ib.t3 9.521
+R66 ib.n4 ib.n3 2.692
+R67 ib.n7 ib.n6 1.471
+R68 ib ib.n9 1.181
+R69 ib.n8 ib.n0 0.568
+R70 ib.n2 ib.n1 0.403
+R71 ib.n3 ib.n2 0.403
+R72 ib.n5 ib.n4 0.403
+R73 ib.n6 ib.n5 0.403
+R74 ib.n8 ib.n7 0.209
+R75 ib.n9 ib.n8 0.193
+R76 vd.n38 vd.n28 187.122
+R77 vd.n34 vd.n33 187.122
+R78 vd.n23 vd.n22 166.682
+R79 vd.n23 vd.n18 166.682
+R80 vd.t16 vd.t6 126.47
+R81 vd.t14 vd.t10 126.47
+R82 vd.n8 vd.n7 124.807
+R83 vd.n4 vd.n3 124.807
+R84 vd.t4 vd.n9 121.098
+R85 vd.t4 vd.n5 121.098
+R86 vd.n37 vd.n30 105.65
+R87 vd.n37 vd.n29 105.65
+R88 vd.n8 vd.t8 89.697
+R89 vd.n4 vd.t12 89.697
+R90 vd.n21 vd.n20 67.367
+R91 vd.n17 vd.n16 67.367
+R92 vd.n23 vd.t16 63.235
+R93 vd.n23 vd.t14 63.235
+R94 vd.n31 vd.t3 10.53
+R95 vd.n31 vd.t1 9.724
+R96 vd.n26 vd.t13 9.724
+R97 vd.n25 vd.t9 9.521
+R98 vd.n25 vd.t5 9.521
+R99 vd.n30 vd.t2 8.109
+R100 vd.n29 vd.t0 8.109
+R101 vd.n11 vd.t7 4.754
+R102 vd.n12 vd.t11 4.294
+R103 vd.n10 vd.t17 3.808
+R104 vd.n10 vd.t15 3.808
+R105 vd.n24 vd.n23 2.738
+R106 vd.n26 vd.n25 1.009
+R107 vd.n24 vd.n12 0.649
+R108 vd.n40 vd.n39 0.576
+R109 vd.n39 vd.n26 0.542
+R110 vd.n11 vd.n10 0.486
+R111 vd.n12 vd.n11 0.46
+R112 vd.t4 vd.n24 0.322
+R113 vd.n34 vd.n31 0.287
+R114 vd.n39 vd.n38 0.189
+R115 vd.n22 vd.n21 0.184
+R116 vd.n18 vd.n17 0.184
+R117 vd.n9 vd.n8 0.161
+R118 vd.n5 vd.n4 0.161
+R119 vd.n38 vd.n37 0.101
+R120 vd.n37 vd.n34 0.101
+R121 vd vd.n40 0.062
+R122 vd.n40 vd.t4 0.029
+R123 vd.n36 vd.n35 0.008
+R124 vd.n37 vd.n36 0.008
+R125 vd.n3 vd.n2 0.006
+R126 vd.n7 vd.n6 0.006
+R127 vd.n33 vd.n32 0.006
+R128 vd.n28 vd.n27 0.006
+R129 vd.n1 vd.n0 0.005
+R130 vd.t4 vd.n1 0.005
+R131 vd.n14 vd.n13 0.004
+R132 vd.n23 vd.n14 0.004
+R133 vd.n16 vd.n15 0.003
+R134 vd.n20 vd.n19 0.003
+R135 w_4400_2200.n6 w_4400_2200.t9 148.866
+R136 w_4400_2200.n8 w_4400_2200.t11 148.866
+R137 w_4400_2200.n8 w_4400_2200.t13 109.214
+R138 w_4400_2200.n3 w_4400_2200.t7 108.825
+R139 w_4400_2200.t7 w_4400_2200.t2 87.861
+R140 w_4400_2200.t13 w_4400_2200.t0 87.861
+R141 w_4400_2200.t1 w_4400_2200.n9 11.492
+R142 w_4400_2200.n5 w_4400_2200.t10 11.092
+R143 w_4400_2200.n4 w_4400_2200.t3 10.835
+R144 w_4400_2200.n4 w_4400_2200.t8 10.835
+R145 w_4400_2200.n0 w_4400_2200.t12 10.835
+R146 w_4400_2200.n0 w_4400_2200.t14 10.835
+R147 w_4400_2200.n2 w_4400_2200.t5 9.792
+R148 w_4400_2200.n1 w_4400_2200.t4 9.521
+R149 w_4400_2200.n1 w_4400_2200.t6 9.521
+R150 w_4400_2200.n7 w_4400_2200.n2 4.293
+R151 w_4400_2200.n2 w_4400_2200.n1 1.077
+R152 w_4400_2200.n5 w_4400_2200.n4 0.657
+R153 w_4400_2200.n8 w_4400_2200.n7 0.439
+R154 w_4400_2200.n9 w_4400_2200.n8 0.437
+R155 w_4400_2200.n6 w_4400_2200.n3 0.389
+R156 w_4400_2200.n7 w_4400_2200.n6 0.36
+R157 w_4400_2200.n9 w_4400_2200.n0 0.257
+R158 w_4400_2200.n6 w_4400_2200.n5 0.237
+R159 inn.n0 inn.t2 573.58
+R160 inn.n0 inn.t0 573.58
+R161 inn.n0 inn.t1 515.74
+R162 inn inn.n0 16.413
+R163 a_4538_1570.n1 a_4538_1570.t5 40.071
+R164 a_4538_1570.n1 a_4538_1570.t3 37.359
+R165 a_4538_1570.n2 a_4538_1570.t4 17.512
+R166 a_4538_1570.t2 a_4538_1570.n3 11.507
+R167 a_4538_1570.n0 a_4538_1570.t1 10.835
+R168 a_4538_1570.n0 a_4538_1570.t0 10.835
+R169 a_4538_1570.n3 a_4538_1570.n2 2.581
+R170 a_4538_1570.n2 a_4538_1570.n1 0.362
+R171 a_4538_1570.n3 a_4538_1570.n0 0.271
+R172 inp.n0 inp.t2 573.58
+R173 inp.n0 inp.t0 573.58
+R174 inp.n0 inp.t1 515.74
+R175 inp inp.n0 18.03
+C0 ib inp 0.45fF
+C1 inn inp 0.23fF
+C2 vd out 1.83fF
+C3 ib inn 0.04fF
+C4 inp out 0.00fF
+C5 ib out 0.88fF
+C6 vd inp 0.08fF
+C7 inn out 0.00fF
+C8 ib vd 8.44fF
+C9 vd inn 0.07fF
+*.ends
+
+
+
+**** end user architecture code
+.ends
+
+.GLOBAL GND
+.end

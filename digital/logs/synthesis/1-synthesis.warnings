@@ -1,0 +1,10 @@
+ABC: Warning: Detected 2 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
+Warning: Wire sr.\data [7] is used but has no driver.
+Warning: Wire sr.\data [6] is used but has no driver.
+Warning: Wire sr.\data [5] is used but has no driver.
+Warning: Wire sr.\data [4] is used but has no driver.
+Warning: Wire sr.\data [3] is used but has no driver.
+Warning: Wire sr.\data [2] is used but has no driver.
+Warning: Wire sr.\data [1] is used but has no driver.
+Warning: Wire sr.\data [0] is used but has no driver.
+Warnings: 8 unique messages, 8 total

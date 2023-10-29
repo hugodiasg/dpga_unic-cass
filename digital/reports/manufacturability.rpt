@@ -1,0 +1,19 @@
+Design Name: sr
+Run Directory: /shift/openlane/sr/runs/RUN_2023.10.27_18.18.11
+----------------------------------------
+
+Magic DRC Summary:
+Source: /shift/openlane/sr/runs/RUN_2023.10.27_18.18.11/reports/signoff/drc.rpt
+Total Magic DRC violations is 0
+----------------------------------------
+
+LVS Summary:
+Source: /shift/openlane/sr/runs/RUN_2023.10.27_18.18.11/logs/signoff/38-sr.lef.lvs.log
+Number of nets: 48                         |Number of nets: 48                         
+Design is LVS clean.
+----------------------------------------
+
+Antenna Summary:
+Source: /shift/openlane/sr/runs/RUN_2023.10.27_18.18.11/logs/signoff/40-arc.log
+Pin violations: 0
+Net violations: 0

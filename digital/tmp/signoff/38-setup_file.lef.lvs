@@ -1,0 +1,1 @@
+lvs {/shift/openlane/sr/runs/RUN_2023.10.27_18.18.11/results/signoff/sr.spice sr} {/shift/openlane/sr/runs/RUN_2023.10.27_18.18.11/tmp/signoff/35-sr.pnl.v sr} /home/jr_dig/unic-cass/pdks/sky130A/libs.tech/netgen/sky130A_setup.tcl /shift/openlane/sr/runs/RUN_2023.10.27_18.18.11/logs/signoff/38-sr.lef.lvs.log -json

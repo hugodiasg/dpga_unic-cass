@@ -1,0 +1,20 @@
+
+61. Printing statistics.
+
+=== sr ===
+
+   Number of wires:                 19
+   Number of wire bits:             26
+   Number of public wires:           5
+   Number of public wire bits:      12
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 22
+     sky130_fd_sc_hd__buf_1          7
+     sky130_fd_sc_hd__conb_1         1
+     sky130_fd_sc_hd__dfrtp_2        7
+     sky130_fd_sc_hd__mux2_2         7
+
+   Chip area for module '\sr': 292.780800
+

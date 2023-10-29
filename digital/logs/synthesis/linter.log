@@ -1,0 +1,6 @@
+%Warning-WIDTHEXPAND: /shift/openlane/sr/src/shift_register.v:15:23: Operator ASSIGNDLY expects 8 bits on the Assign RHS, but Assign RHS's REPLICATE generates 7 bits.
+                                                                   : ... In instance sr
+   15 |             shift_reg <= {sdi, shift_reg[WORD-2:1]};
+      |                       ^~
+                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=5.009
+                      ... Use "/* verilator lint_off WIDTHEXPAND */" and lint_on around source to disable this message.

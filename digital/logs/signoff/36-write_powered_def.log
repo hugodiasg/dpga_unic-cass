@@ -1,0 +1,21 @@
+OpenROAD bdc8e944cd08ba8edebeca19fa531bd026690330 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ODB-0222] Reading LEF file: /shift/openlane/sr/runs/RUN_2023.10.27_18.18.11/tmp/merged.nom.lef
+[INFO ODB-0223]     Created 13 technology layers
+[INFO ODB-0224]     Created 25 technology vias
+[INFO ODB-0225]     Created 442 library cells
+[INFO ODB-0226] Finished LEF file:  /shift/openlane/sr/runs/RUN_2023.10.27_18.18.11/tmp/merged.nom.lef
+[INFO ODB-0127] Reading DEF file: /shift/openlane/sr/runs/RUN_2023.10.27_18.18.11/results/routing/sr.def
+[INFO ODB-0128] Design: sr
+[INFO ODB-0130]     Created 14 pins.
+[INFO ODB-0131]     Created 640 components and 2520 component-terminals.
+[INFO ODB-0132]     Created 2 special nets and 2410 connections.
+[INFO ODB-0133]     Created 45 nets and 109 connections.
+[INFO ODB-0134] Finished DEF file: /shift/openlane/sr/runs/RUN_2023.10.27_18.18.11/results/routing/sr.def
+Top-level design name: sr
+Found default power net 'VPWR'
+Found default ground net 'VGND'
+Found 1 power ports.
+Found 1 ground ports.
+Modified power connections of 640/640 cells.
