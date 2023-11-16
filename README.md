@@ -1,11 +1,13 @@
 
-# DIGITALLY PROGRAMMABLE GAIN AMPLIFIER - UNIC CASS 2023
+# DIGITALLY PROGRAMMABLE GAIN AMPLIFIER - (Universalization of IC Design from CASS](https://ieee-cas.org/universalization-ic-design-cass-unic-cass)
 
 ## 1. LIST OF THE INVOLVED TEAM MEMBERS
 
 - Francisco de Assis Brito Filho (Faculty member)
 - Hugo Dias Giló (Undergraduate student)
-- Daniel Da Silva Santos (Undergraduate student)
+- Edson Alves da Silva (Undergraduate student)
+- José Lira de Oliveira Junior (Undergraduate student)
+- Hadassa Juliana da Costa Gomes (Undergraduate student)
 
 ## 2. A SHORT DESCRIPTION OF THE CIRCUIT
 
