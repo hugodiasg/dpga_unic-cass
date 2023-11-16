@@ -86,20 +86,21 @@ The results of the simulations carried out will be presented below.
 
 ## 8. PORTS
 
-| Port                    | type                |
-| ----------------------- | ------------------- |
-| ss                      | digital input       |
-| sclk                    | digital input       |
-| sdi                     | digital input       |
-| reset                   | digital input       |
-| inn                     | analog input        |
-| inp                     | analog input        |
-| ib                      | analog input        |
-| out                     | analog output       |
-| vd_ota                  | power               |
-| gnd_ota                 | power               |
-| vd_spi                  | power               |
-| gnd_spi                 | power               |
+| Pin Name | Type    | Harness Pin          |
+|----------|---------|----------------------|
+| inn      | Analog  | io_analog[8] / mprj[22] |
+| inp      | Analog  | io_analog[9] / mprj[23] |
+| ib       | Analog  | io_analog[10] / mprj[24] |
+| out      | Analog  | io_analog[7] / mprj[21] |
+| vd_ota   | Power   | vdda2                |
+| gnd_ota  | Power   | vssa2                |
+| ss       | Digital | io_in[14] / mprj[25] |
+| sclk     | Digital | io_in[15] / mprj[26] |
+| sdi      | Digital | io_in[16] / mprj[27] |
+| reset    | Digital | io_in[17] / mprj[28] |
+| vd_spi   | Power   | vccd2                |
+| gnd_spi  | Power   | vssd1                |
+
 
 ## 9. APPLICABLE REFERENCES
 
