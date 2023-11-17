@@ -1,5 +1,5 @@
 
-# DIGITALLY PROGRAMMABLE GAIN AMPLIFIER - (Universalization of IC Design from CASS](https://ieee-cas.org/universalization-ic-design-cass-unic-cass)
+# DIGITALLY PROGRAMMABLE GAIN AMPLIFIER - [Universalization of IC Design from CASS](https://ieee-cas.org/universalization-ic-design-cass-unic-cass)
 
 ## 1. LIST OF THE INVOLVED TEAM MEMBERS
 
